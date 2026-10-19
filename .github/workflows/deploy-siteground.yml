@@ -1,0 +1,83 @@
+# Builds the static site and uploads it to SiteGround over FTPS.
+# Runs on every push to this branch or main, when Sanity publishes (webhook ->
+# repository_dispatch), and from Actions > "Deploy to SiteGround" > Run workflow.
+#
+# Repository secrets (Settings > Secrets and variables > Actions):
+#   SG_FTP_SERVER    FTP host from SiteGround Site Tools > Site > FTP Accounts
+#   SG_FTP_USERNAME  FTP account whose folder is the site's public_html
+#   SG_FTP_PASSWORD
+#   GHL_WEBHOOK_URL  the forms' GoHighLevel inbound webhook (not set yet: until it is,
+#                    forms are accepted but not forwarded)
+# Optional repository variables (Settings > Secrets and variables > Actions > Variables):
+#   GHL_CHAT_WIDGET_ID (not set yet), GA_ID, GTM_ID, AHREFS_KEY (default to the old site's IDs)
+name: Deploy to SiteGround
+
+on:
+  push:
+    branches: [claude/quirky-pascal-sobf9n, main]
+  repository_dispatch:
+    types: [sanity-publish]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-siteground
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # At job level so the steps' `if:` checks can see them.
+    env:
+      SG_FTP_SERVER: ${{ secrets.SG_FTP_SERVER }}
+      # The forms' GoHighLevel inbound webhook. It is written only into
+      # api/lead-config.php on SiteGround (never served, see .htaccess), not into
+      # public/, because hosts without PHP (e.g. Vercel previews) serve .php as text.
+      GHL_WEBHOOK_URL: ${{ secrets.GHL_WEBHOOK_URL }}
+      # Where careers resumes are emailed (the address the job pages name).
+      CAREERS_EMAIL: ${{ vars.CAREERS_EMAIL || 'reza@capitalinvestmentllc.com' }}
+      NEXT_PUBLIC_GHL_CHAT_WIDGET_ID: ${{ vars.GHL_CHAT_WIDGET_ID }}
+      # Tracking IDs from the old site's source (GA4, GTM, Ahrefs Web Analytics). Public values.
+      NEXT_PUBLIC_GA_ID: ${{ vars.GA_ID || 'G-N5KLT6B97L' }}
+      NEXT_PUBLIC_GTM_ID: ${{ vars.GTM_ID || 'GTM-P2QV2DF5' }}
+      NEXT_PUBLIC_AHREFS_KEY: ${{ vars.AHREFS_KEY || 'LPpulIXjo9NNtCXPynXhaw' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      # Download from the run page for a manual upload (no form settings inside).
+      - name: Keep a copy of the site
+        uses: actions/upload-artifact@v4
+        with:
+          name: capital-investment-site
+          path: out/
+          include-hidden-files: true
+          retention-days: 14
+
+      - name: Write form settings
+        run: |
+          php -r 'file_put_contents("out/api/lead-config.php", "<?php\nreturn " . var_export(["webhook_url" => (string) getenv("GHL_WEBHOOK_URL"), "careers_email" => (string) getenv("CAREERS_EMAIL")], true) . ";\n");'
+
+      - name: Upload to SiteGround
+        # Skipped (build check only) until the FTP secrets are added.
+        if: env.SG_FTP_SERVER != ''
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SG_FTP_SERVER }}
+          username: ${{ secrets.SG_FTP_USERNAME }}
+          password: ${{ secrets.SG_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: ./

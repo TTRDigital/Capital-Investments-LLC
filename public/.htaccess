@@ -1,0 +1,359 @@
+# Capital Investment LLC: static Next.js export on SiteGround (Apache).
+# Does what a Node server would: canonical host, old-URL redirects, trailing
+# slashes, security headers, caching and compression.
+
+Options -Indexes
+DirectoryIndex index.html index.php
+# The trailing slash is added by a rewrite below (on https), not by Apache.
+DirectorySlash Off
+ErrorDocument 404 /404.html
+ErrorDocument 410 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # One address: https://www.capitalinvestmentllc.com (with www), like the old site's canonical URLs.
+  # (turn on "HTTPS Enforce" in SiteGround Site Tools > Security > SSL Manager too)
+  RewriteCond %{HTTP_HOST} ^capitalinvestmentllc\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.capitalinvestmentllc.com/$1 [R=301,L]
+
+  # ---- Old WordPress URLs (generated from the old site; keep above the trailing-slash rule) ----
+  # The home page moved from /home/ to /.
+  RewriteRule ^home/?$ https://%{HTTP_HOST}/ [R=301,L,NC]
+  # Team archive (and its pages) -> Our Team.
+  RewriteRule ^team(?:/page/\d+)?/?$ https://%{HTTP_HOST}/our-team/ [R=301,L,NC]
+  # Redirects the old site already had.
+  RewriteRule ^investments-in-miami/?$ https://%{HTTP_HOST}/locations/miami-florida/ [R=301,L,NC]
+  RewriteRule ^investments-in-washington-dc/?$ https://%{HTTP_HOST}/locations/washington-dc/ [R=301,L,NC]
+  RewriteRule ^investments-in-northern-virginia/?$ https://%{HTTP_HOST}/locations/virginia/ [R=301,L,NC]
+  RewriteRule ^about/?$ https://%{HTTP_HOST}/our-team/ [R=301,L,NC]
+  RewriteRule ^contact/?$ https://%{HTTP_HOST}/contact-us/ [R=301,L,NC]
+  RewriteRule ^properties/?$ https://%{HTTP_HOST}/ [R=301,L,NC]
+  RewriteRule ^author/ttrdigital/?$ https://%{HTTP_HOST}/ [R=301,L,NC]
+  # Old ?page_id= / ?p= links (WordPress short links): 301 to the page, query dropped.
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=781(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2764(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/terms-of-service/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2757(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/contact-us/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2649(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-historic-district-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2631(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-government-center-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2611(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-central-business-district-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2421(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-park-west-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2413(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-miami-arts-and-entertainment-district/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2405(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2354(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/south-beach-florida/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2328(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/coral-gables-florida/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2236(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-dade-county/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2227(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/fairfax-county/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2183(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/sitemap/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2125(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/brickell-miami/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2101(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/confirmation-thank-you/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1925(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/washington-dc/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1916(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/virginia/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1907(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/maryland/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1848(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/miami-florida/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1833(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/valuation-consultation/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1826(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/property-management/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1696(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/development-services-and-project-management/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1675(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/landlord-and-tenant-representation/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1643(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/locations/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1616(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/investment-sales-and-acquisition-services/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1583(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/services/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1563(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/newsletter-subscribe-thank-you/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1558(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/subscribe/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=761(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/offices/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=460(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/careers-in-miami-fl/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=406(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/careers-in-washington-dc-metro/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=398(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/careers/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=327(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/our-team/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=3(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/privacy-policy/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2770(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/connor-zarebi/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2743(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/monica-morfin/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2742(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/ramzah-khan/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2088(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/catina-rhinehart/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1897(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/alex-parra/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=1786(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/john-daly/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=553(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/xandria-baleno/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=551(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/nitika-dumera/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=549(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/cason-chatham/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=548(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/steven-p-moskowitz/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=547(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/sarah-lescallett/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=546(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/adam-benaim/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=545(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/ali-tofigh-esq/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=543(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/mikayel-aakil-bey/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=542(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/brooke-fontan/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=539(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/yassin-kadir/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=538(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/boyd-lawrence/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=537(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/christina-davies/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=2377(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/justin-katz/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=536(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/windy-parsons/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=534(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/mani-milan-mps/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=520(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/david-krucoff/ [R=301,L,QSD]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=419(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/team/reza-sabaii-esq/ [R=301,L,QSD]
+  # Old uploaded images (any WordPress size, e.g. -1024x683 or -scaled) to their new files.
+  RewriteRule ^wp-content/uploads/2024/09/Adam-Benaim-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/adam-benaim.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Ali-Tofigh-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/ali-tofigh.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Brooke-Fontan-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/brooke-fontan.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/David-Krucoff-VP-Real-Estate-Associate-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/david-krucoff.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Justin(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/justin-katz.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Justin(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/justin-katz.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Mani-Milan-Senior-VP-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/mani-milan.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Mikayel-Aakil-Bey-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/mikayel-aakil-bey.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/P01-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/reza-sabaii.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/P02(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/cason-chatham.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/P1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/steven-p-moskowitz.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4388-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-working-lunch.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4388(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-laptop-review.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4389(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-team-dinner.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4390(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-dinner-table.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4391(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-team-logo.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4392(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-desk-work.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-4393(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/gallery-dinner-event.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-5284(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/group-photo-strip.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Rectangle-5293(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/home/service-financial-analysis.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Sarah-Lescallett-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/sarah-lescallett.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Untitled-design-18-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/nitika-dumera.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Xandria-Baleno-headshot-e1718732095429(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/xandria-baleno.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/Yassin-Kadir-Real-Estate-Associate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/yassin-kadir.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/banner-hero-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/heroes/night-towers.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/boyd-lawrence-real-estate-associate-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/boyd-lawrence.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/capitalinvestmentllc-team-photo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/group-photo-logo-tab.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/christina-davies-headshot(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/christina-davies.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/david(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/david-krucoff.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/download-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpeg$ https://%{HTTP_HOST}/images/team/group-photo-logo-small.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/favicon(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-mark.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/firms(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/icons/other-firms.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/footer-bg(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/footer-bg.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/footer-logo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-dark.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/footer-mobile-bg(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/footer-bg-mobile.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/logo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-light.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/mani(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/mani-milan.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/reza(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/reza-sabaii.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/windy-parsons-headshot-no-bg(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/windy-parsons.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/bethseda-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/offices/bethesda-md.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/boyd-lawrence-237(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/boyd-lawrence.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/brooke-fontan-237(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/brooke-fontan.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/capitalinvestmentllc-miami-fl-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/offices/miami-fl.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/capitalinvestmentllc-washington-dc-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/offices/washington-dc.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/christina-davies-237(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/christina-davies.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/tysons-va-image-2x(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/offices/tysons-va.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/windy-parson-237(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/windy-parsons.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/10/yassin-kadir-237(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/carousel/yassin-kadir.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/Group-1000006796(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/heroes/glass-office-building.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/Group-1000011294(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/networking-event-logo.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/Rectangle-4526(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/advisors-talking.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/Rectangle-5(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/group-photo-logo.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/banner-image-3(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/heroes/glass-towers.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/business-presentation(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/business-presentation.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/capitalinvestmentllc-event-photo-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/event-conversation.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/capitalinvestmentllc-event-photo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/team-at-event.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/capitalinvestmentllc-miami-fl-team-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/events/miami-team.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/capitalinvestmentllc-washington-dc-image-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/offices/washington-dc-wide.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/chart-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/icons/step-location.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/chart-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/icons/step-advisor.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/chart(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/icons/step-chart.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/commercial-valuation-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/valuation-document.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/commerical-real-estate(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/conference-room.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/development-services-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/team-laptops.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/expert-guidance-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/desk-review.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/favicon(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-mark.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/footer-logo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-dark.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/get-started-bg-capital-investement(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/cta-shapes.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-1-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/networking-group.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-1-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/networking-group-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/advisors-talking-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-2-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/desk-review-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-2-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/two-advisors.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image-6(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/three-professionals.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/heroes/blue-skyline.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/market-experts-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/attendees.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/market-specific-experties-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/team-posing.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/maryland-image-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/maryland-office-building.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/maryland-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/annapolis.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/maryland(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/annapolis-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/miami-image-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/downtown-miami-street.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/miami(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/miami-beach-aerial.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/negotiation-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/handshake.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/our-location-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/south-beach-aerial.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/property-managment-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/building-facades.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/virginia-image-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/richmond-skyline.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/virginia-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/richmond-aerial.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/virginia(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/richmond-aerial-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/washigton-dc-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/us-capitol.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/washington-dc-image-2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/dc-office-tower.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/washington(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/us-capitol-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/11/why-choose-capitalinvestment-llc(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/services/clients-reviewing-documents.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/alex-parra-photo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/alex-parra.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/capitalinvestment-team-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/group-photo-wide.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/headshot-john-daly-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/john-daly.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/partner-with-capital-investment-llc-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/partners-talking.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/professional-comprehensive-property-management-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/lounge-meeting.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/property-management-florida-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/miami-beach-aerial-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/property-management-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/two-professionals.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/property-management-washington-dc-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/places/us-capitol-3.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/regional-presence-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/man-and-woman.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/tailored-solutions-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/lounge-meeting-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/valuation-commercial-real-estate-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/conversation.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/12/why-choose-property-management-with-capitalinvestmentllc-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/conversation-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/01/capital-investment-team-photo-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/group-photo-white.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/01/capital-investment-team-photo-e1737484637762(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/group-photo-white-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/01/catina-rhinehart-headshot(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/catina-rhinehart.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/03/bricknell-miami-photo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/brickell-skyline.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Fairfax-virginia-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/virginia-skyline-sunset.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Farifax-va-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/virginia-skyline-reflection.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/brickell-miami-photo-scaled-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/miami-night-skyline.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/brickell-miami-photo(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/miami-night-skyline-2.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/capital-investment-team-photo-2024-final-e1746479381123(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/team/group-photo-2024.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/coral-gables-florida-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/coral-gables-biltmore.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/coral-gables-florida-photo-e1746471770220(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/coral-gables-aerial.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/get-started-bg-capital-investement(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/cta-shapes.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/miami-florida(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/miami-dusk.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/property-management-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/events/two-professionals.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/south-beach-florida-image(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/miami-beach-sunset.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/05/south-beach-florida-photo-e1746471329777(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/south-beach-towers.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/Knight-Concert-Hall(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/knight-concert-hall.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/bicentennial-park-miami(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/bicentennial-park.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/downtown-miami(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/bayside-downtown-miami.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/downtown-miami2(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/downtown-miami-towers.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/miami-florida(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/downtown-miami-dusk.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/06/ziff-ballet-opera-house(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/ziff-ballet-opera-house.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/downtown-miami-golden-hour(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/downtown-miami-golden-hour.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/eight-street-station(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/eighth-street-station.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/miami-cbd(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/miami-cbd-night.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/miami-dade-courthouse(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/miami-dade-courthouse.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/miami-metrorail-500x460-1(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/places/miami-metrorail.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/07/stephen-clark-center(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/places/stephen-clark-center.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/09/Monica(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/monica-morfin.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/09/Monica(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/monica-morfin.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/09/person(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/ramzah-khan.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/04/Connor(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/connor-zarebi.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/04/Connor(?:-scaled|-e\d+)?(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/team/connor-zarebi.webp [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2024/09/down-arrow\.svg$ https://%{HTTP_HOST}/images/icons/down-arrow.svg [R=301,L,NC]
+  # Images of people no longer on the team, and any other old upload: 410 Gone.
+  RewriteRule ^wp-content/uploads/ - [G,L,NC]
+  # WordPress sitemaps and feeds.
+  RewriteRule ^(?:sitemap_index|wp-sitemap|[a-z_-]+-sitemap\d*|wp-sitemap-[a-z0-9_-]+)\.xml$ https://%{HTTP_HOST}/sitemap.xml [R=301,L,NC]
+  # WordPress-only paths that no longer exist: 410 Gone, so search engines drop them.
+  RewriteRule ^(?:wp-admin|wp-includes|wp-json|wp-content)(?:/|$) - [G,L,NC]
+  RewriteRule ^(?:wp-login|xmlrpc|wp-cron|wp-signup|wp-trackback|wp-comments-post|wp-config|readme|license)\.(?:php|html|txt)$ - [G,L,NC]
+  RewriteRule ^(?:.+/)?(?:feed|trackback|embed|comments/feed)/?$ - [G,L,NC]
+  RewriteRule ^(?:category|tag|author|elementor-hf|e-landing-page|elementor_library)/ - [G,L,NC]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:rest_route|feed|attachment_id|elementor_library|s)= [NC]
+  RewriteRule ^(?:index\.php)?$ - [G,L]
+  # ---- end of old WordPress URLs ----
+
+  # Pages live at /page/ (page/index.html): add the missing slash, on https
+  # (absolute, so visitors behind SiteGround's proxy are not bounced through http).
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+  # The Sanity Studio is one page; its inner URLs (/cms/structure/...) load it.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^cms/. /cms/index.html [L]
+</IfModule>
+
+# The form's settings file and the upload tool's file list are never served.
+<FilesMatch "^(lead-config\.php|\.ftp-deploy-sync-state\.json)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # CSP for the site. Third parties allowed: Google Analytics / Tag Manager and
+  # Ahrefs analytics (when their IDs are set), Google Maps (office maps),
+  # Sanity images, and the GoHighLevel (LeadConnector) chat widget with its
+  # anti-spam check. If you add tags in GTM that load other scripts, add their
+  # domains here. The studio at /cms talks to many Sanity hosts and is
+  # protected by Sanity login instead.
+  <If "%{REQUEST_URI} !~ m#^/cms(/|$)#">
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://analytics.ahrefs.com https://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://*.leadconnectorhq.com https://*.msgsndr.com https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://*.leadconnectorhq.com https://*.msgsndr.com https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://analytics.ahrefs.com https://*.leadconnectorhq.com https://*.msgsndr.com wss://*.leadconnectorhq.com https://*.googleapis.com https://challenges.cloudflare.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; media-src 'self' blob: https://cdn.sanity.io; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  </If>
+
+  # Caching: hashed build files forever, images for a month, pages always fresh.
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico|mp4|webm)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|txt|xml)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-store"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+  AddType text/javascript .js
+</IfModule>
+
+# Compress text files. Apache may label .js as text/javascript or application/javascript: both are listed.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/x-javascript application/json application/manifest+json image/svg+xml text/xml application/xml text/plain
+</IfModule>
