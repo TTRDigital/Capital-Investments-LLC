@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Img, MenuItem } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Caret, Close, MenuIcon } from "@/components/ui/Icons";
@@ -19,17 +19,27 @@ const isActive = (item: MenuItem, path: string): boolean => !!item.href && item.
 function DesktopItem({ item, path, depth }: { item: MenuItem; path: string; depth: number }) {
   const active = isActive(item, path);
   const top = depth === 0;
+  const sub = useRef<HTMLUListElement>(null);
+  const [flip, setFlip] = useState(false);
+  // Open a submenu towards the left when it would run past the right edge of the window.
+  const place = () => {
+    const ul = sub.current;
+    const li = ul?.parentElement;
+    if (!ul || !li) return;
+    const r = li.getBoundingClientRect();
+    setFlip((top ? r.left : r.right) + ul.offsetWidth > document.documentElement.clientWidth);
+  };
   const label = (
     <>
       <span>{item.label}</span>
-      {item.children ? <Caret className={`h-[10px] w-[10px] ${top ? "" : "-rotate-90"}`} /> : null}
+      {item.children ? <Caret className={`h-[10px] w-[10px] ${top ? "" : flip ? "rotate-90" : "-rotate-90"}`} /> : null}
     </>
   );
   const cls = top
     ? `flex items-center gap-[10px] px-[20px] py-[13px] text-[18px] font-medium leading-[20px] transition-colors hover:text-copper ${active ? "text-copper" : "text-white"}`
     : `flex items-center justify-between gap-3 px-[20px] py-[13px] text-[13px] font-medium leading-[20px] transition-colors hover:text-copper ${active ? "text-copper" : "text-white"}`;
   return (
-    <li className="group/item relative">
+    <li className="group/item relative" onMouseEnter={item.children ? place : undefined} onFocus={item.children ? place : undefined}>
       {item.href ? (
         <Link href={item.href} className={cls} aria-haspopup={item.children ? "true" : undefined}>
           {label}
@@ -41,7 +51,8 @@ function DesktopItem({ item, path, depth }: { item: MenuItem; path: string; dept
       )}
       {item.children ? (
         <ul
-          className={`invisible absolute z-10 min-w-[250px] bg-black/[0.83] opacity-0 transition-opacity duration-150 group-hover/item:visible group-hover/item:opacity-100 group-focus-within/item:visible group-focus-within/item:opacity-100 ${top ? "left-0 top-full" : "left-full top-0"}`}
+          ref={sub}
+          className={`invisible absolute z-10 min-w-[250px] bg-black/[0.83] opacity-0 transition-opacity duration-150 group-hover/item:visible group-hover/item:opacity-100 group-focus-within/item:visible group-focus-within/item:opacity-100 ${top ? `top-full ${flip ? "right-0" : "left-0"}` : `top-0 ${flip ? "right-full" : "left-full"}`}`}
         >
           {item.children.map((c) => (
             <DesktopItem key={c.label} item={c} path={path} depth={depth + 1} />
