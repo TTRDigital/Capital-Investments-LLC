@@ -82,11 +82,15 @@ export type ServiceBlocksSection = Base & {
 export type ServiceSliderSection = Base & { _type: "serviceSlider"; heading: string; slides: { title: string; text: Rich; bullets: string[]; image?: Img }[] };
 
 /* Home page */
+/** Video files by format; the phone files are optional and fall back to the desktop ones. */
+export type HeroVideo = { webm?: string; mp4?: string; webmMobile?: string; mp4Mobile?: string };
 export type HomeHeroSection = Base & {
   _type: "homeHero";
   heading: string;
   words: string[];
   image?: Img;
+  /** Background video, played over the photo once the page has loaded. */
+  video?: HeroVideo;
   text: Rich;
   button?: Link;
   galleryLeft: Img[];

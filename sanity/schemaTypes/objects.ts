@@ -199,10 +199,24 @@ export const serviceSlider = section("serviceSlider", "Services slider", [headin
 
 /* ---------- Home ---------- */
 
+export const heroVideo = defineType({
+  name: "heroVideo",
+  title: "Background video",
+  type: "object",
+  options: { collapsible: true, collapsed: true },
+  fields: [
+    defineField({ name: "webm", title: "WebM link (desktop)", type: "string", description: "e.g. /videos/miami-skyline-timelapse-1280.webm" }),
+    defineField({ name: "mp4", title: "MP4 link (desktop)", type: "string", description: "e.g. /videos/miami-skyline-timelapse-1280.mp4" }),
+    defineField({ name: "webmMobile", title: "WebM link (phones, optional)", type: "string" }),
+    defineField({ name: "mp4Mobile", title: "MP4 link (phones, optional)", type: "string" }),
+  ],
+});
+
 export const homeHero = section("homeHero", "Home banner", [
   heading("heading", "Main heading (H1)"),
   defineField({ name: "words", title: "Typewriter words", type: "array", of: [defineArrayMember({ type: "string" })] }),
   image("image", "Background photo"),
+  defineField({ name: "video", title: "Background video", type: "heroVideo", description: "Plays over the photo after the page loads. Leave empty for the photo only." }),
   paras("text", "Welcome text"),
   button(),
   defineField({ name: "galleryLeft", title: "Photo grid (left, 6 photos)", type: "array", of: [defineArrayMember({ type: "altImage" })] }),
@@ -352,6 +366,7 @@ export const objectTypes = [
   serviceBlock,
   serviceSlide,
   comparisonSide,
+  heroVideo,
   statItem,
   carouselMember,
   market,

@@ -348,6 +348,8 @@ ErrorDocument 410 /404.html
 
 <IfModule mod_mime.c>
   AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
   AddType font/woff2 .woff2
   AddType image/svg+xml .svg
   AddType text/javascript .js

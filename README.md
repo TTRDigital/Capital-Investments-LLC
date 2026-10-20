@@ -146,8 +146,11 @@ Fixed:
 - `#` placeholder city links now go to the real location page, or are plain text
 - Footer links point straight at pages instead of redirecting
 - Copyright year updates automatically
-- Assets loaded from the staging host or other companies' sites are self-hosted; the
-  home hero video (hosted on an unrelated site) is replaced by its still image
+- Assets loaded from the staging host or other companies' sites are self-hosted. The
+  home banner video was streamed from an unrelated site as a 10.6 MB HEVC file that
+  Chrome on Windows/Linux and Firefox can't play; it now plays from the client's own
+  copy, re-encoded to WebM + MP4 (2.7 MB desktop, 1.3 MB phone) and started after the
+  page has loaded, over the same banner photo and dark gradient
 - The Adobe link and the third-party chat iframe forms were removed; forms post to
   our own endpoint with a consent checkbox
 - Privacy and Terms pages get a dark band behind the white header so the menu is readable

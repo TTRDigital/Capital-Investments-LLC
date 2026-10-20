@@ -28,6 +28,12 @@ export const fallbackPages: Page[] = [
           "width": 1440,
           "height": 1464
         },
+        "video": {
+          "webm": "/videos/miami-skyline-timelapse-1280.webm",
+          "mp4": "/videos/miami-skyline-timelapse-1280.mp4",
+          "webmMobile": "/videos/miami-skyline-timelapse-854.webm",
+          "mp4Mobile": "/videos/miami-skyline-timelapse-854.mp4"
+        },
         "text": [
           "Welcome to Capital Investment, your trusted partner in financial growth and wealth management. With over 50 years of combined experience, our dedicated team is here to help you achieve your ideal financial future. Let us work together to turn your investment goals into reality."
         ],
