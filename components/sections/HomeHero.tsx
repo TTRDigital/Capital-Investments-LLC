@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { HeroVideo, HomeHeroSection } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
@@ -9,10 +9,16 @@ import { PillButton } from "@/components/sections/parts";
 
 /**
  * Home banner: night skyline, heading, typewriter cycling the service areas,
- * and two photo grids that slide apart on scroll to reveal the welcome text
- * (the old site did this with GSAP; here it is a scroll listener). With
- * reduced motion the grids start apart and the text is shown.
+ * and two photo grids that slide apart on scroll to reveal the welcome text.
+ * Same timing as the old site's GSAP ScrollTrigger: from the photo area's top
+ * at 20% of the window until its bottom meets the window's bottom, smoothed
+ * like `scrub: 1`. When the area is shorter than that range (phones) the
+ * grids part as soon as its top passes 20%. Progress is written to the
+ * `--p` CSS variable (0 to 1). With reduced motion the grids start apart.
  */
+
+/** Smoothing time constant in seconds (approximates GSAP's `scrub: 1`). */
+const SCRUB = 0.35;
 
 type VideoSource = { src: string; type: string };
 
@@ -92,28 +98,46 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
   const word = useTypewriter(s.words);
   const videoSources = useVideoSources(s.video);
   const [playing, setPlaying] = useState(false);
+  const root = useRef<HTMLElement>(null);
   const wrap = useRef<HTMLDivElement>(null);
-  const [p, setP] = useState(0);
 
   useEffect(() => {
+    const sec = root.current;
     const el = wrap.current;
-    if (!el) return;
-    let raf = 0;
+    if (!sec || !el) return;
+    const set = (v: number) => sec.style.setProperty("--p", v.toFixed(4));
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      raf = requestAnimationFrame(() => setP(1));
-      return () => cancelAnimationFrame(raf);
+      set(1);
+      return;
     }
-    const update = () => {
-      raf = 0;
+    let target = 0;
+    let cur = 0;
+    let raf = 0;
+    let last = 0;
+    const measure = () => {
       const r = el.getBoundingClientRect();
       const start = window.innerHeight * 0.2;
-      const total = Math.max(r.height - window.innerHeight * 0.8, 1);
-      setP(Math.min(Math.max((start - r.top) / total, 0), 1));
+      const total = r.height - window.innerHeight * 0.8;
+      target = total > 0 ? Math.min(Math.max((start - r.top) / total, 0), 1) : r.top <= start ? 1 : 0;
+    };
+    const tick = (t: number) => {
+      const dt = last ? Math.min((t - last) / 1000, 0.1) : 1 / 60;
+      last = t;
+      cur += (target - cur) * (1 - Math.exp(-dt / SCRUB));
+      if (Math.abs(target - cur) < 0.001) {
+        cur = target;
+        raf = 0;
+        last = 0;
+      } else raf = requestAnimationFrame(tick);
+      set(cur);
     };
     const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
+      measure();
+      if (!raf) raf = requestAnimationFrame(tick);
     };
-    update();
+    measure();
+    cur = target;
+    set(cur);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
@@ -124,7 +148,7 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-night pt-[221px] text-white md:pt-[200px]">
+    <section ref={root} style={{ "--p": 0 } as CSSProperties} className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden bg-night pt-[200px] text-white">
       <Picture img={s.image} fill priority sizes="100vw" className="-z-20 object-cover" />
       {videoSources.length ? (
         <video
@@ -153,21 +177,25 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
             {word}
           </span>
         </p>
-        <Picture img={images.downArrow} sizes="45px" className="mx-auto mt-[40px] h-[49px] w-[40px] md:mt-[120px] md:h-[55px] md:w-[45px]" priority={false} eager />
+        {/* The old arrow box moved down 40% of its height: 20px on phones, 74px on desktop. */}
+        <div className="mt-[40px] [--shift:20px] md:mt-[120px] md:[--shift:74px]" style={{ transform: "translateY(calc(var(--p) * var(--shift)))" }}>
+          <Picture img={images.downArrow} sizes="45px" className="mx-auto h-[49px] w-[40px] md:h-[55px] md:w-[45px]" priority={false} eager />
+        </div>
       </div>
-      <div ref={wrap} className="relative mt-[30px] flex min-h-[500px] items-start justify-center gap-[16px] overflow-hidden md:mt-[14px] md:min-h-[620px] md:items-center">
-        <div className="absolute -left-[51%] top-0 z-[1] w-full md:relative md:left-auto" style={{ transform: `translateX(${-50 * p}%)` }}>
+      {/* Phones: the welcome text sets the height and the grids cover it, half off each side. */}
+      <div ref={wrap} className="relative mt-[19px] min-h-[300px] overflow-hidden pb-[35px] md:mt-[14px] md:flex md:min-h-[620px] md:items-center md:justify-center md:gap-[16px] md:pb-0">
+        <div className="absolute -left-[51%] top-[10px] z-[1] w-full md:relative md:left-auto md:top-auto" style={{ transform: "translateX(calc(var(--p) * -50%))" }}>
           <Grid imgs={s.galleryLeft} />
         </div>
-        <div className="absolute -right-[51%] top-0 z-[1] w-full md:relative md:right-auto" style={{ transform: `translateX(${50 * p}%)` }}>
+        <div className="absolute -right-[51%] top-[10px] z-[1] w-full md:relative md:right-auto md:top-auto" style={{ transform: "translateX(calc(var(--p) * 50%))" }}>
           <Grid imgs={s.galleryRight} />
         </div>
         <div
-          className="relative z-0 mx-auto flex max-w-[600px] max-md:!opacity-100 flex-col items-center justify-center gap-[20px] px-[15px] pb-[40px] pt-[300px] text-center md:absolute md:inset-x-0 md:top-[30%] md:pt-0"
-          style={{ opacity: p }}
+          className="relative z-0 mx-auto flex max-w-[600px] flex-col items-center justify-center gap-[20px] pb-[30px] pt-[45px] text-center [--y0:20px] md:absolute md:inset-x-0 md:top-[188px] md:py-0 md:[--y0:0px]"
+          style={{ opacity: "var(--p)", transform: "translateY(calc((1 - var(--p)) * var(--y0) + var(--p) * -20%))" }}
         >
-          <Rich paras={s.text} className="font-montserrat text-[16px] font-normal leading-[1.5] md:text-[20px]" />
-          <PillButton link={s.button} />
+          <Rich paras={s.text} className="font-lexend text-[16px] font-medium leading-[24px] text-[#fffefe] md:max-[1024px]:text-[22px] md:max-[1024px]:leading-[37px] min-[1025px]:text-[28px] min-[1025px]:leading-[43px]" />
+          <PillButton link={s.button} className="max-md:!px-[20px] max-md:!py-[11px] min-[1025px]:!py-[16px]" />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Inter, Lora, Montserrat, Outfit, Roboto } from "next/font/google";
+import { DM_Sans, Inter, Lexend, Lora, Montserrat, Outfit, Roboto } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 
 /*
@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], 
 const roboto = Roboto({ subsets: ["latin"], weight: ["600", "700"], display: "swap", variable: "--font-roboto-f", preload: false });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"], display: "swap", variable: "--font-montserrat-f", preload: false });
 const outfit = Outfit({ subsets: ["latin"], weight: ["600", "700"], display: "swap", variable: "--font-outfit-f", preload: false });
+const lexend = Lexend({ subsets: ["latin"], weight: ["500"], display: "swap", variable: "--font-lexend-f", preload: false });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap", variable: "--font-dm-f", preload: false });
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-US" className={`${lora.variable} ${inter.variable} ${roboto.variable} ${montserrat.variable} ${outfit.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="en-US" className={`${lora.variable} ${inter.variable} ${roboto.variable} ${montserrat.variable} ${outfit.variable} ${lexend.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

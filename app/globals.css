@@ -4,7 +4,8 @@
    Capital Investment LLC design tokens
    Measured from the old Elementor pages (desktop 1440px, phone 390px):
    copper accent, cream bands, Lora headings, Inter body text, Roboto card
-   titles, Montserrat buttons, Outfit on the state pages, DM Sans footer.
+   titles, Montserrat buttons, Outfit on the state pages, DM Sans footer,
+   Lexend for the home banner welcome text.
    ========================================================================== */
 
 @theme {
@@ -25,6 +26,7 @@
   --font-montserrat: var(--font-montserrat-f), var(--font-inter), sans-serif;
   --font-outfit: var(--font-outfit-f), var(--font-inter), sans-serif;
   --font-dm: var(--font-dm-f), var(--font-inter), sans-serif;
+  --font-lexend: var(--font-lexend-f), var(--font-inter), sans-serif; /* home banner welcome text */
   /* The old theme rendered lists and accordions in the system font. */
   --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
