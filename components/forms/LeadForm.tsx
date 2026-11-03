@@ -10,7 +10,7 @@ import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYT
  * - newsletter (footer): Full Name*, Email*
  * - subscribe (/subscribe/): First Name*, Last Name*, Email*
  * - careers (/careers-in-…/): Name*, Email Address*, Phone Number, Upload Resume*
- * Posted to /api/lead.php, which checks the same rules and forwards to GoHighLevel.
+ * Posted to /api/lead/, which checks the same rules and forwards to GoHighLevel.
  */
 
 type FieldName = "full_name" | "first_name" | "last_name" | "email" | "phone" | "resume";
@@ -135,9 +135,9 @@ export function LeadForm({
         const body = new FormData();
         body.set("payload", JSON.stringify(payload));
         body.set("resume", file);
-        res = await fetch("/api/lead.php", { method: "POST", body });
+        res = await fetch("/api/lead/", { method: "POST", body });
       } else {
-        res = await fetch("/api/lead.php", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+        res = await fetch("/api/lead/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       }
       if (!res.ok) throw new Error(String(res.status));
       const w = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
