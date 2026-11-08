@@ -167,7 +167,7 @@ export function LeadForm({
   }
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} noValidate className={`mt-5 space-y-[14px] text-left font-sans ${dark ? "text-white" : "text-ink"}`}>
+    <form data-ttr-skip ref={formRef} onSubmit={onSubmit} noValidate className={`mt-5 space-y-[14px] text-left font-sans ${dark ? "text-white" : "text-ink"}`}>
       {fields.map((f) => {
         const id = `${uid}-${f.name}`;
         const bad = !!errors[f.name];

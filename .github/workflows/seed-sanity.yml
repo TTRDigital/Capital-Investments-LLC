@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "add-missing: only create what is not in Sanity yet. overwrite: replace everything with the built-in content (edits made in /cms are lost). dry-run: check only, write nothing."
+        description: "dry-run: check only, write nothing. add-missing: only create what is not in Sanity yet (never overwrites or deletes)."
         type: choice
-        options: [add-missing, overwrite, dry-run]
-        default: add-missing
+        options: [dry-run, add-missing]
+        default: dry-run
 
 permissions:
   contents: read
@@ -43,7 +43,6 @@ jobs:
             exit 1
           fi
           case "$MODE" in
-            overwrite) npm run seed -- --force ;;
-            dry-run) npm run seed -- --dry-run ;;
+            add-missing) npm run seed -- --write ;;
             *) npm run seed ;;
           esac

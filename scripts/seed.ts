@@ -2,14 +2,16 @@
  * Loads the built-in content (lib/data) and its images into Sanity, so the
  * CMS starts full instead of empty.
  *
- *   npm run seed              # create documents that don't exist yet (add-missing)
- *   npm run seed -- --force   # overwrite every document with the built-in content
- *   npm run seed -- --dry-run # build every document without uploading or writing
+ *   npm run seed                # DRY RUN (default): builds every document, uploads and writes nothing
+ *   npm run seed -- --write     # creates only the documents that do not exist yet
+ *
+ * Never deletes and never overwrites: documents use createIfNotExists, so
+ * anything already in Sanity (or edited in /cms) is left exactly as it is.
  *
  * Writes to project 850gl5j0 / production unless NEXT_PUBLIC_SANITY_PROJECT_ID /
- * NEXT_PUBLIC_SANITY_DATASET say otherwise (environment or .env.local). Needs
- * SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens).
- * Without --force, anything an editor already changed in /cms is kept.
+ * NEXT_PUBLIC_SANITY_DATASET say otherwise (environment or .env.local). --write
+ * needs SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens),
+ * kept in the environment, never in code.
  */
 import { createReadStream, existsSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
@@ -32,8 +34,7 @@ if (existsSync(join(root, ".env.local"))) {
 // Imported after .env.local is loaded so its values apply.
 const { dataset, projectId } = await import("../sanity/env.ts");
 const token = process.env.SANITY_WRITE_TOKEN;
-const force = process.argv.includes("--force");
-const dryRun = process.argv.includes("--dry-run");
+const dryRun = !process.argv.includes("--write");
 
 if (!dryRun && (!projectId || !token)) {
   console.error("Set SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens) in .env.local or the environment.");
@@ -141,10 +142,12 @@ async function build() {
   return docs as { _id: string; _type: string }[];
 }
 
-console.log(`Seeding ${projectId}/${dataset}${force ? " (overwrite)" : " (add missing, keeping existing documents)"}${dryRun ? " [dry run]" : ""}. Uploading images`);
+console.log(`Seeding ${projectId}/${dataset} (add missing only, never overwrites)${dryRun ? " [DRY RUN, pass --write to create]" : ""}. Uploading images`);
 const docs = await build();
 console.log(`\n${uploaded.size} images ${dryRun ? "checked" : "uploaded"}. Writing ${docs.length} documents…`);
 if (dryRun) {
+  const existing = await client.fetch<string[]>(`*[_id in $ids]._id`, { ids: docs.map((d) => d._id) }).catch(() => null);
+  if (existing) console.log(`Already in Sanity (would be left untouched): ${existing.length}. Would create: ${docs.length - existing.length}.`);
   const counts = docs.reduce<Record<string, number>>((acc, d) => ((acc[d._type] = (acc[d._type] ?? 0) + 1), acc), {});
   const bad = JSON.stringify(docs).match(/"src":"\/images/g)?.length ?? 0;
   console.log("Dry run, nothing written:", counts, `${Math.round(JSON.stringify(docs).length / 1024)} KB of content`, bad ? `WARNING: ${bad} images not converted` : "all images converted");
@@ -155,8 +158,7 @@ if (dryRun) {
 for (let i = 0; i < docs.length; i += 10) {
   const tx = client.transaction();
   for (const d of docs.slice(i, i + 10)) {
-    if (force) tx.createOrReplace(d);
-    else tx.createIfNotExists(d);
+    tx.createIfNotExists(d);
   }
   await tx.commit({ visibility: "async" });
   process.stdout.write(`${Math.min(i + 10, docs.length)}/${docs.length} `);
