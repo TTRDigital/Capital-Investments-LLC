@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPage, getPages, getSiteSettings, getTeam } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionRenderer } from "@/components/sections/SectionRenderer";
 import type { Page } from "@/lib/types";
@@ -47,6 +47,7 @@ export default async function SitePage({ params }: { params: Promise<Params> }) 
   return (
     <>
       {path !== "/" ? <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.path })))} /> : null}
+      {page.group === "services" && path !== "/services/" ? <JsonLd data={serviceSchema(page.title, page.seo.description, page.path)} /> : null}
       {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
       {page.sections.map((s, i) => (
         <SectionRenderer key={s._key ?? i} section={s} ctx={{ settings, team, pages, crumbs }} />

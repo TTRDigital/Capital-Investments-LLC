@@ -10,7 +10,6 @@ import type {
   OfficeListSection,
   Page,
   SitemapListSection,
-  SubscribeSection,
   TeamGridSection,
   TeamMember,
 } from "@/lib/types";
@@ -220,20 +219,6 @@ export function ContactFormBlock({ consentText }: { consentText: string }) {
   );
 }
 
-export function Subscribe({ s, consentText }: { s: SubscribeSection; consentText: string }) {
-  return (
-    <section className="py-[40px] md:py-[60px]">
-      <div className="container-box mx-auto max-w-[700px] text-center">
-        <Title text={s.heading} font={s.hFont} size="intro" />
-        <Body paras={s.text} className="mt-[15px] text-[15px] leading-[1.7] text-black/80" />
-        <div className="mx-auto max-w-[520px]">
-          <LeadForm kind="subscribe" consentText={consentText} showLabels={false} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function Message({ s }: { s: MessageSection }) {
   return (
     <section className="py-[60px] md:py-[80px]">
@@ -308,7 +293,7 @@ export function Legal({ s }: { s: LegalSection }) {
       <div className="h-[70px] bg-night min-[1025px]:h-[112px]" aria-hidden="true" />
       <div className="container-box pt-[40px]">
         <h1 className="font-serif text-[28px] font-bold text-black md:text-[32px]">{s.heading}</h1>
-        <Rich paras={s.body} className="mt-[20px] font-sans text-[14px] leading-[1.75] text-black/85" headingClass="!mt-[28px] font-sans text-[20px] font-semibold text-black" listClass="list-disc pl-[22px]" />
+        <Rich paras={s.body} className="mt-[20px] font-sans text-[14px] leading-[1.75] text-black/85" headingTag="h2" headingClass="!mt-[28px] font-sans text-[20px] font-semibold text-black" listClass="list-disc pl-[22px]" />
       </div>
     </section>
   );

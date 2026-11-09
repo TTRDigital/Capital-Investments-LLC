@@ -278,7 +278,6 @@ export const careers = section("careers", "Careers intro", [paras(), heading(), 
 export const job = defineType({ name: "job", title: "Job", type: "object", fields: [defineField({ name: "title", type: "string" }), paras("body", "Description")], preview: { select: { title: "title" } } });
 export const jobs = section("jobs", "Job descriptions + resume form", [heading(), defineField({ name: "jobs", type: "array", of: [defineArrayMember({ type: "job" })] }), defineField({ name: "formHeading", type: "string" })]);
 export const contactForm = section("contactForm", "Contact form", [defineField({ name: "note", title: "Note", type: "string", readOnly: true, initialValue: "Shows the contact form (Full Name, Email, Phone, consent)." })], "note");
-export const subscribe = section("subscribe", "Newsletter signup", [heading(), paras()]);
 export const message = section("message", "Message", [heading(), paras()]);
 export const sitemapList = section("sitemapList", "HTML sitemap (automatic)", [heading()]);
 export const legal = section("legal", "Legal text", [heading("heading", "Main heading (H1)"), paras("body", "Text")]);
@@ -313,7 +312,6 @@ export const sectionTypes = [
   "careers",
   "jobs",
   "contactForm",
-  "subscribe",
   "message",
   "sitemapList",
   "legal",
@@ -404,7 +402,6 @@ export const objectTypes = [
   careers,
   jobs,
   contactForm,
-  subscribe,
   message,
   sitemapList,
   legal,

@@ -46,6 +46,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
             <Rich
               paras={m.bio}
               className="mt-[20px] font-sans text-[16px] leading-[1.7] text-black/85"
+              headingTag="h2"
               headingClass="!mt-[28px] font-sans text-[20px] font-semibold text-[#334155]"
               listClass="list-disc pl-[22px]"
             />

@@ -4,7 +4,7 @@ import { Faq, ServiceSlider, Slider, SplitAccordion, Tabs } from "@/components/s
 import { HomeHero } from "@/components/sections/HomeHero";
 import { HomeServices } from "@/components/sections/HomeServices";
 import { Comparison, OfficeMaps, Stats, TeamCarousel } from "@/components/sections/Home";
-import { Careers, ContactFormBlock, Jobs, Legal, MarketSlider, Message, OfficeCards, OfficeList, SitemapList, Subscribe, TeamGrid } from "@/components/sections/Company";
+import { Careers, ContactFormBlock, Jobs, Legal, MarketSlider, Message, OfficeCards, OfficeList, SitemapList, TeamGrid } from "@/components/sections/Company";
 
 export type RenderContext = { settings: SiteSettings; team: TeamMember[]; pages: Page[]; crumbs: { label: string; href?: string }[] };
 
@@ -70,8 +70,6 @@ export function SectionRenderer({ section: s, ctx }: { section: Section; ctx: Re
       return <Jobs s={s} consentText={ctx.settings.consentText} />;
     case "contactForm":
       return <ContactFormBlock consentText={ctx.settings.consentText} />;
-    case "subscribe":
-      return <Subscribe s={s} consentText={ctx.settings.consentText} />;
     case "message":
       return <Message s={s} />;
     case "sitemapList":

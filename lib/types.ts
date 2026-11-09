@@ -118,7 +118,6 @@ export type TeamGridSection = Base & { _type: "teamGrid"; heading: string };
 export type CareersSection = Base & { _type: "careers"; text: Rich; heading: string; openings: Link[] };
 export type JobsSection = Base & { _type: "jobs"; heading: string; jobs: { title: string; body: Rich }[]; formHeading: string };
 export type ContactFormSection = Base & { _type: "contactForm" };
-export type SubscribeSection = Base & { _type: "subscribe"; heading: string; text: Rich };
 export type MessageSection = Base & { _type: "message"; heading: string; text: Rich };
 export type SitemapListSection = Base & { _type: "sitemapList"; heading: string };
 export type LegalSection = Base & { _type: "legal"; heading: string; body: Rich };
@@ -153,7 +152,6 @@ export type Section =
   | CareersSection
   | JobsSection
   | ContactFormSection
-  | SubscribeSection
   | MessageSection
   | SitemapListSection
   | LegalSection;
@@ -212,6 +210,9 @@ export type SiteSettings = {
   footerQuickLinks: Link[];
   footerServiceLinks: Link[];
   consentText: string;
+  /** Footer "be contacted" form (replaces the newsletter signup). */
+  consultationHeading?: string;
+  consultationText?: string;
   credit: Link;
   logo: Img;
   footerLogo: Img;
