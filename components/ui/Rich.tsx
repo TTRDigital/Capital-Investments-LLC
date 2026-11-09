@@ -59,12 +59,12 @@ function blocks(paras: string[]): Block[] {
 }
 
 /** Paragraph list from the CMS. `listClass` styles bullet lists, `headingClass` the "## " lines. */
-export function Rich({ paras, className = "", headingClass = "", listClass = "" }: { paras?: string[]; className?: string; headingClass?: string; listClass?: string }) {
+export function Rich({ paras, className = "", headingClass = "", listClass = "", headingTag: H = "h3" }: { paras?: string[]; className?: string; headingClass?: string; listClass?: string; headingTag?: "h2" | "h3" }) {
   if (!paras?.length) return null;
   return (
     <div className={`rich ${className}`}>
       {blocks(paras).map((b, i) => {
-        if (b.kind === "h") return <h3 key={i} className={headingClass}><Inline text={b.lines[0]} /></h3>;
+        if (b.kind === "h") return <H key={i} className={headingClass}><Inline text={b.lines[0]} /></H>;
         if (b.kind === "p") return <p key={i}><Inline text={b.lines[0]} /></p>;
         const List = b.kind === "ul" ? "ul" : "ol";
         return (

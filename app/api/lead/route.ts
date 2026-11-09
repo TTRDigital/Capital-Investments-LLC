@@ -1,7 +1,7 @@
 import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
 
 /*
- * Lead forms (contact, newsletter, subscribe, careers). Checks the same rules
+ * Lead forms (contact, consultation, careers). Checks the same rules
  * as the form, filters spam, then sends the lead to TTR OS, which saves it for
  * Capital Investment LLC. Settings (Vercel environment variables):
  *   TTR_SITE_KEY   the public site key from TTR OS (Capital > Integrations)
@@ -13,8 +13,7 @@ export const runtime = "nodejs";
 
 const FORMS: Record<string, Record<string, boolean>> = {
   contact: { full_name: true, email: true, phone: true },
-  newsletter: { full_name: true, email: true },
-  subscribe: { first_name: true, last_name: true, email: true },
+  consultation: { full_name: true, email: true, phone: true },
   careers: { full_name: true, email: true, phone: false },
 };
 

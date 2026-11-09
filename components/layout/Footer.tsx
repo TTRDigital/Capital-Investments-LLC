@@ -3,7 +3,7 @@ import type { SiteSettings } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
 import { ChevronsUp, Facebook, Instagram, LinkedIn } from "@/components/ui/Icons";
-import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { LeadForm } from "@/components/forms/LeadForm";
 
 const SOCIAL = { linkedin: LinkedIn, facebook: Facebook, instagram: Instagram } as const;
 const SOCIAL_LABEL = { linkedin: "LinkedIn", facebook: "Facebook", instagram: "Instagram" } as const;
@@ -45,8 +45,11 @@ export function Footer({ settings }: { settings: SiteSettings }) {
                 );
               })}
             </ul>
-            <h2 className="mt-[20px] text-left text-[20px] font-semibold leading-[26px]">Subscribe To Our Newsletter</h2>
-            <NewsletterForm consentText={settings.consentText} />
+            <h2 className="mt-[20px] text-left text-[20px] font-semibold leading-[26px]">{settings.consultationHeading || "Request a consultation"}</h2>
+            {settings.consultationText ? <p className="mt-[8px] max-w-[460px] text-left font-sans text-[14px] leading-[22px] text-white/85">{settings.consultationText}</p> : null}
+            <div className="max-w-[460px]">
+              <LeadForm kind="consultation" consentText={settings.consentText} tone="dark" showLabels={false} submitLabel="SUBMIT" />
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-[201px_201px_201px] md:gap-x-[21px] md:pt-[50px]">
             <FooterColumn title="Quick Links" links={settings.footerQuickLinks} />

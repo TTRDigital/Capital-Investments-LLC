@@ -31,8 +31,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 419,
     "seo": {
-      "title": "Reza Sabaii, ESQ. - Capital Investment LLC",
-      "description": "Reza Sabaii, ESQ., Principal Broker at Capital Investment LLC. Reza Sabaii is the Principal Broker at Capital Investment LLC – a cutting edge commercial…"
+      "title": "Reza Sabaii, ESQ., Principal Broker | Capital Investment LLC",
+      "description": "Reza Sabaii, ESQ. is the Principal Broker at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -56,8 +56,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 520,
     "seo": {
-      "title": "David Krucoff - Capital Investment LLC",
-      "description": "David Krucoff, Executive Vice President at Capital Investment LLC. David Krucoff has a broad range of experience, including 15 years focused solely on…"
+      "title": "David Krucoff, Executive Vice President | Capital Investment LLC",
+      "description": "David Krucoff is an Executive Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -77,8 +77,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 534,
     "seo": {
-      "title": "Mani Milan, MPS - Capital Investment LLC",
-      "description": "Mani Milan, MPS, Senior Vice President at Capital Investment LLC. Mani is a Senior Vice-President at Capital Investment LLC."
+      "title": "Mani Milan, MPS, Senior Vice President | Capital Investment LLC",
+      "description": "Mani Milan, MPS is a Senior Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -99,8 +99,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 536,
     "seo": {
-      "title": "Windy Parsons - Capital Investment LLC",
-      "description": "Windy Parsons, Vice President at Capital Investment LLC. Windy Parsons has been involved in multiple facets of commercial real estate providing a…"
+      "title": "Windy Parsons, Vice President | Capital Investment LLC",
+      "description": "Windy Parsons is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -121,8 +121,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 2377,
     "seo": {
-      "title": "Justin Katz - Capital Investment LLC",
-      "description": "Justin Katz, Vice President at Capital Investment LLC. As Vice President at Capital Investment LLC, Justin brings over seven years of demonstrated…"
+      "title": "Justin Katz, Vice President | Capital Investment LLC",
+      "description": "Justin Katz is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -142,8 +142,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 537,
     "seo": {
-      "title": "Christina Davies - Capital Investment LLC",
-      "description": "Christina Davies, Project Development at Capital Investment LLC. Christina has an extensive background in real estate that includes procuring, capitalizing…"
+      "title": "Christina Davies, Project Development | Capital Investment LLC",
+      "description": "Christina Davies works in Project Development at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -163,8 +163,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 538,
     "seo": {
-      "title": "Boyd Lawrence - Capital Investment LLC",
-      "description": "Boyd Lawrence, Real Estate Associate at Capital Investment LLC. Boyd Lawrence has an extensive background in transportation and facilities operations."
+      "title": "Boyd Lawrence, Real Estate Associate | Capital Investment LLC",
+      "description": "Boyd Lawrence is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -185,8 +185,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 539,
     "seo": {
-      "title": "Yassin Kadir - Capital Investment LLC",
-      "description": "Yassin Kadir, Real Estate Associate at Capital Investment LLC. Yassin has extensive experience in representing clients on various commercial real estate…"
+      "title": "Yassin Kadir, Real Estate Associate | Capital Investment LLC",
+      "description": "Yassin Kadir is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -208,8 +208,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 542,
     "seo": {
-      "title": "Brooke Fontan - Capital Investment LLC",
-      "description": "Brooke Fontan, Real Estate Associate at Capital Investment LLC. Brooke Fontan is a trusted and experienced commercial real estate advisor who has 20+ years…"
+      "title": "Brooke Fontan, Real Estate Associate | Capital Investment LLC",
+      "description": "Brooke Fontan is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -236,8 +236,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 543,
     "seo": {
-      "title": "Mikayel Aakil-Bey - Capital Investment LLC",
-      "description": "Mikayel Aakil-Bey, Real Estate Associate at Capital Investment LLC. Mikayel Aakil is a dedicated commercial real estate agent specializing in serving…"
+      "title": "Mikayel Aakil-Bey, Real Estate Associate | Capital Investment LLC",
+      "description": "Mikayel Aakil-Bey is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -262,8 +262,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 545,
     "seo": {
-      "title": "Ali Tofigh, ESQ - Capital Investment LLC",
-      "description": "Ali Tofigh, ESQ, Real Estate Associate at Capital Investment LLC. Ali is an attorney barred in the state of Maryland and Washington, D.C."
+      "title": "Ali Tofigh, ESQ, Real Estate Associate | Capital Investment LLC",
+      "description": "Ali Tofigh, ESQ is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -283,8 +283,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 546,
     "seo": {
-      "title": "Adam Benaim - Capital Investment LLC",
-      "description": "Adam Benaim, Real Estate Associate at Capital Investment LLC. Adam is a Maryland native and an ambitious real estate professional."
+      "title": "Adam Benaim, Real Estate Associate | Capital Investment LLC",
+      "description": "Adam Benaim is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -304,8 +304,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 547,
     "seo": {
-      "title": "Sarah Lescallett - Capital Investment LLC",
-      "description": "Sarah Lescallett, Real Estate Associate at Capital Investment LLC. Sarah is a Commercial Real Estate Agent for Capital Investment LLC, serving clients in…"
+      "title": "Sarah Lescallett, Real Estate Associate | Capital Investment LLC",
+      "description": "Sarah Lescallett is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -328,8 +328,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 548,
     "seo": {
-      "title": "Steven P. Moskowitz - Capital Investment LLC",
-      "description": "Steven P. Moskowitz, Real Estate Associate at Capital Investment LLC. With extensive experience in the sales and leasing of retail, office, industrial, and…"
+      "title": "Steven P. Moskowitz, Real Estate Associate",
+      "description": "Steven P. Moskowitz is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -351,8 +351,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 549,
     "seo": {
-      "title": "Cason Chatham - Capital Investment LLC",
-      "description": "Cason Chatham, Real Estate Associate at Capital Investment LLC. Cason Chatham is a third-generation real estate professional, whose time as a humanitarian…"
+      "title": "Cason Chatham, Real Estate Associate | Capital Investment LLC",
+      "description": "Cason Chatham is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -373,8 +373,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 551,
     "seo": {
-      "title": "Nitika Dumera - Capital Investment LLC",
-      "description": "Nitika Dumera, Real Estate Associate at Capital Investment LLC. Nitika is a Virginia native with extensive experience in operating many businesses…"
+      "title": "Nitika Dumera, Real Estate Associate | Capital Investment LLC",
+      "description": "Nitika Dumera is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -396,8 +396,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 553,
     "seo": {
-      "title": "Xandria Baleno - Capital Investment LLC",
-      "description": "Xandria Baleno, Real Estate Associate at Capital Investment LLC. Xandria Baleno is a dynamic and driven commercial real estate professional, adept at…"
+      "title": "Xandria Baleno, Real Estate Associate | Capital Investment LLC",
+      "description": "Xandria Baleno is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -420,8 +420,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 1786,
     "seo": {
-      "title": "John Daly - Capital Investment LLC",
-      "description": "John Daly, Investment Sales Advisor at Capital Investment LLC. John is an Investment Sales Advisor with Capital Investment LLC, primarily covering the…"
+      "title": "John Daly, Investment Sales Advisor | Capital Investment LLC",
+      "description": "John Daly is an Investment Sales Advisor at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -441,8 +441,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 1897,
     "seo": {
-      "title": "Alex Parra - Capital Investment LLC",
-      "description": "Alex Parra, Administrative Assistant at Capital Investment LLC. Alex Parra is a dedicated administrative assistant with over two years of experience…"
+      "title": "Alex Parra, Administrative Assistant | Capital Investment LLC",
+      "description": "Alex Parra is an Administrative Assistant at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -464,8 +464,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 2088,
     "seo": {
-      "title": "Catina Rhinehart - Capital Investment LLC",
-      "description": "Catina Rhinehart, Real Estate Associate at Capital Investment LLC. Catina began her Multifamily career in 2003 assisting investors and clients in all…"
+      "title": "Catina Rhinehart, Real Estate Associate | Capital Investment LLC",
+      "description": "Catina Rhinehart is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -487,8 +487,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 2742,
     "seo": {
-      "title": "Ramzah Khan - Capital Investment LLC",
-      "description": "Ramzah Khan, Real Estate Associate at Capital Investment LLC. As a Real Estate Agent at Capital Investment LLC, Ramzah is a trusted advisor and strategic…"
+      "title": "Ramzah Khan, Real Estate Associate | Capital Investment LLC",
+      "description": "Ramzah Khan is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -512,8 +512,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 2743,
     "seo": {
-      "title": "Monica Morfin - Real Estate Agent Associate - Capital Investment LLC",
-      "description": "Monica Morfin, Real Estate Associate at Capital Investment LLC. As a Florida native and Miami Beach resident, Monica is deeply attuned to the pulse of the…"
+      "title": "Monica Morfin, Real Estate Associate | Capital Investment LLC",
+      "description": "Monica Morfin is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -536,8 +536,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 2770,
     "seo": {
-      "title": "Connor Zarebi - Capital Investment LLC",
-      "description": "Connor Zarebi, Associate, Business Development at Capital Investment LLC. Connor Zarebi is a dedicated real estate professional with nearly three years of…"
+      "title": "Connor Zarebi, Associate, Business Development",
+      "description": "Connor Zarebi is an Associate, Business Development at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   }
 ];

@@ -11,4 +11,4 @@ export const MIN_FILL_MS = 2500;
 export const RESUME_MAX_BYTES = 5 * 1024 * 1024;
 export const RESUME_ACCEPT = ".pdf,.doc,.docx";
 
-export type FormKind = "contact" | "newsletter" | "subscribe" | "careers";
+export type FormKind = "contact" | "consultation" | "careers";
