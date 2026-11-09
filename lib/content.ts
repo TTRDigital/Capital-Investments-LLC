@@ -6,7 +6,8 @@ import { dataset, projectId } from "@/sanity/env";
 import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
-import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
+import { fallbackGuides } from "@/lib/data/guides";
+import type { Guide, Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
    Content layer
@@ -100,4 +101,26 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
 
 export async function getTeamMember(slug: string) {
   return (await getTeam()).find((m) => m.slug === slug);
+}
+
+/* ---------- Guides ---------- */
+
+/** Team member documents are seeded with the id "teamMember-<slug>", so a reference carries the slug. */
+const authorSlugFrom = (ref: unknown) => (isObj(ref) && typeof ref._ref === "string" ? ref._ref.replace(/^teamMember-/, "") : undefined);
+
+export const getGuides = cache(async (): Promise<Guide[]> => {
+  const cms = await sanityFetch<Loose[]>(`*[_type == "guide" && defined(slug.current)] | order(publishedAt desc)`, {}, ["guide"]);
+  if (!cms?.length) return fallbackGuides;
+  const bySlug = new Map(fallbackGuides.map((g) => [g.slug, g]));
+  const merged = cms.map((doc) => {
+    const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug, author: undefined }) as Partial<Guide>;
+    const base = bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", title: c.title ?? "", excerpt: "", seo: { title: c.title ?? "", description: "" }, authorSlug: "reza-sabaii-esq", publishedAt: "", body: [], sources: [], related: [], disclaimer: [] };
+    return merge(base, { ...c, authorSlug: authorSlugFrom(doc.author) });
+  });
+  const missing = fallbackGuides.filter((f) => !merged.some((m) => m.slug === f.slug));
+  return [...merged, ...missing].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+});
+
+export async function getGuide(slug: string) {
+  return (await getGuides()).find((g) => g.slug === slug);
 }

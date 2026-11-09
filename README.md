@@ -161,3 +161,8 @@ Flagged and kept as written (please confirm with the client):
 - Home hero copy mentions "wealth management" and "50 years"
 - Reza's profile says "Houston, Texas"
 - Date ranges "2014 - 2024" / "10 years" in profiles
+
+## Guides
+
+Guides (market conditions, public statistics, what to check) live in Sanity as `guide` documents and are shown at `/guides/` and `/guides/<slug>/`. `lib/data/guides.ts` holds the same content as the fallback, like `lib/data/pages.ts`.
+`npm run export:guides` writes `content/guides/guides.seed.json` (no token, no network, ids without dots) and checks the content rules (question headings, no dashes, sources present). Load steps are in `scripts/export-guides.ts`.
