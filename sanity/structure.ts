@@ -1,5 +1,5 @@
 import type { StructureResolver } from "sanity/structure";
-import { Building2, Cog, FileText, Home, MapPin, Scale, Send, Users } from "lucide-react";
+import { BookOpen, Building2, Cog, FileText, Home, MapPin, Scale, Send, Users } from "lucide-react";
 
 const pages = (S: Parameters<StructureResolver>[0], group: string, title: string, icon: React.ComponentType) =>
   S.listItem()
@@ -21,5 +21,6 @@ export const structure: StructureResolver = (S) =>
       pages(S, "legal", "Legal", Scale),
       S.listItem().title("All pages").icon(FileText).child(S.documentTypeList("page").title("All pages").defaultOrdering([{ field: "order", direction: "asc" }])),
       S.divider(),
+      S.listItem().title("Guides").icon(BookOpen).child(S.documentTypeList("guide").title("Guides").defaultOrdering([{ field: "publishedAt", direction: "desc" }])),
       S.listItem().title("Team").icon(Users).child(S.documentTypeList("teamMember").title("Team").defaultOrdering([{ field: "order", direction: "asc" }])),
     ]);

@@ -216,3 +216,25 @@ export type SiteSettings = {
   logo: Img;
   footerLogo: Img;
 };
+
+/* Guides (market conditions, statistics and client insights). Sanity document type "guide". */
+export type GuideSource = { label: string; publisher: string; url: string; /** Publication date if the source gives one, else the date it was read, as written. */ date: string; note?: string };
+export type Guide = {
+  slug: string;
+  title: string;
+  /** One or two sentences for the guides index and cards. */
+  excerpt: string;
+  seo: Seo;
+  /** Slug of the team member shown in the byline (Team member document). */
+  authorSlug: string;
+  /** ISO dates, YYYY-MM-DD. */
+  publishedAt: string;
+  updatedAt?: string;
+  /** Banner photo; empty uses the default banner. */
+  banner?: Img;
+  /** Same text conventions as page copy, plus "### " for third-level headings. The title is the H1, so body headings start at "## ". */
+  body: Rich;
+  sources: GuideSource[];
+  related: Link[];
+  disclaimer: Rich;
+};
