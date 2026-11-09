@@ -216,3 +216,36 @@ export type SiteSettings = {
   logo: Img;
   footerLogo: Img;
 };
+
+/* Guides: long-form market guides (/guides/<slug>/). Stored in Sanity as "guide" documents in this same shape. */
+export type GuideSource = {
+  /** Title of the page or report. */
+  label: string;
+  publisher: string;
+  url: string;
+  /** Date the source was published, updated or reviewed (as the source shows it). */
+  date: string;
+};
+export type Guide = {
+  slug: string;
+  title: string;
+  order: number;
+  /** "review" = waiting for the reviewer: noindex and left out of the sitemap. "live" = public. */
+  status: "review" | "live";
+  /** ISO dates (YYYY-MM-DD). */
+  publishedAt: string;
+  updatedAt: string;
+  /** Date the sources were last checked, shown in plain words on the page. */
+  sourcesCheckedOn: string;
+  author: { name: string; role: string; slug: string };
+  /** One or two sentences: the guide card and the opening lead. */
+  summary: string;
+  image: Img;
+  takeaways: string[];
+  /** Paragraphs. "## " = H2, "### " = H3, "- " bullets, same inline marks as everywhere else. */
+  body: Rich;
+  faqs: { question: string; answer: Rich }[];
+  sources: GuideSource[];
+  related: Link[];
+  seo: Seo;
+};

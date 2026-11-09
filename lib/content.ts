@@ -6,7 +6,8 @@ import { dataset, projectId } from "@/sanity/env";
 import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
-import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
+import { fallbackGuides } from "@/lib/data/guides";
+import type { Guide, Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
    Content layer
@@ -100,4 +101,43 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
 
 export async function getTeamMember(slug: string) {
   return (await getTeam()).find((m) => m.slug === slug);
+}
+
+/* ---------- Guides ---------- */
+
+/** Shell for a guide that exists only in Sanity: every list exists, status "review" keeps it noindex. */
+const blankGuide = (slug: string): Guide => ({
+  slug,
+  title: "",
+  order: 99,
+  status: "review",
+  publishedAt: "2026-01-01",
+  updatedAt: "2026-01-01",
+  sourcesCheckedOn: "",
+  author: { name: "Reza Sabaii", role: "Principal Broker, Capital Investment LLC", slug: "reza-sabaii-esq" },
+  summary: "",
+  image: { src: "/images/places/brickell-skyline.webp", alt: "Brickell skyline and Biscayne Bay, Miami", width: 1920, height: 720 },
+  takeaways: [],
+  body: [],
+  faqs: [],
+  sources: [],
+  related: [],
+  seo: { title: "", description: "" },
+});
+
+export const getGuides = cache(async (): Promise<Guide[]> => {
+  const cms = await sanityFetch<Loose[]>(`*[_type == "guide" && defined(slug.current)] | order(order asc)`, {}, ["guide"]);
+  if (!cms?.length) return fallbackGuides;
+  const bySlug = new Map(fallbackGuides.map((g) => [g.slug, g]));
+  const merged = cms.map((doc) => {
+    const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug }) as Partial<Guide>;
+    const base = bySlug.get(c.slug ?? "") ?? blankGuide(c.slug ?? "");
+    return merge(base, c);
+  });
+  const missing = fallbackGuides.filter((f) => !merged.some((m) => m.slug === f.slug));
+  return [...merged, ...missing].sort((a, b) => a.order - b.order);
+});
+
+export async function getGuide(slug: string) {
+  return (await getGuides()).find((g) => g.slug === slug);
 }

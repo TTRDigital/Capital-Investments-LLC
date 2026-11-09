@@ -354,7 +354,21 @@ export const office = defineType({
   preview: { select: { title: "name", subtitle: "address", media: "image" } },
 });
 
+export const guideSource = defineType({
+  name: "guideSource",
+  title: "Source",
+  type: "object",
+  fields: [
+    defineField({ name: "label", title: "Title of the page or report", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "publisher", type: "string" }),
+    defineField({ name: "url", type: "url", validation: (r) => r.required() }),
+    defineField({ name: "date", title: "Date shown by the source", type: "string" }),
+  ],
+  preview: { select: { title: "label", subtitle: "publisher" } },
+});
+
 export const objectTypes = [
+  guideSource,
   seo,
   altImage,
   link,
