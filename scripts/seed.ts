@@ -5,19 +5,22 @@
  *   npm run seed              # create documents that don't exist yet (add-missing)
  *   npm run seed -- --force   # overwrite every document with the built-in content
  *   npm run seed -- --dry-run # build every document without uploading or writing
+ *   npm run seed -- --only=guides                         # only the guide documents (any mode)
+ *   npm run seed -- --export=sanity/seed/guides.json      # write the guide documents to JSON (+ .ndjson): no token, no network
  *
  * Writes to project 850gl5j0 / production unless NEXT_PUBLIC_SANITY_PROJECT_ID /
  * NEXT_PUBLIC_SANITY_DATASET say otherwise (environment or .env.local). Needs
  * SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens).
  * Without --force, anything an editor already changed in /cms is kept.
  */
-import { createReadStream, existsSync, readFileSync } from "node:fs";
-import { basename, join } from "node:path";
+import { createReadStream, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { basename, dirname, join } from "node:path";
 import { createClient } from "@sanity/client";
 import type { Img } from "../lib/types";
 import { fallbackSettings } from "../lib/data/site.ts";
 import { fallbackPages } from "../lib/data/pages.ts";
 import { fallbackTeam } from "../lib/data/team.ts";
+import { fallbackGuides } from "../lib/data/guides.ts";
 
 const root = new URL("..", import.meta.url).pathname;
 
@@ -34,8 +37,10 @@ const { dataset, projectId } = await import("../sanity/env.ts");
 const token = process.env.SANITY_WRITE_TOKEN;
 const force = process.argv.includes("--force");
 const dryRun = process.argv.includes("--dry-run");
+const only = process.argv.find((a) => a.startsWith("--only="))?.slice(7);
+const exportTo = process.argv.find((a) => a.startsWith("--export="))?.slice(9);
 
-if (!dryRun && (!projectId || !token)) {
+if (!dryRun && !exportTo && (!projectId || !token)) {
   console.error("Set SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens) in .env.local or the environment.");
   process.exit(1);
 }
@@ -49,6 +54,7 @@ const key = () => `k${(keyN++).toString(36)}`;
 const uploaded = new Map<string, string>();
 
 async function asset(src: string) {
+  if (exportTo) throw new Error("Export mode does not touch images");
   if (uploaded.has(src)) return uploaded.get(src)!;
   const file = join(root, "public", src);
   if (!existsSync(file)) throw new Error(`Missing file: ${file}`);
@@ -77,6 +83,9 @@ function memberType(field: string, parentType?: string): string | undefined {
       markets: "market",
       members: "carouselMember",
       jobs: "job",
+      sources: "guideSource",
+      faqs: "faqItem",
+      related: "link",
       openings: "link",
       cities: "link",
       footerQuickLinks: "link",
@@ -91,6 +100,8 @@ const childMenuType = (parent?: string) => (parent === "menuItem" ? "subMenuItem
 
 /** Built-in data -> Sanity document values: images uploaded, array objects keyed and typed. */
 async function toSanity(v: Json, field = "", parentType?: string): Promise<Json> {
+  // Export mode has no network, so photos are left out: the site keeps using the built-in photo until one is added in /cms.
+  if (exportTo && isImg(v)) return undefined;
   if (isImg(v)) return { _type: "altImage", alt: v.alt, asset: { _type: "reference", _ref: await asset(v.src) } };
   if (Array.isArray(v)) {
     const out = [];
@@ -121,8 +132,21 @@ const pageId = (path: string) => `page-${path === "/" ? "home" : path.replace(/^
 
 /* ---------- documents ---------- */
 
-async function build() {
+async function buildGuides() {
   const docs: Record<string, unknown>[] = [];
+  for (const g of fallbackGuides) {
+    const { slug, seo, ...rest } = g;
+    const _id = `guide-${slug}`;
+    if (_id.includes(".")) throw new Error(`Document id must not contain dots: ${_id}`);
+    docs.push({ _id, _type: "guide", ...((await toSanity(rest)) as object), slug: { _type: "slug", current: slug }, seo: { _type: "seo", ...((await toSanity(seo)) as object) } });
+  }
+  return docs as { _id: string; _type: string }[];
+}
+
+async function build() {
+  if (only === "guides" || exportTo) return buildGuides();
+  const docs: Record<string, unknown>[] = [];
+  docs.push(...(await buildGuides()));
   docs.push({ _id: "siteSettings", _type: "siteSettings", ...((await toSanity(fallbackSettings)) as object) });
   for (const p of fallbackPages) {
     const { sections, seo, ...rest } = p;
@@ -143,6 +167,14 @@ async function build() {
 
 console.log(`Seeding ${projectId}/${dataset}${force ? " (overwrite)" : " (add missing, keeping existing documents)"}${dryRun ? " [dry run]" : ""}. Uploading images`);
 const docs = await build();
+if (exportTo) {
+  const file = join(root, exportTo);
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, JSON.stringify(docs, null, 2) + "\n");
+  writeFileSync(file.replace(/\.json$/, "") + ".ndjson", docs.map((d) => JSON.stringify(d)).join("\n") + "\n");
+  console.log(`\nExported ${docs.length} documents to ${exportTo} (and .ndjson). No token, no network.`);
+  process.exit(0);
+}
 console.log(`\n${uploaded.size} images ${dryRun ? "checked" : "uploaded"}. Writing ${docs.length} documents…`);
 if (dryRun) {
   const counts = docs.reduce<Record<string, number>>((acc, d) => ((acc[d._type] = (acc[d._type] ?? 0) + 1), acc), {});

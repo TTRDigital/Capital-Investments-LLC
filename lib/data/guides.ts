@@ -1,0 +1,288 @@
+import type { Guide } from "@/lib/types";
+
+/*
+ * Built-in guides. Same shape as the "guide" documents in Sanity (sanity/schemaTypes/documents.ts);
+ * scripts/seed.ts exports these to JSON for loading into Sanity, and Sanity values win when present.
+ *
+ * Writing rules for every guide: each statistic or market claim names its public source inline and in
+ * the Sources list with a date; no dashes as punctuation; no legal, tax or investment advice.
+ * Reza Sabaii reviews each guide before it goes live (status "review" keeps it noindex until then).
+ */
+
+const reza = { name: "Reza Sabaii", role: "Principal Broker, Capital Investment LLC", slug: "reza-sabaii-esq" };
+
+const advice =
+  "This guide is general information, not legal, tax or investment advice, and it does not promise any result or return. Please speak with your own attorney, tax adviser and investment adviser before you act.";
+
+export const fallbackGuides: Guide[] = [
+  {
+    slug: "brickell-vs-downtown-miami-commercial-real-estate",
+    title: "Brickell vs Downtown Miami: what commercial real estate investors should compare",
+    order: 1,
+    status: "review",
+    publishedAt: "2026-11-09",
+    updatedAt: "2026-11-09",
+    sourcesCheckedOn: "November 9, 2026",
+    author: reza,
+    summary:
+      "Brickell and Downtown Miami sit side by side but can suit different investors. Here is a plain way to compare them, with sourced office figures, access and the building checks to run first.",
+    image: {
+      src: "/images/places/brickell-skyline.webp",
+      alt: "Brickell skyline and Biscayne Bay, Miami",
+      width: 1920,
+      height: 720,
+    },
+    takeaways: [
+      "Public sources give different office figures for Downtown Miami, so always note who published a number and when.",
+      "One analysis of Yardi Matrix data reported lower office vacancy in Brickell (7.3%) than in the Miami Central Business District (13.2%).",
+      "Those figures cover office space only. Retail, apartments, hotels and land need their own research.",
+      "Ask the same building questions in both areas: age and recertification, lease dates, parking and how rent is quoted.",
+    ],
+    body: [
+      "Brickell and Downtown Miami are neighbors, share the same free Metromover system and often show up in the same search. They can still suit different investors. This guide gives you a simple way to compare them, using public figures where we could verify them, and a short list of checks to run before you spend time on a specific building.",
+      "## Why compare Brickell and Downtown Miami side by side?",
+      "Investors often meet both names in the same listing search, so the question is usually not which name is better. The more useful question is which area fits what you want to own and how you plan to hold it.",
+      "Brickell is where Miami-Dade County's Metromover system has its Financial District station. Downtown Miami includes Government Center, a civic and transit hub close to Metrorail and Metromover. Our own pages on [Brickell](/locations/brickell-miami/), [Downtown Miami](/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/) and [Government Center](/locations/miami-florida/commercial-real-estate-services-in-government-center-miami/) cover each area in more detail.",
+      "## What do public office figures say about each area?",
+      "Office is only one property type. Retail, multifamily, hotel, industrial and land can move differently, and nothing below describes them. Every number here is tied to its source and date, and the full list is under Sources at the end of this guide.",
+      "### What did Yardi Matrix data show for Brickell and the Miami CBD?",
+      "In an analysis of Yardi Matrix data published on August 28, 2026, MIAMI REALTORS and RWorld reported office asking rent of $79.7 per square foot in Brickell and $78.4 per square foot in the Miami Central Business District. Reported office vacancy was 7.3% in Brickell and 13.2% in the Miami Central Business District. Brickell's office inventory was 9.6 million square feet, with 96% of it Class A+ or Class A. The Miami Central Business District had 6.8 million square feet, with 75% Class A+ or Class A. The Miami Central Business District is the closest match in that report to what most people call Downtown.",
+      "### What did Cushman & Wakefield report?",
+      "Cushman & Wakefield's Miami Office MarketBeat for the third quarter of 2026 reported a Miami office vacancy rate of 13.9%, down 100 basis points from a year earlier. It reported Class A vacancy of 16.0% and a Class A average asking rent of $74.77 per square foot, up 6.1% from a year earlier. For Downtown, the same page lists an asking rent of $77.63 per square foot, up 1.0% from a year earlier.",
+      "The Cushman & Wakefield page we reviewed did not give a Brickell vacancy rate or Brickell asking rent, so the Brickell comparison in this guide relies on the Yardi Matrix analysis above.",
+      "### Why do the numbers not match exactly?",
+      "The two sources put Downtown asking rent at $78.4 and $77.63 per square foot. That small gap is normal. Publishers use different data sets, building lists, cut-off dates and area boundaries. Treat each figure as a snapshot from one source, and when you compare two areas, compare numbers from the same source and the same month.",
+      "### What do these figures suggest, and what do they not show?",
+      "Read together, the Yardi Matrix figures point to lower reported office vacancy and a larger share of Class A+ and Class A space in Brickell than in the Miami Central Business District, with asking rents close to each other. A lower vacancy rate usually means less space waiting to be leased. A higher one can mean more choice for tenants and buyers, and more leasing work for an owner. Neither is good or bad on its own.",
+      "These figures do not show building-level value, lease terms, tenant concessions, sale prices or income yields. A broker can help you collect that detail for a specific building.",
+      "## How does getting around compare in the two areas?",
+      "Miami-Dade County describes Metromover as a free elevated people mover with 21 stations, running from the Financial District station in Brickell to the School Board station in the Omni area. The county lists service hours of 5:30 a.m. to 10 p.m., seven days a week. Both Brickell and Downtown Miami are served by that system.",
+      "Station closures and hours can change, so check current service with Miami-Dade Transportation. Then walk the route yourself at the times your future tenants and their staff would use it.",
+      "## What should you check on any specific building?",
+      "The same short list works in both areas.",
+      "- **Building age and recertification.** Miami-Dade County's recertification program applies to buildings at 30 years and every 10 years after that, with reports from a Florida registered engineer or architect on structural and electrical safety. Ask for the latest report and any repair plans.",
+      "- **Lease dates and tenants.** Ask who the tenants are, when each lease ends and what the owner agreed to in the lease.",
+      "- **How rent is quoted.** Florida repealed its state sales tax on commercial rent for rental periods beginning on or after October 1, 2025, according to the Florida Department of Revenue. Older rent models may still include a tax that no longer applies to new periods. The same notice says sales tax continues to apply to parking spaces in lots and garages, so ask how parking is billed.",
+      "- **Zoning and permitted uses.** Ask for the current zoning and permitted uses from the City of Miami before you assume a use will be allowed.",
+      "- **Access for tenants and staff.** Look at transit, parking and walking routes for the people who would use the building every day.",
+      "## Which questions should you bring to a first conversation?",
+      "Whichever area you lean toward, these questions keep the first conversation useful.",
+      "- What do you want the property to do for you: steady income, a place for your own business, or something you plan to reposition?",
+      "- How long do you expect to hold it, and how will you finance it?",
+      "- Which tenants or uses fit the building and the neighborhood?",
+      "- What would make you walk away from a deal?",
+      "Capital Investment LLC has an office at 777 Brickell Avenue in Miami and works across Brickell, Downtown Miami and nearby areas, including through our [investment sales and acquisition services](/services/investment-sales-and-acquisition-services/) and our wider [Miami market page](/locations/miami-florida/).",
+      "## What are your next steps?",
+      "If you are weighing the two areas, start by writing down your goal and your holding period, then ask a broker for current numbers on two or three specific buildings from the same source and month. When you are ready, you can [contact our team](/contact-us/) to talk it through.",
+      advice,
+    ],
+    faqs: [
+      {
+        question: "Is Brickell or Downtown Miami better for commercial investors?",
+        answer: [
+          "There is no single answer. The better area depends on the property type, your budget, your plans for the building and how long you plan to hold it. Public office figures can help you ask better questions, but they do not rank the two areas.",
+        ],
+      },
+      {
+        question: "Do these figures apply to all commercial property?",
+        answer: [
+          "No. The figures in this guide describe office space only. Retail, apartments, hotels, industrial property and land have their own markets and need their own research.",
+        ],
+      },
+      {
+        question: "Where can I find numbers for a specific building?",
+        answer: [
+          "Ask a commercial broker for current asking rents, vacancy and recent comparable deals for that building, from the same source and month. Public market reports describe a whole submarket, not one address.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "South Florida Office Rents Top New York as Demand Surges (analysis of Yardi Matrix data)",
+        publisher: "MIAMI REALTORS + RWorld",
+        url: "https://www.miamirealtors.com/2026/08/28/south-florida-office-rents-top-new-york-as-demand-surges/",
+        date: "August 28, 2026",
+      },
+      {
+        label: "Miami Office MarketBeat, Q3 2026",
+        publisher: "Cushman & Wakefield",
+        url: "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats/miami-marketbeats/office",
+        date: "Listed October 12, 2026",
+      },
+      {
+        label: "Metromover",
+        publisher: "Miami-Dade County",
+        url: "https://www.miamidade.gov/global/transportation/metromover.page",
+        date: "Reviewed November 9, 2026",
+      },
+      {
+        label: "Building Recertification",
+        publisher: "Miami-Dade County",
+        url: "https://www.miamidade.gov/global/economy/building/recertification.page",
+        date: "Forms updated as of January 2025",
+      },
+      {
+        label: "Tax Information Publication 25A01-04: Sales Tax on Commercial Rentals Repealed Effective October 1, 2025",
+        publisher: "Florida Department of Revenue",
+        url: "https://floridarevenue.com/taxes/tips/Documents/TIP_25A01-04.pdf",
+        date: "July 24, 2025",
+      },
+    ],
+    related: [
+      { label: "Brickell, Miami commercial real estate", href: "/locations/brickell-miami/" },
+      { label: "Downtown Miami commercial real estate", href: "/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/" },
+      { label: "Investment sales and acquisition services", href: "/services/investment-sales-and-acquisition-services/" },
+      { label: "Buying Miami commercial property as a foreign investor", href: "/guides/buying-miami-commercial-property-as-a-foreign-investor/" },
+    ],
+    seo: {
+      title: "Brickell vs Downtown Miami: What CRE Investors Compare",
+      description:
+        "Comparing Brickell and Downtown Miami for commercial real estate? See sourced office figures, access and the building checks to run first.",
+    },
+  },
+  {
+    slug: "buying-miami-commercial-property-as-a-foreign-investor",
+    title: "Buying Miami commercial property as a foreign investor: what to check first",
+    order: 2,
+    status: "review",
+    publishedAt: "2026-11-09",
+    updatedAt: "2026-11-09",
+    sourcesCheckedOn: "November 9, 2026",
+    author: reza,
+    summary:
+      "Before a price or a cap rate, a foreign investor in Miami commercial property has a few checks to run: who can buy, what rules touch the location, what the building and its papers show, and how a later sale is taxed.",
+    image: {
+      src: "/images/places/miami-night-skyline.webp",
+      alt: "Miami skyline at night reflected in Biscayne Bay",
+      width: 2400,
+      height: 1607,
+    },
+    takeaways: [
+      "Florida law limits some buyers tied to listed countries of concern, and some locations, so check both before you make an offer.",
+      "Federal rules let CFIUS review some real estate purchases by foreign persons near listed military installations.",
+      "An environmental review before closing, the building's recertification status and Florida's deed tax all belong on your list.",
+      "When a foreign person later sells U.S. property, the buyer generally must withhold 15% of the amount realized under FIRPTA.",
+    ],
+    body: [
+      "If you live outside the United States and are thinking about buying commercial property in Miami, a few checks come before the price or the expected income. Who is allowed to buy? What rules touch the location? What do the building and its papers show? And how will a later sale be taxed? This guide walks through those checks in order, and it points to the public source for each rule so you can read it yourself.",
+      "## Who can buy Miami commercial property, and are there limits?",
+      "Chapter 692 of the Florida Statutes limits what certain \"foreign principals\" can acquire in Florida. The chapter names a list of foreign countries of concern that includes China, Russia, Iran, North Korea, Cuba, the regime of Nicolas Maduro in Venezuela, and Syria. As the statute is written, a foreign principal may not acquire an interest in real property on or within 10 miles of a military installation or a critical infrastructure facility. A separate section applies to persons and entities tied to China and has no distance limit.",
+      "The definition reaches beyond individuals. It can include someone with a controlling interest in an entity that owns Florida real property. A person who is a U.S. citizen or a lawful permanent resident is not treated as a foreign principal under the definition, even if domiciled in a listed country. The chapter also has registration duties and a few exceptions.",
+      "These rules took effect on July 1, 2023, and the statute has been amended since. They were also challenged in federal court in the case Shen v. Simpson. The ACLU, which represented the plaintiffs, reports that in November 2025 the Eleventh Circuit found the plaintiffs lacked standing to challenge the purchase restriction, so the law stayed in effect, and that the case is now closed. Because the text can change, ask a Florida attorney to check the current statute against your exact buyer, ownership structure and property.",
+      "## Could the location raise a federal review question?",
+      "Separately, the federal rules at 31 CFR Part 802 give the Committee on Foreign Investment in the United States (CFIUS) authority to review certain real estate transactions by foreign persons near certain locations. For military installations listed in Part 1 of Appendix A, jurisdiction extends one mile from the installation boundary. For installations listed in Part 2, it extends 100 miles. The Treasury Department updated the installation list in a rule published in the Federal Register on November 7, 2024, effective December 9, 2024. The rules also cover certain airports and maritime ports.",
+      "Whether a specific address is covered depends on the lists in the regulation, so ask your attorney to check it before you sign a contract, and to advise whether any filing makes sense for your purchase.",
+      "## What should you verify about the property itself?",
+      "### What do title, survey and zoning tell you?",
+      "Three documents tell you what you would really own.",
+      "- **Title commitment.** It shows who owns the property now and lists liens, easements and other claims that would stay with it.",
+      "- **Survey.** It shows the boundaries, buildings and any encroachments.",
+      "- **Zoning and permitted uses.** Ask for the current zoning and what uses are allowed, so your business plan matches what the city allows.",
+      "### Why order an environmental review before you buy?",
+      "The U.S. Environmental Protection Agency says that \"all appropriate inquiries\" before an acquisition can be used to seek protection from potential liability under federal Superfund law, as an innocent landowner, contiguous property owner or bona fide prospective purchaser. EPA states that the ASTM E1527-21 standard is consistent with its rule and can be used to meet the requirement. It also states that the inquiry must be done or updated within one year before the acquisition date, and that certain parts, including interviews, the records review, the site visit and the lien search, must be done or updated within 180 days before you acquire the property. Those protections are not automatic, so your attorney should confirm what applies to your purchase.",
+      "### Why ask about building age and recertification?",
+      "Miami-Dade County requires building recertification at 30 years and every 10 years after that for the life of the structure. The county excludes single-family homes, duplexes and buildings with an occupant load of 10 or less and 2,000 square feet or less. Owners submit reports from a Florida registered engineer or architect on structural and electrical safety. Ask the seller for the latest report, any open repairs and the date the next one is due.",
+      "## Which Florida taxes and fees show up at closing and in the lease?",
+      "### What is the documentary stamp tax on a deed?",
+      "The Florida Department of Revenue says the documentary stamp tax rate in Miami-Dade County is 60 cents on each $100 of consideration. Miami-Dade County also has a surtax of 45 cents on each $100, which does not apply to a document that transfers only a single-family dwelling. The Department also states that all parties to the document are liable for the tax, regardless of which party agrees to pay it. Rates and rules can change, so ask your attorney or title company to confirm the figure for your deal.",
+      "### Did Florida change the sales tax on commercial rent?",
+      "Yes. Florida repealed the state sales tax on commercial rentals for rental or occupancy periods beginning on or after October 1, 2025, according to the Florida Department of Revenue. Rent for periods through September 2025 remained taxable even if paid later, and the notice says sales tax still applies to parking spaces in lots and garages. If you buy a building with tenants, ask for the rent roll and how each lease treats this change.",
+      "## What changes when you sell later?",
+      "The Foreign Investment in Real Property Tax Act, known as FIRPTA, matters at the exit, so it is worth knowing at the start. The IRS says that in most cases the buyer is the withholding agent. If the seller is a foreign person and the buyer does not withhold, the buyer may be liable for the tax. The IRS states that the rate is generally 15% of the amount realized, which includes cash, the fair market value of other property transferred and liabilities the buyer assumes. The withheld amount is sent to the IRS with Forms 8288 and 8288-A. A seller who believes a lower or zero rate applies can ask the IRS for a withholding certificate on Form 8288-B.",
+      "This is a summary of an IRS page, not tax advice. Your tax adviser can tell you how it applies to your situation, including how it fits with the tax rules of your home country.",
+      "## How should you hold title, and who should be on your team?",
+      "How you hold title affects the Florida registration duties above, your tax reporting and what happens at a sale. We do not give legal or tax advice, so this is a question for your attorney and tax adviser before you make an offer.",
+      "Most foreign investors find it useful to line up these professionals before they go under contract:",
+      "- A real estate attorney licensed in Florida",
+      "- A tax adviser who understands both U.S. rules and the rules where you live",
+      "- A title company and a licensed surveyor",
+      "- An environmental consultant and a building engineer",
+      "- An insurance broker who can quote the property you are considering",
+      "- A commercial broker who knows the submarket",
+      "## What are your next steps?",
+      "Write down your goal, your holding period and who would own the property. Then ask your attorney to run the checks above on that buyer and that address before you spend money on inspections. If you would like a commercial broker's view of Miami submarkets, you can read about [Brickell and Downtown Miami](/guides/brickell-vs-downtown-miami-commercial-real-estate/), look at our [Miami market page](/locations/miami-florida/) or [contact our team](/contact-us/).",
+      advice,
+    ],
+    faqs: [
+      {
+        question: "Can a foreign investor buy commercial property in Miami?",
+        answer: [
+          "It depends on who the buyer is and where the property sits. Florida's chapter 692 and the federal rules in 31 CFR Part 802 are the first checks, and a Florida attorney can confirm how they apply to your buyer, your ownership structure and your address.",
+        ],
+      },
+      {
+        question: "Who withholds tax when a foreign owner sells U.S. property?",
+        answer: [
+          "Under FIRPTA the buyer is generally the withholding agent. The IRS states that the rate is generally 15% of the amount realized. Your tax adviser can tell you how this applies to a specific sale.",
+        ],
+      },
+      {
+        question: "Does Florida charge sales tax on commercial rent?",
+        answer: [
+          "Not for rental or occupancy periods beginning on or after October 1, 2025. The Florida Department of Revenue notes that sales tax still applies to parking spaces in lots and garages, and to earlier periods.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Florida Statutes, Chapter 692, sections 692.201 to 692.205 (foreign principals and real property)",
+        publisher: "Florida Legislature",
+        url: "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0692/0692.html",
+        date: "Statute text as of November 9, 2026",
+      },
+      {
+        label: "Shen v. Simpson",
+        publisher: "ACLU",
+        url: "https://www.aclu.org/cases/shen-v-simpson",
+        date: "Last updated December 31, 2025",
+      },
+      {
+        label: "Definition of Military Installation and the List of Military Installations, 89 FR 88128",
+        publisher: "U.S. Department of the Treasury, Office of Investment Security (Federal Register)",
+        url: "https://www.govinfo.gov/content/pkg/FR-2024-11-07/html/2024-25773.htm",
+        date: "November 7, 2024",
+      },
+      {
+        label: "All Appropriate Inquiries",
+        publisher: "U.S. Environmental Protection Agency",
+        url: "https://www.epa.gov/brownfields/all-appropriate-inquiries",
+        date: "Updated May 7, 2026",
+      },
+      {
+        label: "Building Recertification",
+        publisher: "Miami-Dade County",
+        url: "https://www.miamidade.gov/global/economy/building/recertification.page",
+        date: "Forms updated as of January 2025",
+      },
+      {
+        label: "Documentary Stamp Tax",
+        publisher: "Florida Department of Revenue",
+        url: "https://floridarevenue.com/taxes/taxesfees/pages/doc_stamp.aspx",
+        date: "Reviewed November 9, 2026",
+      },
+      {
+        label: "Tax Information Publication 25A01-04: Sales Tax on Commercial Rentals Repealed Effective October 1, 2025",
+        publisher: "Florida Department of Revenue",
+        url: "https://floridarevenue.com/taxes/tips/Documents/TIP_25A01-04.pdf",
+        date: "July 24, 2025",
+      },
+      {
+        label: "FIRPTA Withholding",
+        publisher: "Internal Revenue Service",
+        url: "https://www.irs.gov/individuals/international-taxpayers/firpta-withholding",
+        date: "Page last reviewed July 21, 2026",
+      },
+    ],
+    related: [
+      { label: "Miami commercial real estate", href: "/locations/miami-florida/" },
+      { label: "Investment sales and acquisition services", href: "/services/investment-sales-and-acquisition-services/" },
+      { label: "Valuation and consultation", href: "/services/valuation-consultation/" },
+      { label: "Brickell vs Downtown Miami guide", href: "/guides/brickell-vs-downtown-miami-commercial-real-estate/" },
+    ],
+    seo: {
+      title: "Foreign Investor Guide: Buying Miami Commercial Property",
+      description:
+        "Buying Miami commercial property from abroad? See the sourced checks to run first: Florida limits, federal review, title, environmental and tax.",
+    },
+  },
+];

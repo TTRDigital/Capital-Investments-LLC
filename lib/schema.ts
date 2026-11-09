@@ -1,4 +1,4 @@
-import type { Office, SiteSettings, TeamMember } from "@/lib/types";
+import type { Guide, Office, SiteSettings, TeamMember } from "@/lib/types";
 import { absoluteUrl } from "@/lib/site";
 import { plain } from "@/components/ui/Rich";
 
@@ -54,5 +54,22 @@ export function faqSchema(items: { question: string; answer: string[] }[]) {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: items.map((f) => ({ "@type": "Question", name: plain(f.question), acceptedAnswer: { "@type": "Answer", text: f.answer.map(plain).join(" ") } })),
+  };
+}
+
+/** Article markup for a guide: author is the named person (linked to their team page), publisher is the company. */
+export function articleSchema(g: Guide, path: string, author?: TeamMember) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: g.title,
+    description: plain(g.seo.description || g.summary),
+    image: absoluteUrl(g.image.src),
+    datePublished: g.publishedAt,
+    dateModified: g.updatedAt,
+    mainEntityOfPage: absoluteUrl(path),
+    author: { "@type": "Person", name: g.author.name, jobTitle: g.author.role, url: absoluteUrl(`/team/${g.author.slug}/`), ...(author?.photo ? { image: absoluteUrl(author.photo.src) } : {}) },
+    publisher: { "@id": absoluteUrl("/#organization") },
+    citation: g.sources.map((s) => s.url),
   };
 }

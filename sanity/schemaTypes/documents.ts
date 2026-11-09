@@ -106,5 +106,60 @@ export const teamMember = defineType({
   preview: { select: { title: "name", subtitle: "role", media: "photo" } },
 });
 
-export const documentTypes = [siteSettings, page, teamMember];
+/* ---------- Guides ---------- */
+
+export const guide = defineType({
+  name: "guide",
+  title: "Guide",
+  type: "document",
+  groups: [
+    { name: "content", title: "Content", default: true },
+    { name: "sources", title: "Sources & links" },
+    { name: "seo", title: "SEO" },
+  ],
+  fields: [
+    defineField({ name: "title", type: "string", group: "content", description: "The page's H1. Phrase it as the question or promise the guide answers.", validation: (r) => r.required() }),
+    defineField({ name: "slug", title: "URL slug", type: "slug", group: "content", options: { source: "title" }, validation: (r) => r.required(), description: "The page is /guides/<slug>/." }),
+    defineField({
+      name: "status",
+      type: "string",
+      group: "content",
+      options: { list: [{ title: "In review (hidden from Google and the sitemap)", value: "review" }, { title: "Live", value: "live" }], layout: "radio" },
+      initialValue: "review",
+      description: "Set to Live only after the reviewer has approved the guide.",
+    }),
+    { ...orderField, group: "content" },
+    defineField({ name: "publishedAt", title: "Published", type: "date", group: "content" }),
+    defineField({ name: "updatedAt", title: "Last updated", type: "date", group: "content" }),
+    defineField({ name: "sourcesCheckedOn", title: "Sources checked on", type: "string", group: "content", description: "In words, e.g. November 9, 2026." }),
+    defineField({
+      name: "author",
+      type: "object",
+      group: "content",
+      fields: [
+        defineField({ name: "name", type: "string" }),
+        defineField({ name: "role", title: "Job title", type: "string" }),
+        defineField({ name: "slug", title: "Team page slug", type: "string", description: "Links the byline to /team/<slug>/." }),
+      ],
+    }),
+    defineField({ name: "summary", type: "text", rows: 3, group: "content", description: "One or two sentences, used on the guides list and as the opening lead." }),
+    defineField({ name: "image", title: "Banner photo", type: "altImage", group: "content" }),
+    defineField({ name: "takeaways", title: "Key takeaways", type: "array", group: "content", of: [defineArrayMember({ type: "text", rows: 2 })] }),
+    defineField({
+      name: "body",
+      type: "array",
+      group: "content",
+      of: [defineArrayMember({ type: "text", rows: 5 })],
+      description: "One box per paragraph. Start a box with “## ” for a main heading, “### ” for a sub-heading, “- ” for a bullet. Use questions as headings. **bold**, [link text](/page/).",
+    }),
+    defineField({ name: "faqs", title: "FAQ", type: "array", group: "content", of: [defineArrayMember({ type: "faqItem" })] }),
+    defineField({ name: "sources", type: "array", group: "sources", of: [defineArrayMember({ type: "guideSource" })], description: "Every statistic or market claim needs a named public source here and in the text." }),
+    defineField({ name: "related", title: "Related links", type: "array", group: "sources", of: [defineArrayMember({ type: "link" })] }),
+    { ...seoField, group: "seo" },
+  ],
+  orderings: [{ title: "Order", name: "order", by: [{ field: "order", direction: "asc" }] }],
+  preview: { select: { title: "title", subtitle: "status", media: "image" } },
+});
+
+export const documentTypes = [siteSettings, page, teamMember, guide];
 export const singletonTypes = new Set(["siteSettings"]);
