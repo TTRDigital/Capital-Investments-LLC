@@ -284,15 +284,6 @@ export const fallbackPages: Page[] = [
             }
           },
           {
-            "slug": "windy-parsons",
-            "photo": {
-              "src": "/images/team/carousel/windy-parsons.webp",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "width": 237,
-              "height": 243
-            }
-          },
-          {
             "slug": "christina-davies",
             "photo": {
               "src": "/images/team/carousel/christina-davies.webp",
@@ -6486,15 +6477,6 @@ export const fallbackPages: Page[] = [
               "src": "/images/team/carousel/mani-milan.webp",
               "alt": "Mani Milan, Senior Vice President at Capital Investment LLC",
               "width": 236,
-              "height": 243
-            }
-          },
-          {
-            "slug": "windy-parsons",
-            "photo": {
-              "src": "/images/team/carousel/windy-parsons.webp",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "width": 237,
               "height": 243
             }
           },

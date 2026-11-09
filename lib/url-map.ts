@@ -19,6 +19,12 @@ const hoods = [
 ];
 
 export const moves: Move[] = [
+  // Team members who have left the firm (Reza, TTR-1419): profile page removed, 301 to the team index.
+  { from: "/team/windy-parsons/", to: "/our-team/", why: "has left the firm" },
+  { from: "/team/nitika-dumera/", to: "/our-team/", why: "has left the firm" },
+  { from: "/team/john-daly/", to: "/our-team/", why: "has left the firm" },
+  { from: "/team/alex-parra/", to: "/our-team/", why: "has left the firm" },
+  { from: "/team/connor-zarebi/", to: "/our-team/", why: "has left the firm" },
   // The client has no newsletter: the signup pages are gone, the contact page is the closest match.
   { from: "/subscribe/", to: "/contact-us/", why: "newsletter signup removed" },
   { from: "/confirmation-thank-you/", to: "/contact-us/", why: "newsletter thank-you page removed" },

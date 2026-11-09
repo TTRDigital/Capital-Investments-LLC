@@ -82,28 +82,6 @@ export const fallbackTeam: TeamMember[] = [
     }
   },
   {
-    "slug": "windy-parsons",
-    "name": "Windy Parsons",
-    "role": "Vice President",
-    "order": 4,
-    "photo": {
-      "src": "/images/team/windy-parsons.webp",
-      "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-      "width": 476,
-      "height": 495
-    },
-    "bio": [
-      "Windy Parsons has been involved in multiple facets of commercial real estate providing a comprehensive foundation from which to serve her clients. Windy’s decades of direct industry experience provide a thorough knowledge of brokerage, commercial banking, and real estate law. Windy’s commercial real estate career began in the real estate law field in 1997 where she was responsible for title searches and the real estate closings for commercial properties. From there, Windy was recruited into the Commercial Banking industry in the bank’s Title Insurance Division as a Marketing Director. As a Marketing Director, Windy directed and managed overall operations of developing and executing strategies for generating new business, forecasting real estate trends,\norganizing continuing learning education seminars in real estate, 1031 seminars and maintaining current relationships with bank clients.",
-      "Over the last ten years as a Commercial Broker, Windy has overseen all aspects of the Real Estate transaction process from the valuation, pricing strategy, marketing, due diligence, negotiations of the purchase and sale contract and closed over $300million in Multifamily properties.",
-      "Contact me:\nM: [(336) 688-2320](tel:+13366882320)\n[windy@capitalinvestmentllc.com](mailto:windy@capitalinvestmentllc.com)"
-    ],
-    "wpId": 536,
-    "seo": {
-      "title": "Windy Parsons, Vice President | Capital Investment LLC",
-      "description": "Windy Parsons is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
     "slug": "justin-katz",
     "name": "Justin Katz",
     "role": "Vice President",
@@ -356,28 +334,6 @@ export const fallbackTeam: TeamMember[] = [
     }
   },
   {
-    "slug": "nitika-dumera",
-    "name": "Nitika Dumera",
-    "role": "Real Estate Associate",
-    "order": 16,
-    "photo": {
-      "src": "/images/team/nitika-dumera.webp",
-      "alt": "Nitika Dumera, Real Estate Associate at Capital Investment LLC",
-      "width": 631,
-      "height": 631
-    },
-    "bio": [
-      "Nitika is a Virginia native with extensive experience in operating many businesses, understanding the challenges and opportunities firsthand. Her experience enables her to provide tailored solutions to lease, purchase, or invest. Nitika focuses on cutting-edge tools and technology to analyze data, providing clients with a data-driven approach to real estate decision-making.",
-      "Nitika received a Bachelor’s in business from Marymount University and a Masters in Science, Data Analytics from American University.",
-      "Contact me:\nM: [(703)-916-0601](tel:+17039160601)\n[nitika@capitalinvestmentllc.com](mailto:nitika@capitalinvestmentllc.com)"
-    ],
-    "wpId": 551,
-    "seo": {
-      "title": "Nitika Dumera, Real Estate Associate | Capital Investment LLC",
-      "description": "Nitika Dumera is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
     "slug": "xandria-baleno",
     "name": "Xandria Baleno",
     "role": "Real Estate Associate",
@@ -398,51 +354,6 @@ export const fallbackTeam: TeamMember[] = [
     "seo": {
       "title": "Xandria Baleno, Real Estate Associate | Capital Investment LLC",
       "description": "Xandria Baleno is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "slug": "john-daly",
-    "name": "John Daly",
-    "role": "Investment Sales Advisor",
-    "order": 18,
-    "photo": {
-      "src": "/images/team/john-daly.webp",
-      "alt": "John Daly, Investment Sales Advisor at Capital Investment LLC",
-      "width": 702,
-      "height": 702
-    },
-    "bio": [
-      "John is an Investment Sales Advisor with Capital Investment LLC, primarily covering the Multi-Family space. He brings a unique and diverse skill set to the firm with more than twenty-five years of high-level investment management industry experience working with Real Estate Investment Management companies, REITs, banks, institutional investors, and high net-worth individuals.",
-      "He has worked with such firms as Alliance Capital, FS Investments and Terra Capital Partners.",
-      "Originally from Connecticut, he is a longtime resident of Fort Lauderdale, Florida.",
-      "John is a graduate of the University of California at Santa Barbara.",
-      "Contact John:\nM:[(954) 401-7456](tel:+19544017456)\n[john@capitalinvestmentllc.com](mailto:john@capitalinvestmentllc.com)"
-    ],
-    "wpId": 1786,
-    "seo": {
-      "title": "John Daly, Investment Sales Advisor | Capital Investment LLC",
-      "description": "John Daly is an Investment Sales Advisor at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "slug": "alex-parra",
-    "name": "Alex Parra",
-    "role": "Administrative Assistant",
-    "order": 19,
-    "photo": {
-      "src": "/images/team/alex-parra.webp",
-      "alt": "Alex Parra, Administrative Assistant at Capital Investment LLC",
-      "width": 702,
-      "height": 702
-    },
-    "bio": [
-      "Alex Parra is a dedicated administrative assistant with over two years of experience supporting the executive team at Capital Investment LLC. During this time, he has developed a versatile background that includes expertise in project management, CoStar utilization, and leasing within the commercial real estate sector. His experience extends to multifamily and hospitality leasing, as well as a wide range of associated services, showcasing his adaptability and comprehensive understanding of the industry.",
-      "Alex is known for his proactive approach to problem-solving, tackling challenges with a positive and hard-working mindset. He takes pride in his ability to streamline processes, enhance team efficiency, and contribute to the success of the organizations he supports. His passion for delivering exceptional service and finding innovative solutions makes him an invaluable asset to any team. Whether coordinating complex projects or facilitating seamless communication, Alex consistently strives to exceed expectations and foster a collaborative work environment."
-    ],
-    "wpId": 1897,
-    "seo": {
-      "title": "Alex Parra, Administrative Assistant | Capital Investment LLC",
-      "description": "Alex Parra is an Administrative Assistant at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -516,28 +427,4 @@ export const fallbackTeam: TeamMember[] = [
       "description": "Monica Morfin is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
-  {
-    "slug": "connor-zarebi",
-    "name": "Connor Zarebi",
-    "role": "Associate, Business Development",
-    "order": 23,
-    "photo": {
-      "src": "/images/team/connor-zarebi.webp",
-      "alt": "Connor Zarebi, Associate, Business Development at Capital Investment LLC",
-      "width": 1200,
-      "height": 1200
-    },
-    "bio": [
-      "Connor Zarebi is a dedicated real estate professional with nearly three years of experience in the industry. He began his career specializing in land transactions, where he developed a strong foundation in identifying value and navigating complex deals.",
-      "Connor attended the University of Cincinnati, where he developed a strong interest in business and real estate. He has since focused his career on business development, working closely with CEOs and institutional funds to build strategic partnerships and uncover high-value opportunities.",
-      "Known for his relationship-driven approach and market insight, Connor brings a focused, results-oriented mindset to every partnership he builds.",
-      "**Email:** [connor@capitalinvestmentllc.com](mailto:connor@capitalinvestmentllc.com)",
-      "**Phone:** [513-953-7875](tel:+15139537875)"
-    ],
-    "wpId": 2770,
-    "seo": {
-      "title": "Connor Zarebi, Associate, Business Development",
-      "description": "Connor Zarebi is an Associate, Business Development at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  }
 ];

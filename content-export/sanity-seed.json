@@ -638,7 +638,7 @@
         ]
       },
       {
-        "_key": "k22",
+        "_key": "k21",
         "_type": "teamCarousel",
         "heading": "Meet The Team",
         "members": [
@@ -681,18 +681,6 @@
           {
             "_key": "k1x",
             "_type": "carouselMember",
-            "slug": "windy-parsons",
-            "photo": {
-              "_type": "altImage",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "asset": {
-                "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/carousel/windy-parsons.webp"
-              }
-            }
-          },
-          {
-            "_key": "k1y",
-            "_type": "carouselMember",
             "slug": "christina-davies",
             "photo": {
               "_type": "altImage",
@@ -703,7 +691,7 @@
             }
           },
           {
-            "_key": "k1z",
+            "_key": "k1y",
             "_type": "carouselMember",
             "slug": "boyd-lawrence",
             "photo": {
@@ -715,7 +703,7 @@
             }
           },
           {
-            "_key": "k20",
+            "_key": "k1z",
             "_type": "carouselMember",
             "slug": "yassin-kadir",
             "photo": {
@@ -727,7 +715,7 @@
             }
           },
           {
-            "_key": "k21",
+            "_key": "k20",
             "_type": "carouselMember",
             "slug": "brooke-fontan",
             "photo": {
@@ -741,7 +729,7 @@
         ]
       },
       {
-        "_key": "k23",
+        "_key": "k22",
         "_type": "officeMaps",
         "heading": "Two Convenient Locations",
         "offices": [
@@ -765,7 +753,7 @@
     "order": 2,
     "sections": [
       {
-        "_key": "k24",
+        "_key": "k23",
         "_type": "hero",
         "heading": "Commercial Real Estate Services",
         "image": {
@@ -780,7 +768,7 @@
         "position": "center"
       },
       {
-        "_key": "k25",
+        "_key": "k24",
         "_type": "intro",
         "heading": "Commercial Real Estate Solutions for Investors, Businesses, and Property Owners",
         "text": [
@@ -801,12 +789,12 @@
         "hFont": "serif"
       },
       {
-        "_key": "k2c",
+        "_key": "k2b",
         "_type": "serviceSlider",
         "heading": "Our Comprehensive Commercial\n*Real Estate Services*",
         "slides": [
           {
-            "_key": "k26",
+            "_key": "k25",
             "_type": "serviceSlide",
             "title": "Investment Sales & Acquisition Services",
             "text": [
@@ -827,7 +815,7 @@
             }
           },
           {
-            "_key": "k27",
+            "_key": "k26",
             "_type": "serviceSlide",
             "title": "Commercial Real Estate Valuation & Consultation",
             "text": [
@@ -848,7 +836,7 @@
             }
           },
           {
-            "_key": "k28",
+            "_key": "k27",
             "_type": "serviceSlide",
             "title": "Landlord & Tenant Representation",
             "text": [
@@ -869,7 +857,7 @@
             }
           },
           {
-            "_key": "k29",
+            "_key": "k28",
             "_type": "serviceSlide",
             "title": "Negotiation Leverage Through Market Expertise",
             "text": [
@@ -890,7 +878,7 @@
             }
           },
           {
-            "_key": "k2a",
+            "_key": "k29",
             "_type": "serviceSlide",
             "title": "Commercial Property Management",
             "text": [
@@ -911,7 +899,7 @@
             }
           },
           {
-            "_key": "k2b",
+            "_key": "k2a",
             "_type": "serviceSlide",
             "title": "Development Services & Project Management",
             "text": [
@@ -935,7 +923,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k2i",
+        "_key": "k2h",
         "_type": "slider",
         "variant": "process",
         "heading": "The Benefits of Working With *Capital Investment*",
@@ -945,7 +933,7 @@
         "icon": true,
         "items": [
           {
-            "_key": "k2d",
+            "_key": "k2c",
             "_type": "item",
             "title": "10 Years of Local Expertise",
             "text": [
@@ -953,7 +941,7 @@
             ]
           },
           {
-            "_key": "k2e",
+            "_key": "k2d",
             "_type": "item",
             "title": "Attorney-Owned Advantage",
             "text": [
@@ -961,7 +949,7 @@
             ]
           },
           {
-            "_key": "k2f",
+            "_key": "k2e",
             "_type": "item",
             "title": "Exclusive Off-Market Opportunities",
             "text": [
@@ -969,7 +957,7 @@
             ]
           },
           {
-            "_key": "k2g",
+            "_key": "k2f",
             "_type": "item",
             "title": "Partnerships with Landlords",
             "text": [
@@ -977,7 +965,7 @@
             ]
           },
           {
-            "_key": "k2h",
+            "_key": "k2g",
             "_type": "item",
             "title": "Local Offices and Staff",
             "text": [
@@ -988,7 +976,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k2n",
+        "_key": "k2m",
         "_type": "tabs",
         "heading": "Areas We *Proudly Serve*",
         "text": [
@@ -996,7 +984,7 @@
         ],
         "tabs": [
           {
-            "_key": "k2j",
+            "_key": "k2i",
             "_type": "tab",
             "label": "Miami",
             "title": "Miami",
@@ -1012,7 +1000,7 @@
             }
           },
           {
-            "_key": "k2k",
+            "_key": "k2j",
             "_type": "tab",
             "label": "Washington D.C.",
             "title": "Washington D.C. Metro Area",
@@ -1028,7 +1016,7 @@
             }
           },
           {
-            "_key": "k2l",
+            "_key": "k2k",
             "_type": "tab",
             "label": "Virginia",
             "title": "Virginia",
@@ -1044,7 +1032,7 @@
             }
           },
           {
-            "_key": "k2m",
+            "_key": "k2l",
             "_type": "tab",
             "label": "Maryland",
             "title": "Maryland",
@@ -1063,12 +1051,12 @@
         "hFont": "serif"
       },
       {
-        "_key": "k2u",
+        "_key": "k2t",
         "_type": "faq",
         "heading": "Frequently Asked Questions",
         "items": [
           {
-            "_key": "k2o",
+            "_key": "k2n",
             "_type": "faqItem",
             "question": "What types of commercial properties do you specialize in?",
             "answer": [
@@ -1076,7 +1064,7 @@
             ]
           },
           {
-            "_key": "k2p",
+            "_key": "k2o",
             "_type": "faqItem",
             "question": "How can I determine the value of my commercial property?",
             "answer": [
@@ -1084,7 +1072,7 @@
             ]
           },
           {
-            "_key": "k2q",
+            "_key": "k2p",
             "_type": "faqItem",
             "question": "What areas do you serve?",
             "answer": [
@@ -1092,7 +1080,7 @@
             ]
           },
           {
-            "_key": "k2r",
+            "_key": "k2q",
             "_type": "faqItem",
             "question": "Do you provide property management services?",
             "answer": [
@@ -1100,7 +1088,7 @@
             ]
           },
           {
-            "_key": "k2s",
+            "_key": "k2r",
             "_type": "faqItem",
             "question": "How do you help clients find off-market opportunities?",
             "answer": [
@@ -1108,7 +1096,7 @@
             ]
           },
           {
-            "_key": "k2t",
+            "_key": "k2s",
             "_type": "faqItem",
             "question": "How can I get started with your services?",
             "answer": [
@@ -1119,7 +1107,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k2v",
+        "_key": "k2u",
         "_type": "cta",
         "heading": "Looking For Expert Investment Sales Services in *Washington DC and Miami?*",
         "text": [
@@ -1147,7 +1135,7 @@
     "order": 3,
     "sections": [
       {
-        "_key": "k2w",
+        "_key": "k2v",
         "_type": "hero",
         "heading": "Commercial Real Estate Investment Sales and Acquisition Services in Miami and DMV Area",
         "image": {
@@ -1162,7 +1150,7 @@
         "position": "center"
       },
       {
-        "_key": "k2x",
+        "_key": "k2w",
         "_type": "intro",
         "heading": "Navigating *The Commercial Real Estate Landscape* With Confidence",
         "text": [
@@ -1183,7 +1171,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k31",
+        "_key": "k30",
         "_type": "panel",
         "columns": 3,
         "heading": "Who We Are",
@@ -1200,7 +1188,7 @@
         "subheading": "Our Core Values",
         "items": [
           {
-            "_key": "k2y",
+            "_key": "k2x",
             "_type": "item",
             "title": "Integrity",
             "text": [
@@ -1208,7 +1196,7 @@
             ]
           },
           {
-            "_key": "k2z",
+            "_key": "k2y",
             "_type": "item",
             "title": "Expertise",
             "text": [
@@ -1216,7 +1204,7 @@
             ]
           },
           {
-            "_key": "k30",
+            "_key": "k2z",
             "_type": "item",
             "title": "Client-Centric Approach",
             "text": [
@@ -1227,7 +1215,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k38",
+        "_key": "k37",
         "_type": "slider",
         "variant": "process",
         "heading": "Our Acquisitions & *Sales Services*",
@@ -1237,7 +1225,7 @@
         "icon": true,
         "items": [
           {
-            "_key": "k32",
+            "_key": "k31",
             "_type": "item",
             "title": "Commercial Real Estate Acquisitions in The Washington DC Area And Miami",
             "text": [
@@ -1245,7 +1233,7 @@
             ]
           },
           {
-            "_key": "k33",
+            "_key": "k32",
             "_type": "item",
             "title": "Commercial Real Estate Sales Services in The Washington DC Area And Miami",
             "text": [
@@ -1253,7 +1241,7 @@
             ]
           },
           {
-            "_key": "k34",
+            "_key": "k33",
             "_type": "item",
             "title": "Investment Property Sales Advisory in The Washington DC Area And Miami",
             "text": [
@@ -1261,7 +1249,7 @@
             ]
           },
           {
-            "_key": "k35",
+            "_key": "k34",
             "_type": "item",
             "title": "Property Management in the Washington DC area and Miami",
             "text": [
@@ -1269,7 +1257,7 @@
             ]
           },
           {
-            "_key": "k36",
+            "_key": "k35",
             "_type": "item",
             "title": "Market Research and Analysis in the Washington DC area and Miami",
             "text": [
@@ -1277,7 +1265,7 @@
             ]
           },
           {
-            "_key": "k37",
+            "_key": "k36",
             "_type": "item",
             "title": "Consulting Services in the Washington DC area and Miami",
             "text": [
@@ -1288,7 +1276,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3b",
+        "_key": "k3a",
         "_type": "splitAccordion",
         "heading": "Commercial Real Estate\n*Investment Sales*",
         "text": [
@@ -1304,7 +1292,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k39",
+            "_key": "k38",
             "_type": "accordionItem",
             "title": "Key Benefits of Our Investment Sales Services",
             "body": [
@@ -1314,7 +1302,7 @@
             ]
           },
           {
-            "_key": "k3a",
+            "_key": "k39",
             "_type": "accordionItem",
             "title": "Our Approach",
             "body": [
@@ -1328,7 +1316,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3e",
+        "_key": "k3d",
         "_type": "splitAccordion",
         "heading": "Commercial Real Estate\n*Acquisitions*",
         "text": [
@@ -1344,7 +1332,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "k3c",
+            "_key": "k3b",
             "_type": "accordionItem",
             "title": "Key Benefits of Our Commercial Real Estate Acquisitions Services",
             "body": [
@@ -1354,7 +1342,7 @@
             ]
           },
           {
-            "_key": "k3d",
+            "_key": "k3c",
             "_type": "accordionItem",
             "title": "Our Acquisition Process",
             "body": [
@@ -1369,7 +1357,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3g",
+        "_key": "k3f",
         "_type": "splitAccordion",
         "heading": "Expert *Regional Commercial Real Estate* Services",
         "text": [
@@ -1385,7 +1373,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k3f",
+            "_key": "k3e",
             "_type": "accordionItem",
             "title": "Comprehensive Solutions for Diverse Markets",
             "body": [
@@ -1399,7 +1387,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3l",
+        "_key": "k3k",
         "_type": "tabs",
         "heading": "Location *We Serve*",
         "text": [
@@ -1407,7 +1395,7 @@
         ],
         "tabs": [
           {
-            "_key": "k3h",
+            "_key": "k3g",
             "_type": "tab",
             "label": "Washington D.C.",
             "title": "Washington D. C.",
@@ -1423,7 +1411,7 @@
             }
           },
           {
-            "_key": "k3i",
+            "_key": "k3h",
             "_type": "tab",
             "label": "Virginia",
             "title": "Virginia",
@@ -1439,7 +1427,7 @@
             }
           },
           {
-            "_key": "k3j",
+            "_key": "k3i",
             "_type": "tab",
             "label": "Maryland",
             "title": "Maryland",
@@ -1455,7 +1443,7 @@
             }
           },
           {
-            "_key": "k3k",
+            "_key": "k3j",
             "_type": "tab",
             "label": "Miami",
             "title": "Miami",
@@ -1474,7 +1462,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3s",
+        "_key": "k3r",
         "_type": "whyList",
         "heading": "Why Invest with Us",
         "text": [
@@ -1490,7 +1478,7 @@
         "listHeading": "Key Advantages of Partnering with Capital Investment LLC",
         "items": [
           {
-            "_key": "k3m",
+            "_key": "k3l",
             "_type": "item",
             "title": "Comprehensive Listings",
             "text": [
@@ -1498,7 +1486,7 @@
             ]
           },
           {
-            "_key": "k3n",
+            "_key": "k3m",
             "_type": "item",
             "title": "Tailored Recommendations",
             "text": [
@@ -1506,7 +1494,7 @@
             ]
           },
           {
-            "_key": "k3o",
+            "_key": "k3n",
             "_type": "item",
             "title": "In-Depth Market Analysis",
             "text": [
@@ -1514,7 +1502,7 @@
             ]
           },
           {
-            "_key": "k3p",
+            "_key": "k3o",
             "_type": "item",
             "title": "Negotiation Expertise",
             "text": [
@@ -1522,7 +1510,7 @@
             ]
           },
           {
-            "_key": "k3q",
+            "_key": "k3p",
             "_type": "item",
             "title": "Support Throughout the Process",
             "text": [
@@ -1530,7 +1518,7 @@
             ]
           },
           {
-            "_key": "k3r",
+            "_key": "k3q",
             "_type": "item",
             "title": "Post-Transaction Support",
             "text": [
@@ -1541,7 +1529,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k3t",
+        "_key": "k3s",
         "_type": "cta",
         "heading": "Begin Your Investment Journey Today",
         "text": [
@@ -1569,7 +1557,7 @@
     "order": 4,
     "sections": [
       {
-        "_key": "k3u",
+        "_key": "k3t",
         "_type": "hero",
         "heading": "Landlord and Tenant Representation Services in Miami and DMV Area",
         "image": {
@@ -1584,7 +1572,7 @@
         "position": "top"
       },
       {
-        "_key": "k3v",
+        "_key": "k3u",
         "_type": "intro",
         "heading": "Streamlining Your Commercial *Real Estate Experience*",
         "text": [
@@ -1605,7 +1593,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k48",
+        "_key": "k47",
         "_type": "splitStack",
         "heading": "Tailored Services For *Landlords & Tenants*",
         "text": [
@@ -1613,7 +1601,7 @@
         ],
         "rows": [
           {
-            "_key": "k3z",
+            "_key": "k3y",
             "_type": "stackRow",
             "heading": "Tenant Representation Services in *Washington DC & Miami*",
             "text": [
@@ -1621,7 +1609,7 @@
             ],
             "items": [
               {
-                "_key": "k3w",
+                "_key": "k3v",
                 "_type": "item",
                 "title": "Space Identification:",
                 "text": [
@@ -1629,7 +1617,7 @@
                 ]
               },
               {
-                "_key": "k3x",
+                "_key": "k3w",
                 "_type": "item",
                 "title": "Market Insights:",
                 "text": [
@@ -1637,7 +1625,7 @@
                 ]
               },
               {
-                "_key": "k3y",
+                "_key": "k3x",
                 "_type": "item",
                 "title": "Negotiation Support:",
                 "text": [
@@ -1655,7 +1643,7 @@
             "imageSide": "right"
           },
           {
-            "_key": "k43",
+            "_key": "k42",
             "_type": "stackRow",
             "heading": "*Landlord Representation Services* for DC & Miami",
             "text": [
@@ -1663,7 +1651,7 @@
             ],
             "items": [
               {
-                "_key": "k40",
+                "_key": "k3z",
                 "_type": "item",
                 "title": "Property Marketing:",
                 "text": [
@@ -1671,7 +1659,7 @@
                 ]
               },
               {
-                "_key": "k41",
+                "_key": "k40",
                 "_type": "item",
                 "title": "Tenant Screening:",
                 "text": [
@@ -1679,7 +1667,7 @@
                 ]
               },
               {
-                "_key": "k42",
+                "_key": "k41",
                 "_type": "item",
                 "title": "Lease Management:",
                 "text": [
@@ -1697,7 +1685,7 @@
             "imageSide": "left"
           },
           {
-            "_key": "k47",
+            "_key": "k46",
             "_type": "stackRow",
             "heading": "Commercial *Real Estate Expertise* in DC & Miami",
             "text": [
@@ -1705,7 +1693,7 @@
             ],
             "items": [
               {
-                "_key": "k44",
+                "_key": "k43",
                 "_type": "item",
                 "title": "Advisory Services:",
                 "text": [
@@ -1713,7 +1701,7 @@
                 ]
               },
               {
-                "_key": "k45",
+                "_key": "k44",
                 "_type": "item",
                 "title": "Compliance Guidance:",
                 "text": [
@@ -1721,7 +1709,7 @@
                 ]
               },
               {
-                "_key": "k46",
+                "_key": "k45",
                 "_type": "item",
                 "title": "Long-term Partnerships:",
                 "text": [
@@ -1742,7 +1730,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k4d",
+        "_key": "k4c",
         "_type": "tabs",
         "heading": "Commercial *Real Estate Representation* Across Key Markets",
         "text": [
@@ -1750,7 +1738,7 @@
         ],
         "tabs": [
           {
-            "_key": "k49",
+            "_key": "k48",
             "_type": "tab",
             "label": "Washington D.C.",
             "title": "Washington D. C.",
@@ -1766,7 +1754,7 @@
             }
           },
           {
-            "_key": "k4a",
+            "_key": "k49",
             "_type": "tab",
             "label": "Virginia",
             "title": "Virginia",
@@ -1782,7 +1770,7 @@
             }
           },
           {
-            "_key": "k4b",
+            "_key": "k4a",
             "_type": "tab",
             "label": "Maryland",
             "title": "Maryland",
@@ -1798,7 +1786,7 @@
             }
           },
           {
-            "_key": "k4c",
+            "_key": "k4b",
             "_type": "tab",
             "label": "Florida",
             "title": "Florida",
@@ -1817,7 +1805,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k4i",
+        "_key": "k4h",
         "_type": "imageCards",
         "heading": "Why Clients Trust\n*Capital Investment LLC*",
         "text": [
@@ -1833,7 +1821,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "k4e",
+            "_key": "k4d",
             "_type": "item",
             "title": "Thriving Economy",
             "text": [
@@ -1841,7 +1829,7 @@
             ]
           },
           {
-            "_key": "k4f",
+            "_key": "k4e",
             "_type": "item",
             "title": "Tailored Solutions for Every Client",
             "text": [
@@ -1849,7 +1837,7 @@
             ]
           },
           {
-            "_key": "k4g",
+            "_key": "k4f",
             "_type": "item",
             "title": "Transparent and Collaborative Approach",
             "text": [
@@ -1857,7 +1845,7 @@
             ]
           },
           {
-            "_key": "k4h",
+            "_key": "k4g",
             "_type": "item",
             "title": "Dedicated to Your Achievement",
             "text": [
@@ -1868,7 +1856,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k4j",
+        "_key": "k4i",
         "_type": "cta",
         "heading": "Secure Your Expert Commercial Real Estate Representation",
         "text": [
@@ -1897,7 +1885,7 @@
     "order": 5,
     "sections": [
       {
-        "_key": "k4k",
+        "_key": "k4j",
         "_type": "hero",
         "heading": "Development Services and Project Management in Washington DC and Miami FL",
         "image": {
@@ -1912,7 +1900,7 @@
         "position": "top"
       },
       {
-        "_key": "k4l",
+        "_key": "k4k",
         "_type": "intro",
         "heading": "Building Opportunities in *Washington DC & Miami’s* Thriving Markets",
         "text": [
@@ -1933,7 +1921,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k4y",
+        "_key": "k4x",
         "_type": "serviceBlocks",
         "heading": "Key Services in *Commercial Real Estate* Development",
         "text": [
@@ -1941,7 +1929,7 @@
         ],
         "blocks": [
           {
-            "_key": "k4o",
+            "_key": "k4n",
             "_type": "serviceBlock",
             "heading": "Feasibility Studies & Market Analysis for *Optimal Real Estate Investments*",
             "image": {
@@ -1954,7 +1942,7 @@
             "imageSide": "right",
             "items": [
               {
-                "_key": "k4m",
+                "_key": "k4l",
                 "_type": "item",
                 "title": "Project Viability Assessment",
                 "text": [
@@ -1962,7 +1950,7 @@
                 ]
               },
               {
-                "_key": "k4n",
+                "_key": "k4m",
                 "_type": "item",
                 "title": "Market Insights and Trend Analysis",
                 "text": [
@@ -1972,7 +1960,7 @@
             ]
           },
           {
-            "_key": "k4r",
+            "_key": "k4q",
             "_type": "serviceBlock",
             "heading": "Site Planning and *Design Coordination* in Key Markets",
             "image": {
@@ -1985,7 +1973,7 @@
             "imageSide": "left",
             "items": [
               {
-                "_key": "k4p",
+                "_key": "k4o",
                 "_type": "item",
                 "title": "Comprehensive Site Planning",
                 "text": [
@@ -1993,7 +1981,7 @@
                 ]
               },
               {
-                "_key": "k4q",
+                "_key": "k4p",
                 "_type": "item",
                 "title": "Design Collaboration",
                 "text": [
@@ -2003,7 +1991,7 @@
             ]
           },
           {
-            "_key": "k4u",
+            "_key": "k4t",
             "_type": "serviceBlock",
             "heading": "Permitting *Regulatory Compliance* and Community Engagement",
             "image": {
@@ -2016,7 +2004,7 @@
             "imageSide": "right",
             "items": [
               {
-                "_key": "k4s",
+                "_key": "k4r",
                 "_type": "item",
                 "title": "Navigating Zoning and Building Codes",
                 "text": [
@@ -2024,7 +2012,7 @@
                 ]
               },
               {
-                "_key": "k4t",
+                "_key": "k4s",
                 "_type": "item",
                 "title": "Community Engagement and Approvals",
                 "text": [
@@ -2034,7 +2022,7 @@
             ]
           },
           {
-            "_key": "k4x",
+            "_key": "k4w",
             "_type": "serviceBlock",
             "heading": "Construction *Management and Quality* Control",
             "image": {
@@ -2047,7 +2035,7 @@
             "imageSide": "left",
             "items": [
               {
-                "_key": "k4v",
+                "_key": "k4u",
                 "_type": "item",
                 "title": "Project Oversight and Coordination",
                 "text": [
@@ -2055,7 +2043,7 @@
                 ]
               },
               {
-                "_key": "k4w",
+                "_key": "k4v",
                 "_type": "item",
                 "title": "Budget Management and Cost Optimization",
                 "text": [
@@ -2068,7 +2056,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k4z",
+        "_key": "k4y",
         "_type": "intro",
         "heading": "How We Work",
         "subheading": "Strategic Guidance at Every Step",
@@ -2086,13 +2074,13 @@
         "hFont": "serif"
       },
       {
-        "_key": "k53",
+        "_key": "k52",
         "_type": "steps",
         "heading": "Our Commercial Real Estate Development Process",
         "text": [],
         "items": [
           {
-            "_key": "k50",
+            "_key": "k4z",
             "_type": "item",
             "title": "Strategic Site Selection and Market Analysis",
             "text": [
@@ -2107,7 +2095,7 @@
             }
           },
           {
-            "_key": "k51",
+            "_key": "k50",
             "_type": "item",
             "title": "Financial and Investment Advisory",
             "text": [
@@ -2122,7 +2110,7 @@
             }
           },
           {
-            "_key": "k52",
+            "_key": "k51",
             "_type": "item",
             "title": "Partnering with the Right Professionals",
             "text": [
@@ -2140,7 +2128,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k58",
+        "_key": "k57",
         "_type": "whyList",
         "heading": "Why Choose *Capital Investment LLC?*",
         "text": [
@@ -2156,7 +2144,7 @@
         "listHeading": "Here’s Why Clients Trust Us",
         "items": [
           {
-            "_key": "k54",
+            "_key": "k53",
             "_type": "item",
             "title": "Local Expertise & Market Knowledge",
             "text": [
@@ -2164,7 +2152,7 @@
             ]
           },
           {
-            "_key": "k55",
+            "_key": "k54",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -2172,7 +2160,7 @@
             ]
           },
           {
-            "_key": "k56",
+            "_key": "k55",
             "_type": "item",
             "title": "Strong Network of Trusted Partners",
             "text": [
@@ -2180,7 +2168,7 @@
             ]
           },
           {
-            "_key": "k57",
+            "_key": "k56",
             "_type": "item",
             "title": "Proven Track Record of Success",
             "text": [
@@ -2191,13 +2179,13 @@
         "hFont": "serif"
       },
       {
-        "_key": "k5d",
+        "_key": "k5c",
         "_type": "tabs",
         "heading": "Expertise Across *Key Markets*",
         "text": [],
         "tabs": [
           {
-            "_key": "k59",
+            "_key": "k58",
             "_type": "tab",
             "label": "Washington D.C.",
             "title": "Washington D.C.",
@@ -2211,7 +2199,7 @@
             }
           },
           {
-            "_key": "k5a",
+            "_key": "k59",
             "_type": "tab",
             "label": "Virginia",
             "title": "Virginia",
@@ -2225,7 +2213,7 @@
             }
           },
           {
-            "_key": "k5b",
+            "_key": "k5a",
             "_type": "tab",
             "label": "Maryland",
             "title": "Maryland",
@@ -2239,7 +2227,7 @@
             }
           },
           {
-            "_key": "k5c",
+            "_key": "k5b",
             "_type": "tab",
             "label": "Florida",
             "title": "Florida",
@@ -2256,7 +2244,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k5e",
+        "_key": "k5d",
         "_type": "cta",
         "heading": "Get Started with Capital Investment LLC",
         "text": [
@@ -2284,7 +2272,7 @@
     "order": 6,
     "sections": [
       {
-        "_key": "k5f",
+        "_key": "k5e",
         "_type": "hero",
         "heading": "Top Commercial Real Estate Property Management Services in Miami and the DMV area",
         "image": {
@@ -2299,7 +2287,7 @@
         "position": "top"
       },
       {
-        "_key": "k5g",
+        "_key": "k5f",
         "_type": "intro",
         "heading": "Top Commercial *Real Estate Property Management* In Washington DC & Miami",
         "text": [
@@ -2320,7 +2308,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k5l",
+        "_key": "k5k",
         "_type": "imageCards",
         "heading": "Professional & Comprehensive *Property Management* Services",
         "text": [
@@ -2336,7 +2324,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "k5h",
+            "_key": "k5g",
             "_type": "item",
             "title": "Property Maintenance & Upkeep",
             "text": [
@@ -2344,7 +2332,7 @@
             ]
           },
           {
-            "_key": "k5i",
+            "_key": "k5h",
             "_type": "item",
             "title": "Tenant Relations for High Retention in DC & Miami",
             "text": [
@@ -2352,7 +2340,7 @@
             ]
           },
           {
-            "_key": "k5j",
+            "_key": "k5i",
             "_type": "item",
             "title": "Lease Management and Compliance Services",
             "text": [
@@ -2360,7 +2348,7 @@
             ]
           },
           {
-            "_key": "k5k",
+            "_key": "k5j",
             "_type": "item",
             "title": "Financial Management for Property Performance",
             "text": [
@@ -2371,7 +2359,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k5p",
+        "_key": "k5o",
         "_type": "whyList",
         "heading": "Why Choose *Capital Investment LLC?* For Commercial Property Management",
         "text": [
@@ -2386,7 +2374,7 @@
         },
         "items": [
           {
-            "_key": "k5m",
+            "_key": "k5l",
             "_type": "item",
             "title": "Local Market Expertise",
             "text": [
@@ -2394,7 +2382,7 @@
             ]
           },
           {
-            "_key": "k5n",
+            "_key": "k5m",
             "_type": "item",
             "title": "Client-Centric Approach",
             "text": [
@@ -2402,7 +2390,7 @@
             ]
           },
           {
-            "_key": "k5o",
+            "_key": "k5n",
             "_type": "item",
             "title": "Proven Results",
             "text": [
@@ -2413,7 +2401,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k5u",
+        "_key": "k5t",
         "_type": "tabs",
         "heading": "Our Local Expertise *Across Key Markets*",
         "text": [
@@ -2421,7 +2409,7 @@
         ],
         "tabs": [
           {
-            "_key": "k5q",
+            "_key": "k5p",
             "_type": "tab",
             "label": "Washington D.C.",
             "title": "Washington D. C.",
@@ -2442,7 +2430,7 @@
             }
           },
           {
-            "_key": "k5r",
+            "_key": "k5q",
             "_type": "tab",
             "label": "Virginia",
             "title": "Virginia",
@@ -2463,7 +2451,7 @@
             }
           },
           {
-            "_key": "k5s",
+            "_key": "k5r",
             "_type": "tab",
             "label": "Maryland",
             "title": "Maryland",
@@ -2484,7 +2472,7 @@
             }
           },
           {
-            "_key": "k5t",
+            "_key": "k5s",
             "_type": "tab",
             "label": "Florida",
             "title": "Florida",
@@ -2508,7 +2496,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k62",
+        "_key": "k61",
         "_type": "slider",
         "variant": "process",
         "heading": "Benefits of *Professional Property Management*",
@@ -2518,7 +2506,7 @@
         "icon": true,
         "items": [
           {
-            "_key": "k5v",
+            "_key": "k5u",
             "_type": "item",
             "title": "Expertise in Market Dynamics",
             "text": [
@@ -2526,7 +2514,7 @@
             ]
           },
           {
-            "_key": "k5w",
+            "_key": "k5v",
             "_type": "item",
             "title": "Risk Mitigation",
             "text": [
@@ -2534,7 +2522,7 @@
             ]
           },
           {
-            "_key": "k5x",
+            "_key": "k5w",
             "_type": "item",
             "title": "Efficient Tenant Management",
             "text": [
@@ -2542,7 +2530,7 @@
             ]
           },
           {
-            "_key": "k5y",
+            "_key": "k5x",
             "_type": "item",
             "title": "Effective Maintenance and Repairs",
             "text": [
@@ -2550,7 +2538,7 @@
             ]
           },
           {
-            "_key": "k5z",
+            "_key": "k5y",
             "_type": "item",
             "title": "Financial Performance and Reporting",
             "text": [
@@ -2558,7 +2546,7 @@
             ]
           },
           {
-            "_key": "k60",
+            "_key": "k5z",
             "_type": "item",
             "title": "Increased Property Value",
             "text": [
@@ -2566,7 +2554,7 @@
             ]
           },
           {
-            "_key": "k61",
+            "_key": "k60",
             "_type": "item",
             "title": "Time and Stress Reduction",
             "text": [
@@ -2577,7 +2565,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k63",
+        "_key": "k62",
         "_type": "cta",
         "heading": "Choose Capital Investment LLC for Tailored Property Management Solutions",
         "text": [
@@ -2605,7 +2593,7 @@
     "order": 7,
     "sections": [
       {
-        "_key": "k64",
+        "_key": "k63",
         "_type": "hero",
         "heading": "Commercial Real Estate Valuation & Consulting Services in Miami and the DMV area",
         "image": {
@@ -2620,7 +2608,7 @@
         "position": "top"
       },
       {
-        "_key": "k65",
+        "_key": "k64",
         "_type": "intro",
         "heading": "Your Experts in *Washington, D.C. & Miami*",
         "text": [
@@ -2641,7 +2629,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k6a",
+        "_key": "k69",
         "_type": "panel",
         "columns": 4,
         "heading": "Our Expertise in Commercial Real Estate Consulting",
@@ -2651,7 +2639,7 @@
         "icon": true,
         "items": [
           {
-            "_key": "k66",
+            "_key": "k65",
             "_type": "item",
             "title": "Comprehensive Market Analysis",
             "text": [
@@ -2659,7 +2647,7 @@
             ]
           },
           {
-            "_key": "k67",
+            "_key": "k66",
             "_type": "item",
             "title": "Financial Assessment & Investment Strategy",
             "text": [
@@ -2667,7 +2655,7 @@
             ]
           },
           {
-            "_key": "k68",
+            "_key": "k67",
             "_type": "item",
             "title": "Property Repositioning & Optimization",
             "text": [
@@ -2675,7 +2663,7 @@
             ]
           },
           {
-            "_key": "k69",
+            "_key": "k68",
             "_type": "item",
             "title": "Risk Management & Compliance",
             "text": [
@@ -2686,12 +2674,12 @@
         "hFont": "serif"
       },
       {
-        "_key": "k6j",
+        "_key": "k6i",
         "_type": "splitStack",
         "text": [],
         "rows": [
           {
-            "_key": "k6e",
+            "_key": "k6d",
             "_type": "stackRow",
             "heading": "Valuation of *Commercial Real Estate*",
             "text": [
@@ -2699,7 +2687,7 @@
             ],
             "items": [
               {
-                "_key": "k6b",
+                "_key": "k6a",
                 "_type": "item",
                 "title": "Advanced Valuation Techniques",
                 "text": [
@@ -2707,7 +2695,7 @@
                 ]
               },
               {
-                "_key": "k6c",
+                "_key": "k6b",
                 "_type": "item",
                 "title": "Specialized Valuation for Diverse Property Types",
                 "text": [
@@ -2715,7 +2703,7 @@
                 ]
               },
               {
-                "_key": "k6d",
+                "_key": "k6c",
                 "_type": "item",
                 "title": "Supporting Financial and Strategic Decisions",
                 "text": [
@@ -2733,7 +2721,7 @@
             "imageSide": "right"
           },
           {
-            "_key": "k6i",
+            "_key": "k6h",
             "_type": "stackRow",
             "heading": "Regional Presence & Local Expertise in *Washington, D.C. & Miami*",
             "text": [
@@ -2741,7 +2729,7 @@
             ],
             "items": [
               {
-                "_key": "k6f",
+                "_key": "k6e",
                 "_type": "item",
                 "title": "Local Market Insights",
                 "text": [
@@ -2749,7 +2737,7 @@
                 ]
               },
               {
-                "_key": "k6g",
+                "_key": "k6f",
                 "_type": "item",
                 "title": "Regulatory Knowledge and Compliance",
                 "text": [
@@ -2757,7 +2745,7 @@
                 ]
               },
               {
-                "_key": "k6h",
+                "_key": "k6g",
                 "_type": "item",
                 "title": "A Tailored Approach Across Regions",
                 "text": [
@@ -2778,7 +2766,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k6o",
+        "_key": "k6n",
         "_type": "imageCards",
         "heading": "Why Choose *Capital Investment LLC* For Commercial Real Estate Consulting?",
         "text": [
@@ -2787,7 +2775,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k6k",
+            "_key": "k6j",
             "_type": "item",
             "title": "Proven Track Record of Success",
             "text": [
@@ -2795,7 +2783,7 @@
             ]
           },
           {
-            "_key": "k6l",
+            "_key": "k6k",
             "_type": "item",
             "title": "Client-Centered Approach",
             "text": [
@@ -2803,7 +2791,7 @@
             ]
           },
           {
-            "_key": "k6m",
+            "_key": "k6l",
             "_type": "item",
             "title": "Data-Driven Decisions and Analysis",
             "text": [
@@ -2811,7 +2799,7 @@
             ]
           },
           {
-            "_key": "k6n",
+            "_key": "k6m",
             "_type": "item",
             "title": "End-to-End Support",
             "text": [
@@ -2822,7 +2810,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k6p",
+        "_key": "k6o",
         "_type": "cta",
         "heading": "Let’s Build Your Path to Real Estate Success",
         "text": [
@@ -2850,7 +2838,7 @@
     "order": 8,
     "sections": [
       {
-        "_key": "k6q",
+        "_key": "k6p",
         "_type": "hero",
         "heading": "Capital Investment LLC Service Area",
         "image": {
@@ -2865,7 +2853,7 @@
         "position": "top"
       },
       {
-        "_key": "k6r",
+        "_key": "k6q",
         "_type": "officeCards",
         "eyebrow": "Explore Our Service Areas",
         "heading": "Serving You Where You Need Us Most",
@@ -2877,7 +2865,7 @@
         ]
       },
       {
-        "_key": "k6s",
+        "_key": "k6r",
         "_type": "intro",
         "heading": "Strategically Located to Serve You Better",
         "text": [
@@ -2898,12 +2886,12 @@
         "hFont": "serif"
       },
       {
-        "_key": "k7n",
+        "_key": "k7m",
         "_type": "marketSlider",
         "heading": "Our *Key Commercial Real Estate Markets*",
         "markets": [
           {
-            "_key": "k6y",
+            "_key": "k6x",
             "_type": "market",
             "title": "Miami and South FL",
             "subtitle": "A Hub of Commercial Real Estate Opportunities",
@@ -2913,28 +2901,28 @@
             "citiesHeading": "Florida Cities We Serve",
             "cities": [
               {
-                "_key": "k6t",
+                "_key": "k6s",
                 "_type": "link",
                 "label": "Miami",
                 "href": "/locations/miami-florida/"
               },
               {
-                "_key": "k6u",
+                "_key": "k6t",
                 "_type": "link",
                 "label": "Fort Lauderdale"
               },
               {
-                "_key": "k6v",
+                "_key": "k6u",
                 "_type": "link",
                 "label": "West Palm Beach"
               },
               {
-                "_key": "k6w",
+                "_key": "k6v",
                 "_type": "link",
                 "label": "Hollywood"
               },
               {
-                "_key": "k6x",
+                "_key": "k6w",
                 "_type": "link",
                 "label": "Boca Raton"
               }
@@ -2948,7 +2936,7 @@
             }
           },
           {
-            "_key": "k74",
+            "_key": "k73",
             "_type": "market",
             "title": "Washington D.C. Metro Area",
             "subtitle": "Strategic Commercial Real Estate in the Nation's Capital",
@@ -2958,29 +2946,29 @@
             "citiesHeading": "DMV Cities We Serve",
             "cities": [
               {
-                "_key": "k6z",
+                "_key": "k6y",
                 "_type": "link",
                 "label": "Washington, D.C.",
                 "href": "/locations/washington-dc/"
               },
               {
-                "_key": "k70",
+                "_key": "k6z",
                 "_type": "link",
                 "label": "Bethesda, MD",
                 "href": "/locations/maryland/"
               },
               {
-                "_key": "k71",
+                "_key": "k70",
                 "_type": "link",
                 "label": "Silver Spring, MD"
               },
               {
-                "_key": "k72",
+                "_key": "k71",
                 "_type": "link",
                 "label": "Arlington, VA"
               },
               {
-                "_key": "k73",
+                "_key": "k72",
                 "_type": "link",
                 "label": "Alexandria, VA"
               }
@@ -2994,7 +2982,7 @@
             }
           },
           {
-            "_key": "k7d",
+            "_key": "k7c",
             "_type": "market",
             "title": "Virginia",
             "subtitle": "A Growing Hub for Commercial Investments",
@@ -3004,43 +2992,43 @@
             "citiesHeading": "Virginia Cities We Serve",
             "cities": [
               {
-                "_key": "k75",
+                "_key": "k74",
                 "_type": "link",
                 "label": "Fairfax",
                 "href": "/locations/fairfax-county/"
               },
               {
-                "_key": "k76",
+                "_key": "k75",
                 "_type": "link",
                 "label": "Tysons Corner"
               },
               {
-                "_key": "k77",
+                "_key": "k76",
                 "_type": "link",
                 "label": "Reston"
               },
               {
-                "_key": "k78",
+                "_key": "k77",
                 "_type": "link",
                 "label": "Richmond"
               },
               {
-                "_key": "k79",
+                "_key": "k78",
                 "_type": "link",
                 "label": "Norfolk"
               },
               {
-                "_key": "k7a",
+                "_key": "k79",
                 "_type": "link",
                 "label": "Arlington"
               },
               {
-                "_key": "k7b",
+                "_key": "k7a",
                 "_type": "link",
                 "label": "Alexandria"
               },
               {
-                "_key": "k7c",
+                "_key": "k7b",
                 "_type": "link",
                 "label": "Northern Virginia"
               }
@@ -3054,7 +3042,7 @@
             }
           },
           {
-            "_key": "k7m",
+            "_key": "k7l",
             "_type": "market",
             "title": "Maryland",
             "subtitle": "Commercial Properties for Every Business Need",
@@ -3064,43 +3052,43 @@
             "citiesHeading": "Cities We Serve",
             "cities": [
               {
-                "_key": "k7e",
+                "_key": "k7d",
                 "_type": "link",
                 "label": "Baltimore"
               },
               {
-                "_key": "k7f",
+                "_key": "k7e",
                 "_type": "link",
                 "label": "Rockville"
               },
               {
-                "_key": "k7g",
+                "_key": "k7f",
                 "_type": "link",
                 "label": "Annapolis"
               },
               {
-                "_key": "k7h",
+                "_key": "k7g",
                 "_type": "link",
                 "label": "Gaithersburg"
               },
               {
-                "_key": "k7i",
+                "_key": "k7h",
                 "_type": "link",
                 "label": "Columbia"
               },
               {
-                "_key": "k7j",
+                "_key": "k7i",
                 "_type": "link",
                 "label": "Chevy Chase"
               },
               {
-                "_key": "k7k",
+                "_key": "k7j",
                 "_type": "link",
                 "label": "Bethesda",
                 "href": "/locations/maryland/"
               },
               {
-                "_key": "k7l",
+                "_key": "k7k",
                 "_type": "link",
                 "label": "South Maryland"
               }
@@ -3116,7 +3104,7 @@
         ]
       },
       {
-        "_key": "k7r",
+        "_key": "k7q",
         "_type": "panel",
         "columns": 3,
         "heading": "Local Expertise & Personalized Service",
@@ -3132,7 +3120,7 @@
         },
         "items": [
           {
-            "_key": "k7o",
+            "_key": "k7n",
             "_type": "item",
             "title": "Local Expertise",
             "text": [
@@ -3140,7 +3128,7 @@
             ]
           },
           {
-            "_key": "k7p",
+            "_key": "k7o",
             "_type": "item",
             "title": "Personalized Service",
             "text": [
@@ -3148,7 +3136,7 @@
             ]
           },
           {
-            "_key": "k7q",
+            "_key": "k7p",
             "_type": "item",
             "title": "Comprehensive Support",
             "text": [
@@ -3159,12 +3147,12 @@
         "hFont": "serif"
       },
       {
-        "_key": "k7y",
+        "_key": "k7x",
         "_type": "faq",
         "heading": "Frequently Asked Questions",
         "items": [
           {
-            "_key": "k7s",
+            "_key": "k7r",
             "_type": "faqItem",
             "question": "What types of commercial properties do you specialize in?",
             "answer": [
@@ -3172,7 +3160,7 @@
             ]
           },
           {
-            "_key": "k7t",
+            "_key": "k7s",
             "_type": "faqItem",
             "question": "How can I determine the value of my commercial property?",
             "answer": [
@@ -3180,7 +3168,7 @@
             ]
           },
           {
-            "_key": "k7u",
+            "_key": "k7t",
             "_type": "faqItem",
             "question": "What areas do you serve?",
             "answer": [
@@ -3188,7 +3176,7 @@
             ]
           },
           {
-            "_key": "k7v",
+            "_key": "k7u",
             "_type": "faqItem",
             "question": "Do you provide property management services?",
             "answer": [
@@ -3196,7 +3184,7 @@
             ]
           },
           {
-            "_key": "k7w",
+            "_key": "k7v",
             "_type": "faqItem",
             "question": "How do you help clients find off-market opportunities?",
             "answer": [
@@ -3204,7 +3192,7 @@
             ]
           },
           {
-            "_key": "k7x",
+            "_key": "k7w",
             "_type": "faqItem",
             "question": "How can I get started with your services?",
             "answer": [
@@ -3215,7 +3203,7 @@
         "hFont": "serif"
       },
       {
-        "_key": "k7z",
+        "_key": "k7y",
         "_type": "cta",
         "heading": "Get Started With Capital Investment Today",
         "text": [
@@ -3243,7 +3231,7 @@
     "order": 9,
     "sections": [
       {
-        "_key": "k80",
+        "_key": "k7z",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Washington DC",
         "image": {
@@ -3258,7 +3246,7 @@
         "position": "top"
       },
       {
-        "_key": "k81",
+        "_key": "k80",
         "_type": "intro",
         "heading": "Unlock Opportunities in *Washington DC's Commercial Real Estate Market*",
         "text": [
@@ -3279,7 +3267,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k86",
+        "_key": "k85",
         "_type": "panel",
         "columns": 2,
         "heading": "Why Washington DC is a Prime CRE Market",
@@ -3295,7 +3283,7 @@
         },
         "items": [
           {
-            "_key": "k82",
+            "_key": "k81",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -3305,7 +3293,7 @@
             ]
           },
           {
-            "_key": "k83",
+            "_key": "k82",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -3315,7 +3303,7 @@
             ]
           },
           {
-            "_key": "k84",
+            "_key": "k83",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -3325,7 +3313,7 @@
             ]
           },
           {
-            "_key": "k85",
+            "_key": "k84",
             "_type": "item",
             "title": "Resilience and Stability",
             "text": [
@@ -3338,7 +3326,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8c",
+        "_key": "k8b",
         "_type": "slider",
         "variant": "check",
         "heading": "Our Comprehensive Commercial Real Estate Services in Washington DC",
@@ -3347,7 +3335,7 @@
         ],
         "items": [
           {
-            "_key": "k87",
+            "_key": "k86",
             "_type": "item",
             "title": "Acquisitions & Sales",
             "text": [
@@ -3357,7 +3345,7 @@
             ]
           },
           {
-            "_key": "k88",
+            "_key": "k87",
             "_type": "item",
             "title": "Landlord & Tenant Representation",
             "text": [
@@ -3367,7 +3355,7 @@
             ]
           },
           {
-            "_key": "k89",
+            "_key": "k88",
             "_type": "item",
             "title": "Property Management",
             "text": [
@@ -3377,7 +3365,7 @@
             ]
           },
           {
-            "_key": "k8a",
+            "_key": "k89",
             "_type": "item",
             "title": "Valuation and Consulting",
             "text": [
@@ -3387,7 +3375,7 @@
             ]
           },
           {
-            "_key": "k8b",
+            "_key": "k8a",
             "_type": "item",
             "title": "Development Services",
             "text": [
@@ -3400,7 +3388,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8h",
+        "_key": "k8g",
         "_type": "imageCards",
         "heading": "Expertise in *Washington DC's Commercial Real Estate Market*",
         "text": [
@@ -3416,7 +3404,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "k8d",
+            "_key": "k8c",
             "_type": "item",
             "title": "In-Depth Market Knowledge",
             "text": [
@@ -3425,7 +3413,7 @@
             ]
           },
           {
-            "_key": "k8e",
+            "_key": "k8d",
             "_type": "item",
             "title": "Diverse Property Expertise:",
             "text": [
@@ -3434,7 +3422,7 @@
             ]
           },
           {
-            "_key": "k8f",
+            "_key": "k8e",
             "_type": "item",
             "title": "Client-Centered Approach",
             "text": [
@@ -3443,7 +3431,7 @@
             ]
           },
           {
-            "_key": "k8g",
+            "_key": "k8f",
             "_type": "item",
             "title": "Proven Results",
             "text": [
@@ -3455,7 +3443,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8k",
+        "_key": "k8j",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Strategic Service Areas Beyond Washington DC",
@@ -3464,7 +3452,7 @@
         ],
         "items": [
           {
-            "_key": "k8i",
+            "_key": "k8h",
             "_type": "item",
             "title": "Northern Virginia",
             "text": [
@@ -3473,7 +3461,7 @@
             ]
           },
           {
-            "_key": "k8j",
+            "_key": "k8i",
             "_type": "item",
             "title": "Maryland",
             "text": [
@@ -3485,7 +3473,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8q",
+        "_key": "k8p",
         "_type": "splitAccordion",
         "heading": "Why *Capital Investment LLC* Stands Out",
         "text": [
@@ -3501,7 +3489,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k8l",
+            "_key": "k8k",
             "_type": "accordionItem",
             "title": "Local Expertise with a National Reach",
             "body": [
@@ -3510,7 +3498,7 @@
             ]
           },
           {
-            "_key": "k8m",
+            "_key": "k8l",
             "_type": "accordionItem",
             "title": "Tailored Solutions",
             "body": [
@@ -3519,7 +3507,7 @@
             ]
           },
           {
-            "_key": "k8n",
+            "_key": "k8m",
             "_type": "accordionItem",
             "title": "Proven Track Record",
             "body": [
@@ -3528,7 +3516,7 @@
             ]
           },
           {
-            "_key": "k8o",
+            "_key": "k8n",
             "_type": "accordionItem",
             "title": "Comprehensive Services",
             "body": [
@@ -3537,7 +3525,7 @@
             ]
           },
           {
-            "_key": "k8p",
+            "_key": "k8o",
             "_type": "accordionItem",
             "title": "Commitment to Excellence",
             "body": [
@@ -3550,7 +3538,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8r",
+        "_key": "k8q",
         "_type": "cta",
         "heading": "Your Next Real Estate Move Starts Here",
         "text": [
@@ -3563,7 +3551,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k8s",
+        "_key": "k8r",
         "_type": "article",
         "heading": "Where Are the Best Washington DC Investment Properties",
         "body": [
@@ -3602,7 +3590,7 @@
     "order": 10,
     "sections": [
       {
-        "_key": "k8t",
+        "_key": "k8s",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate\nServices in Miami, Florida",
         "image": {
@@ -3617,7 +3605,7 @@
         "position": "center"
       },
       {
-        "_key": "k8u",
+        "_key": "k8t",
         "_type": "intro",
         "heading": "Your Gateway to *Miami’s Thriving Commercial Real Estate Market*",
         "text": [
@@ -3638,7 +3626,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k91",
+        "_key": "k90",
         "_type": "panel",
         "columns": 3,
         "heading": "Our Comprehensive Commercial Real Estate Services",
@@ -3654,7 +3642,7 @@
         },
         "items": [
           {
-            "_key": "k8v",
+            "_key": "k8u",
             "_type": "item",
             "title": "Acquisitions and Sales",
             "text": [
@@ -3664,7 +3652,7 @@
             ]
           },
           {
-            "_key": "k8w",
+            "_key": "k8v",
             "_type": "item",
             "title": "Valuation and Consulting",
             "text": [
@@ -3674,7 +3662,7 @@
             ]
           },
           {
-            "_key": "k8x",
+            "_key": "k8w",
             "_type": "item",
             "title": "Property Management",
             "text": [
@@ -3684,7 +3672,7 @@
             ]
           },
           {
-            "_key": "k8y",
+            "_key": "k8x",
             "_type": "item",
             "title": "Leasing Services",
             "text": [
@@ -3694,7 +3682,7 @@
             ]
           },
           {
-            "_key": "k8z",
+            "_key": "k8y",
             "_type": "item",
             "title": "Landlord and Tenant Representation",
             "text": [
@@ -3704,7 +3692,7 @@
             ]
           },
           {
-            "_key": "k90",
+            "_key": "k8z",
             "_type": "item",
             "title": "Development Support",
             "text": [
@@ -3717,7 +3705,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k96",
+        "_key": "k95",
         "_type": "slider",
         "variant": "check",
         "heading": "Why Miami is a Prime Location for Commercial Real Estate",
@@ -3726,7 +3714,7 @@
         ],
         "items": [
           {
-            "_key": "k92",
+            "_key": "k91",
             "_type": "item",
             "title": "Economic Growth",
             "text": [
@@ -3735,7 +3723,7 @@
             ]
           },
           {
-            "_key": "k93",
+            "_key": "k92",
             "_type": "item",
             "title": "Strategic Location",
             "text": [
@@ -3744,7 +3732,7 @@
             ]
           },
           {
-            "_key": "k94",
+            "_key": "k93",
             "_type": "item",
             "title": "Diverse Opportunities",
             "text": [
@@ -3753,7 +3741,7 @@
             ]
           },
           {
-            "_key": "k95",
+            "_key": "k94",
             "_type": "item",
             "title": "Growing Population and Tourism",
             "text": [
@@ -3765,7 +3753,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k9a",
+        "_key": "k99",
         "_type": "imageCards",
         "heading": "Tailored Solutions for *Miami’s Unique Real Estate Market*",
         "text": [
@@ -3781,7 +3769,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "k97",
+            "_key": "k96",
             "_type": "item",
             "title": "Local Market Expertise",
             "text": [
@@ -3790,7 +3778,7 @@
             ]
           },
           {
-            "_key": "k98",
+            "_key": "k97",
             "_type": "item",
             "title": "Personalized Strategies",
             "text": [
@@ -3799,7 +3787,7 @@
             ]
           },
           {
-            "_key": "k99",
+            "_key": "k98",
             "_type": "item",
             "title": "Data-Driven Decisions",
             "text": [
@@ -3811,7 +3799,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k9e",
+        "_key": "k9d",
         "_type": "splitAccordion",
         "heading": "Why Partner With *Capital Investment* LLC",
         "text": [
@@ -3827,7 +3815,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k9b",
+            "_key": "k9a",
             "_type": "accordionItem",
             "title": "Deep Local Knowledge",
             "body": [
@@ -3836,7 +3824,7 @@
             ]
           },
           {
-            "_key": "k9c",
+            "_key": "k9b",
             "_type": "accordionItem",
             "title": "Full-Service Support",
             "body": [
@@ -3844,7 +3832,7 @@
             ]
           },
           {
-            "_key": "k9d",
+            "_key": "k9c",
             "_type": "accordionItem",
             "title": "Proven Results",
             "body": [
@@ -3856,7 +3844,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k9l",
+        "_key": "k9k",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Serving Miami’s Key Commercial Districts",
@@ -3865,7 +3853,7 @@
         ],
         "items": [
           {
-            "_key": "k9f",
+            "_key": "k9e",
             "_type": "item",
             "title": "Downtown Miami",
             "text": [
@@ -3873,7 +3861,7 @@
             ]
           },
           {
-            "_key": "k9g",
+            "_key": "k9f",
             "_type": "item",
             "title": "Brickell",
             "text": [
@@ -3881,7 +3869,7 @@
             ]
           },
           {
-            "_key": "k9h",
+            "_key": "k9g",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -3889,7 +3877,7 @@
             ]
           },
           {
-            "_key": "k9i",
+            "_key": "k9h",
             "_type": "item",
             "title": "Coral Gables",
             "text": [
@@ -3897,7 +3885,7 @@
             ]
           },
           {
-            "_key": "k9j",
+            "_key": "k9i",
             "_type": "item",
             "title": "Doral",
             "text": [
@@ -3905,7 +3893,7 @@
             ]
           },
           {
-            "_key": "k9k",
+            "_key": "k9j",
             "_type": "item",
             "title": "Miami Beach",
             "text": [
@@ -3916,7 +3904,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k9m",
+        "_key": "k9l",
         "_type": "cta",
         "heading": "Get in Touch With Our Miami Commercial Real Estate Experts",
         "text": [
@@ -3929,7 +3917,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "k9n",
+        "_key": "k9m",
         "_type": "article",
         "heading": "Why Invest in Miami: Tax Advantages and Key Benefits",
         "body": [
@@ -3961,7 +3949,7 @@
     "order": 11,
     "sections": [
       {
-        "_key": "k9o",
+        "_key": "k9n",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services\nin CBD Miami, FL",
         "image": {
@@ -3976,7 +3964,7 @@
         "position": "center"
       },
       {
-        "_key": "k9p",
+        "_key": "k9o",
         "_type": "intro",
         "heading": "Your Partner for Commercial Real Estate Services in CBD Miami, FL",
         "text": [
@@ -3998,7 +3986,7 @@
         "hAccent": true
       },
       {
-        "_key": "k9u",
+        "_key": "k9t",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why CBD Miami Is a Prime Market",
@@ -4007,7 +3995,7 @@
         ],
         "items": [
           {
-            "_key": "k9q",
+            "_key": "k9p",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -4015,7 +4003,7 @@
             ]
           },
           {
-            "_key": "k9r",
+            "_key": "k9q",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -4023,7 +4011,7 @@
             ]
           },
           {
-            "_key": "k9s",
+            "_key": "k9r",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -4031,7 +4019,7 @@
             ]
           },
           {
-            "_key": "k9t",
+            "_key": "k9s",
             "_type": "item",
             "title": "Resilience and Market Stability",
             "text": [
@@ -4043,7 +4031,7 @@
         "hAccent": true
       },
       {
-        "_key": "ka0",
+        "_key": "k9z",
         "_type": "splitAccordion",
         "heading": "Our Comprehensive CRE Services in CBD Miami",
         "text": [
@@ -4059,7 +4047,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "k9v",
+            "_key": "k9u",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -4071,7 +4059,7 @@
             ]
           },
           {
-            "_key": "k9w",
+            "_key": "k9v",
             "_type": "accordionItem",
             "title": "Development Services",
             "body": [
@@ -4082,7 +4070,7 @@
             ]
           },
           {
-            "_key": "k9x",
+            "_key": "k9w",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -4093,7 +4081,7 @@
             ]
           },
           {
-            "_key": "k9y",
+            "_key": "k9x",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -4104,7 +4092,7 @@
             ]
           },
           {
-            "_key": "k9z",
+            "_key": "k9y",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -4120,7 +4108,7 @@
         "hAccent": true
       },
       {
-        "_key": "ka5",
+        "_key": "ka4",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Our Expertise in CBD Miami & Beyond",
@@ -4129,7 +4117,7 @@
         ],
         "items": [
           {
-            "_key": "ka1",
+            "_key": "ka0",
             "_type": "item",
             "title": "Brickell",
             "text": [
@@ -4137,7 +4125,7 @@
             ]
           },
           {
-            "_key": "ka2",
+            "_key": "ka1",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -4145,7 +4133,7 @@
             ]
           },
           {
-            "_key": "ka3",
+            "_key": "ka2",
             "_type": "item",
             "title": "Edgewater",
             "text": [
@@ -4153,7 +4141,7 @@
             ]
           },
           {
-            "_key": "ka4",
+            "_key": "ka3",
             "_type": "item",
             "title": "Omni District",
             "text": [
@@ -4165,7 +4153,7 @@
         "hAccent": true
       },
       {
-        "_key": "kac",
+        "_key": "kab",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Capital Investment LLC Stands Out",
@@ -4179,7 +4167,7 @@
         },
         "items": [
           {
-            "_key": "ka6",
+            "_key": "ka5",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -4187,7 +4175,7 @@
             ]
           },
           {
-            "_key": "ka7",
+            "_key": "ka6",
             "_type": "item",
             "title": "Proven Track Record",
             "text": [
@@ -4195,7 +4183,7 @@
             ]
           },
           {
-            "_key": "ka8",
+            "_key": "ka7",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -4203,7 +4191,7 @@
             ]
           },
           {
-            "_key": "ka9",
+            "_key": "ka8",
             "_type": "item",
             "title": "Commitment to Excellence",
             "text": [
@@ -4211,7 +4199,7 @@
             ]
           },
           {
-            "_key": "kaa",
+            "_key": "ka9",
             "_type": "item",
             "title": "Client-Centered",
             "text": [
@@ -4219,7 +4207,7 @@
             ]
           },
           {
-            "_key": "kab",
+            "_key": "kaa",
             "_type": "item",
             "title": "Local Expertise with National Reach",
             "text": [
@@ -4231,7 +4219,7 @@
         "hAccent": true
       },
       {
-        "_key": "kad",
+        "_key": "kac",
         "_type": "cta",
         "heading": "Ready to Explore Commercial Real Estate Services\nin CBD Miami?",
         "text": [
@@ -4260,7 +4248,7 @@
     "order": 12,
     "sections": [
       {
-        "_key": "kae",
+        "_key": "kad",
         "_type": "hero",
         "heading": "Commercial Real Estate Services in Coral Gables",
         "image": {
@@ -4275,7 +4263,7 @@
         "position": "center"
       },
       {
-        "_key": "kaf",
+        "_key": "kae",
         "_type": "intro",
         "heading": "Strategic & Trusted Guidance in One of South Florida’s Most Distinguished Markets",
         "text": [
@@ -4297,7 +4285,7 @@
         "hAccent": true
       },
       {
-        "_key": "kal",
+        "_key": "kak",
         "_type": "splitAccordion",
         "heading": "Full-Service Commercial Real Estate Expertise",
         "text": [
@@ -4313,7 +4301,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kag",
+            "_key": "kaf",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -4325,7 +4313,7 @@
             ]
           },
           {
-            "_key": "kah",
+            "_key": "kag",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -4336,7 +4324,7 @@
             ]
           },
           {
-            "_key": "kai",
+            "_key": "kah",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -4347,7 +4335,7 @@
             ]
           },
           {
-            "_key": "kaj",
+            "_key": "kai",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -4358,7 +4346,7 @@
             ]
           },
           {
-            "_key": "kak",
+            "_key": "kaj",
             "_type": "accordionItem",
             "title": "Development & Project Management",
             "body": [
@@ -4374,7 +4362,7 @@
         "hAccent": true
       },
       {
-        "_key": "kao",
+        "_key": "kan",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Coral Gables Market Expertise",
@@ -4383,7 +4371,7 @@
         ],
         "items": [
           {
-            "_key": "kam",
+            "_key": "kal",
             "_type": "item",
             "title": "Prime Commercial Districts",
             "text": [
@@ -4394,7 +4382,7 @@
             ]
           },
           {
-            "_key": "kan",
+            "_key": "kam",
             "_type": "item",
             "title": "Market Snapshot",
             "text": [
@@ -4409,7 +4397,7 @@
         "hAccent": true
       },
       {
-        "_key": "kas",
+        "_key": "kar",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Zoning, Planning, and Historic Requirements",
@@ -4419,7 +4407,7 @@
         ],
         "items": [
           {
-            "_key": "kap",
+            "_key": "kao",
             "_type": "item",
             "title": "Historic Preservation",
             "text": [
@@ -4427,7 +4415,7 @@
             ]
           },
           {
-            "_key": "kaq",
+            "_key": "kap",
             "_type": "item",
             "title": "Zoning Compliance",
             "text": [
@@ -4435,7 +4423,7 @@
             ]
           },
           {
-            "_key": "kar",
+            "_key": "kaq",
             "_type": "item",
             "title": "Planning Review",
             "text": [
@@ -4447,7 +4435,7 @@
         "hAccent": true
       },
       {
-        "_key": "kax",
+        "_key": "kaw",
         "_type": "panel",
         "columns": 4,
         "heading": "Why Partner With Capital Investment LLC",
@@ -4463,7 +4451,7 @@
         },
         "items": [
           {
-            "_key": "kat",
+            "_key": "kas",
             "_type": "item",
             "title": "Local Expertise You Can Count On",
             "text": [
@@ -4472,7 +4460,7 @@
             ]
           },
           {
-            "_key": "kau",
+            "_key": "kat",
             "_type": "item",
             "title": "End-to-End Service Delivery",
             "text": [
@@ -4481,7 +4469,7 @@
             ]
           },
           {
-            "_key": "kav",
+            "_key": "kau",
             "_type": "item",
             "title": "Proven Results",
             "text": [
@@ -4490,7 +4478,7 @@
             ]
           },
           {
-            "_key": "kaw",
+            "_key": "kav",
             "_type": "item",
             "title": "Tailored, Transparent Partnerships",
             "text": [
@@ -4503,7 +4491,7 @@
         "hAccent": true
       },
       {
-        "_key": "kay",
+        "_key": "kax",
         "_type": "cta",
         "heading": "Start Your Coral Gables Investment Journey With Us",
         "text": [
@@ -4532,7 +4520,7 @@
     "order": 13,
     "sections": [
       {
-        "_key": "kaz",
+        "_key": "kay",
         "_type": "hero",
         "heading": "Commercial Real Estate\nServices in Downtown Miami",
         "image": {
@@ -4547,7 +4535,7 @@
         "position": "bottom"
       },
       {
-        "_key": "kb0",
+        "_key": "kaz",
         "_type": "intro",
         "heading": "Your Trusted Advisors in One of Miami’s Fastest-Growing Investment Zones",
         "text": [
@@ -4570,7 +4558,7 @@
         "hAccent": true
       },
       {
-        "_key": "kb6",
+        "_key": "kb5",
         "_type": "splitAccordion",
         "heading": "Full-Service Commercial Real Estate Expertise",
         "text": [
@@ -4586,7 +4574,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kb1",
+            "_key": "kb0",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -4598,7 +4586,7 @@
             ]
           },
           {
-            "_key": "kb2",
+            "_key": "kb1",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -4609,7 +4597,7 @@
             ]
           },
           {
-            "_key": "kb3",
+            "_key": "kb2",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -4620,7 +4608,7 @@
             ]
           },
           {
-            "_key": "kb4",
+            "_key": "kb3",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -4631,7 +4619,7 @@
             ]
           },
           {
-            "_key": "kb5",
+            "_key": "kb4",
             "_type": "accordionItem",
             "title": "Development & Project Management",
             "body": [
@@ -4647,7 +4635,7 @@
         "hAccent": true
       },
       {
-        "_key": "kb9",
+        "_key": "kb8",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why Downtown Miami?",
@@ -4656,7 +4644,7 @@
         ],
         "items": [
           {
-            "_key": "kb7",
+            "_key": "kb6",
             "_type": "item",
             "title": "Key Commercial Districts",
             "text": [
@@ -4668,7 +4656,7 @@
             ]
           },
           {
-            "_key": "kb8",
+            "_key": "kb7",
             "_type": "item",
             "title": "Market Snapshot",
             "text": [
@@ -4682,7 +4670,7 @@
         "hAccent": true
       },
       {
-        "_key": "kbd",
+        "_key": "kbc",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Zoning & Planning Considerations",
@@ -4692,7 +4680,7 @@
         ],
         "items": [
           {
-            "_key": "kba",
+            "_key": "kb9",
             "_type": "item",
             "title": "T6 Zones",
             "text": [
@@ -4700,7 +4688,7 @@
             ]
           },
           {
-            "_key": "kbb",
+            "_key": "kba",
             "_type": "item",
             "title": "FAR Restrictions",
             "text": [
@@ -4708,7 +4696,7 @@
             ]
           },
           {
-            "_key": "kbc",
+            "_key": "kbb",
             "_type": "item",
             "title": "City Coordination",
             "text": [
@@ -4720,7 +4708,7 @@
         "hAccent": true
       },
       {
-        "_key": "kbh",
+        "_key": "kbg",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Choose Capital Investment LLC?",
@@ -4734,7 +4722,7 @@
         },
         "items": [
           {
-            "_key": "kbe",
+            "_key": "kbd",
             "_type": "item",
             "title": "Local Expertise with Global Reach",
             "text": [
@@ -4743,7 +4731,7 @@
             ]
           },
           {
-            "_key": "kbf",
+            "_key": "kbe",
             "_type": "item",
             "title": "Complete Service Offering",
             "text": [
@@ -4752,7 +4740,7 @@
             ]
           },
           {
-            "_key": "kbg",
+            "_key": "kbf",
             "_type": "item",
             "title": "Results You Can See",
             "text": [
@@ -4765,7 +4753,7 @@
         "hAccent": true
       },
       {
-        "_key": "kbi",
+        "_key": "kbh",
         "_type": "cta",
         "heading": "Start Your Downtown Miami Investment Journey With Us",
         "text": [
@@ -4794,7 +4782,7 @@
     "order": 14,
     "sections": [
       {
-        "_key": "kbj",
+        "_key": "kbi",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services\nin Government Center Miami, FL",
         "image": {
@@ -4809,7 +4797,7 @@
         "position": "bottom"
       },
       {
-        "_key": "kbk",
+        "_key": "kbj",
         "_type": "intro",
         "heading": "Your Partner for Commercial Real Estate Services in Government Center Miami, FL",
         "text": [
@@ -4831,7 +4819,7 @@
         "hAccent": true
       },
       {
-        "_key": "kbp",
+        "_key": "kbo",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why Government Center Miami Is a Prime Market",
@@ -4840,7 +4828,7 @@
         ],
         "items": [
           {
-            "_key": "kbl",
+            "_key": "kbk",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -4848,7 +4836,7 @@
             ]
           },
           {
-            "_key": "kbm",
+            "_key": "kbl",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -4856,7 +4844,7 @@
             ]
           },
           {
-            "_key": "kbn",
+            "_key": "kbm",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -4864,7 +4852,7 @@
             ]
           },
           {
-            "_key": "kbo",
+            "_key": "kbn",
             "_type": "item",
             "title": "Resilience and Market Stability",
             "text": [
@@ -4876,7 +4864,7 @@
         "hAccent": true
       },
       {
-        "_key": "kbv",
+        "_key": "kbu",
         "_type": "splitAccordion",
         "heading": "Our Comprehensive CRE Services\nin Government Center Miami",
         "text": [
@@ -4892,7 +4880,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kbq",
+            "_key": "kbp",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -4904,7 +4892,7 @@
             ]
           },
           {
-            "_key": "kbr",
+            "_key": "kbq",
             "_type": "accordionItem",
             "title": "Development Services",
             "body": [
@@ -4915,7 +4903,7 @@
             ]
           },
           {
-            "_key": "kbs",
+            "_key": "kbr",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -4926,7 +4914,7 @@
             ]
           },
           {
-            "_key": "kbt",
+            "_key": "kbs",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -4937,7 +4925,7 @@
             ]
           },
           {
-            "_key": "kbu",
+            "_key": "kbt",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -4953,7 +4941,7 @@
         "hAccent": true
       },
       {
-        "_key": "kc0",
+        "_key": "kbz",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Our Expertise in Government Center\n& Greater Miami",
@@ -4962,7 +4950,7 @@
         ],
         "items": [
           {
-            "_key": "kbw",
+            "_key": "kbv",
             "_type": "item",
             "title": "Brickell",
             "text": [
@@ -4970,7 +4958,7 @@
             ]
           },
           {
-            "_key": "kbx",
+            "_key": "kbw",
             "_type": "item",
             "title": "[Downtown Miami](/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/)",
             "text": [
@@ -4979,7 +4967,7 @@
             "href": "/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/"
           },
           {
-            "_key": "kby",
+            "_key": "kbx",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -4987,7 +4975,7 @@
             ]
           },
           {
-            "_key": "kbz",
+            "_key": "kby",
             "_type": "item",
             "title": "Civic Center",
             "text": [
@@ -4999,7 +4987,7 @@
         "hAccent": true
       },
       {
-        "_key": "kc7",
+        "_key": "kc6",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Capital Investment LLC Stands Out",
@@ -5013,7 +5001,7 @@
         },
         "items": [
           {
-            "_key": "kc1",
+            "_key": "kc0",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -5021,7 +5009,7 @@
             ]
           },
           {
-            "_key": "kc2",
+            "_key": "kc1",
             "_type": "item",
             "title": "Proven Track Record",
             "text": [
@@ -5029,7 +5017,7 @@
             ]
           },
           {
-            "_key": "kc3",
+            "_key": "kc2",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -5037,7 +5025,7 @@
             ]
           },
           {
-            "_key": "kc4",
+            "_key": "kc3",
             "_type": "item",
             "title": "Commitment to Excellence",
             "text": [
@@ -5045,7 +5033,7 @@
             ]
           },
           {
-            "_key": "kc5",
+            "_key": "kc4",
             "_type": "item",
             "title": "Client-Centered",
             "text": [
@@ -5053,7 +5041,7 @@
             ]
           },
           {
-            "_key": "kc6",
+            "_key": "kc5",
             "_type": "item",
             "title": "Local Expertise with National Reach",
             "text": [
@@ -5065,7 +5053,7 @@
         "hAccent": true
       },
       {
-        "_key": "kc8",
+        "_key": "kc7",
         "_type": "cta",
         "heading": "Ready to Explore Commercial Real Estate Services\nin Government Center Miami?",
         "text": [
@@ -5094,7 +5082,7 @@
     "order": 15,
     "sections": [
       {
-        "_key": "kc9",
+        "_key": "kc8",
         "_type": "hero",
         "heading": "Commercial Real Estate Services\nin Historic District Miami",
         "image": {
@@ -5109,7 +5097,7 @@
         "position": "center"
       },
       {
-        "_key": "kca",
+        "_key": "kc9",
         "_type": "intro",
         "heading": "Your Partner for Commercial Real Estate Services in Historic District Miami, FL",
         "text": [
@@ -5131,7 +5119,7 @@
         "hAccent": true
       },
       {
-        "_key": "kcf",
+        "_key": "kce",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why the Historic District Miami Is a Prime Market",
@@ -5140,7 +5128,7 @@
         ],
         "items": [
           {
-            "_key": "kcb",
+            "_key": "kca",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -5148,7 +5136,7 @@
             ]
           },
           {
-            "_key": "kcc",
+            "_key": "kcb",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -5156,7 +5144,7 @@
             ]
           },
           {
-            "_key": "kcd",
+            "_key": "kcc",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -5164,7 +5152,7 @@
             ]
           },
           {
-            "_key": "kce",
+            "_key": "kcd",
             "_type": "item",
             "title": "Resilience and Market Stability",
             "text": [
@@ -5176,7 +5164,7 @@
         "hAccent": true
       },
       {
-        "_key": "kcl",
+        "_key": "kck",
         "_type": "splitAccordion",
         "heading": "Our Comprehensive CRE Services\nin the Historic District Miami",
         "text": [
@@ -5192,7 +5180,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kcg",
+            "_key": "kcf",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -5204,7 +5192,7 @@
             ]
           },
           {
-            "_key": "kch",
+            "_key": "kcg",
             "_type": "accordionItem",
             "title": "Development Services",
             "body": [
@@ -5215,7 +5203,7 @@
             ]
           },
           {
-            "_key": "kci",
+            "_key": "kch",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -5226,7 +5214,7 @@
             ]
           },
           {
-            "_key": "kcj",
+            "_key": "kci",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -5237,7 +5225,7 @@
             ]
           },
           {
-            "_key": "kck",
+            "_key": "kcj",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -5253,7 +5241,7 @@
         "hAccent": true
       },
       {
-        "_key": "kcq",
+        "_key": "kcp",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Our Expertise in the Historic District\n& Surrounding Areas",
@@ -5263,7 +5251,7 @@
         ],
         "items": [
           {
-            "_key": "kcm",
+            "_key": "kcl",
             "_type": "item",
             "title": "[Downtown Miami](/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/)",
             "text": [
@@ -5272,7 +5260,7 @@
             "href": "/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/"
           },
           {
-            "_key": "kcn",
+            "_key": "kcm",
             "_type": "item",
             "title": "South Beach",
             "text": [
@@ -5280,7 +5268,7 @@
             ]
           },
           {
-            "_key": "kco",
+            "_key": "kcn",
             "_type": "item",
             "title": "Brickell",
             "text": [
@@ -5288,7 +5276,7 @@
             ]
           },
           {
-            "_key": "kcp",
+            "_key": "kco",
             "_type": "item",
             "title": "Overtown",
             "text": [
@@ -5300,7 +5288,7 @@
         "hAccent": true
       },
       {
-        "_key": "kcx",
+        "_key": "kcw",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Capital Investment LLC Stands Out",
@@ -5314,7 +5302,7 @@
         },
         "items": [
           {
-            "_key": "kcr",
+            "_key": "kcq",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -5322,7 +5310,7 @@
             ]
           },
           {
-            "_key": "kcs",
+            "_key": "kcr",
             "_type": "item",
             "title": "Proven Track Record",
             "text": [
@@ -5330,7 +5318,7 @@
             ]
           },
           {
-            "_key": "kct",
+            "_key": "kcs",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -5338,7 +5326,7 @@
             ]
           },
           {
-            "_key": "kcu",
+            "_key": "kct",
             "_type": "item",
             "title": "Commitment to Excellence",
             "text": [
@@ -5346,7 +5334,7 @@
             ]
           },
           {
-            "_key": "kcv",
+            "_key": "kcu",
             "_type": "item",
             "title": "Client-Centered",
             "text": [
@@ -5354,7 +5342,7 @@
             ]
           },
           {
-            "_key": "kcw",
+            "_key": "kcv",
             "_type": "item",
             "title": "Local Expertise with National Reach",
             "text": [
@@ -5366,7 +5354,7 @@
         "hAccent": true
       },
       {
-        "_key": "kcy",
+        "_key": "kcx",
         "_type": "cta",
         "heading": "Ready to Explore Commercial Real Estate Services\nin the Historic District Miami?",
         "text": [
@@ -5395,7 +5383,7 @@
     "order": 16,
     "sections": [
       {
-        "_key": "kcz",
+        "_key": "kcy",
         "_type": "hero",
         "heading": "Commercial Real Estate Services\nin Miami Arts and Entertainment District",
         "image": {
@@ -5410,7 +5398,7 @@
         "position": "center"
       },
       {
-        "_key": "kd0",
+        "_key": "kcz",
         "_type": "intro",
         "heading": "Your Partner for Commercial Real Estate Services in Miami Arts and Entertainment District",
         "text": [
@@ -5432,7 +5420,7 @@
         "hAccent": true
       },
       {
-        "_key": "kd5",
+        "_key": "kd4",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why the Miami Arts and Entertainment District\nIs a Prime Market",
@@ -5441,7 +5429,7 @@
         ],
         "items": [
           {
-            "_key": "kd1",
+            "_key": "kd0",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -5449,7 +5437,7 @@
             ]
           },
           {
-            "_key": "kd2",
+            "_key": "kd1",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -5457,7 +5445,7 @@
             ]
           },
           {
-            "_key": "kd3",
+            "_key": "kd2",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -5465,7 +5453,7 @@
             ]
           },
           {
-            "_key": "kd4",
+            "_key": "kd3",
             "_type": "item",
             "title": "Resilience and Market Stability",
             "text": [
@@ -5477,7 +5465,7 @@
         "hAccent": true
       },
       {
-        "_key": "kdb",
+        "_key": "kda",
         "_type": "splitAccordion",
         "heading": "Our Comprehensive CRE Services in the\nMiami Arts and Entertainment District",
         "text": [
@@ -5493,7 +5481,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kd6",
+            "_key": "kd5",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -5505,7 +5493,7 @@
             ]
           },
           {
-            "_key": "kd7",
+            "_key": "kd6",
             "_type": "accordionItem",
             "title": "Development Services",
             "body": [
@@ -5516,7 +5504,7 @@
             ]
           },
           {
-            "_key": "kd8",
+            "_key": "kd7",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -5527,7 +5515,7 @@
             ]
           },
           {
-            "_key": "kd9",
+            "_key": "kd8",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -5538,7 +5526,7 @@
             ]
           },
           {
-            "_key": "kda",
+            "_key": "kd9",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -5554,7 +5542,7 @@
         "hAccent": true
       },
       {
-        "_key": "kdg",
+        "_key": "kdf",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Our Expertise in the\nArts & Entertainment District and Beyond",
@@ -5564,7 +5552,7 @@
         ],
         "items": [
           {
-            "_key": "kdc",
+            "_key": "kdb",
             "_type": "item",
             "title": "Edgewater",
             "text": [
@@ -5572,7 +5560,7 @@
             ]
           },
           {
-            "_key": "kdd",
+            "_key": "kdc",
             "_type": "item",
             "title": "[Downtown Miami](/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/)",
             "text": [
@@ -5581,7 +5569,7 @@
             "href": "/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/"
           },
           {
-            "_key": "kde",
+            "_key": "kdd",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -5589,7 +5577,7 @@
             ]
           },
           {
-            "_key": "kdf",
+            "_key": "kde",
             "_type": "item",
             "title": "Omni District",
             "text": [
@@ -5601,7 +5589,7 @@
         "hAccent": true
       },
       {
-        "_key": "kdn",
+        "_key": "kdm",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Capital Investment LLC Stands Out",
@@ -5615,7 +5603,7 @@
         },
         "items": [
           {
-            "_key": "kdh",
+            "_key": "kdg",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -5623,7 +5611,7 @@
             ]
           },
           {
-            "_key": "kdi",
+            "_key": "kdh",
             "_type": "item",
             "title": "Proven Track Record",
             "text": [
@@ -5631,7 +5619,7 @@
             ]
           },
           {
-            "_key": "kdj",
+            "_key": "kdi",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -5639,7 +5627,7 @@
             ]
           },
           {
-            "_key": "kdk",
+            "_key": "kdj",
             "_type": "item",
             "title": "Commitment to Excellence",
             "text": [
@@ -5647,7 +5635,7 @@
             ]
           },
           {
-            "_key": "kdl",
+            "_key": "kdk",
             "_type": "item",
             "title": "Client-Centered",
             "text": [
@@ -5655,7 +5643,7 @@
             ]
           },
           {
-            "_key": "kdm",
+            "_key": "kdl",
             "_type": "item",
             "title": "Local Expertise with National Reach",
             "text": [
@@ -5667,7 +5655,7 @@
         "hAccent": true
       },
       {
-        "_key": "kdo",
+        "_key": "kdn",
         "_type": "cta",
         "heading": "Ready to Explore Commercial Real Estate Services\nin the Miami Arts and Entertainment District?",
         "text": [
@@ -5696,7 +5684,7 @@
     "order": 17,
     "sections": [
       {
-        "_key": "kdp",
+        "_key": "kdo",
         "_type": "hero",
         "heading": "Commercial Real Estate\nServices in Park West Miami",
         "image": {
@@ -5711,7 +5699,7 @@
         "position": "center"
       },
       {
-        "_key": "kdq",
+        "_key": "kdp",
         "_type": "intro",
         "heading": "Your Partner for Commercial Real Estate Services in Park West Miami, FL",
         "text": [
@@ -5733,7 +5721,7 @@
         "hAccent": true
       },
       {
-        "_key": "kdv",
+        "_key": "kdu",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Why Park West Miami Is a Prime Market",
@@ -5742,7 +5730,7 @@
         ],
         "items": [
           {
-            "_key": "kdr",
+            "_key": "kdq",
             "_type": "item",
             "title": "Strong Demand Across Property Types",
             "text": [
@@ -5750,7 +5738,7 @@
             ]
           },
           {
-            "_key": "kds",
+            "_key": "kdr",
             "_type": "item",
             "title": "Prime Location Advantages",
             "text": [
@@ -5758,7 +5746,7 @@
             ]
           },
           {
-            "_key": "kdt",
+            "_key": "kds",
             "_type": "item",
             "title": "Dynamic Business Environment",
             "text": [
@@ -5766,7 +5754,7 @@
             ]
           },
           {
-            "_key": "kdu",
+            "_key": "kdt",
             "_type": "item",
             "title": "Resilience and Market Stability",
             "text": [
@@ -5778,7 +5766,7 @@
         "hAccent": true
       },
       {
-        "_key": "ke1",
+        "_key": "ke0",
         "_type": "splitAccordion",
         "heading": "Our Comprehensive CRE\nServices in Park West Miami",
         "text": [
@@ -5794,7 +5782,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kdw",
+            "_key": "kdv",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -5806,7 +5794,7 @@
             ]
           },
           {
-            "_key": "kdx",
+            "_key": "kdw",
             "_type": "accordionItem",
             "title": "Development Services",
             "body": [
@@ -5817,7 +5805,7 @@
             ]
           },
           {
-            "_key": "kdy",
+            "_key": "kdx",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -5828,7 +5816,7 @@
             ]
           },
           {
-            "_key": "kdz",
+            "_key": "kdy",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -5839,7 +5827,7 @@
             ]
           },
           {
-            "_key": "ke0",
+            "_key": "kdz",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -5855,7 +5843,7 @@
         "hAccent": true
       },
       {
-        "_key": "ke6",
+        "_key": "ke5",
         "_type": "cardGrid",
         "columns": 2,
         "heading": "Our Expertise in Park West & Beyond",
@@ -5864,7 +5852,7 @@
         ],
         "items": [
           {
-            "_key": "ke2",
+            "_key": "ke1",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -5872,7 +5860,7 @@
             ]
           },
           {
-            "_key": "ke3",
+            "_key": "ke2",
             "_type": "item",
             "title": "Edgewater",
             "text": [
@@ -5880,7 +5868,7 @@
             ]
           },
           {
-            "_key": "ke4",
+            "_key": "ke3",
             "_type": "item",
             "title": "Omni District",
             "text": [
@@ -5888,7 +5876,7 @@
             ]
           },
           {
-            "_key": "ke5",
+            "_key": "ke4",
             "_type": "item",
             "title": "[Downtown Miami](/locations/miami-florida/commercial-real-estate-services-in-downtown-miami/)",
             "text": [
@@ -5901,7 +5889,7 @@
         "hAccent": true
       },
       {
-        "_key": "ked",
+        "_key": "kec",
         "_type": "panel",
         "columns": 3,
         "heading": "Why Capital Investment LLC Stands Out",
@@ -5915,7 +5903,7 @@
         },
         "items": [
           {
-            "_key": "ke7",
+            "_key": "ke6",
             "_type": "item",
             "title": "Tailored Solutions",
             "text": [
@@ -5923,7 +5911,7 @@
             ]
           },
           {
-            "_key": "ke8",
+            "_key": "ke7",
             "_type": "item",
             "title": "Proven Track Record",
             "text": [
@@ -5931,7 +5919,7 @@
             ]
           },
           {
-            "_key": "ke9",
+            "_key": "ke8",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -5939,7 +5927,7 @@
             ]
           },
           {
-            "_key": "kea",
+            "_key": "ke9",
             "_type": "item",
             "title": "Commitment to Excellence",
             "text": [
@@ -5947,7 +5935,7 @@
             ]
           },
           {
-            "_key": "keb",
+            "_key": "kea",
             "_type": "item",
             "title": "Client-Centered",
             "text": [
@@ -5955,7 +5943,7 @@
             ]
           },
           {
-            "_key": "kec",
+            "_key": "keb",
             "_type": "item",
             "title": "Local Expertise with National Reach",
             "text": [
@@ -5967,7 +5955,7 @@
         "hAccent": true
       },
       {
-        "_key": "kee",
+        "_key": "ked",
         "_type": "cta",
         "heading": "Ready to Explore Commercial Real\nEstate Services in Park West Miami?",
         "text": [
@@ -5996,7 +5984,7 @@
     "order": 18,
     "sections": [
       {
-        "_key": "kef",
+        "_key": "kee",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Virginia",
         "image": {
@@ -6011,7 +5999,7 @@
         "position": "top"
       },
       {
-        "_key": "keg",
+        "_key": "kef",
         "_type": "intro",
         "heading": "Your Trusted Advisors in *Virginia’s Thriving Real Estate Market*",
         "text": [
@@ -6032,7 +6020,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kel",
+        "_key": "kek",
         "_type": "panel",
         "columns": 4,
         "heading": "Why Virginia is a Prime Destination for Commercial Real Estate Investment",
@@ -6048,7 +6036,7 @@
         },
         "items": [
           {
-            "_key": "keh",
+            "_key": "keg",
             "_type": "item",
             "title": "Proximity to Washington DC",
             "text": [
@@ -6056,7 +6044,7 @@
             ]
           },
           {
-            "_key": "kei",
+            "_key": "keh",
             "_type": "item",
             "title": "Economic Growth",
             "text": [
@@ -6064,7 +6052,7 @@
             ]
           },
           {
-            "_key": "kej",
+            "_key": "kei",
             "_type": "item",
             "title": "Infrastructure and Connectivity",
             "text": [
@@ -6072,7 +6060,7 @@
             ]
           },
           {
-            "_key": "kek",
+            "_key": "kej",
             "_type": "item",
             "title": "Business-Friendly Environment",
             "text": [
@@ -6083,7 +6071,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kes",
+        "_key": "ker",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Dynamic Opportunities in Virginia’s Commercial Real Estate Market",
@@ -6092,7 +6080,7 @@
         ],
         "items": [
           {
-            "_key": "kem",
+            "_key": "kel",
             "_type": "item",
             "title": "Arlington",
             "text": [
@@ -6100,7 +6088,7 @@
             ]
           },
           {
-            "_key": "ken",
+            "_key": "kem",
             "_type": "item",
             "title": "Fairfax",
             "text": [
@@ -6108,7 +6096,7 @@
             ]
           },
           {
-            "_key": "keo",
+            "_key": "ken",
             "_type": "item",
             "title": "Richmond",
             "text": [
@@ -6116,7 +6104,7 @@
             ]
           },
           {
-            "_key": "kep",
+            "_key": "keo",
             "_type": "item",
             "title": "Virginia Beach and Norfolk",
             "text": [
@@ -6124,7 +6112,7 @@
             ]
           },
           {
-            "_key": "keq",
+            "_key": "kep",
             "_type": "item",
             "title": "Tysons",
             "text": [
@@ -6132,7 +6120,7 @@
             ]
           },
           {
-            "_key": "ker",
+            "_key": "keq",
             "_type": "item",
             "title": "Reston",
             "text": [
@@ -6143,7 +6131,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kez",
+        "_key": "key",
         "_type": "slider",
         "variant": "check",
         "heading": "Our Complete Commercial Real Estate Services in Virginia",
@@ -6152,7 +6140,7 @@
         ],
         "items": [
           {
-            "_key": "ket",
+            "_key": "kes",
             "_type": "item",
             "title": "Acquisitions & Sales",
             "text": [
@@ -6163,7 +6151,7 @@
             ]
           },
           {
-            "_key": "keu",
+            "_key": "ket",
             "_type": "item",
             "title": "Property Management",
             "text": [
@@ -6174,7 +6162,7 @@
             ]
           },
           {
-            "_key": "kev",
+            "_key": "keu",
             "_type": "item",
             "title": "Development Services",
             "text": [
@@ -6185,7 +6173,7 @@
             ]
           },
           {
-            "_key": "kew",
+            "_key": "kev",
             "_type": "item",
             "title": "Tenant & Landlord Representation",
             "text": [
@@ -6196,7 +6184,7 @@
             ]
           },
           {
-            "_key": "kex",
+            "_key": "kew",
             "_type": "item",
             "title": "Valuation & Consulting",
             "text": [
@@ -6207,7 +6195,7 @@
             ]
           },
           {
-            "_key": "key",
+            "_key": "kex",
             "_type": "item",
             "title": "Negotiation Services",
             "text": [
@@ -6221,7 +6209,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kf5",
+        "_key": "kf4",
         "_type": "splitAccordion",
         "heading": "Why Partner with *Capital Investment LLC?*",
         "text": [
@@ -6237,7 +6225,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kf0",
+            "_key": "kez",
             "_type": "accordionItem",
             "title": "Local Knowledge & Expertise",
             "body": [
@@ -6245,7 +6233,7 @@
             ]
           },
           {
-            "_key": "kf1",
+            "_key": "kf0",
             "_type": "accordionItem",
             "title": "Customized Strategies",
             "body": [
@@ -6253,7 +6241,7 @@
             ]
           },
           {
-            "_key": "kf2",
+            "_key": "kf1",
             "_type": "accordionItem",
             "title": "Comprehensive Services",
             "body": [
@@ -6261,7 +6249,7 @@
             ]
           },
           {
-            "_key": "kf3",
+            "_key": "kf2",
             "_type": "accordionItem",
             "title": "Proven Track Record",
             "body": [
@@ -6269,7 +6257,7 @@
             ]
           },
           {
-            "_key": "kf4",
+            "_key": "kf3",
             "_type": "accordionItem",
             "title": "Client-Centered Approach",
             "body": [
@@ -6281,7 +6269,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kf6",
+        "_key": "kf5",
         "_type": "cta",
         "heading": "Ready to Make Your Move in Virginia’s Real Estate Market?",
         "text": [
@@ -6294,7 +6282,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kf7",
+        "_key": "kf6",
         "_type": "article",
         "heading": "Best Cities for Real Estate Investments in Northern Virginia",
         "body": [
@@ -6325,7 +6313,7 @@
     "order": 19,
     "sections": [
       {
-        "_key": "kf8",
+        "_key": "kf7",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Maryland",
         "image": {
@@ -6340,7 +6328,7 @@
         "position": "top"
       },
       {
-        "_key": "kf9",
+        "_key": "kf8",
         "_type": "intro",
         "heading": "Welcome to *Your Trusted Partner in MD Commercial Real Estate*",
         "text": [
@@ -6361,7 +6349,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kff",
+        "_key": "kfe",
         "_type": "panel",
         "columns": 3,
         "heading": "Our Comprehensive Commercial Real Estate Services in Maryland",
@@ -6377,7 +6365,7 @@
         },
         "items": [
           {
-            "_key": "kfa",
+            "_key": "kf9",
             "_type": "item",
             "title": "Acquisitions & Sales",
             "text": [
@@ -6388,7 +6376,7 @@
             ]
           },
           {
-            "_key": "kfb",
+            "_key": "kfa",
             "_type": "item",
             "title": "Property Management",
             "text": [
@@ -6399,7 +6387,7 @@
             ]
           },
           {
-            "_key": "kfc",
+            "_key": "kfb",
             "_type": "item",
             "title": "Tenant & Landlord Representation",
             "text": [
@@ -6410,7 +6398,7 @@
             ]
           },
           {
-            "_key": "kfd",
+            "_key": "kfc",
             "_type": "item",
             "title": "Valuation & Consulting",
             "text": [
@@ -6421,7 +6409,7 @@
             ]
           },
           {
-            "_key": "kfe",
+            "_key": "kfd",
             "_type": "item",
             "title": "Development Services",
             "text": [
@@ -6435,7 +6423,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kfk",
+        "_key": "kfj",
         "_type": "slider",
         "variant": "check",
         "heading": "Why Maryland’s Commercial Real Estate Market is Thriving",
@@ -6444,7 +6432,7 @@
         ],
         "items": [
           {
-            "_key": "kfg",
+            "_key": "kff",
             "_type": "item",
             "title": "Strategic Location",
             "text": [
@@ -6452,7 +6440,7 @@
             ]
           },
           {
-            "_key": "kfh",
+            "_key": "kfg",
             "_type": "item",
             "title": "Thriving Industries",
             "text": [
@@ -6460,7 +6448,7 @@
             ]
           },
           {
-            "_key": "kfi",
+            "_key": "kfh",
             "_type": "item",
             "title": "Emerging Business Hubs",
             "text": [
@@ -6468,7 +6456,7 @@
             ]
           },
           {
-            "_key": "kfj",
+            "_key": "kfi",
             "_type": "item",
             "title": "Skilled Workforce",
             "text": [
@@ -6479,7 +6467,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kfp",
+        "_key": "kfo",
         "_type": "imageCards",
         "heading": "Tailored Solutions for *Maryland Businesses*",
         "text": [
@@ -6495,7 +6483,7 @@
         "imageSide": "left",
         "items": [
           {
-            "_key": "kfl",
+            "_key": "kfk",
             "_type": "item",
             "title": "For Investors",
             "text": [
@@ -6503,7 +6491,7 @@
             ]
           },
           {
-            "_key": "kfm",
+            "_key": "kfl",
             "_type": "item",
             "title": "For Business Owners",
             "text": [
@@ -6511,7 +6499,7 @@
             ]
           },
           {
-            "_key": "kfn",
+            "_key": "kfm",
             "_type": "item",
             "title": "For Landlords",
             "text": [
@@ -6519,7 +6507,7 @@
             ]
           },
           {
-            "_key": "kfo",
+            "_key": "kfn",
             "_type": "item",
             "title": "For Developers",
             "text": [
@@ -6530,7 +6518,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kft",
+        "_key": "kfs",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Our Expertise in Maryland’s Commercial Real Estate Market",
@@ -6539,7 +6527,7 @@
         ],
         "items": [
           {
-            "_key": "kfq",
+            "_key": "kfp",
             "_type": "item",
             "title": "Local Market Knowledge",
             "text": [
@@ -6547,7 +6535,7 @@
             ]
           },
           {
-            "_key": "kfr",
+            "_key": "kfq",
             "_type": "item",
             "title": "Proven Success",
             "text": [
@@ -6555,7 +6543,7 @@
             ]
           },
           {
-            "_key": "kfs",
+            "_key": "kfr",
             "_type": "item",
             "title": "Strategic Partnerships",
             "text": [
@@ -6566,7 +6554,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kfz",
+        "_key": "kfy",
         "_type": "splitAccordion",
         "heading": "Why Partner With *Capital Investment* LLC",
         "text": [
@@ -6582,7 +6570,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kfu",
+            "_key": "kft",
             "_type": "accordionItem",
             "title": "Local Market Expertise",
             "body": [
@@ -6590,7 +6578,7 @@
             ]
           },
           {
-            "_key": "kfv",
+            "_key": "kfu",
             "_type": "accordionItem",
             "title": "Full-Service Solutions",
             "body": [
@@ -6598,7 +6586,7 @@
             ]
           },
           {
-            "_key": "kfw",
+            "_key": "kfv",
             "_type": "accordionItem",
             "title": "Results-Driven Strategies",
             "body": [
@@ -6606,7 +6594,7 @@
             ]
           },
           {
-            "_key": "kfx",
+            "_key": "kfw",
             "_type": "accordionItem",
             "title": "Personalized Approach",
             "body": [
@@ -6614,7 +6602,7 @@
             ]
           },
           {
-            "_key": "kfy",
+            "_key": "kfx",
             "_type": "accordionItem",
             "title": "Proven Track Record",
             "body": [
@@ -6626,7 +6614,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kg5",
+        "_key": "kg4",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Key Areas We Serve in Maryland",
@@ -6635,7 +6623,7 @@
         ],
         "items": [
           {
-            "_key": "kg0",
+            "_key": "kfz",
             "_type": "item",
             "title": "Baltimore",
             "text": [
@@ -6643,7 +6631,7 @@
             ]
           },
           {
-            "_key": "kg1",
+            "_key": "kg0",
             "_type": "item",
             "title": "Rockville",
             "text": [
@@ -6651,7 +6639,7 @@
             ]
           },
           {
-            "_key": "kg2",
+            "_key": "kg1",
             "_type": "item",
             "title": "Annapolis",
             "text": [
@@ -6659,7 +6647,7 @@
             ]
           },
           {
-            "_key": "kg3",
+            "_key": "kg2",
             "_type": "item",
             "title": "Columbia",
             "text": [
@@ -6667,7 +6655,7 @@
             ]
           },
           {
-            "_key": "kg4",
+            "_key": "kg3",
             "_type": "item",
             "title": "Gaithersburg & Bethesda",
             "text": [
@@ -6678,7 +6666,7 @@
         "hFont": "sans"
       },
       {
-        "_key": "kg6",
+        "_key": "kg5",
         "_type": "cta",
         "heading": "Get in Touch With Maryland’s Leading CRE Experts Today!",
         "text": [
@@ -6706,7 +6694,7 @@
     "order": 20,
     "sections": [
       {
-        "_key": "kg7",
+        "_key": "kg6",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Brickell: Miami's Prime CRE Location",
         "image": {
@@ -6721,7 +6709,7 @@
         "position": "center"
       },
       {
-        "_key": "kg8",
+        "_key": "kg7",
         "_type": "intro",
         "heading": "Navigating Investment Real Estate in Brickell Miami",
         "text": [
@@ -6740,7 +6728,7 @@
         "hAccent": true
       },
       {
-        "_key": "kg9",
+        "_key": "kg8",
         "_type": "intro",
         "heading": "Why Should You Invest in Brickell Commercial Properties?",
         "text": [
@@ -6762,7 +6750,7 @@
         "hAccent": true
       },
       {
-        "_key": "kgf",
+        "_key": "kge",
         "_type": "slider",
         "variant": "process",
         "heading": "Brickell Real Estate Market Trends: Key Opportunities",
@@ -6771,7 +6759,7 @@
         ],
         "items": [
           {
-            "_key": "kga",
+            "_key": "kg9",
             "_type": "item",
             "title": "Brickell Office Buildings & High-Rise Towers",
             "text": [
@@ -6781,7 +6769,7 @@
             ]
           },
           {
-            "_key": "kgb",
+            "_key": "kga",
             "_type": "item",
             "title": "Brickell Retail Spaces & Shopping Centers",
             "text": [
@@ -6791,7 +6779,7 @@
             ]
           },
           {
-            "_key": "kgc",
+            "_key": "kgb",
             "_type": "item",
             "title": "Brickell Residential & Mixed-Use Developments",
             "text": [
@@ -6801,7 +6789,7 @@
             ]
           },
           {
-            "_key": "kgd",
+            "_key": "kgc",
             "_type": "item",
             "title": "Brickell Hospitality & Hotel Properties",
             "text": [
@@ -6811,7 +6799,7 @@
             ]
           },
           {
-            "_key": "kge",
+            "_key": "kgd",
             "_type": "item",
             "title": "Brickell Industrial & Warehouse Properties",
             "text": [
@@ -6825,7 +6813,7 @@
         "hAccent": true
       },
       {
-        "_key": "kgl",
+        "_key": "kgk",
         "_type": "slider",
         "variant": "process",
         "heading": "Our Comprehensive Commercial Real Estate Services in Brickell & Miami FL",
@@ -6834,7 +6822,7 @@
         ],
         "items": [
           {
-            "_key": "kgg",
+            "_key": "kgf",
             "_type": "item",
             "title": "Brickell Property Acquisition & Sales",
             "text": [
@@ -6845,7 +6833,7 @@
             ]
           },
           {
-            "_key": "kgh",
+            "_key": "kgg",
             "_type": "item",
             "title": "Brickell Leasing & Tenant Representation",
             "text": [
@@ -6855,7 +6843,7 @@
             ]
           },
           {
-            "_key": "kgi",
+            "_key": "kgh",
             "_type": "item",
             "title": "Brickell Commercial Property Management",
             "text": [
@@ -6866,7 +6854,7 @@
             ]
           },
           {
-            "_key": "kgj",
+            "_key": "kgi",
             "_type": "item",
             "title": "Brickell Property Valuation & Consultation",
             "text": [
@@ -6877,7 +6865,7 @@
             ]
           },
           {
-            "_key": "kgk",
+            "_key": "kgj",
             "_type": "item",
             "title": "Brickell Commercial Building Development & Project Management",
             "text": [
@@ -6893,7 +6881,7 @@
         "hAccent": true
       },
       {
-        "_key": "kgq",
+        "_key": "kgp",
         "_type": "cardGrid",
         "heading": "Our Comprehensive Commercial Real Estate Services in Brickell & Miami FL",
         "text": [
@@ -6901,7 +6889,7 @@
         ],
         "items": [
           {
-            "_key": "kgm",
+            "_key": "kgl",
             "_type": "item",
             "title": "Local Expertise",
             "text": [
@@ -6909,7 +6897,7 @@
             ]
           },
           {
-            "_key": "kgn",
+            "_key": "kgm",
             "_type": "item",
             "title": "Comprehensive Services",
             "text": [
@@ -6917,7 +6905,7 @@
             ]
           },
           {
-            "_key": "kgo",
+            "_key": "kgn",
             "_type": "item",
             "title": "Proven Success",
             "text": [
@@ -6925,7 +6913,7 @@
             ]
           },
           {
-            "_key": "kgp",
+            "_key": "kgo",
             "_type": "item",
             "title": "Strong Network",
             "text": [
@@ -6937,7 +6925,7 @@
         "hAccent": true
       },
       {
-        "_key": "kgr",
+        "_key": "kgq",
         "_type": "cta",
         "heading": "Your Next Commercial Real Estate Move in Brickell Starts With Our Expert Miami Realtors",
         "text": [
@@ -6965,7 +6953,7 @@
     "order": 21,
     "sections": [
       {
-        "_key": "kgs",
+        "_key": "kgr",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Fairfax County",
         "image": {
@@ -6980,7 +6968,7 @@
         "position": "center"
       },
       {
-        "_key": "kgt",
+        "_key": "kgs",
         "_type": "intro",
         "heading": "Navigating Investment Real Estate in Northern Virginia",
         "text": [
@@ -7002,7 +6990,7 @@
         "hAccent": true
       },
       {
-        "_key": "kh3",
+        "_key": "kh2",
         "_type": "slider",
         "variant": "check",
         "heading": "Why Invest in Commercial Real Estate in Fairfax County?",
@@ -7011,7 +6999,7 @@
         ],
         "items": [
           {
-            "_key": "kgu",
+            "_key": "kgt",
             "_type": "item",
             "title": "Strong Economic Drivers",
             "text": [
@@ -7019,7 +7007,7 @@
             ]
           },
           {
-            "_key": "kgv",
+            "_key": "kgu",
             "_type": "item",
             "title": "Diverse Property Opportunities",
             "text": [
@@ -7027,7 +7015,7 @@
             ]
           },
           {
-            "_key": "kgw",
+            "_key": "kgv",
             "_type": "item",
             "title": "Infrastructure Advantage",
             "text": [
@@ -7035,7 +7023,7 @@
             ]
           },
           {
-            "_key": "kgx",
+            "_key": "kgw",
             "_type": "item",
             "title": "Resilient Market Demand",
             "text": [
@@ -7043,7 +7031,7 @@
             ]
           },
           {
-            "_key": "kgy",
+            "_key": "kgx",
             "_type": "item",
             "title": "High Quality of Life",
             "text": [
@@ -7051,7 +7039,7 @@
             ]
           },
           {
-            "_key": "kgz",
+            "_key": "kgy",
             "_type": "item",
             "title": "Business-Friendly Environment:",
             "text": [
@@ -7059,7 +7047,7 @@
             ]
           },
           {
-            "_key": "kh0",
+            "_key": "kgz",
             "_type": "item",
             "title": "Skilled Talent Pool",
             "text": [
@@ -7067,7 +7055,7 @@
             ]
           },
           {
-            "_key": "kh1",
+            "_key": "kh0",
             "_type": "item",
             "title": "Transit-Oriented Development",
             "text": [
@@ -7075,7 +7063,7 @@
             ]
           },
           {
-            "_key": "kh2",
+            "_key": "kh1",
             "_type": "item",
             "title": "Legal & Regulatory Support",
             "text": [
@@ -7087,14 +7075,14 @@
         "hAccent": true
       },
       {
-        "_key": "kh9",
+        "_key": "kh8",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Fairfax Commercial Real Estate Market Opportunities",
         "text": [],
         "items": [
           {
-            "_key": "kh4",
+            "_key": "kh3",
             "_type": "item",
             "title": "Office Buildings & Executive Suites",
             "text": [
@@ -7102,7 +7090,7 @@
             ]
           },
           {
-            "_key": "kh5",
+            "_key": "kh4",
             "_type": "item",
             "title": "Retail Spaces & Shopping Centers",
             "text": [
@@ -7110,7 +7098,7 @@
             ]
           },
           {
-            "_key": "kh6",
+            "_key": "kh5",
             "_type": "item",
             "title": "Mixed-Use Developments",
             "text": [
@@ -7118,7 +7106,7 @@
             ]
           },
           {
-            "_key": "kh7",
+            "_key": "kh6",
             "_type": "item",
             "title": "Hospitality & Event Properties",
             "text": [
@@ -7126,7 +7114,7 @@
             ]
           },
           {
-            "_key": "kh8",
+            "_key": "kh7",
             "_type": "item",
             "title": "Industrial & Flex Properties",
             "text": [
@@ -7138,7 +7126,7 @@
         "hAccent": true
       },
       {
-        "_key": "khg",
+        "_key": "khf",
         "_type": "panel",
         "columns": 3,
         "heading": "Discover Fairfax County's Top Areas for Commercial Investment",
@@ -7154,7 +7142,7 @@
         },
         "items": [
           {
-            "_key": "kha",
+            "_key": "kh9",
             "_type": "item",
             "title": "Tysons",
             "text": [
@@ -7162,7 +7150,7 @@
             ]
           },
           {
-            "_key": "khb",
+            "_key": "kha",
             "_type": "item",
             "title": "Reston",
             "text": [
@@ -7170,7 +7158,7 @@
             ]
           },
           {
-            "_key": "khc",
+            "_key": "khb",
             "_type": "item",
             "title": "Merrifield / Mosaic District",
             "text": [
@@ -7178,7 +7166,7 @@
             ]
           },
           {
-            "_key": "khd",
+            "_key": "khc",
             "_type": "item",
             "title": "Springfield",
             "text": [
@@ -7186,7 +7174,7 @@
             ]
           },
           {
-            "_key": "khe",
+            "_key": "khd",
             "_type": "item",
             "title": "Fairfax City",
             "text": [
@@ -7194,7 +7182,7 @@
             ]
           },
           {
-            "_key": "khf",
+            "_key": "khe",
             "_type": "item",
             "title": "Herndon & Chantilly",
             "text": [
@@ -7206,7 +7194,7 @@
         "hAccent": true
       },
       {
-        "_key": "khm",
+        "_key": "khl",
         "_type": "splitAccordion",
         "heading": "Full-Service Commercial Real Estate Expertise in *Fairfax County*",
         "text": [
@@ -7222,7 +7210,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "khh",
+            "_key": "khg",
             "_type": "accordionItem",
             "title": "[Acquisition & Sales](/services/investment-sales-and-acquisition-services/)",
             "body": [
@@ -7230,7 +7218,7 @@
             ]
           },
           {
-            "_key": "khi",
+            "_key": "khh",
             "_type": "accordionItem",
             "title": "[Landlord & Tenant Representation](/services/landlord-and-tenant-representation/)",
             "body": [
@@ -7238,7 +7226,7 @@
             ]
           },
           {
-            "_key": "khj",
+            "_key": "khi",
             "_type": "accordionItem",
             "title": "[Property Management](/services/property-management/)",
             "body": [
@@ -7246,7 +7234,7 @@
             ]
           },
           {
-            "_key": "khk",
+            "_key": "khj",
             "_type": "accordionItem",
             "title": "[Valuation & Consulting](/services/valuation-consultation/)",
             "body": [
@@ -7254,7 +7242,7 @@
             ]
           },
           {
-            "_key": "khl",
+            "_key": "khk",
             "_type": "accordionItem",
             "title": "[Development & Project Management](/services/development-services-and-project-management/)",
             "body": [
@@ -7267,7 +7255,7 @@
         "hAccent": true
       },
       {
-        "_key": "khn",
+        "_key": "khm",
         "_type": "cta",
         "heading": "Ready to Explore Fairfax Commercial Real Estate?",
         "text": [
@@ -7296,7 +7284,7 @@
     "order": 22,
     "sections": [
       {
-        "_key": "kho",
+        "_key": "khn",
         "_type": "hero",
         "heading": "Expert Commercial Real Estate Services in Miami-Dade County",
         "image": {
@@ -7311,7 +7299,7 @@
         "position": "center"
       },
       {
-        "_key": "khp",
+        "_key": "kho",
         "_type": "intro",
         "heading": "Navigating Investment Real Estate in Miami-Dade",
         "text": [
@@ -7333,7 +7321,7 @@
         "hAccent": true
       },
       {
-        "_key": "ki0",
+        "_key": "khz",
         "_type": "slider",
         "variant": "check",
         "heading": "Why Invest in Miami-Dade County Commercial Properties?",
@@ -7342,7 +7330,7 @@
         ],
         "items": [
           {
-            "_key": "khq",
+            "_key": "khp",
             "_type": "item",
             "title": "Booming Economy",
             "text": [
@@ -7350,7 +7338,7 @@
             ]
           },
           {
-            "_key": "khr",
+            "_key": "khq",
             "_type": "item",
             "title": "Diverse Market Segments",
             "text": [
@@ -7358,7 +7346,7 @@
             ]
           },
           {
-            "_key": "khs",
+            "_key": "khr",
             "_type": "item",
             "title": "Infrastructure Growth:",
             "text": [
@@ -7366,7 +7354,7 @@
             ]
           },
           {
-            "_key": "kht",
+            "_key": "khs",
             "_type": "item",
             "title": "High ROI Potential",
             "text": [
@@ -7374,7 +7362,7 @@
             ]
           },
           {
-            "_key": "khu",
+            "_key": "kht",
             "_type": "item",
             "title": "International Business Hub",
             "text": [
@@ -7382,7 +7370,7 @@
             ]
           },
           {
-            "_key": "khv",
+            "_key": "khu",
             "_type": "item",
             "title": "Business-Friendly Environment",
             "text": [
@@ -7390,7 +7378,7 @@
             ]
           },
           {
-            "_key": "khw",
+            "_key": "khv",
             "_type": "item",
             "title": "Skilled Workforce Access",
             "text": [
@@ -7398,7 +7386,7 @@
             ]
           },
           {
-            "_key": "khx",
+            "_key": "khw",
             "_type": "item",
             "title": "Resilient Market Demand",
             "text": [
@@ -7406,7 +7394,7 @@
             ]
           },
           {
-            "_key": "khy",
+            "_key": "khx",
             "_type": "item",
             "title": "Transit-Oriented Developments",
             "text": [
@@ -7414,7 +7402,7 @@
             ]
           },
           {
-            "_key": "khz",
+            "_key": "khy",
             "_type": "item",
             "title": "Lifestyle Appeal",
             "text": [
@@ -7426,14 +7414,14 @@
         "hAccent": true
       },
       {
-        "_key": "ki6",
+        "_key": "ki5",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Miami-Dade Commercial Real Estate Market Opportunities",
         "text": [],
         "items": [
           {
-            "_key": "ki1",
+            "_key": "ki0",
             "_type": "item",
             "title": "Office Buildings & High-Rises",
             "text": [
@@ -7441,7 +7429,7 @@
             ]
           },
           {
-            "_key": "ki2",
+            "_key": "ki1",
             "_type": "item",
             "title": "Retail Properties & Storefronts",
             "text": [
@@ -7449,7 +7437,7 @@
             ]
           },
           {
-            "_key": "ki3",
+            "_key": "ki2",
             "_type": "item",
             "title": "Mixed-Use & Residential Developments",
             "text": [
@@ -7457,7 +7445,7 @@
             ]
           },
           {
-            "_key": "ki4",
+            "_key": "ki3",
             "_type": "item",
             "title": "Hospitality Properties",
             "text": [
@@ -7465,7 +7453,7 @@
             ]
           },
           {
-            "_key": "ki5",
+            "_key": "ki4",
             "_type": "item",
             "title": "Industrial & Logistics Spaces",
             "text": [
@@ -7477,7 +7465,7 @@
         "hAccent": true
       },
       {
-        "_key": "kig",
+        "_key": "kif",
         "_type": "panel",
         "columns": 3,
         "heading": "Discover Miami-Dade’s Top Neighborhoods for Commercial Investment",
@@ -7493,7 +7481,7 @@
         },
         "items": [
           {
-            "_key": "ki7",
+            "_key": "ki6",
             "_type": "item",
             "title": "Downtown Miami",
             "text": [
@@ -7501,7 +7489,7 @@
             ]
           },
           {
-            "_key": "ki8",
+            "_key": "ki7",
             "_type": "item",
             "title": "Miami Beach",
             "text": [
@@ -7509,7 +7497,7 @@
             ]
           },
           {
-            "_key": "ki9",
+            "_key": "ki8",
             "_type": "item",
             "title": "Brickell",
             "text": [
@@ -7517,7 +7505,7 @@
             ]
           },
           {
-            "_key": "kia",
+            "_key": "ki9",
             "_type": "item",
             "title": "Wynwood",
             "text": [
@@ -7525,7 +7513,7 @@
             ]
           },
           {
-            "_key": "kib",
+            "_key": "kia",
             "_type": "item",
             "title": "Design District",
             "text": [
@@ -7533,7 +7521,7 @@
             ]
           },
           {
-            "_key": "kic",
+            "_key": "kib",
             "_type": "item",
             "title": "Coral Gables",
             "text": [
@@ -7541,7 +7529,7 @@
             ]
           },
           {
-            "_key": "kid",
+            "_key": "kic",
             "_type": "item",
             "title": "Doral",
             "text": [
@@ -7549,7 +7537,7 @@
             ]
           },
           {
-            "_key": "kie",
+            "_key": "kid",
             "_type": "item",
             "title": "Edgewater & Midtown",
             "text": [
@@ -7557,7 +7545,7 @@
             ]
           },
           {
-            "_key": "kif",
+            "_key": "kie",
             "_type": "item",
             "title": "Little Havana",
             "text": [
@@ -7569,7 +7557,7 @@
         "hAccent": true
       },
       {
-        "_key": "kim",
+        "_key": "kil",
         "_type": "splitAccordion",
         "heading": "Full-Spectrum Commercial Real Estate Services in Miami-Dade",
         "text": [
@@ -7585,7 +7573,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kih",
+            "_key": "kig",
             "_type": "accordionItem",
             "title": "[Acquisition & Sales](/services/investment-sales-and-acquisition-services/)",
             "body": [
@@ -7593,7 +7581,7 @@
             ]
           },
           {
-            "_key": "kii",
+            "_key": "kih",
             "_type": "accordionItem",
             "title": "[Leasing & Tenant Representation](/services/landlord-and-tenant-representation/)",
             "body": [
@@ -7601,7 +7589,7 @@
             ]
           },
           {
-            "_key": "kij",
+            "_key": "kii",
             "_type": "accordionItem",
             "title": "[Property Management](/services/property-management/)",
             "body": [
@@ -7609,7 +7597,7 @@
             ]
           },
           {
-            "_key": "kik",
+            "_key": "kij",
             "_type": "accordionItem",
             "title": "[Valuation & Consulting](/services/valuation-consultation/)",
             "body": [
@@ -7617,7 +7605,7 @@
             ]
           },
           {
-            "_key": "kil",
+            "_key": "kik",
             "_type": "accordionItem",
             "title": "[Development & Project Oversight](/services/development-services-and-project-management/)",
             "body": [
@@ -7630,7 +7618,7 @@
         "hAccent": true
       },
       {
-        "_key": "kin",
+        "_key": "kim",
         "_type": "cta",
         "heading": "Ready to Invest in Miami-Dade County Commercial Real Estate?",
         "text": [
@@ -7659,7 +7647,7 @@
     "order": 23,
     "sections": [
       {
-        "_key": "kio",
+        "_key": "kin",
         "_type": "hero",
         "heading": "Commercial Real Estate Services in South Beach",
         "image": {
@@ -7674,7 +7662,7 @@
         "position": "center"
       },
       {
-        "_key": "kip",
+        "_key": "kio",
         "_type": "intro",
         "heading": "Your Partner in *South Beach Miami’s Premier Real Estate Market*",
         "text": [
@@ -7696,7 +7684,7 @@
         "hAccent": true
       },
       {
-        "_key": "kiu",
+        "_key": "kit",
         "_type": "splitAccordion",
         "heading": "Full-Service Commercial Real Estate Expertise",
         "text": [
@@ -7712,7 +7700,7 @@
         "imageSide": "right",
         "items": [
           {
-            "_key": "kiq",
+            "_key": "kip",
             "_type": "accordionItem",
             "title": "Acquisitions & Sales",
             "body": [
@@ -7723,7 +7711,7 @@
             ]
           },
           {
-            "_key": "kir",
+            "_key": "kiq",
             "_type": "accordionItem",
             "title": "Valuation & Consulting",
             "body": [
@@ -7734,7 +7722,7 @@
             ]
           },
           {
-            "_key": "kis",
+            "_key": "kir",
             "_type": "accordionItem",
             "title": "Property Management",
             "body": [
@@ -7745,7 +7733,7 @@
             ]
           },
           {
-            "_key": "kit",
+            "_key": "kis",
             "_type": "accordionItem",
             "title": "Landlord & Tenant Representation",
             "body": [
@@ -7761,7 +7749,7 @@
         "hAccent": true
       },
       {
-        "_key": "kiy",
+        "_key": "kix",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Market Expertise: Navigating South Beach’s Distinct Commercial Submarkets",
@@ -7770,7 +7758,7 @@
         ],
         "items": [
           {
-            "_key": "kiv",
+            "_key": "kiu",
             "_type": "item",
             "title": "Ocean Drive",
             "text": [
@@ -7781,7 +7769,7 @@
             ]
           },
           {
-            "_key": "kiw",
+            "_key": "kiv",
             "_type": "item",
             "title": "Collins Avenue",
             "text": [
@@ -7792,7 +7780,7 @@
             ]
           },
           {
-            "_key": "kix",
+            "_key": "kiw",
             "_type": "item",
             "title": "Washington Avenue",
             "text": [
@@ -7807,7 +7795,7 @@
         "hAccent": true
       },
       {
-        "_key": "kj2",
+        "_key": "kj1",
         "_type": "cardGrid",
         "columns": 3,
         "heading": "Understanding Zoning & Development in South Beach",
@@ -7817,7 +7805,7 @@
         ],
         "items": [
           {
-            "_key": "kiz",
+            "_key": "kiy",
             "_type": "item",
             "title": "Historic District Requirements",
             "text": [
@@ -7825,7 +7813,7 @@
             ]
           },
           {
-            "_key": "kj0",
+            "_key": "kiz",
             "_type": "item",
             "title": "Zoning Compliance",
             "text": [
@@ -7833,7 +7821,7 @@
             ]
           },
           {
-            "_key": "kj1",
+            "_key": "kj0",
             "_type": "item",
             "title": "Oceanfront Development",
             "text": [
@@ -7845,7 +7833,7 @@
         "hAccent": true
       },
       {
-        "_key": "kj7",
+        "_key": "kj6",
         "_type": "panel",
         "columns": 4,
         "heading": "Why Work With Capital Investment LLC",
@@ -7861,7 +7849,7 @@
         },
         "items": [
           {
-            "_key": "kj3",
+            "_key": "kj2",
             "_type": "item",
             "title": "In-Depth Market Knowledge",
             "text": [
@@ -7870,7 +7858,7 @@
             ]
           },
           {
-            "_key": "kj4",
+            "_key": "kj3",
             "_type": "item",
             "title": "End-to-End Support",
             "text": [
@@ -7879,7 +7867,7 @@
             ]
           },
           {
-            "_key": "kj5",
+            "_key": "kj4",
             "_type": "item",
             "title": "Proven Results",
             "text": [
@@ -7888,7 +7876,7 @@
             ]
           },
           {
-            "_key": "kj6",
+            "_key": "kj5",
             "_type": "item",
             "title": "Client-Centered Focus",
             "text": [
@@ -7901,7 +7889,7 @@
         "hAccent": true
       },
       {
-        "_key": "kj8",
+        "_key": "kj7",
         "_type": "cta",
         "heading": "Let’s Talk About Your South Beach Commercial Real Estate Goals",
         "text": [
@@ -7930,7 +7918,7 @@
     "order": 24,
     "sections": [
       {
-        "_key": "kj9",
+        "_key": "kj8",
         "_type": "hero",
         "heading": "Our Offices",
         "image": {
@@ -7944,7 +7932,7 @@
         "position": "center"
       },
       {
-        "_key": "kja",
+        "_key": "kj9",
         "_type": "officeList",
         "offices": [
           "tysons",
@@ -7954,12 +7942,12 @@
         ]
       },
       {
-        "_key": "kjj",
+        "_key": "kjh",
         "_type": "teamCarousel",
         "heading": "Meet The Team",
         "members": [
           {
-            "_key": "kjb",
+            "_key": "kja",
             "_type": "carouselMember",
             "slug": "reza-sabaii-esq",
             "photo": {
@@ -7971,7 +7959,7 @@
             }
           },
           {
-            "_key": "kjc",
+            "_key": "kjb",
             "_type": "carouselMember",
             "slug": "david-krucoff",
             "photo": {
@@ -7983,7 +7971,7 @@
             }
           },
           {
-            "_key": "kjd",
+            "_key": "kjc",
             "_type": "carouselMember",
             "slug": "mani-milan-mps",
             "photo": {
@@ -7995,19 +7983,7 @@
             }
           },
           {
-            "_key": "kje",
-            "_type": "carouselMember",
-            "slug": "windy-parsons",
-            "photo": {
-              "_type": "altImage",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "asset": {
-                "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/carousel/windy-parsons.webp"
-              }
-            }
-          },
-          {
-            "_key": "kjf",
+            "_key": "kjd",
             "_type": "carouselMember",
             "slug": "christina-davies",
             "photo": {
@@ -8019,7 +7995,7 @@
             }
           },
           {
-            "_key": "kjg",
+            "_key": "kje",
             "_type": "carouselMember",
             "slug": "boyd-lawrence",
             "photo": {
@@ -8031,7 +8007,7 @@
             }
           },
           {
-            "_key": "kjh",
+            "_key": "kjf",
             "_type": "carouselMember",
             "slug": "yassin-kadir",
             "photo": {
@@ -8043,7 +8019,7 @@
             }
           },
           {
-            "_key": "kji",
+            "_key": "kjg",
             "_type": "carouselMember",
             "slug": "brooke-fontan",
             "photo": {
@@ -8076,7 +8052,7 @@
     "order": 25,
     "sections": [
       {
-        "_key": "kjk",
+        "_key": "kji",
         "_type": "hero",
         "heading": "Our Team at Capital Investment LLC",
         "image": {
@@ -8092,7 +8068,7 @@
         "position": "top"
       },
       {
-        "_key": "kjl",
+        "_key": "kjj",
         "_type": "teamGrid",
         "heading": "Our Team"
       }
@@ -8112,7 +8088,7 @@
     "order": 26,
     "sections": [
       {
-        "_key": "kjm",
+        "_key": "kjk",
         "_type": "hero",
         "heading": "Careers",
         "image": {
@@ -8128,7 +8104,7 @@
         "position": "top"
       },
       {
-        "_key": "kjp",
+        "_key": "kjn",
         "_type": "careers",
         "text": [
           "Capital Investment LLC looks to bring on agents who have earned the expertise to advise clients on commercial real estate and ways to maximize real estate investments. A combination of education, experience, and instinct is our priority. A record of over-delivering usually sets our principal candidates apart from the crowd. We offer our agents the opportunity to build upon their commercial real estate experience on a team with a reputation for stellar performance and results. A true passion for helping clients invest wisely and advocating for them in conversations with lenders, investors, property managers, and other parties is not easy to find. If this describes your disposition and experience, we anticipate hearing from you."
@@ -8136,13 +8112,13 @@
         "heading": "Current Openings:",
         "openings": [
           {
-            "_key": "kjn",
+            "_key": "kjl",
             "_type": "link",
             "label": "Commercial Real Estate Agent Job Description - Brickell, Miami, Florida",
             "href": "/careers-in-miami-fl/"
           },
           {
-            "_key": "kjo",
+            "_key": "kjm",
             "_type": "link",
             "label": "Commercial Real Estate Agent Job Description - Tysons, Virginia",
             "href": "/careers-in-washington-dc-metro/"
@@ -8165,7 +8141,7 @@
     "order": 27,
     "sections": [
       {
-        "_key": "kjq",
+        "_key": "kjo",
         "_type": "hero",
         "heading": "Careers In Miami FL",
         "image": {
@@ -8181,12 +8157,12 @@
         "position": "top"
       },
       {
-        "_key": "kjs",
+        "_key": "kjq",
         "_type": "jobs",
         "heading": "Current Openings:",
         "jobs": [
           {
-            "_key": "kjr",
+            "_key": "kjp",
             "_type": "job",
             "title": "Commercial Real Estate Agent Job Description - Brickell, Miami, Florida",
             "body": [
@@ -8237,7 +8213,7 @@
     "order": 28,
     "sections": [
       {
-        "_key": "kjt",
+        "_key": "kjr",
         "_type": "hero",
         "heading": "Careers In Washington, DC Metro",
         "image": {
@@ -8253,12 +8229,12 @@
         "position": "center"
       },
       {
-        "_key": "kjv",
+        "_key": "kjt",
         "_type": "jobs",
         "heading": "Current Openings:",
         "jobs": [
           {
-            "_key": "kju",
+            "_key": "kjs",
             "_type": "job",
             "title": "Commercial Real Estate Agent Job Description - Tysons, Virginia",
             "body": [
@@ -8309,7 +8285,7 @@
     "order": 29,
     "sections": [
       {
-        "_key": "kjw",
+        "_key": "kju",
         "_type": "hero",
         "heading": "Contact Us",
         "image": {
@@ -8323,7 +8299,7 @@
         "position": "center"
       },
       {
-        "_key": "kjx",
+        "_key": "kjv",
         "_type": "contactForm"
       }
     ],
@@ -8342,7 +8318,7 @@
     "order": 30,
     "sections": [
       {
-        "_key": "kjy",
+        "_key": "kjw",
         "_type": "hero",
         "heading": "Sitemap",
         "image": {
@@ -8358,7 +8334,7 @@
         "position": "top"
       },
       {
-        "_key": "kjz",
+        "_key": "kjx",
         "_type": "sitemapList",
         "heading": "Pages"
       }
@@ -8378,7 +8354,7 @@
     "order": 31,
     "sections": [
       {
-        "_key": "kk0",
+        "_key": "kjy",
         "_type": "legal",
         "heading": "Privacy Policy for Capital Investment LLC",
         "body": [
@@ -8432,7 +8408,7 @@
     "order": 32,
     "sections": [
       {
-        "_key": "kk1",
+        "_key": "kjz",
         "_type": "legal",
         "heading": "Terms of Service",
         "body": [
@@ -8584,35 +8560,6 @@
       "_type": "seo",
       "title": "Mani Milan, MPS, Senior Vice President | Capital Investment LLC",
       "description": "Mani Milan, MPS is a Senior Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "_id": "teamMember-windy-parsons",
-    "_type": "teamMember",
-    "name": "Windy Parsons",
-    "role": "Vice President",
-    "order": 4,
-    "photo": {
-      "_type": "altImage",
-      "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-      "asset": {
-        "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/windy-parsons.webp"
-      }
-    },
-    "bio": [
-      "Windy Parsons has been involved in multiple facets of commercial real estate providing a comprehensive foundation from which to serve her clients. Windy’s decades of direct industry experience provide a thorough knowledge of brokerage, commercial banking, and real estate law. Windy’s commercial real estate career began in the real estate law field in 1997 where she was responsible for title searches and the real estate closings for commercial properties. From there, Windy was recruited into the Commercial Banking industry in the bank’s Title Insurance Division as a Marketing Director. As a Marketing Director, Windy directed and managed overall operations of developing and executing strategies for generating new business, forecasting real estate trends,\norganizing continuing learning education seminars in real estate, 1031 seminars and maintaining current relationships with bank clients.",
-      "Over the last ten years as a Commercial Broker, Windy has overseen all aspects of the Real Estate transaction process from the valuation, pricing strategy, marketing, due diligence, negotiations of the purchase and sale contract and closed over $300million in Multifamily properties.",
-      "Contact me:\nM: [(336) 688-2320](tel:+13366882320)\n[windy@capitalinvestmentllc.com](mailto:windy@capitalinvestmentllc.com)"
-    ],
-    "wpId": 536,
-    "slug": {
-      "_type": "slug",
-      "current": "windy-parsons"
-    },
-    "seo": {
-      "_type": "seo",
-      "title": "Windy Parsons, Vice President | Capital Investment LLC",
-      "description": "Windy Parsons is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -8945,35 +8892,6 @@
     }
   },
   {
-    "_id": "teamMember-nitika-dumera",
-    "_type": "teamMember",
-    "name": "Nitika Dumera",
-    "role": "Real Estate Associate",
-    "order": 16,
-    "photo": {
-      "_type": "altImage",
-      "alt": "Nitika Dumera, Real Estate Associate at Capital Investment LLC",
-      "asset": {
-        "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/nitika-dumera.webp"
-      }
-    },
-    "bio": [
-      "Nitika is a Virginia native with extensive experience in operating many businesses, understanding the challenges and opportunities firsthand. Her experience enables her to provide tailored solutions to lease, purchase, or invest. Nitika focuses on cutting-edge tools and technology to analyze data, providing clients with a data-driven approach to real estate decision-making.",
-      "Nitika received a Bachelor’s in business from Marymount University and a Masters in Science, Data Analytics from American University.",
-      "Contact me:\nM: [(703)-916-0601](tel:+17039160601)\n[nitika@capitalinvestmentllc.com](mailto:nitika@capitalinvestmentllc.com)"
-    ],
-    "wpId": 551,
-    "slug": {
-      "_type": "slug",
-      "current": "nitika-dumera"
-    },
-    "seo": {
-      "_type": "seo",
-      "title": "Nitika Dumera, Real Estate Associate | Capital Investment LLC",
-      "description": "Nitika Dumera is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
     "_id": "teamMember-xandria-baleno",
     "_type": "teamMember",
     "name": "Xandria Baleno",
@@ -9001,65 +8919,6 @@
       "_type": "seo",
       "title": "Xandria Baleno, Real Estate Associate | Capital Investment LLC",
       "description": "Xandria Baleno is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "_id": "teamMember-john-daly",
-    "_type": "teamMember",
-    "name": "John Daly",
-    "role": "Investment Sales Advisor",
-    "order": 18,
-    "photo": {
-      "_type": "altImage",
-      "alt": "John Daly, Investment Sales Advisor at Capital Investment LLC",
-      "asset": {
-        "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/john-daly.webp"
-      }
-    },
-    "bio": [
-      "John is an Investment Sales Advisor with Capital Investment LLC, primarily covering the Multi-Family space. He brings a unique and diverse skill set to the firm with more than twenty-five years of high-level investment management industry experience working with Real Estate Investment Management companies, REITs, banks, institutional investors, and high net-worth individuals.",
-      "He has worked with such firms as Alliance Capital, FS Investments and Terra Capital Partners.",
-      "Originally from Connecticut, he is a longtime resident of Fort Lauderdale, Florida.",
-      "John is a graduate of the University of California at Santa Barbara.",
-      "Contact John:\nM:[(954) 401-7456](tel:+19544017456)\n[john@capitalinvestmentllc.com](mailto:john@capitalinvestmentllc.com)"
-    ],
-    "wpId": 1786,
-    "slug": {
-      "_type": "slug",
-      "current": "john-daly"
-    },
-    "seo": {
-      "_type": "seo",
-      "title": "John Daly, Investment Sales Advisor | Capital Investment LLC",
-      "description": "John Daly is an Investment Sales Advisor at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "_id": "teamMember-alex-parra",
-    "_type": "teamMember",
-    "name": "Alex Parra",
-    "role": "Administrative Assistant",
-    "order": 19,
-    "photo": {
-      "_type": "altImage",
-      "alt": "Alex Parra, Administrative Assistant at Capital Investment LLC",
-      "asset": {
-        "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/alex-parra.webp"
-      }
-    },
-    "bio": [
-      "Alex Parra is a dedicated administrative assistant with over two years of experience supporting the executive team at Capital Investment LLC. During this time, he has developed a versatile background that includes expertise in project management, CoStar utilization, and leasing within the commercial real estate sector. His experience extends to multifamily and hospitality leasing, as well as a wide range of associated services, showcasing his adaptability and comprehensive understanding of the industry.",
-      "Alex is known for his proactive approach to problem-solving, tackling challenges with a positive and hard-working mindset. He takes pride in his ability to streamline processes, enhance team efficiency, and contribute to the success of the organizations he supports. His passion for delivering exceptional service and finding innovative solutions makes him an invaluable asset to any team. Whether coordinating complex projects or facilitating seamless communication, Alex consistently strives to exceed expectations and foster a collaborative work environment."
-    ],
-    "wpId": 1897,
-    "slug": {
-      "_type": "slug",
-      "current": "alex-parra"
-    },
-    "seo": {
-      "_type": "seo",
-      "title": "Alex Parra, Administrative Assistant | Capital Investment LLC",
-      "description": "Alex Parra is an Administrative Assistant at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -9152,37 +9011,6 @@
       "_type": "seo",
       "title": "Monica Morfin, Real Estate Associate | Capital Investment LLC",
       "description": "Monica Morfin is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "_id": "teamMember-connor-zarebi",
-    "_type": "teamMember",
-    "name": "Connor Zarebi",
-    "role": "Associate, Business Development",
-    "order": 23,
-    "photo": {
-      "_type": "altImage",
-      "alt": "Connor Zarebi, Associate, Business Development at Capital Investment LLC",
-      "asset": {
-        "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/connor-zarebi.webp"
-      }
-    },
-    "bio": [
-      "Connor Zarebi is a dedicated real estate professional with nearly three years of experience in the industry. He began his career specializing in land transactions, where he developed a strong foundation in identifying value and navigating complex deals.",
-      "Connor attended the University of Cincinnati, where he developed a strong interest in business and real estate. He has since focused his career on business development, working closely with CEOs and institutional funds to build strategic partnerships and uncover high-value opportunities.",
-      "Known for his relationship-driven approach and market insight, Connor brings a focused, results-oriented mindset to every partnership he builds.",
-      "**Email:** [connor@capitalinvestmentllc.com](mailto:connor@capitalinvestmentllc.com)",
-      "**Phone:** [513-953-7875](tel:+15139537875)"
-    ],
-    "wpId": 2770,
-    "slug": {
-      "_type": "slug",
-      "current": "connor-zarebi"
-    },
-    "seo": {
-      "_type": "seo",
-      "title": "Connor Zarebi, Associate, Business Development",
-      "description": "Connor Zarebi is an Associate, Business Development at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   }
 ]

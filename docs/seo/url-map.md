@@ -20,6 +20,11 @@ Undo: delete the row in `lib/url-map.ts`. To undo everything, revert the PR.
 | `/locations/investments-in-washington-dc/` | `/locations/washington-dc/` | 301, variant |
 | `/locations/investments-in-northern-virginia/`, `/locations/northern-virginia/` | `/locations/virginia/` | 301, variants |
 | `/commercial-real-estate-services-in-<hood>/` and `/locations/commercial-real-estate-services-in-<hood>/` for central-business-district, downtown, government-center, historic-district, miami-arts-and-entertainment-district, park-west (all `-miami`) | `/locations/miami-florida/commercial-real-estate-services-in-<hood>-miami/` | 301, every Miami neighbourhood page, Government Center included, lives inside the Miami folder |
+| `/team/windy-parsons/` | `/our-team/` | 301, person has left the firm (Reza, TTR-1419); profile, menu, carousel, sitemap and schema entries removed; old photo URLs answer 410 |
+| `/team/nitika-dumera/` | `/our-team/` | 301, person has left the firm (Reza, TTR-1419); profile, menu, carousel, sitemap and schema entries removed; old photo URLs answer 410 |
+| `/team/john-daly/` | `/our-team/` | 301, person has left the firm (Reza, TTR-1419); profile, menu, carousel, sitemap and schema entries removed; old photo URLs answer 410 |
+| `/team/alex-parra/` | `/our-team/` | 301, person has left the firm (Reza, TTR-1419); profile, menu, carousel, sitemap and schema entries removed; old photo URLs answer 410 |
+| `/team/connor-zarebi/` | `/our-team/` | 301, person has left the firm (Reza, TTR-1419); profile, menu, carousel, sitemap and schema entries removed; old photo URLs answer 410 |
 | `/subscribe/` | `/contact-us/` | 301, newsletter removed (client has no newsletter) |
 | `/confirmation-thank-you/` | `/contact-us/` | 301, same |
 | `/newsletter-subscribe-thank-you/` | `/contact-us/` | 301, same |
@@ -33,7 +38,7 @@ Old WordPress `?p=` and `?page_id=` links still map as before, with the ID remov
 
 ## Unchanged
 
-All other 29 pages and the 23 team profiles keep their URL.
+All other 29 pages and the 18 remaining team profiles keep their URL.
 
 ## Proposed, not implemented (needs Kia and the client)
 
