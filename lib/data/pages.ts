@@ -6837,8 +6837,9 @@ export const fallbackPages: Page[] = [
           "The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.",
           "If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.",
           "Children’s Information\nAnother part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.\n\nCommunications & SMS Consent",
-          "By submitting any form on our website, you consent to receive SMS and email messages from **Capital Investment LLC** regarding your inquiries, scheduled consultations, and related updates.",
+          "If you check the text message box on a form on our website, you consent to receive SMS messages from **Capital Investment LLC** about your inquiry, scheduling and service updates. We may reply to your inquiry by email.",
           "Message and data rates may apply. You can opt out at any time by replying **STOP** to any SMS message or by contacting us through our website.",
+          "We do not sell, rent, or share your mobile number or text message consent with third parties or affiliates for marketing or promotional purposes.",
           "We do not sell, rent, or share your personal information with third parties for marketing purposes.",
           "Capital Investment LLC does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records."
         ],
@@ -6860,7 +6861,7 @@ export const fallbackPages: Page[] = [
         "_type": "legal",
         "heading": "Terms of Service",
         "body": [
-          "**Effective Date:** November 4, 2025",
+          "**Effective Date:** [TODO before launch: set this to the date these Terms go live]",
           "Welcome to Capital Investment LLC (“Company,” “we,” “us,” or “our”). By accessing or using our website (the “Site”), you agree to these Terms of Service (“Terms”). If you do **not** agree, please do not access or use the Site.",
           "## **1. Use of the Site**",
           "1.1 **License.** We grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Site in accordance with these Terms and applicable law.",
@@ -6900,7 +6901,13 @@ export const fallbackPages: Page[] = [
           "## **12. Miscellaneous**",
           "- **Severability.** If any part of these Terms is held invalid or unenforceable, the remaining provisions will continue in full force.",
           "- **Waiver.** Our failure to enforce any right or provision will not constitute a waiver thereof.",
-          "- **Entire Agreement.** These Terms (together with the Privacy Policy, any applicable subscription terms, and any other legal notices published by us) constitute the entire agreement between you and Company regarding your use of the Site and supersede all prior or contemporaneous communications and proposals (whether oral, written or electronic) between you and Company."
+          "- **Entire Agreement.** These Terms (together with the Privacy Policy, any applicable subscription terms, and any other legal notices published by us) constitute the entire agreement between you and Company regarding your use of the Site and supersede all prior or contemporaneous communications and proposals (whether oral, written or electronic) between you and Company.",
+          "## **13. Text Message (SMS) Program**",
+          "13.1 **Program.** Capital Investment LLC text messages are sent to people who agree to receive them by checking the separate text message box on a form on our website. The texts are replies to your inquiry, scheduling messages and service updates.",
+          "13.2 **Frequency and rates.** Message frequency varies. Message and data rates may apply.",
+          "13.3 **Opt out and help.** Reply STOP to any message to opt out. Reply HELP for help, or contact us at reza@capitalinvestmentllc.com or (571) 540-8688.",
+          "13.4 **Consent.** Consent to receive text messages is not a condition of purchase or of using the Site. You can send a form without checking the box.",
+          "13.5 **Privacy.** See our [Privacy Policy](/privacy-policy/) for how we handle your mobile number and text message consent."
         ],
         "_key": "s1"
       }

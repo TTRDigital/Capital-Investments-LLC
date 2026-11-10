@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYTES, type FormKind } from "@/lib/lead-options";
+import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYTES, SMS_CONSENT_TEXT, type FormKind } from "@/lib/lead-options";
 
 /*
  * The old site's four forms, same fields, plus a consent checkbox:
@@ -81,6 +81,9 @@ export function LeadForm({
   const [values, setValues] = useState<Record<string, string>>({});
   const [file, setFile] = useState<File | null>(null);
   const [consent, setConsent] = useState(false);
+  // Text message opt-in: separate, never pre-checked, never required.
+  const [smsConsent, setSmsConsent] = useState(false);
+  const showSms = kind === "contact" || kind === "consultation";
   const [errors, setErrors] = useState<Record<string, string | undefined>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -93,7 +96,8 @@ export function LeadForm({
     if (status === "sending") return;
     const next: Record<string, string | undefined> = {};
     for (const f of fields) next[f.name] = validate(f, values[f.name] ?? "", file);
-    if (!consent) next.consent = "Please check the box to agree.";
+    // The call consent is optional on the contact and consultation forms (a person can ask to be contacted without agreeing to calls); the careers form keeps it.
+    if (!consent && !showSms) next.consent = "Please check the box to agree.";
     setErrors(next);
     const firstBad = Object.keys(next).find((k) => next[k]);
     if (firstBad) {
@@ -113,7 +117,8 @@ export function LeadForm({
       form: kind,
       ...Object.fromEntries(fields.filter((f) => f.type !== "file").map((f) => [f.name, values[f.name] ?? ""])),
       ...(position ? { position } : {}),
-      consent: true,
+      consent,
+      ...(showSms ? { sms_consent: smsConsent } : {}),
       consent_text: consentText,
       website_url: honeypot,
       elapsed_ms: Date.now() - startedAt.current,
@@ -229,6 +234,32 @@ export function LeadForm({
           </p>
         ) : null}
       </div>
+
+      {showSms ? (
+        <div>
+          <label htmlFor={`${uid}-sms`} className={`flex cursor-pointer items-start gap-3 text-[13px] leading-[1.5] ${dark ? "text-white/85" : "text-ink/85"}`}>
+            <input
+              id={`${uid}-sms`}
+              name="sms_consent"
+              type="checkbox"
+              checked={smsConsent}
+              onChange={(e) => setSmsConsent(e.target.checked)}
+              className="mt-[3px] h-[16px] w-[16px] shrink-0 accent-[#bb6e3d]"
+            />
+            <span>
+              {SMS_CONSENT_TEXT.split(/(Privacy Policy|Terms)\b/).map((part, i) =>
+                part === "Privacy Policy" || part === "Terms" ? (
+                  <a key={i} href={part === "Terms" ? "/terms-of-service/" : "/privacy-policy/"} target="_blank" rel="noopener" onClick={(e) => e.stopPropagation()} className="font-semibold underline">
+                    {part}
+                  </a>
+                ) : (
+                  part
+                ),
+              )}
+            </span>
+          </label>
+        </div>
+      ) : null}
 
       {/* Honeypot: hidden from people, tempting to bots. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
