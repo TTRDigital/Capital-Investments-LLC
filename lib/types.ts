@@ -13,7 +13,10 @@
 export type Img = { src: string; alt: string; width: number; height: number };
 export type Link = { label: string; href: string };
 export type Rich = string[];
-export type Seo = { title: string; description: string; noIndex?: boolean; image?: Img };
+/** `structuredData` (or `schema`, which wins when both are set): JSON-LD (one object or an array) as text. When filled it replaces the page-level schema built in code. */
+export type Seo = { title: string; description: string; noIndex?: boolean; image?: Img; structuredData?: string; schema?: string };
+/** Replaces the alt text of every image on the page whose file matches (see lib/seo-fields.ts). */
+export type AltOverride = { match: string; alt: string };
 
 /** A card / list entry: title plus paragraphs (bullets allowed). */
 export type Item = { title: string; text: Rich; icon?: Img; href?: string };
@@ -166,6 +169,7 @@ export type Page = {
   group: "company" | "services" | "locations" | "legal" | "forms";
   order: number;
   seo: Seo;
+  altOverrides?: AltOverride[];
   sections: Section[];
 };
 
@@ -179,6 +183,7 @@ export type TeamMember = {
   /** Old WordPress post ID, for ?p= redirects. */
   wpId?: number;
   seo: Seo;
+  altOverrides?: AltOverride[];
 };
 
 export type Office = {

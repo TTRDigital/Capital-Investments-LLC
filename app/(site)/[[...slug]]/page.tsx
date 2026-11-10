@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPage, getPages, getSiteSettings, getTeam } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { parseStructuredData } from "@/lib/seo-fields";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionRenderer } from "@/components/sections/SectionRenderer";
@@ -44,11 +45,19 @@ export default async function SitePage({ params }: { params: Promise<Params> }) 
   if (!page) notFound();
   const crumbs = trail(page, pages);
   const faqs = page.sections.flatMap((s) => (s._type === "faq" ? s.items : []));
+  // Structured data from Sanity (seo.structuredData) replaces the page-level schema built here; empty or invalid falls back to it.
+  const custom = parseStructuredData(page.seo);
   return (
     <>
-      {path !== "/" ? <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.path })))} /> : null}
-      {page.group === "services" && path !== "/services/" ? <JsonLd data={serviceSchema(page.title, page.seo.description, page.path)} /> : null}
-      {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
+      {custom ? (
+        custom.map((d, i) => <JsonLd key={i} data={{ "@context": "https://schema.org", ...d }} />)
+      ) : (
+        <>
+          {path !== "/" ? <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.path })))} /> : null}
+          {page.group === "services" && path !== "/services/" ? <JsonLd data={serviceSchema(page.title, page.seo.description, page.path)} /> : null}
+          {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
+        </>
+      )}
       {page.sections.map((s, i) => (
         <SectionRenderer key={s._key ?? i} section={s} ctx={{ settings, team, pages, crumbs }} />
       ))}
