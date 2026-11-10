@@ -73,7 +73,8 @@ export async function POST(req: Request) {
     if (field === "phone" && (!/^[0-9()#&+*\-=. ]+$/.test(v) || v.replace(/\D/g, "").length < 10)) errors[field] = "Please enter a phone number with area code.";
     if (["full_name", "first_name", "last_name"].includes(field) && v.length < 2) errors[field] = "Please enter your name.";
   }
-  if (input.consent !== true) errors.consent = "Please check the box to agree.";
+  // Call consent is optional on contact and consultation (recorded yes or no); careers still requires it.
+  if (input.consent !== true && form === "careers") errors.consent = "Please check the box to agree.";
   if (form === "careers" && !hasResume) errors.resume = "Please attach your resume.";
   if (Object.keys(errors).length) return reply(422, { ok: false, error: "Please check the form.", fields: errors });
 
@@ -104,8 +105,8 @@ export async function POST(req: Request) {
   f("phone", lead.phone ?? "");
   f("position", text(input.position, 200));
   if (hasResume) f("resume_file", `${resumeName} (not delivered: ask the person to email it)`);
-  f("consent", "yes");
-  f("consent_text", text(input.consent_text, 1000));
+  f("consent", input.consent === true ? "yes" : "no");
+  if (input.consent === true) f("consent_text", text(input.consent_text, 1000));
   // Separate text message opt-in: only recorded as "yes" when the unchecked box was ticked. The stored wording is the server copy, not what the browser sent.
   const sms = input.sms_consent === true && (form === "contact" || form === "consultation");
   f("sms_consent", sms ? "yes" : "no");

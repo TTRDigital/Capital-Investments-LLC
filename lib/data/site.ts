@@ -126,7 +126,7 @@ export const fallbackSettings: SiteSettings = {
   consultationHeading: "Request a consultation",
   consultationText: "Leave your name, email and phone number and ask to be contacted about your property or investment.",
   consentText:
-    "By clicking 'Submit,' I provide my express written consent for Capital Investment LLC to contact me via phone calls and SMS/text messages at the number provided. I agree that these communications may be initiated using automated dialing systems, pre-recorded messages, or AI voice technology for marketing and informational purposes. I understand that consent is not a condition of purchase and that message/data rates may apply. I can opt-out at any time by replying STOP or by emailing reza@capitalinvestmentllc.com.",
+    "By clicking 'Submit,' I provide my express written consent for Capital Investment LLC to contact me by phone calls at the number provided. I agree that these calls may be initiated using automated dialing systems, pre-recorded messages, or AI voice technology for informational purposes. I understand that consent is not a condition of purchase. I can opt out at any time by emailing reza@capitalinvestmentllc.com.",
   credit: { label: "TTR Digital Marketing", href: "https://ttrdigitalmarketing.com/" },
   logo: images.logoLight,
   footerLogo: images.logoDark,

@@ -96,7 +96,8 @@ export function LeadForm({
     if (status === "sending") return;
     const next: Record<string, string | undefined> = {};
     for (const f of fields) next[f.name] = validate(f, values[f.name] ?? "", file);
-    if (!consent) next.consent = "Please check the box to agree.";
+    // The call consent is optional on the contact and consultation forms (a person can ask to be contacted without agreeing to calls); the careers form keeps it.
+    if (!consent && !showSms) next.consent = "Please check the box to agree.";
     setErrors(next);
     const firstBad = Object.keys(next).find((k) => next[k]);
     if (firstBad) {
@@ -116,7 +117,7 @@ export function LeadForm({
       form: kind,
       ...Object.fromEntries(fields.filter((f) => f.type !== "file").map((f) => [f.name, values[f.name] ?? ""])),
       ...(position ? { position } : {}),
-      consent: true,
+      consent,
       ...(showSms ? { sms_consent: smsConsent } : {}),
       consent_text: consentText,
       website_url: honeypot,
