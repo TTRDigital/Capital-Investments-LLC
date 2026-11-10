@@ -13,8 +13,8 @@
 export type Img = { src: string; alt: string; width: number; height: number };
 export type Link = { label: string; href: string };
 export type Rich = string[];
-/** `structuredData`: JSON-LD (one object or an array) as text. When filled it replaces the page-level schema built in code. */
-export type Seo = { title: string; description: string; noIndex?: boolean; image?: Img; structuredData?: string };
+/** `structuredData` (or `schema`, which wins when both are set): JSON-LD (one object or an array) as text. When filled it replaces the page-level schema built in code. */
+export type Seo = { title: string; description: string; noIndex?: boolean; image?: Img; structuredData?: string; schema?: string };
 /** Replaces the alt text of every image on the page whose file matches (see lib/seo-fields.ts). */
 export type AltOverride = { match: string; alt: string };
 

@@ -33,6 +33,23 @@ export const seo = defineType({
           }
         }),
     }),
+    defineField({
+      name: "schema",
+      title: "Structured data from TTR OS (JSON-LD)",
+      type: "text",
+      rows: 8,
+      description: "Same as Structured data; written by the TTR OS page fixer. Wins when both are filled.",
+      validation: (r) =>
+        r.custom((v) => {
+          if (!v) return true;
+          try {
+            JSON.parse(String(v));
+            return true;
+          } catch {
+            return "Not valid JSON";
+          }
+        }),
+    }),
     defineField({ name: "noIndex", title: "Hide from search engines", type: "boolean", initialValue: false }),
   ],
 });
