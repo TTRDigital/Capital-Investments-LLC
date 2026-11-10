@@ -1,4 +1,4 @@
-import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
+import { MIN_FILL_MS, SMS_CONSENT_TEXT, attributionKeys } from "@/lib/lead-options";
 
 /*
  * Lead forms (contact, consultation, careers). Checks the same rules
@@ -106,6 +106,10 @@ export async function POST(req: Request) {
   if (hasResume) f("resume_file", `${resumeName} (not delivered: ask the person to email it)`);
   f("consent", "yes");
   f("consent_text", text(input.consent_text, 1000));
+  // Separate text message opt-in: only recorded as "yes" when the unchecked box was ticked. The stored wording is the server copy, not what the browser sent.
+  const sms = input.sms_consent === true && (form === "contact" || form === "consultation");
+  f("sms_consent", sms ? "yes" : "no");
+  if (sms) f("sms_consent_text", SMS_CONSENT_TEXT);
   f("spam_check", spam);
   f("page_url", text(input.page_url, 1000));
   for (const k of attributionKeys) f(k, text(input[k], 200));
