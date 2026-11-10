@@ -6,6 +6,7 @@ import { dataset, projectId } from "@/sanity/env";
 import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
+import { applyAltOverrides } from "@/lib/seo-fields";
 import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
@@ -73,7 +74,8 @@ export const getPages = cache(async (): Promise<Page[]> => {
     const c = fromCms(doc) as Partial<Page>;
     const base = byPath.get(c.path ?? "") ?? { path: c.path ?? "", title: c.title ?? "", group: "company" as const, order: 99, seo: { title: c.title ?? "", description: "" }, sections: [] };
     const page = merge(base, c);
-    return { ...page, sections: page.sections.map(normalizeSection).filter((s): s is Section => !!s) };
+    const sections = page.sections.map(normalizeSection).filter((s): s is Section => !!s);
+    return applyAltOverrides({ ...page, sections }, page.altOverrides);
   });
   const missing = fallbackPages.filter((f) => !merged.some((m) => m.path === f.path));
   return [...merged, ...missing].sort((a, b) => a.order - b.order);
@@ -92,7 +94,8 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
   const merged = cms.map((doc) => {
     const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug }) as Partial<TeamMember>;
     const base = bySlug.get(c.slug ?? "") ?? { slug: c.slug ?? "", name: c.name ?? "", role: "", order: 99, bio: [], seo: { title: `${c.name ?? ""} - Capital Investment LLC`, description: "" } };
-    return merge(base, c);
+    const m = merge(base, c);
+    return applyAltOverrides(m, m.altOverrides);
   });
   const missing = fallbackTeam.filter((f) => !merged.some((m) => m.slug === f.slug));
   return [...merged, ...missing].sort((a, b) => a.order - b.order);

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPage, getTeam, getTeamMember } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { parseStructuredData } from "@/lib/seo-fields";
 import { breadcrumbSchema, personSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Hero } from "@/components/sections/Basic";
@@ -30,10 +31,17 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
   const teamHero = teamPage?.sections.find((s) => s._type === "hero") as HeroSection | undefined;
   const hero: HeroSection = { _type: "hero", heading: m.role, image: teamHero?.image, overlay: teamHero?.overlay ?? 0.4, position: teamHero?.position ?? "top", breadcrumbs: true, align: "left" };
   const path = `/team/${m.slug}/`;
+  const custom = parseStructuredData(m.seo);
   return (
     <>
-      <JsonLd data={personSchema(m, path)} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Our Team", path: "/our-team/" }, { name: m.name, path }])} />
+      {custom ? (
+        custom.map((d, i) => <JsonLd key={i} data={{ "@context": "https://schema.org", ...d }} />)
+      ) : (
+        <>
+          <JsonLd data={personSchema(m, path)} />
+          <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Our Team", path: "/our-team/" }, { name: m.name, path }])} />
+        </>
+      )}
       <Hero s={hero} headingTag="p" crumbs={[{ label: "Home", href: "/" }, { label: "Our Team", href: "/our-team/" }, { label: m.name }]} />
       <section className="py-[40px] md:py-[60px]">
         <div className="container-box grid gap-[30px] md:grid-cols-[minmax(0,1fr)_300px] md:gap-[60px] lg:pr-[60px]">

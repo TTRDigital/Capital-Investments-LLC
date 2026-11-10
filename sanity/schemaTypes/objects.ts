@@ -16,8 +16,37 @@ export const seo = defineType({
     defineField({ name: "title", title: "SEO title", type: "string", description: "Shown in Google and the browser tab. Aim for under 60 characters.", validation: (r) => r.max(120).warning("Long titles may be cut off in Google.") }),
     defineField({ name: "description", title: "Meta description", type: "text", rows: 3, description: "Aim for under 160 characters.", validation: (r) => r.max(170).warning("Long descriptions may be cut off in Google.") }),
     defineField({ name: "image", title: "Social share image", type: "altImage", description: "1200 x 630. Leave empty to use the page's banner photo." }),
+    defineField({
+      name: "structuredData",
+      title: "Structured data (JSON-LD)",
+      type: "text",
+      rows: 8,
+      description: "One JSON-LD object or a list of them. When filled it replaces the page's built-in schema (breadcrumbs, service, FAQ). Leave empty to keep the built-in one.",
+      validation: (r) =>
+        r.custom((v) => {
+          if (!v) return true;
+          try {
+            JSON.parse(String(v));
+            return true;
+          } catch {
+            return "Not valid JSON";
+          }
+        }),
+    }),
     defineField({ name: "noIndex", title: "Hide from search engines", type: "boolean", initialValue: false }),
   ],
+});
+
+/** Alt text replacement for images on a page, matched by file name (used by the TTR OS page fixer). */
+export const altOverride = defineType({
+  name: "altOverride",
+  title: "Alt text override",
+  type: "object",
+  fields: [
+    defineField({ name: "match", title: "Image file", type: "string", description: "File name or path, e.g. brickell-skyline.webp" }),
+    defineField({ name: "alt", title: "Alt text", type: "string" }),
+  ],
+  preview: { select: { title: "match", subtitle: "alt" } },
 });
 
 /** Image that always offers alt text. */
@@ -354,6 +383,7 @@ export const office = defineType({
 
 export const objectTypes = [
   seo,
+  altOverride,
   altImage,
   link,
   item,

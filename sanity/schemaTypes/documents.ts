@@ -2,6 +2,7 @@ import { defineArrayMember, defineField, defineType } from "sanity";
 import { sectionTypes } from "./objects";
 
 const seoField = defineField({ name: "seo", title: "SEO", type: "seo" });
+const altOverridesField = defineField({ name: "altOverrides", title: "Image alt text overrides", type: "array", of: [defineArrayMember({ type: "altOverride" })], description: "Replaces the alt text of every image on this page that uses the file." });
 const orderField = defineField({ name: "order", title: "Order", type: "number" });
 
 /* ---------- Settings ---------- */
@@ -78,6 +79,7 @@ export const page = defineType({
     { ...orderField, group: "content" },
     defineField({ name: "sections", type: "array", group: "content", of: sectionTypes.map((t) => defineArrayMember({ type: t })) }),
     { ...seoField, group: "seo" },
+    { ...altOverridesField, group: "seo" },
   ],
   orderings: [{ title: "Site order", name: "order", by: [{ field: "order", direction: "asc" }] }],
   preview: { select: { title: "title", subtitle: "path" } },
@@ -103,6 +105,7 @@ export const teamMember = defineType({
     }),
     defineField({ name: "wpId", title: "Old WordPress ID", type: "number", readOnly: true, hidden: true }),
     seoField,
+    altOverridesField,
   ],
   orderings: [{ title: "Order", name: "order", by: [{ field: "order", direction: "asc" }] }],
   preview: { select: { title: "name", subtitle: "role", media: "photo" } },
