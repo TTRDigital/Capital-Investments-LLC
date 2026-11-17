@@ -11,33 +11,77 @@ function postal(o: Office) {
     : { "@type": "PostalAddress", streetAddress: o.address, addressCountry: "US" };
 }
 
+const ORG_ID = () => `${absoluteUrl("/")}#organization`;
+
+/** The firm plus one branch per office, all built from the Site settings (no ratings, reviews or prices). */
 export function businessSchema(s: SiteSettings) {
+  const sameAs = s.social.map((x) => x.href);
   return {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "@id": absoluteUrl("/#organization"),
-    name: s.name,
-    url: absoluteUrl("/"),
-    logo: absoluteUrl(s.footerLogo.src),
-    image: absoluteUrl(s.logo.src),
-    telephone: s.phone,
-    email: s.email,
-    sameAs: s.social.map((x) => x.href),
-    address: postal(s.offices[0]),
-    location: s.offices.map((o) => ({ "@type": "Place", name: `${s.name} – ${o.name}`, address: postal(o), ...(o.phone ? { telephone: o.phone } : {}) })),
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "@id": ORG_ID(),
+        name: s.name,
+        legalName: s.legalName,
+        slogan: s.tagline,
+        url: absoluteUrl("/"),
+        logo: absoluteUrl(s.footerLogo.src),
+        image: absoluteUrl(s.logo.src),
+        telephone: s.phone,
+        email: s.email,
+        sameAs,
+        address: postal(s.offices[0]),
+        areaServed: ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
+        contactPoint: [{ "@type": "ContactPoint", contactType: "customer service", telephone: s.phone, email: s.email, areaServed: "US" }],
+      },
+      ...s.offices.map((o) => ({
+        "@type": "RealEstateAgent",
+        "@id": `${absoluteUrl("/offices/")}#${o.key}`,
+        name: `${s.name}, ${o.name}`,
+        url: absoluteUrl("/offices/"),
+        parentOrganization: { "@id": ORG_ID() },
+        address: postal(o),
+        hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.mapQuery)}`,
+        ...(o.phone ? { telephone: o.phone } : {}),
+      })),
+      { "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, url: absoluteUrl("/"), name: s.name, inLanguage: "en-US", publisher: { "@id": ORG_ID() } },
+    ],
   };
 }
 
-export function personSchema(m: TeamMember, path: string) {
+/** Service pages: the service as offered by the firm in the markets it serves. Text comes from the page's own title and description. */
+export function serviceSchema(name: string, description: string, path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: absoluteUrl(path),
+    provider: { "@id": ORG_ID() },
+    areaServed: ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
+  };
+}
+
+/** Profile links and the degree are only included when the member's own bio on the site shows them. No license numbers or ratings. */
+export function personSchema(m: TeamMember, path: string, phone?: string) {
+  const bio = m.bio.join(" ");
+  const sameAs = [...new Set([...bio.matchAll(/\]\((https:\/\/(?:www\.)?(?:linkedin\.com|loopnet\.com|homes\.com|thebrokerlist\.com|showcase\.com)[^)\s]*)\)/g)].map((x) => x[1]))];
+  const school = bio.match(/Juris Doctor(?: degree)? from the ([A-Z][A-Za-z ]+? (?:Law School|University))/)?.[1];
+  const tel = phone ?? bio.match(/\]\(tel:(\+?\d+)\)/)?.[1];
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${absoluteUrl(path)}#person`,
     name: m.name,
     jobTitle: m.role,
     url: absoluteUrl(path),
     ...(m.photo ? { image: absoluteUrl(m.photo.src) } : {}),
-    worksFor: { "@id": absoluteUrl("/#organization") },
+    worksFor: { "@id": ORG_ID() },
     description: plain(m.seo.description),
+    ...(sameAs.length ? { sameAs } : {}),
+    ...(school ? { alumniOf: { "@type": "CollegeOrUniversity", name: school } } : {}),
+    ...(tel ? { telephone: tel } : {}),
   };
 }
 

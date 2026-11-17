@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-/** Every indexable page and team member. Noindex pages (subscribe and thank-you pages) and old URLs (301s in .htaccess) are left out. */
+/** Every indexable page and team member. Noindex pages and redirected old URLs (lib/url-map.ts, lib/legacy-redirects.ts) are left out. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [pages, team] = await Promise.all([getPages(), getTeam()]);
   const entry = (path: string, priority: number) => ({ url: absoluteUrl(path), changeFrequency: "monthly" as const, priority });

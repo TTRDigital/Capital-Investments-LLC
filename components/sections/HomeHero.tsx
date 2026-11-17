@@ -38,15 +38,27 @@ function useVideoSources(video?: HeroVideo) {
     const mp4 = (phone && video.mp4Mobile) || video.mp4;
     const list = [webm && { src: webm, type: "video/webm" }, mp4 && { src: mp4, type: "video/mp4" }].filter(Boolean) as VideoSource[];
     if (!list.length) return;
-    const start = () => setSources(list);
+    // Start after the page has loaded and then on the first touch, scroll or key press, or after 4 seconds
+    // (same idea as the chat widget): the video file never competes with the page load.
+    let started = false;
     let t = 0;
-    const onLoad = () => {
-      t = window.setTimeout(start, 0);
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    const start = () => {
+      if (started) return;
+      started = true;
+      events.forEach((e) => window.removeEventListener(e, start));
+      window.clearTimeout(t);
+      setSources(list);
     };
-    if (document.readyState === "complete") onLoad();
-    else window.addEventListener("load", onLoad, { once: true });
+    const arm = () => {
+      events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+      t = window.setTimeout(start, 4000);
+    };
+    if (document.readyState === "complete") arm();
+    else window.addEventListener("load", arm, { once: true });
     return () => {
-      window.removeEventListener("load", onLoad);
+      window.removeEventListener("load", arm);
+      events.forEach((e) => window.removeEventListener(e, start));
       window.clearTimeout(t);
     };
   }, [video]);

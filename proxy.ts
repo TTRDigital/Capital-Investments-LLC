@@ -1,33 +1,18 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { rules } from "./lib/legacy-redirects";
+import { resolve } from "./lib/redirect";
 
 /*
- * Old WordPress addresses (moved here from the SiteGround .htaccess):
- * 301 to the new page, or 410 for things that no longer exist.
- * The rules are in lib/legacy-redirects.ts.
+ * Old and moved addresses: 301 to the new page (query string kept), or 410 for
+ * things that no longer exist. The rules are in lib/url-map.ts (this project's
+ * URL changes) and lib/legacy-redirects.ts (old WordPress addresses).
  */
-const compiled = rules.map((r) => ({
-  re: new RegExp(r.p, r.i ? "i" : ""),
-  d: r.d,
-  g: r.g,
-  q: r.q ? new RegExp(r.q, "i") : null,
-}));
-
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
-  const path = pathname.replace(/^\//, "");
-  const qs = search.replace(/^\?/, "");
-  for (const r of compiled) {
-    if (!r.re.test(path)) continue;
-    if (r.q && !r.q.test(qs)) continue;
-    if (r.g) return new NextResponse("Gone", { status: 410, headers: { "content-type": "text/plain" } });
-    const to = req.nextUrl.clone();
-    to.pathname = r.d;
-    to.search = "";
-    return NextResponse.redirect(to, 301);
-  }
-  return NextResponse.next();
+  const hit = resolve(pathname, search);
+  if (!hit) return NextResponse.next();
+  if (hit.status === 410 || !hit.to) return new NextResponse("Gone", { status: 410, headers: { "content-type": "text/plain" } });
+  return NextResponse.redirect(new URL(hit.to, req.nextUrl), 301);
 }
 
 export const config = {

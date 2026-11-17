@@ -8,8 +8,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 1,
     "seo": {
-      "title": "Capital Investment Consulting | Capital Investment LLC",
-      "description": "Capital Investment LLC provides capital investment consulting, real estate investment strategy and commercial services for businesses and investors nationwide."
+      "title": "Commercial Real Estate Advisors | Capital Investment LLC",
+      "description": "Offices in Tysons VA, Washington DC, Bethesda MD and Miami FL. Commercial leasing, investment sales, property management and valuation."
     },
     "sections": [
       {
@@ -284,15 +284,6 @@ export const fallbackPages: Page[] = [
             }
           },
           {
-            "slug": "windy-parsons",
-            "photo": {
-              "src": "/images/team/carousel/windy-parsons.webp",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "width": 237,
-              "height": 243
-            }
-          },
-          {
             "slug": "christina-davies",
             "photo": {
               "src": "/images/team/carousel/christina-davies.webp",
@@ -348,8 +339,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 2,
     "seo": {
-      "title": "Commercial Real Estate Services | Washington DC and Miami FL - Capital Investment LLC",
-      "description": "Discover professional commercial real estate services, including leasing, rentals, investment consulting, and property management in Washington DC and Miami FL."
+      "title": "Commercial Real Estate Services | Capital Investment LLC",
+      "description": "Five commercial real estate services: landlord and tenant representation, investment sales, development management, property management and valuation."
     },
     "sections": [
       {
@@ -673,8 +664,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 3,
     "seo": {
-      "title": "Commercial Real Estate Investment Sales and Acquisition Services | Washington DC and Miami FL - Capital Investment LLC",
-      "description": "Expert investment sales and acquisition services. Capital Investment LLC offers strategic solutions for buyers and sellers to optimize investments and profitability."
+      "title": "Investment Sales and Acquisitions | Capital Investment LLC",
+      "description": "Representation for buyers and sellers of commercial property in the Washington DC area and Miami. Call (571) 540-8688 or (305) 404-6426 to talk it through."
     },
     "sections": [
       {
@@ -1033,8 +1024,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 4,
     "seo": {
-      "title": "Landlord and Tenant Representation Services in Washington DC and Miami FL | Capital Investment LLC",
-      "description": "Expert landlord and tenant representation for commercial real estate. Capital Investment LLC ensures smooth lease negotiations and effective dispute resolution."
+      "title": "Landlord and Tenant Representation | Capital Investment LLC",
+      "description": "Commercial lease representation for landlords and tenants in the Washington DC area and Miami, including lease negotiation and dispute resolution."
     },
     "sections": [
       {
@@ -1308,8 +1299,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 5,
     "seo": {
-      "title": "Development Services and Project Management | Capital Investment LLC",
-      "description": "Commercial real estate development services and project management in Washington DC, Miami, Virginia and Maryland, from initial planning to construction."
+      "title": "Development and Project Management | Capital Investment LLC",
+      "description": "Development services and project management for commercial property in Washington DC, Virginia, Maryland and Miami, from planning to construction."
     },
     "sections": [
       {
@@ -1631,8 +1622,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 6,
     "seo": {
-      "title": "Property Management - Capital Investment LLC",
-      "description": "Capital Investment LLC provides commercial real estate property management in Washington DC, Miami and beyond, focused on property value and tenants."
+      "title": "Commercial Property Management | Capital Investment LLC",
+      "description": "Property management for commercial owners in Washington DC, Virginia, Maryland and Miami, handled by the Capital Investment LLC team."
     },
     "sections": [
       {
@@ -1905,8 +1896,8 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 7,
     "seo": {
-      "title": "Valuation & Consultation - Capital Investment LLC",
-      "description": "Commercial real estate valuation and consulting in the Washington, D.C. area, Virginia, Maryland and Miami: data-driven guidance from Capital Investment LLC."
+      "title": "Property Valuation and Consulting | Capital Investment LLC",
+      "description": "Commercial property valuation and consulting for owners and investors in the Washington DC area, Virginia, Maryland and Miami."
     },
     "sections": [
       {
@@ -2111,8 +2102,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 8,
     "seo": {
-      "title": "Our Locations - Capital Investment LLC",
-      "description": "Explore our commercial real estate services in Washington DC, Miami FL, Virginia and Maryland. Find expert leasing, investment, and management solutions near you."
+      "title": "Service Areas: DC, VA, MD and Miami | Capital Investment LLC",
+      "description": "Markets served by Capital Investment LLC: Washington DC, Northern Virginia, Maryland and Miami, with offices in Tysons, Washington DC, Bethesda and Miami."
     },
     "sections": [
       {
@@ -2437,8 +2428,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 9,
     "seo": {
-      "title": "Commercial Real Estate Services in Washington DC | Capital Investment LLC",
-      "description": "Get premier commercial real estate services in Washington DC with Capital Investment LLC. We offer investment consulting, leasing, and asset management."
+      "title": "Washington DC Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial real estate in Washington DC: leasing, investment sales, property management and valuation. Office at 6323 Georgia Avenue NW, (571) 500-2661."
     },
     "sections": [
       {
@@ -2748,8 +2739,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 10,
     "seo": {
-      "title": "Invest in Miami Real Estate | Capital Investment LLC",
-      "description": "Invest in Miami real estate with Capital Investment LLC: investment consulting, property management, brokerage and development in Miami & Coral Gables, FL."
+      "title": "Commercial Real Estate in Miami, FL | Capital Investment LLC",
+      "description": "Commercial real estate in Miami and Coral Gables: leasing, investment sales, property management, development. Office: 777 Brickell Avenue, (305) 404-6426."
     },
     "sections": [
       {
@@ -3055,8 +3046,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 11,
     "seo": {
-      "title": "Commercial Real Estate Services in Central Business District Miami - Capital Investment LLC",
-      "description": "Capital Investment LLC specializes in commercial real estate services in CBD Miami (Central Business District), at the core of Miami’s financial activity."
+      "title": "Central Business District Miami Commercial Real Estate",
+      "description": "Commercial leasing, investment sales and property management in Miami's Central Business District. Call the Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -3309,8 +3300,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 12,
     "seo": {
-      "title": "Commercial Real Estate Services in Coral Gables | Capital Investment LLC",
-      "description": "Discover expert commercial real estate services in Coral Gables, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Coral Gables Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial leasing, investment sales and property management in Coral Gables, Florida, from the Capital Investment LLC Miami office, (305) 404-6426."
     },
     "sections": [
       {
@@ -3546,8 +3537,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 13,
     "seo": {
-      "title": "Commercial Real Estate Services in Downtown Miami | Capital Investment LLC",
-      "description": "Discover expert commercial real estate services in Downtown Miami, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Downtown Miami Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial leasing, investment sales and property management in Downtown Miami. Call the Capital Investment LLC Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -3775,8 +3766,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 14,
     "seo": {
-      "title": "Commercial Real Estate Services in Government Center Miami | Capital Investment LLC",
-      "description": "Discover expert real estate services in Government Center Miami, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Government Center Miami Commercial Real Estate",
+      "description": "Commercial leasing, investment sales and property management near Miami's Government Center. Call the Capital Investment LLC Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -4030,8 +4021,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 15,
     "seo": {
-      "title": "Commercial Real Estate Services in Historic District Miami | Capital Investment LLC",
-      "description": "Discover expert real estate services in Historic District Miami, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Historic District Miami Commercial Real Estate",
+      "description": "Commercial leasing, investment sales and property management in Miami's Historic District. Call the Capital Investment LLC Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -4286,8 +4277,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 16,
     "seo": {
-      "title": "Commercial Real Estate Services in Miami Arts and Entertainment District | Capital Investment LLC",
-      "description": "Discover expert real estate services in Miami Arts and Entertainment District, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Miami Arts and Entertainment District Commercial Real Estate",
+      "description": "Commercial leasing, investment sales and property management in the Miami Arts and Entertainment District. Call (305) 404-6426."
     },
     "sections": [
       {
@@ -4542,8 +4533,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 17,
     "seo": {
-      "title": "Commercial Real Estate Services in Park West Miami | Capital Investment LLC",
-      "description": "Discover expert commercial real estate services in Park West Miami, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "Park West Miami Commercial Real Estate",
+      "description": "Commercial leasing, investment sales and property management in Park West, Miami. Call the Capital Investment LLC Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -4797,8 +4788,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 18,
     "seo": {
-      "title": "Commercial Real Estate Services in Virginia | Capital Investment LLC",
-      "description": "Explore professional commercial real estate services in Virginia. Capital Investment LLC provides leasing, investment consulting, and property management."
+      "title": "Commercial Real Estate in Virginia | Capital Investment LLC",
+      "description": "Commercial real estate in Northern Virginia: leasing, investment sales, property management, valuation. Tysons office: 8230 Old Courthouse Rd, (571) 540-8688."
     },
     "sections": [
       {
@@ -5077,8 +5068,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 19,
     "seo": {
-      "title": "Commercial Real Estate Services in Maryland | Capital Investment LLC",
-      "description": "Find professional commercial real estate services in Maryland with Capital Investment LLC. From leasing to investment management, we provide tailored solutions."
+      "title": "Commercial Real Estate in Maryland | Capital Investment LLC",
+      "description": "Commercial real estate in Maryland: leasing, investment sales, property management and valuation. Bethesda office at 7809 Woodmont Ave, (240) 792-7525."
     },
     "sections": [
       {
@@ -5398,8 +5389,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 20,
     "seo": {
-      "title": "Commercial Real Estate Services in Brickell, Miami | Capital Investment LLC",
-      "description": "Discover expert commercial real estate services in Brickell, Miami. Capital Investment LLC helps businesses and investors find opportunities in this vibrant market."
+      "title": "Brickell Miami Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial leasing, investment sales and property management in Brickell, Miami. Our Miami office is at 777 Brickell Avenue, Suite 160, (305) 404-6426."
     },
     "sections": [
       {
@@ -5623,8 +5614,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 21,
     "seo": {
-      "title": "Commercial Real Estate Services in Fairfax County | Capital Investment LLC",
-      "description": "Unlock top-tier commercial real estate opportunities in Fairfax County. Capital Investment LLC offers expert services to guide businesses & investors. Call us now!"
+      "title": "Fairfax County Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial leasing, investment sales and property management in Fairfax County, Virginia, from the Tysons office, (571) 540-8688."
     },
     "sections": [
       {
@@ -5897,8 +5888,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 22,
     "seo": {
-      "title": "Commercial Real Estate Services in Miami-Dade County, Miami | Capital Investment LLC",
-      "description": "Explore premier commercial real estate services in Miami-Dade County, Florida. Capital Investment LLC offers tailored investment solutions for businesses and investors."
+      "title": "Miami-Dade County Commercial Real Estate",
+      "description": "Capital Investment LLC handles commercial leasing, investment sales and property management across Miami-Dade County. Call (305) 404-6426."
     },
     "sections": [
       {
@@ -6195,8 +6186,8 @@ export const fallbackPages: Page[] = [
     "group": "locations",
     "order": 23,
     "seo": {
-      "title": "Commercial Real Estate Services in South Beach | Capital Investment LLC",
-      "description": "Discover expert commercial real estate services in South Beach, Florida. Capital Investment LLC offers leasing, investment consulting, and property management."
+      "title": "South Beach Commercial Real Estate | Capital Investment LLC",
+      "description": "Commercial leasing, investment sales and property management in South Beach, Miami Beach. Call the Capital Investment LLC Miami office on (305) 404-6426."
     },
     "sections": [
       {
@@ -6431,8 +6422,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 24,
     "seo": {
-      "title": "Offices - Capital Investment LLC",
-      "description": "Capital Investment LLC has locations across multiple regions. We serve Miami, Washington DC, Virginia and Maryland. Find commercial real estate solutions near you."
+      "title": "Offices in Tysons, DC, Bethesda and Miami",
+      "description": "Addresses and phone numbers for the Capital Investment LLC offices in Tysons VA, Washington DC, Bethesda MD and Miami FL."
     },
     "sections": [
       {
@@ -6490,15 +6481,6 @@ export const fallbackPages: Page[] = [
             }
           },
           {
-            "slug": "windy-parsons",
-            "photo": {
-              "src": "/images/team/carousel/windy-parsons.webp",
-              "alt": "Windy Parsons, Vice President at Capital Investment LLC",
-              "width": 237,
-              "height": 243
-            }
-          },
-          {
             "slug": "christina-davies",
             "photo": {
               "src": "/images/team/carousel/christina-davies.webp",
@@ -6549,8 +6531,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 25,
     "seo": {
-      "title": "Our Team - Capital Investment LLC",
-      "description": "Meet the expert team at Capital Investment LLC, specializing in commercial real estate services and delivering exceptional results in Washington, DC & Miami."
+      "title": "Our Team of Brokers and Advisors | Capital Investment LLC",
+      "description": "Meet the Capital Investment LLC team: principal broker Reza Sabaii, vice presidents, real estate associates and advisors in DC, Virginia, Maryland and Miami."
     },
     "sections": [
       {
@@ -6581,8 +6563,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 26,
     "seo": {
-      "title": "Careers - Capital Investment LLC",
-      "description": "Join the team at Capital Investment LLC. Explore exciting career opportunities in commercial real estate in Miami FL, Washington DC, Virginia and Maryland."
+      "title": "Careers in Commercial Real Estate | Capital Investment LLC",
+      "description": "Current job openings at Capital Investment LLC in Miami FL and the Washington DC metro area, with the job description and how to apply."
     },
     "sections": [
       {
@@ -6626,8 +6608,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 27,
     "seo": {
-      "title": "Careers In Miami FL - Capital Investment LLC",
-      "description": "Explore commercial real estate job opportunities in Miami, Florida with Capital Investment LLC. Join our team of expert and professionals and grow your career."
+      "title": "Careers in Miami FL | Capital Investment LLC",
+      "description": "Open positions at the Capital Investment LLC Miami office, with the job description and a form to send your resume."
     },
     "sections": [
       {
@@ -6692,8 +6674,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 28,
     "seo": {
-      "title": "Careers In Washington, DC Metro | Capital Investment LLC.",
-      "description": "Commercial real estate agent opening in Tysons, Virginia with Capital Investment LLC. Read the job description and upload your resume to apply."
+      "title": "Careers in the Washington DC Metro | Capital Investment LLC",
+      "description": "Commercial real estate agent opening in Tysons, Virginia. Read the job description and upload your resume to apply."
     },
     "sections": [
       {
@@ -6758,8 +6740,8 @@ export const fallbackPages: Page[] = [
     "group": "forms",
     "order": 29,
     "seo": {
-      "title": "Contact Us - Capital Investment LLC",
-      "description": "Contact Capital Investment LLC, commercial real estate advisors with offices in Tysons, VA and Miami, FL. Call (571) 540-8688 or (305) 404-6426."
+      "title": "Contact Capital Investment LLC | Tysons VA and Miami FL",
+      "description": "Contact the Capital Investment LLC offices in Tysons VA, (571) 540-8688, and Miami FL, (305) 404-6426, or send a message to be contacted."
     },
     "sections": [
       {
@@ -6787,8 +6769,8 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 30,
     "seo": {
-      "title": "Sitemap - Capital Investment LLC",
-      "description": "Sitemap of the Capital Investment LLC website: commercial real estate services, service areas, offices, our team, careers and contact pages."
+      "title": "Sitemap | Capital Investment LLC",
+      "description": "All pages on the Capital Investment LLC website: services, service areas, offices, our team, careers and contact."
     },
     "sections": [
       {
@@ -6819,8 +6801,8 @@ export const fallbackPages: Page[] = [
     "group": "legal",
     "order": 31,
     "seo": {
-      "title": "Privacy Policy for Capital Investment LLC - Capital Investment LLC",
-      "description": "Read the privacy policy of Capital Investment LLC to understand how we protect your personal information while providing trusted commercial real estate services."
+      "title": "Privacy Policy | Capital Investment LLC",
+      "description": "How Capital Investment LLC collects, uses and protects personal information submitted through this website."
     },
     "sections": [
       {
@@ -6870,7 +6852,7 @@ export const fallbackPages: Page[] = [
     "group": "legal",
     "order": 32,
     "seo": {
-      "title": "Terms of Service - Capital Investment LLC",
+      "title": "Terms of Service | Capital Investment LLC",
       "description": "Terms of Service for the Capital Investment LLC website, including use of the site, ownership of content, disclaimers and governing law."
     },
     "sections": [
@@ -6924,104 +6906,4 @@ export const fallbackPages: Page[] = [
       }
     ]
   },
-  {
-    "path": "/subscribe/",
-    "title": "Subscribe",
-    "group": "forms",
-    "order": 33,
-    "seo": {
-      "title": "Subscribe - Capital Investment LLC",
-      "description": "",
-      "noIndex": true
-    },
-    "sections": [
-      {
-        "_type": "hero",
-        "heading": "Subscribe",
-        "image": {
-          "src": "/images/heroes/blue-skyline.webp",
-          "alt": "City skyline at night in blue tones",
-          "width": 2400,
-          "height": 713
-        },
-        "_key": "s1",
-        "overlay": 0.7,
-        "position": "center"
-      },
-      {
-        "_type": "subscribe",
-        "heading": "Subscribe to Our Newsletter!",
-        "text": [
-          "Stay connected with us through our monthly newsletter and stay up-to-date with current issues and happenings in the world of commercial real estate."
-        ],
-        "_key": "s2"
-      }
-    ]
-  },
-  {
-    "path": "/confirmation-thank-you/",
-    "title": "Confirmation Thank You",
-    "group": "forms",
-    "order": 34,
-    "seo": {
-      "title": "Confirmation Thank You - Capital Investment LLC",
-      "description": "",
-      "noIndex": true
-    },
-    "sections": [
-      {
-        "_type": "hero",
-        "heading": "Thank You",
-        "image": {
-          "src": "/images/heroes/blue-skyline.webp",
-          "alt": "City skyline at night in blue tones",
-          "width": 2400,
-          "height": 713
-        },
-        "_key": "s1",
-        "overlay": 0.7,
-        "position": "center"
-      },
-      {
-        "_type": "message",
-        "heading": "You've Been Subscribed to Our Newsletter!",
-        "text": [],
-        "_key": "s2"
-      }
-    ]
-  },
-  {
-    "path": "/newsletter-subscribe-thank-you/",
-    "title": "Subscribe Thank You",
-    "group": "forms",
-    "order": 35,
-    "seo": {
-      "title": "Subscribe Thank You - Capital Investment LLC",
-      "description": "",
-      "noIndex": true
-    },
-    "sections": [
-      {
-        "_type": "hero",
-        "heading": "Thank You",
-        "image": {
-          "src": "/images/heroes/blue-skyline.webp",
-          "alt": "City skyline at night in blue tones",
-          "width": 2400,
-          "height": 713
-        },
-        "_key": "s1",
-        "overlay": 0.7,
-        "position": "center"
-      },
-      {
-        "_type": "message",
-        "heading": "Thanks for subscribing!",
-        "text": [
-          "Please check your email to confirm your subscription to our newsletter. If you don’t receive a confirmation email, please check your spam folder."
-        ],
-        "_key": "s2"
-      }
-    ]
-  }
 ];

@@ -7,8 +7,7 @@ import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYT
 /*
  * The old site's four forms, same fields, plus a consent checkbox:
  * - contact (Let's Chat popup, /contact-us/): Full Name, Email, Phone
- * - newsletter (footer): Full Name*, Email*
- * - subscribe (/subscribe/): First Name*, Last Name*, Email*
+ * - consultation (footer, "be contacted"): Full Name*, Email*, Phone*
  * - careers (/careers-in-…/): Name*, Email Address*, Phone Number, Upload Resume*
  * Posted to /api/lead/, which checks the same rules and forwards to GoHighLevel.
  */
@@ -22,14 +21,10 @@ const FIELDS: Record<FormKind, FieldDef[]> = {
     { name: "email", label: "Email", required: true, type: "email", autoComplete: "email" },
     { name: "phone", label: "Phone", required: true, type: "tel", autoComplete: "tel" },
   ],
-  newsletter: [
+  consultation: [
     { name: "full_name", label: "Full Name", required: true, type: "text", autoComplete: "name" },
     { name: "email", label: "Email", required: true, type: "email", autoComplete: "email" },
-  ],
-  subscribe: [
-    { name: "first_name", label: "First Name", required: true, type: "text", autoComplete: "given-name" },
-    { name: "last_name", label: "Last Name", required: true, type: "text", autoComplete: "family-name" },
-    { name: "email", label: "Email", required: true, type: "email", autoComplete: "email" },
+    { name: "phone", label: "Phone", required: true, type: "tel", autoComplete: "tel" },
   ],
   careers: [
     { name: "full_name", label: "Name", required: true, type: "text", autoComplete: "name" },
@@ -40,11 +35,10 @@ const FIELDS: Record<FormKind, FieldDef[]> = {
 };
 
 /** Where a successful submit goes; forms without one show a thank-you message in place. */
-const THANK_YOU: Partial<Record<FormKind, string>> = { newsletter: "/confirmation-thank-you/", subscribe: "/confirmation-thank-you/" };
+const THANK_YOU: Partial<Record<FormKind, string>> = {};
 const SUCCESS: Record<FormKind, string> = {
   contact: "Thank you. Your message has been sent.",
-  newsletter: "Thank you for subscribing.",
-  subscribe: "Thank you for subscribing.",
+  consultation: "Thank you. Your request has been sent.",
   careers: "Thank you. Your resume has been sent.",
 };
 

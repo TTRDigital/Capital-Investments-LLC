@@ -47,6 +47,8 @@ export const siteSettings = defineType({
     defineField({ name: "footerQuickLinks", title: "Footer: Quick Links", type: "array", group: "menu", of: [defineArrayMember({ type: "link" })] }),
     defineField({ name: "footerServiceLinks", title: "Footer: Services", type: "array", group: "menu", of: [defineArrayMember({ type: "link" })] }),
     defineField({ name: "credit", title: "Footer credit", type: "link", group: "menu" }),
+    defineField({ name: "consultationHeading", title: "Footer form: heading (be contacted)", type: "string", group: "forms" }),
+    defineField({ name: "consultationText", title: "Footer form: short text", type: "text", rows: 3, group: "forms" }),
     defineField({ name: "consentText", title: "Consent checkbox text (all forms)", type: "text", rows: 6, group: "forms" }),
   ],
   preview: { prepare: () => ({ title: "Site settings" }) },

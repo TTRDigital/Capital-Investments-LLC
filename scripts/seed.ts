@@ -5,13 +5,15 @@
  *   npm run seed              # create documents that don't exist yet (add-missing)
  *   npm run seed -- --force   # overwrite every document with the built-in content
  *   npm run seed -- --dry-run # build every document without uploading or writing
+ *   npm run seed -- --export  # write content-export/sanity-seed.json (+ .ndjson): no token, no network, nothing uploaded
+ *                             # images point at https://www.capitalinvestmentllc.com/images/... (--assets-base=<url> to change)
  *
  * Writes to project 850gl5j0 / production unless NEXT_PUBLIC_SANITY_PROJECT_ID /
  * NEXT_PUBLIC_SANITY_DATASET say otherwise (environment or .env.local). Needs
  * SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens).
  * Without --force, anything an editor already changed in /cms is kept.
  */
-import { createReadStream, existsSync, readFileSync } from "node:fs";
+import { createReadStream, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import { createClient } from "@sanity/client";
 import type { Img } from "../lib/types";
@@ -33,7 +35,9 @@ if (existsSync(join(root, ".env.local"))) {
 const { dataset, projectId } = await import("../sanity/env.ts");
 const token = process.env.SANITY_WRITE_TOKEN;
 const force = process.argv.includes("--force");
-const dryRun = process.argv.includes("--dry-run");
+const exportMode = process.argv.includes("--export");
+const dryRun = process.argv.includes("--dry-run") || exportMode;
+const assetsBase = (process.argv.find((a) => a.startsWith("--assets-base="))?.split("=")[1] ?? "https://www.capitalinvestmentllc.com").replace(/\/$/, "");
 
 if (!dryRun && (!projectId || !token)) {
   console.error("Set SANITY_WRITE_TOKEN (Editor token from sanity.io/manage > API > Tokens) in .env.local or the environment.");
@@ -91,6 +95,12 @@ const childMenuType = (parent?: string) => (parent === "menuItem" ? "subMenuItem
 
 /** Built-in data -> Sanity document values: images uploaded, array objects keyed and typed. */
 async function toSanity(v: Json, field = "", parentType?: string): Promise<Json> {
+  if (isImg(v) && exportMode) {
+    if (!existsSync(join(root, "public", v.src))) throw new Error(`Missing file: ${v.src}`);
+    // `sanity dataset import` downloads and uploads this file, then replaces the marker with a reference.
+    uploaded.set(v.src, v.src);
+    return { _type: "altImage", alt: v.alt, asset: { _sanityAsset: `image@${assetsBase}${v.src}` } };
+  }
   if (isImg(v)) return { _type: "altImage", alt: v.alt, asset: { _type: "reference", _ref: await asset(v.src) } };
   if (Array.isArray(v)) {
     const out = [];
@@ -144,6 +154,19 @@ async function build() {
 console.log(`Seeding ${projectId}/${dataset}${force ? " (overwrite)" : " (add missing, keeping existing documents)"}${dryRun ? " [dry run]" : ""}. Uploading images`);
 const docs = await build();
 console.log(`\n${uploaded.size} images ${dryRun ? "checked" : "uploaded"}. Writing ${docs.length} documents…`);
+if (exportMode) {
+  const dotted = docs.filter((d) => d._id.includes("."));
+  if (dotted.length) throw new Error(`Document ids with dots become private: ${dotted.map((d) => d._id).join(", ")}`);
+  const ids = new Set(docs.map((d) => d._id));
+  if (ids.size !== docs.length) throw new Error("Duplicate document ids");
+  const dir = join(root, "content-export");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "sanity-seed.json"), JSON.stringify(docs, null, 2) + "\n");
+  writeFileSync(join(dir, "sanity-seed.ndjson"), docs.map((d) => JSON.stringify(d)).join("\n") + "\n");
+  const counts = docs.reduce<Record<string, number>>((acc, d) => ((acc[d._type] = (acc[d._type] ?? 0) + 1), acc), {});
+  console.log("Exported to content-export/sanity-seed.json and .ndjson:", counts, `${uploaded.size} images referenced, no dots in ids`);
+  process.exit(0);
+}
 if (dryRun) {
   const counts = docs.reduce<Record<string, number>>((acc, d) => ((acc[d._type] = (acc[d._type] ?? 0) + 1), acc), {});
   const bad = JSON.stringify(docs).match(/"src":"\/images/g)?.length ?? 0;
