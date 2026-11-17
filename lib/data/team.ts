@@ -85,7 +85,7 @@ export const fallbackTeam: TeamMember[] = [
     "slug": "justin-katz",
     "name": "Justin Katz",
     "role": "Vice President",
-    "order": 5,
+    "order": 9,
     "photo": {
       "src": "/images/team/justin-katz.webp",
       "alt": "Justin Katz, Vice President at Capital Investment LLC",
@@ -170,11 +170,11 @@ export const fallbackTeam: TeamMember[] = [
   {
     "slug": "brooke-fontan",
     "name": "Brooke Fontan",
-    "role": "Real Estate Associate",
-    "order": 9,
+    "role": "Vice President",
+    "order": 5,
     "photo": {
       "src": "/images/team/brooke-fontan.webp",
-      "alt": "Brooke Fontan, Real Estate Associate at Capital Investment LLC",
+      "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
       "width": 891,
       "height": 891
     },
@@ -186,8 +186,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 542,
     "seo": {
-      "title": "Brooke Fontan, Real Estate Associate | Capital Investment LLC",
-      "description": "Brooke Fontan is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+      "title": "Brooke Fontan, Vice President | Capital Investment LLC",
+      "description": "Brooke Fontan is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {

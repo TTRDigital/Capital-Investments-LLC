@@ -314,7 +314,7 @@ export const fallbackPages: Page[] = [
             "slug": "brooke-fontan",
             "photo": {
               "src": "/images/team/carousel/brooke-fontan.webp",
-              "alt": "Brooke Fontan, Real Estate Associate at Capital Investment LLC",
+              "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
               "width": 237,
               "height": 243
             }
@@ -6511,7 +6511,7 @@ export const fallbackPages: Page[] = [
             "slug": "brooke-fontan",
             "photo": {
               "src": "/images/team/carousel/brooke-fontan.webp",
-              "alt": "Brooke Fontan, Real Estate Associate at Capital Investment LLC",
+              "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
               "width": 237,
               "height": 243
             }
