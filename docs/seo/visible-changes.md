@@ -33,3 +33,6 @@ proposed content goes to Sanity through `content-export/sanity-seed.json` (see b
 `npx sanity dataset import content-export/sanity-seed.ndjson production --missing` (never replaces existing
 documents) after approval. Production Sanity currently has no page documents; the site reads its built-in
 copy until they are loaded.
+
+## Live (TTR-1427)
+The SEO re-optimization and the removal of the five team pages were approved by the client on Nov 16 and go live on Nov 17, 2026.
