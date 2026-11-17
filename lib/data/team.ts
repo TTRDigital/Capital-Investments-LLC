@@ -82,25 +82,26 @@ export const fallbackTeam: TeamMember[] = [
     }
   },
   {
-    "slug": "justin-katz",
-    "name": "Justin Katz",
+    "slug": "brooke-fontan",
+    "name": "Brooke Fontan",
     "role": "Vice President",
     "order": 5,
     "photo": {
-      "src": "/images/team/justin-katz.webp",
-      "alt": "Justin Katz, Vice President at Capital Investment LLC",
-      "width": 1200,
-      "height": 1200
+      "src": "/images/team/brooke-fontan.webp",
+      "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
+      "width": 891,
+      "height": 891
     },
     "bio": [
-      "As Vice President at Capital Investment LLC, Justin brings over seven years of demonstrated experience in the commercial real estate industry to the firm’s newly launched Miami office. Justin began his career specializing in tenant representation services helping office space users throughout Washington, D.C., Maryland, and Virginia. He transitioned into Director and Manager roles focussing on acquisitions and dispositions which played a key role in sourcing, underwriting, and executing commercial real estate transactions across multiple asset classes.\n\nAt Capital Investment LLC, Justin leverages this dual background to drive growth opportunities in the energetic South Florida market, bridging the needs of investors, tenants, and property owners with a focus on long-term value creation. As the firm expands its regional footprint, Justin is extremely excited to help lead initiatives in Miami, contributing to Capital Investment’s mission of delivering strategic, data-driven real estate solutions.",
-      "Justin graduated from Radford University where he received a Bachelor of Science in Pre-medical studies. He enjoys running, playing pickleball, swimming, and attending musical events in his free time.",
-      "Contact me:\n(C) [202.961.0922](tel:+12029610922) (O) [202.723.5500](tel:+12027235500)\nEmail: [justin@capitalinvestmentllc.com](mailto:justin@capitalinvestmentllc.com)"
+      "Brooke Fontan is a trusted and experienced commercial real estate advisor who has 20+ years of experience in both the Real Estate Industry and the Financial Industry. She has worked with business owners, developers, investors, and Fortune 500 businesses. She has the knowledge and experience in representing tenants and landlords for their office, retail, and industrial leasing needs. Brooke has represented as well both buyers and sellers for retail, office, land, and industrial sales. She has managed shopping centers including all the financial aspects. She has also assisted in strategic real estate planning for her clients.",
+      "Brooke is a licensed real estate agent in Virginia and Texas. She graduated from the University of Houston with a Bachelor of Business Administration in Accounting degree.",
+      "Brooke’s diverse background and experience in both the real estate and financial industry helps her provide unique and creative solutions and provide the highest level of service possible to her clients.",
+      "Contact me:\nM [(571) 354-9167](tel:+15713549167)\nEmail: [brooke@capitalinvestmentllc.com](mailto:brooke@capitalinvestmentllc.com)"
     ],
-    "wpId": 2377,
+    "wpId": 542,
     "seo": {
-      "title": "Justin Katz, Vice President | Capital Investment LLC",
-      "description": "Justin Katz is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+      "title": "Brooke Fontan, Vice President | Capital Investment LLC",
+      "description": "Brooke Fontan is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
@@ -168,26 +169,25 @@ export const fallbackTeam: TeamMember[] = [
     }
   },
   {
-    "slug": "brooke-fontan",
-    "name": "Brooke Fontan",
-    "role": "Real Estate Associate",
+    "slug": "justin-katz",
+    "name": "Justin Katz",
+    "role": "Vice President",
     "order": 9,
     "photo": {
-      "src": "/images/team/brooke-fontan.webp",
-      "alt": "Brooke Fontan, Real Estate Associate at Capital Investment LLC",
-      "width": 891,
-      "height": 891
+      "src": "/images/team/justin-katz.webp",
+      "alt": "Justin Katz, Vice President at Capital Investment LLC",
+      "width": 1200,
+      "height": 1200
     },
     "bio": [
-      "Brooke Fontan is a trusted and experienced commercial real estate advisor who has 20+ years of experience in both the Real Estate Industry and the Financial Industry. She has worked with business owners, developers, investors, and Fortune 500 businesses. She has the knowledge and experience in representing tenants and landlords for their office, retail, and industrial leasing needs. Brooke has represented as well both buyers and sellers for retail, office, land, and industrial sales. She has managed shopping centers including all the financial aspects. She has also assisted in strategic real estate planning for her clients.",
-      "Brooke is a licensed real estate agent in Virginia and Texas. She graduated from the University of Houston with a Bachelor of Business Administration in Accounting degree.",
-      "Brooke’s diverse background and experience in both the real estate and financial industry helps her provide unique and creative solutions and provide the highest level of service possible to her clients.",
-      "Contact me:\nM [(571) 354-9167](tel:+15713549167)\nEmail: [brooke@capitalinvestmentllc.com](mailto:brooke@capitalinvestmentllc.com)"
+      "As Vice President at Capital Investment LLC, Justin brings over seven years of demonstrated experience in the commercial real estate industry to the firm’s newly launched Miami office. Justin began his career specializing in tenant representation services helping office space users throughout Washington, D.C., Maryland, and Virginia. He transitioned into Director and Manager roles focussing on acquisitions and dispositions which played a key role in sourcing, underwriting, and executing commercial real estate transactions across multiple asset classes.\n\nAt Capital Investment LLC, Justin leverages this dual background to drive growth opportunities in the energetic South Florida market, bridging the needs of investors, tenants, and property owners with a focus on long-term value creation. As the firm expands its regional footprint, Justin is extremely excited to help lead initiatives in Miami, contributing to Capital Investment’s mission of delivering strategic, data-driven real estate solutions.",
+      "Justin graduated from Radford University where he received a Bachelor of Science in Pre-medical studies. He enjoys running, playing pickleball, swimming, and attending musical events in his free time.",
+      "Contact me:\n(C) [202.961.0922](tel:+12029610922) (O) [202.723.5500](tel:+12027235500)\nEmail: [justin@capitalinvestmentllc.com](mailto:justin@capitalinvestmentllc.com)"
     ],
-    "wpId": 542,
+    "wpId": 2377,
     "seo": {
-      "title": "Brooke Fontan, Real Estate Associate | Capital Investment LLC",
-      "description": "Brooke Fontan is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+      "title": "Justin Katz, Vice President | Capital Investment LLC",
+      "description": "Justin Katz is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
