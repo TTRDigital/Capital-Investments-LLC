@@ -6,6 +6,7 @@ import { dataset, projectId } from "@/sanity/env";
 import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
+import { applyTeamOrder } from "@/lib/team-order";
 import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
@@ -87,7 +88,7 @@ export async function getPage(path: string): Promise<Page | undefined> {
 
 export const getTeam = cache(async (): Promise<TeamMember[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "teamMember" && defined(slug.current)] | order(order asc)`, {}, ["teamMember"]);
-  if (!cms?.length) return fallbackTeam;
+  if (!cms?.length) return applyTeamOrder(fallbackTeam);
   const bySlug = new Map(fallbackTeam.map((m) => [m.slug, m]));
   const merged = cms.map((doc) => {
     const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug }) as Partial<TeamMember>;
@@ -95,7 +96,7 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
     return merge(base, c);
   });
   const missing = fallbackTeam.filter((f) => !merged.some((m) => m.slug === f.slug));
-  return [...merged, ...missing].sort((a, b) => a.order - b.order);
+  return applyTeamOrder([...merged, ...missing]);
 });
 
 export async function getTeamMember(slug: string) {
