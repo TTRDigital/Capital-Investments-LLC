@@ -105,10 +105,32 @@ export const fallbackTeam: TeamMember[] = [
     }
   },
   {
+    "slug": "justin-katz",
+    "name": "Justin Katz",
+    "role": "Vice President",
+    "order": 6,
+    "photo": {
+      "src": "/images/team/justin-katz.webp",
+      "alt": "Justin Katz, Vice President at Capital Investment LLC",
+      "width": 1200,
+      "height": 1200
+    },
+    "bio": [
+      "As Vice President at Capital Investment LLC, Justin brings over seven years of demonstrated experience in the commercial real estate industry to the firm’s newly launched Miami office. Justin began his career specializing in tenant representation services helping office space users throughout Washington, D.C., Maryland, and Virginia. He transitioned into Director and Manager roles focussing on acquisitions and dispositions which played a key role in sourcing, underwriting, and executing commercial real estate transactions across multiple asset classes.\n\nAt Capital Investment LLC, Justin leverages this dual background to drive growth opportunities in the energetic South Florida market, bridging the needs of investors, tenants, and property owners with a focus on long-term value creation. As the firm expands its regional footprint, Justin is extremely excited to help lead initiatives in Miami, contributing to Capital Investment’s mission of delivering strategic, data-driven real estate solutions.",
+      "Justin graduated from Radford University where he received a Bachelor of Science in Pre-medical studies. He enjoys running, playing pickleball, swimming, and attending musical events in his free time.",
+      "Contact me:\n(C) [202.961.0922](tel:+12029610922) (O) [202.723.5500](tel:+12027235500)\nEmail: [justin@capitalinvestmentllc.com](mailto:justin@capitalinvestmentllc.com)"
+    ],
+    "wpId": 2377,
+    "seo": {
+      "title": "Justin Katz, Vice President | Capital Investment LLC",
+      "description": "Justin Katz is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+    }
+  },
+  {
     "slug": "christina-davies",
     "name": "Christina Davies",
     "role": "Project Development",
-    "order": 6,
+    "order": 7,
     "photo": {
       "src": "/images/team/christina-davies.webp",
       "alt": "Christina Davies, Project Development at Capital Investment LLC",
@@ -129,7 +151,7 @@ export const fallbackTeam: TeamMember[] = [
     "slug": "boyd-lawrence",
     "name": "Boyd Lawrence",
     "role": "Real Estate Associate",
-    "order": 7,
+    "order": 8,
     "photo": {
       "src": "/images/team/boyd-lawrence.webp",
       "alt": "Boyd Lawrence, Real Estate Associate at Capital Investment LLC",
@@ -150,7 +172,7 @@ export const fallbackTeam: TeamMember[] = [
     "slug": "yassin-kadir",
     "name": "Yassin Kadir",
     "role": "Real Estate Associate",
-    "order": 8,
+    "order": 9,
     "photo": {
       "src": "/images/team/yassin-kadir.webp",
       "alt": "Yassin Kadir, Real Estate Associate at Capital Investment LLC",
@@ -166,28 +188,6 @@ export const fallbackTeam: TeamMember[] = [
     "seo": {
       "title": "Yassin Kadir, Real Estate Associate | Capital Investment LLC",
       "description": "Yassin Kadir is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
-    }
-  },
-  {
-    "slug": "justin-katz",
-    "name": "Justin Katz",
-    "role": "Vice President",
-    "order": 9,
-    "photo": {
-      "src": "/images/team/justin-katz.webp",
-      "alt": "Justin Katz, Vice President at Capital Investment LLC",
-      "width": 1200,
-      "height": 1200
-    },
-    "bio": [
-      "As Vice President at Capital Investment LLC, Justin brings over seven years of demonstrated experience in the commercial real estate industry to the firm’s newly launched Miami office. Justin began his career specializing in tenant representation services helping office space users throughout Washington, D.C., Maryland, and Virginia. He transitioned into Director and Manager roles focussing on acquisitions and dispositions which played a key role in sourcing, underwriting, and executing commercial real estate transactions across multiple asset classes.\n\nAt Capital Investment LLC, Justin leverages this dual background to drive growth opportunities in the energetic South Florida market, bridging the needs of investors, tenants, and property owners with a focus on long-term value creation. As the firm expands its regional footprint, Justin is extremely excited to help lead initiatives in Miami, contributing to Capital Investment’s mission of delivering strategic, data-driven real estate solutions.",
-      "Justin graduated from Radford University where he received a Bachelor of Science in Pre-medical studies. He enjoys running, playing pickleball, swimming, and attending musical events in his free time.",
-      "Contact me:\n(C) [202.961.0922](tel:+12029610922) (O) [202.723.5500](tel:+12027235500)\nEmail: [justin@capitalinvestmentllc.com](mailto:justin@capitalinvestmentllc.com)"
-    ],
-    "wpId": 2377,
-    "seo": {
-      "title": "Justin Katz, Vice President | Capital Investment LLC",
-      "description": "Justin Katz is a Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
