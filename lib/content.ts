@@ -7,6 +7,7 @@ import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
 import { applyTeamOrder } from "@/lib/team-order";
+import { applyMemberTitles, fixDavidTitle } from "@/lib/title-override";
 import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
@@ -68,7 +69,7 @@ export async function getOffice(key: string): Promise<Office | undefined> {
 
 export const getPages = cache(async (): Promise<Page[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "page" && defined(path)] | order(order asc)`, {}, ["page"]);
-  if (!cms?.length) return fallbackPages;
+  if (!cms?.length) return fixDavidTitle(fallbackPages);
   const byPath = new Map(fallbackPages.map((p) => [p.path, p]));
   const merged = cms.map((doc) => {
     const c = fromCms(doc) as Partial<Page>;
@@ -77,7 +78,7 @@ export const getPages = cache(async (): Promise<Page[]> => {
     return { ...page, sections: page.sections.map(normalizeSection).filter((s): s is Section => !!s) };
   });
   const missing = fallbackPages.filter((f) => !merged.some((m) => m.path === f.path));
-  return [...merged, ...missing].sort((a, b) => a.order - b.order);
+  return fixDavidTitle([...merged, ...missing].sort((a, b) => a.order - b.order));
 });
 
 export async function getPage(path: string): Promise<Page | undefined> {
@@ -88,7 +89,7 @@ export async function getPage(path: string): Promise<Page | undefined> {
 
 export const getTeam = cache(async (): Promise<TeamMember[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "teamMember" && defined(slug.current)] | order(order asc)`, {}, ["teamMember"]);
-  if (!cms?.length) return applyTeamOrder(fallbackTeam);
+  if (!cms?.length) return applyMemberTitles(applyTeamOrder(fallbackTeam));
   const bySlug = new Map(fallbackTeam.map((m) => [m.slug, m]));
   const merged = cms.map((doc) => {
     const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug }) as Partial<TeamMember>;
@@ -96,7 +97,7 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
     return merge(base, c);
   });
   const missing = fallbackTeam.filter((f) => !merged.some((m) => m.slug === f.slug));
-  return applyTeamOrder([...merged, ...missing]);
+  return applyMemberTitles(applyTeamOrder([...merged, ...missing]));
 });
 
 export async function getTeamMember(slug: string) {

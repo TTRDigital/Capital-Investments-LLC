@@ -660,7 +660,7 @@
             "slug": "david-krucoff",
             "photo": {
               "_type": "altImage",
-              "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+              "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
               "asset": {
                 "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/carousel/david-krucoff.webp"
               }
@@ -7964,7 +7964,7 @@
             "slug": "david-krucoff",
             "photo": {
               "_type": "altImage",
-              "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+              "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
               "asset": {
                 "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/carousel/david-krucoff.webp"
               }
@@ -8506,11 +8506,11 @@
     "_id": "teamMember-david-krucoff",
     "_type": "teamMember",
     "name": "David Krucoff",
-    "role": "Executive Vice President",
+    "role": "Associate Broker",
     "order": 2,
     "photo": {
       "_type": "altImage",
-      "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+      "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
       "asset": {
         "_sanityAsset": "image@https://www.capitalinvestmentllc.com/images/team/david-krucoff.webp"
       }
@@ -8530,8 +8530,8 @@
     },
     "seo": {
       "_type": "seo",
-      "title": "David Krucoff, Executive Vice President | Capital Investment LLC",
-      "description": "David Krucoff is an Executive Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+      "title": "David Krucoff, Associate Broker | Capital Investment LLC",
+      "description": "David Krucoff is an Associate Broker at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
