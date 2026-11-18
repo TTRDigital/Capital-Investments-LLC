@@ -8567,7 +8567,7 @@
     "_type": "teamMember",
     "name": "Justin Katz",
     "role": "Vice President",
-    "order": 5,
+    "order": 6,
     "photo": {
       "_type": "altImage",
       "alt": "Justin Katz, Vice President at Capital Investment LLC",
@@ -8596,7 +8596,7 @@
     "_type": "teamMember",
     "name": "Christina Davies",
     "role": "Project Development",
-    "order": 6,
+    "order": 7,
     "photo": {
       "_type": "altImage",
       "alt": "Christina Davies, Project Development at Capital Investment LLC",
@@ -8624,7 +8624,7 @@
     "_type": "teamMember",
     "name": "Boyd Lawrence",
     "role": "Real Estate Associate",
-    "order": 7,
+    "order": 8,
     "photo": {
       "_type": "altImage",
       "alt": "Boyd Lawrence, Real Estate Associate at Capital Investment LLC",
@@ -8652,7 +8652,7 @@
     "_type": "teamMember",
     "name": "Yassin Kadir",
     "role": "Real Estate Associate",
-    "order": 8,
+    "order": 9,
     "photo": {
       "_type": "altImage",
       "alt": "Yassin Kadir, Real Estate Associate at Capital Investment LLC",
@@ -8681,7 +8681,7 @@
     "_type": "teamMember",
     "name": "Brooke Fontan",
     "role": "Real Estate Associate",
-    "order": 9,
+    "order": 5,
     "photo": {
       "_type": "altImage",
       "alt": "Brooke Fontan, Real Estate Associate at Capital Investment LLC",
