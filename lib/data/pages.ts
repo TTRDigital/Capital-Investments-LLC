@@ -269,7 +269,7 @@ export const fallbackPages: Page[] = [
             "slug": "david-krucoff",
             "photo": {
               "src": "/images/team/carousel/david-krucoff.webp",
-              "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+              "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
               "width": 237,
               "height": 243
             }
@@ -6466,7 +6466,7 @@ export const fallbackPages: Page[] = [
             "slug": "david-krucoff",
             "photo": {
               "src": "/images/team/carousel/david-krucoff.webp",
-              "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+              "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
               "width": 237,
               "height": 243
             }

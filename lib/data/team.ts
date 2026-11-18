@@ -38,11 +38,11 @@ export const fallbackTeam: TeamMember[] = [
   {
     "slug": "david-krucoff",
     "name": "David Krucoff",
-    "role": "Executive Vice President",
+    "role": "Associate Broker",
     "order": 2,
     "photo": {
       "src": "/images/team/david-krucoff.webp",
-      "alt": "David Krucoff, Executive Vice President at Capital Investment LLC",
+      "alt": "David Krucoff, Associate Broker at Capital Investment LLC",
       "width": 966,
       "height": 966
     },
@@ -56,8 +56,8 @@ export const fallbackTeam: TeamMember[] = [
     ],
     "wpId": 520,
     "seo": {
-      "title": "David Krucoff, Executive Vice President | Capital Investment LLC",
-      "description": "David Krucoff is an Executive Vice President at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+      "title": "David Krucoff, Associate Broker | Capital Investment LLC",
+      "description": "David Krucoff is an Associate Broker at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
   {
