@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { preloadRecaptcha, recaptchaToken } from "@/lib/spam-guard";
 import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYTES, type FormKind } from "@/lib/lead-options";
 
 /*
@@ -86,6 +87,7 @@ export function LeadForm({
 
   useEffect(() => {
     startedAt.current = Date.now();
+    preloadRecaptcha();
   }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -109,6 +111,8 @@ export function LeadForm({
       /* storage unavailable */
     }
     const honeypot = (formRef.current?.elements.namedItem("website_url") as HTMLInputElement | null)?.value ?? "";
+    const elapsed = Date.now() - startedAt.current;
+    const token = await recaptchaToken("lead");
     const payload: Record<string, string | number | boolean> = {
       form: kind,
       ...Object.fromEntries(fields.filter((f) => f.type !== "file").map((f) => [f.name, values[f.name] ?? ""])),
@@ -116,7 +120,8 @@ export function LeadForm({
       consent: true,
       consent_text: consentText,
       website_url: honeypot,
-      elapsed_ms: Date.now() - startedAt.current,
+      elapsed_ms: elapsed,
+      recaptcha_token: token,
       page_url: window.location.href,
       landing_page: attribution.landing_page ?? "",
       referrer: attribution.referrer ?? document.referrer,
