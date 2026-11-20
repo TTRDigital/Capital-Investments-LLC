@@ -1,4 +1,5 @@
 import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
+import { clientIp, guardLead, rateLimited, SPAM_LABEL } from "@/lib/spam-guard";
 
 /*
  * Lead forms (contact, consultation, careers). Checks the same rules
@@ -30,6 +31,7 @@ export async function POST(req: Request) {
     try { oh = new URL(origin).hostname.toLowerCase(); } catch { /* bad origin */ }
     if (oh !== host) return reply(403, { ok: false, error: "Forbidden." });
   }
+  if (rateLimited(clientIp(req))) return reply(429, { ok: false, error: "Too many requests. Please call us instead." });
 
   let input: Record<string, unknown> | null = null;
   let hasResume = false;
@@ -77,11 +79,17 @@ export async function POST(req: Request) {
   if (form === "careers" && !hasResume) errors.resume = "Please attach your resume.";
   if (Object.keys(errors).length) return reply(422, { ok: false, error: "Please check the form.", fields: errors });
 
-  const trapFilled = text(input.website_url, 200) !== "";
-  const elapsed = typeof input.elapsed_ms === "number" ? input.elapsed_ms : null;
-  const tooFast = elapsed !== null && elapsed < MIN_FILL_MS;
-  if (trapFilled && tooFast) return reply(200, { ok: true });
-  const spam = trapFilled ? "suspect: hidden field filled" : tooFast ? `suspect: sent in ${elapsed} ms` : "ok";
+  // Spam (lib/spam-guard.ts): a bot gets the usual ok answer and nothing is sent; a doubtful lead is still sent, marked "Possible spam".
+  const verdict = await guardLead({
+    trap: input.website_url,
+    elapsedMs: input.elapsed_ms,
+    minFillMs: MIN_FILL_MS,
+    texts: [lead.full_name ?? "", lead.first_name ?? "", lead.last_name ?? "", text(input.position, 200), lead.email ?? ""],
+    recaptchaToken: input.recaptcha_token,
+    ip: clientIp(req),
+  });
+  if (verdict.action === "drop") return reply(200, { ok: true });
+  const spam = verdict.note;
 
   const key = process.env.TTR_SITE_KEY;
   if (!key) {
@@ -96,7 +104,7 @@ export async function POST(req: Request) {
   body.set("r", text(input.referrer, 1000));
   body.set("u", text(input.landing_page, 1000));
   const f = (n: string, v: string) => { if (v) body.set(`f_${n}`, v); };
-  f("form", form);
+  f("form", verdict.possibleSpam ? `${SPAM_LABEL}: ${form}` : form);
   f("name", fullName);
   f("first_name", lead.first_name ?? "");
   f("last_name", lead.last_name ?? "");
