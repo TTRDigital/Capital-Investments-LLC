@@ -6840,6 +6840,7 @@ export const fallbackPages: Page[] = [
           "By submitting any form on our website, you consent to receive SMS and email messages from **Capital Investment LLC** regarding your inquiries, scheduled consultations, and related updates.",
           "Message and data rates may apply. You can opt out at any time by replying **STOP** to any SMS message or by contacting us through our website.",
           "We do not sell, rent, or share your personal information with third parties for marketing purposes.",
+          "**Text messages (SMS).** If you give us your mobile number and agree to receive texts, Capital Investment uses it only to send the messages you asked for, such as appointment reminders and replies to your requests. Message frequency varies. Message and data rates may apply. Reply STOP at any time to stop texts, or HELP for help. We never sell or share your mobile number or your texting consent with third parties or affiliates for their marketing.",
           "Capital Investment LLC does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records."
         ],
         "_key": "s1"
@@ -6893,6 +6894,7 @@ export const fallbackPages: Page[] = [
           "You agree to defend, indemnify and hold harmless Company, its officers, directors, employees, agents and affiliates from and against any and all claims, liabilities, damages, losses and expenses (including reasonable attorneys’ fees) arising out of or in any way connected with: (a) your use of the Site; (b) your violation of these Terms; or (c) your infringement of any third-party rights.",
           "## **9. Privacy**",
           "Our Privacy Policy describes how we collect, use, and disclose your information — by using the Site you agree to the terms of that policy. Please review it here: [Privacy Policy](/privacy-policy/).",
+          "**Text messages.** When you opt in, Capital Investment may text you about your appointments and requests. Message frequency varies. Message and data rates may apply. Reply STOP to cancel at any time; you will get one text confirming it. Reply HELP for help, or call 305-404-6426. Consent to texts is not a condition of any purchase. Carriers are not liable for delayed or undelivered messages.",
           "## **10. Changes to Terms**",
           "We may revise these Terms at any time in our sole discretion. The updated Terms will post the “Effective Date” at the top. You are responsible for reviewing them periodically. Your continued use of the Site after changes constitute your acceptance of the updated Terms.",
           "## **11. Governing Law & Jurisdiction**",

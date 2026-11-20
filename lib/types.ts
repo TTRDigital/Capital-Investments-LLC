@@ -118,6 +118,8 @@ export type TeamGridSection = Base & { _type: "teamGrid"; heading: string };
 export type CareersSection = Base & { _type: "careers"; text: Rich; heading: string; openings: Link[] };
 export type JobsSection = Base & { _type: "jobs"; heading: string; jobs: { title: string; body: Rich }[]; formHeading: string };
 export type ContactFormSection = Base & { _type: "contactForm" };
+/** Texting opt-in form (TTR-2572): intro text, then First name, Mobile number and an unticked consent box. */
+export type TextOptInSection = Base & { _type: "textOptIn"; text: Rich; consentText: string; submitLabel: string };
 export type MessageSection = Base & { _type: "message"; heading: string; text: Rich };
 export type SitemapListSection = Base & { _type: "sitemapList"; heading: string };
 export type LegalSection = Base & { _type: "legal"; heading: string; body: Rich };
@@ -152,6 +154,7 @@ export type Section =
   | CareersSection
   | JobsSection
   | ContactFormSection
+  | TextOptInSection
   | MessageSection
   | SitemapListSection
   | LegalSection;

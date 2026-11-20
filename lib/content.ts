@@ -4,7 +4,8 @@ import { sanityFetch } from "@/lib/sanity/fetch";
 import { merge } from "@/lib/merge";
 import { dataset, projectId } from "@/sanity/env";
 import { fallbackSettings } from "@/lib/data/site";
-import { fallbackPages } from "@/lib/data/pages";
+import { fallbackPages as sitePages } from "@/lib/data/pages";
+import { textingPages } from "@/lib/data/texting-pages";
 import { fallbackTeam } from "@/lib/data/team";
 import { applyTeamOrder } from "@/lib/team-order";
 import { applyMemberTitles, fixDavidTitle } from "@/lib/title-override";
@@ -66,6 +67,9 @@ export async function getOffice(key: string): Promise<Office | undefined> {
 }
 
 /* ---------- Pages ---------- */
+
+/** The site's pages plus the texting opt-in page (lib/data/texting-pages.ts, TTR-2572). */
+const fallbackPages = [...sitePages, ...textingPages];
 
 export const getPages = cache(async (): Promise<Page[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "page" && defined(path)] | order(order asc)`, {}, ["page"]);

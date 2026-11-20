@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useId, useRef, useState } from "react";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYTES, type FormKind } from "@/lib/lead-options";
 
 /*
@@ -9,6 +9,7 @@ import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYT
  * - contact (Let's Chat popup, /contact-us/): Full Name, Email, Phone
  * - consultation (footer, "be contacted"): Full Name*, Email*, Phone*
  * - careers (/careers-in-…/): Name*, Email Address*, Phone Number, Upload Resume*
+ * - texts (/text-messages/, texting opt-in, TTR-2572): First name*, Mobile number*
  * Posted to /api/lead/, which checks the same rules and forwards to GoHighLevel.
  */
 
@@ -32,6 +33,10 @@ const FIELDS: Record<FormKind, FieldDef[]> = {
     { name: "phone", label: "Phone Number", required: false, type: "tel", autoComplete: "tel" },
     { name: "resume", label: "Upload Resume", required: true, type: "file" },
   ],
+  texts: [
+    { name: "first_name", label: "First name", required: true, type: "text", autoComplete: "given-name" },
+    { name: "phone", label: "Mobile number", required: true, type: "tel", autoComplete: "tel" },
+  ],
 };
 
 /** Where a successful submit goes; forms without one show a thank-you message in place. */
@@ -40,6 +45,7 @@ const SUCCESS: Record<FormKind, string> = {
   contact: "Thank you. Your message has been sent.",
   consultation: "Thank you. Your request has been sent.",
   careers: "Thank you. Your resume has been sent.",
+  texts: "Thank you. You are signed up for texts.",
 };
 
 function validate(f: FieldDef, value: string, file: File | null): string | undefined {
@@ -64,9 +70,16 @@ export function LeadForm({
   submitLabel = "SEND",
   position,
   showLabels = true,
+  consentContent,
+  after,
 }: {
   kind: FormKind;
+  /** The consent wording, sent with the lead as the record of what the person agreed to. */
   consentText: string;
+  /** Shown next to the box instead of consentText when the wording carries links. Must say the same words. */
+  consentContent?: ReactNode;
+  /** Shown under the submit button. */
+  after?: ReactNode;
   tone?: "light" | "dark";
   submitLabel?: string;
   /** Job title sent with a careers application. */
@@ -221,7 +234,7 @@ export function LeadForm({
             aria-describedby={errors.consent ? `${uid}-consent-err` : undefined}
             className="mt-[3px] h-[16px] w-[16px] shrink-0 accent-[#bb6e3d]"
           />
-          <span>{consentText}</span>
+          <span>{consentContent ?? consentText}</span>
         </label>
         {errors.consent ? (
           <p id={`${uid}-consent-err`} className={`mt-1 text-[13px] ${errCls}`}>
@@ -249,6 +262,7 @@ export function LeadForm({
       >
         {status === "sending" ? "Sending…" : submitLabel}
       </button>
+      {after}
     </form>
   );
 }

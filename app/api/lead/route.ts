@@ -15,6 +15,7 @@ const FORMS: Record<string, Record<string, boolean>> = {
   contact: { full_name: true, email: true, phone: true },
   consultation: { full_name: true, email: true, phone: true },
   careers: { full_name: true, email: true, phone: false },
+  texts: { first_name: true, phone: true },
 };
 
 function reply(status: number, body: Record<string, unknown>) {
@@ -89,7 +90,7 @@ export async function POST(req: Request) {
     return reply(503, { ok: false, error: "Please call us instead." });
   }
 
-  const fullName = lead.full_name ?? `${lead.first_name} ${lead.last_name}`.trim();
+  const fullName = lead.full_name ?? `${lead.first_name ?? ""} ${lead.last_name ?? ""}`.trim();
   const body = new URLSearchParams();
   body.set("k", key);
   body.set("p", new URL(text(input.page_url, 1000) || "https://www.capitalinvestmentllc.com/").pathname);
@@ -105,6 +106,7 @@ export async function POST(req: Request) {
   f("position", text(input.position, 200));
   if (hasResume) f("resume_file", `${resumeName} (not delivered: ask the person to email it)`);
   f("consent", "yes");
+  if (form === "texts") f("sms_opt_in", "yes");
   f("consent_text", text(input.consent_text, 1000));
   f("spam_check", spam);
   f("page_url", text(input.page_url, 1000));

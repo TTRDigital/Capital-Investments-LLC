@@ -5,6 +5,7 @@ import type {
   LegalSection,
   MarketSliderSection,
   MessageSection,
+  TextOptInSection,
   Office,
   OfficeCardsSection,
   OfficeListSection,
@@ -213,6 +214,48 @@ export function ContactFormBlock({ consentText }: { consentText: string }) {
       <div className="container-box">
         <div className="mx-auto max-w-[566px]">
           <LeadForm kind="contact" consentText={consentText} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Texting opt-in (TTR-2572) ---------- */
+
+const LEGAL_LINK = "font-semibold text-copper underline";
+
+/** The consent wording with "Privacy Policy" and "Terms" as links. The words stay exactly as written in the content. */
+function consentWithLinks(text: string) {
+  const tail = "See our Privacy Policy and Terms.";
+  if (!text.endsWith(tail)) return undefined;
+  return (
+    <>
+      {text.slice(0, -tail.length)}See our{" "}
+      <Link href="/privacy-policy/" target="_blank" rel="noopener" className={LEGAL_LINK}>Privacy Policy</Link> and{" "}
+      <Link href="/terms-of-service/" target="_blank" rel="noopener" className={LEGAL_LINK}>Terms</Link>.
+    </>
+  );
+}
+
+export function TextOptInBlock({ s }: { s: TextOptInSection }) {
+  return (
+    <section className="py-[40px] md:py-[50px]">
+      <div className="container-box">
+        <div className="mx-auto max-w-[566px]">
+          <Rich paras={s.text} className="font-sans text-[16px] leading-[1.75] text-black/85" />
+          <LeadForm
+            kind="texts"
+            consentText={s.consentText}
+            consentContent={consentWithLinks(s.consentText)}
+            submitLabel={s.submitLabel}
+            after={
+              <p className="text-center text-[14px]">
+                <Link href="/privacy-policy/" className={LEGAL_LINK}>Privacy Policy</Link>
+                <span aria-hidden="true"> | </span>
+                <Link href="/terms-of-service/" className={LEGAL_LINK}>Terms</Link>
+              </p>
+            }
+          />
         </div>
       </div>
     </section>
