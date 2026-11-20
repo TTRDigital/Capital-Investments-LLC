@@ -47,7 +47,7 @@ export default async function SitePage({ params }: { params: Promise<Params> }) 
   return (
     <>
       {path !== "/" ? <JsonLd data={breadcrumbSchema(crumbs.map((c) => ({ name: c.label, path: c.path })))} /> : null}
-      {page.group === "services" && path !== "/services/" ? <JsonLd data={serviceSchema(page.title, page.seo.description, page.path)} /> : null}
+      {(page.group === "services" && path !== "/services/") || page.areaServed ? <JsonLd data={serviceSchema(page.title, page.seo.description, page.path, page.areaServed)} /> : null}
       {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
       {page.sections.map((s, i) => (
         <SectionRenderer key={s._key ?? i} section={s} ctx={{ settings, team, pages, crumbs }} />

@@ -167,6 +167,8 @@ export type Page = {
   order: number;
   seo: Seo;
   sections: Section[];
+  /** Service-in-a-city pages: the place named in the page's Service JSON-LD (areaServed), e.g. "Miami, FL". */
+  areaServed?: string;
 };
 
 export type TeamMember = {

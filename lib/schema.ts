@@ -50,8 +50,8 @@ export function businessSchema(s: SiteSettings) {
   };
 }
 
-/** Service pages: the service as offered by the firm in the markets it serves. Text comes from the page's own title and description. */
-export function serviceSchema(name: string, description: string, path: string) {
+/** Service pages: the service as offered by the firm in the markets it serves (or in one place, for a service-in-a-city page). Text comes from the page's own title and description. */
+export function serviceSchema(name: string, description: string, path: string, area?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -59,7 +59,7 @@ export function serviceSchema(name: string, description: string, path: string) {
     description,
     url: absoluteUrl(path),
     provider: { "@id": ORG_ID() },
-    areaServed: ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
+    areaServed: area ?? ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
   };
 }
 
