@@ -11,8 +11,8 @@ import { Analytics } from "@/components/layout/Analytics";
 import { HydrationSignal } from "@/components/layout/HydrationSignal";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
 
-/** TTR OS tracker site key (public, it ships in the page). Set NEXT_PUBLIC_TTR_SITE_KEY in Vercel; nothing loads when empty. */
-const TTR_SITE = process.env.NEXT_PUBLIC_TTR_SITE_KEY;
+/** TTR OS tracker site key. Public (it ships in every page), so it falls back to Capital's key; NEXT_PUBLIC_TTR_SITE_KEY overrides it. */
+const TTR_SITE = process.env.NEXT_PUBLIC_TTR_SITE_KEY || "rpHDHW5PBWuKNAXadcNPiQ";
 
 /** Header, footer and site-wide behaviors. Used by the site layout and the 404 page. */
 export async function SiteShell({ children }: { children: ReactNode }) {
@@ -35,7 +35,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <HydrationSignal />
       <Analytics />
       <script dangerouslySetInnerHTML={{ __html: revealScript }} />
-      {TTR_SITE ? <script src="https://portal.ttrdigitalmarketing.com/api/site/script/5a23a7758595" data-site={TTR_SITE} defer /> : null}
+      <script src="https://portal.ttrdigitalmarketing.com/api/site/script/5a23a7758595" data-site={TTR_SITE} defer />
     </>
   );
 }

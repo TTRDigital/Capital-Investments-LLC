@@ -4,7 +4,8 @@ import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
  * Lead forms (contact, consultation, careers). Checks the same rules
  * as the form, filters spam, then sends the lead to TTR OS, which saves it for
  * Capital Investment LLC. Settings (Vercel environment variables):
- *   TTR_SITE_KEY   the public site key from TTR OS (Capital > Integrations)
+ *   TTR_SITE_KEY   optional, the public site key from TTR OS (Capital > Integrations);
+ *                  defaults to Capital's key, which also ships in every page
  *   TTR_OS_URL     optional, default https://portal.ttrdigitalmarketing.com
  * A careers resume cannot be emailed from here: the lead is saved with the
  * file name, and the person is asked to email the resume.
@@ -83,7 +84,7 @@ export async function POST(req: Request) {
   if (trapFilled && tooFast) return reply(200, { ok: true });
   const spam = trapFilled ? "suspect: hidden field filled" : tooFast ? `suspect: sent in ${elapsed} ms` : "ok";
 
-  const key = process.env.TTR_SITE_KEY;
+  const key = process.env.TTR_SITE_KEY || "rpHDHW5PBWuKNAXadcNPiQ";
   if (!key) {
     console.error("[lead] TTR_SITE_KEY is not set: lead NOT saved");
     return reply(503, { ok: false, error: "Please call us instead." });
