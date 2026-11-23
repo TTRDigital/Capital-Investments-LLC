@@ -16,10 +16,6 @@ export function LazyMap({ title, src, className }: { title: string; src: string;
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (!("IntersectionObserver" in window)) {
-      setOn(true);
-      return;
-    }
     let io: IntersectionObserver | undefined;
     const watch = () => {
       io = new IntersectionObserver(
