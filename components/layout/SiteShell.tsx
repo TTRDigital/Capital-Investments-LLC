@@ -26,7 +26,7 @@ export async function SiteShell({ children }: { children: ReactNode }) {
       <a href="#main" className="sr-only z-[100] rounded bg-copper px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to content
       </a>
-      <Header menu={settings.menu} logo={settings.logo} siteName={settings.name} />
+      <Header menu={settings.menu} siteName={settings.name} phone={settings.phone} />
       <main id="main" tabIndex={-1} className="outline-none">
         {children}
       </main>

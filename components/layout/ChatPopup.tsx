@@ -49,36 +49,36 @@ export function ChatPopup({ offices, consentText }: { offices: Office[]; consent
       aria-labelledby="chat-title"
       onClose={() => setOpen(false)}
       onClick={(e) => e.target === ref.current && close()}
-      className="m-auto max-h-[92dvh] w-[calc(100%-30px)] max-w-[775px] overflow-y-auto rounded-[10px] bg-white p-0 text-ink backdrop:bg-black/60"
+      className="m-auto max-h-[92dvh] w-[calc(100%-24px)] max-w-[920px] overflow-y-auto rounded-2xl bg-white p-0 text-body shadow-lift backdrop:bg-ink/60 backdrop:backdrop-blur-sm"
     >
       {open ? (
-        <div className="relative px-[15px] pb-[40px] pt-[30px] md:px-[30px]">
-          <button type="button" onClick={close} aria-label="Close" className="absolute right-[18px] top-[18px] flex h-[36px] w-[36px] items-center justify-center rounded-full bg-copper text-white transition-transform hover:scale-110">
-            <Close className="h-[16px] w-[16px]" />
+        <div className="relative grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+          <button type="button" onClick={close} aria-label="Close" className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-sand">
+            <Close className="h-5 w-5" />
           </button>
-          <h2 id="chat-title" className="text-center font-serif text-[32px] font-bold leading-[1.3] md:text-[44px]">
-            Get In Touch
-          </h2>
-          <div className="mt-[20px] divide-y divide-[#555]">
-            {offices.map((o) => (
-              <div key={o.key} className="grid items-center gap-4 py-[25px] md:grid-cols-2 md:py-[35px]">
-                <div className="md:pl-[10px]">
-                  <h3 className="font-serif text-[30px] font-bold leading-[1.2] md:text-[38px]">{o.label}</h3>
+          <div className="bg-sand px-6 pb-8 pt-10 md:px-10 md:py-12">
+            <h2 id="chat-title" className="h-section">
+              Get In Touch
+            </h2>
+            <ul className="mt-8 space-y-6">
+              {offices.map((o) => (
+                <li key={o.key} className="border-t border-line pt-6 first:border-0 first:pt-0">
+                  <h3 className="h-card">{o.label}</h3>
+                  <p className="mt-2 flex gap-2.5 text-[14.5px] leading-relaxed">
+                    <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
+                    <span>{o.longAddress}</span>
+                  </p>
                   {o.phone ? (
-                    <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="mt-[14px] inline-flex items-center gap-[6px] rounded-[30px] bg-copper px-[24px] py-[10px] font-dm text-[15px] font-semibold text-white transition-opacity hover:opacity-90">
-                      <Phone className="h-[14px] w-[14px]" />
+                    <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="mt-3 inline-flex items-center gap-2 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
+                      <Phone className="h-3.5 w-3.5 text-copper" />
                       {o.phone}
                     </a>
                   ) : null}
-                </div>
-                <p className="flex items-center gap-[18px] font-dm text-[17px] leading-[1.6]">
-                  <Pin className="h-[22px] w-[16px] shrink-0 text-[#6b7280]" />
-                  <span>{o.longAddress}</span>
-                </p>
-              </div>
-            ))}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="mx-auto max-w-[566px]">
+          <div className="px-6 pb-8 pt-6 md:px-10 md:py-12">
             <LeadForm kind="contact" consentText={consentText} />
           </div>
         </div>

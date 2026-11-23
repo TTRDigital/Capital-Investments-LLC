@@ -69,7 +69,7 @@ export function SectionRenderer({ section: s, ctx }: { section: Section; ctx: Re
     case "jobs":
       return <Jobs s={s} consentText={ctx.settings.consentText} />;
     case "contactForm":
-      return <ContactFormBlock consentText={ctx.settings.consentText} />;
+      return <ContactFormBlock consentText={ctx.settings.consentText} offices={offices(ctx.settings.contactOffices)} />;
     case "message":
       return <Message s={s} />;
     case "sitemapList":

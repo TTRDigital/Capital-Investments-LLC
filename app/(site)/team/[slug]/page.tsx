@@ -1,15 +1,15 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getPage, getTeam, getTeamMember } from "@/lib/content";
+import { getTeam, getTeamMember } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { breadcrumbSchema, personSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { Hero } from "@/components/sections/Basic";
+import Link from "next/link";
 import { Picture } from "@/components/ui/Picture";
 import { Rich } from "@/components/ui/Rich";
-import type { HeroSection } from "@/lib/types";
+import { PillButton } from "@/components/sections/parts";
 
-/* Team member pages (/team/<slug>/), same layout as the old WordPress "team" posts. */
+/* Team member pages (/team/<slug>/): breadcrumb, portrait, name, role and bio. */
 
 // A path that was not built ahead is rendered on request: in draft preview (lib/preview.ts) that is how an
 // unpublished page (e.g. TTR OS's scratch draft) shows. For visitors nothing changes: published content has no
@@ -27,35 +27,53 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [m, teamPage] = await Promise.all([getTeamMember(slug), getPage("/our-team/")]);
+  const m = await getTeamMember(slug);
   if (!m) notFound();
-  // Same banner photo as /our-team/.
-  const teamHero = teamPage?.sections.find((s) => s._type === "hero") as HeroSection | undefined;
-  const hero: HeroSection = { _type: "hero", heading: m.role, image: teamHero?.image, overlay: teamHero?.overlay ?? 0.4, position: teamHero?.position ?? "top", breadcrumbs: true, align: "left" };
   const path = `/team/${m.slug}/`;
   return (
     <>
       <JsonLd data={personSchema(m, path)} />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Our Team", path: "/our-team/" }, { name: m.name, path }])} />
-      <Hero s={hero} headingTag="p" crumbs={[{ label: "Home", href: "/" }, { label: "Our Team", href: "/our-team/" }, { label: m.name }]} />
-      <section className="py-[40px] md:py-[60px]">
-        <div className="container-box grid gap-[30px] md:grid-cols-[minmax(0,1fr)_300px] md:gap-[60px] lg:pr-[60px]">
-          <div>
-            <h1 className="font-serif text-[26px] font-bold leading-[1.3] text-black">{m.name}</h1>
-            <p className="font-serif text-[17px] font-bold text-black">{m.role}</p>
-            <div className="mt-[20px] md:hidden">
-              <Picture img={m.photo} sizes="100vw" className="h-auto w-full max-w-[360px]" />
+      <section className="bg-sand pb-16 pt-10 md:pb-24 md:pt-14">
+        <div className="container-box">
+          <nav aria-label="Breadcrumb" className="text-[13.5px] font-medium text-muted">
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <li>
+                <Link href="/" className="transition-colors hover:text-copper">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-line">
+                /
+              </li>
+              <li>
+                <Link href="/our-team/" className="transition-colors hover:text-copper">
+                  Our Team
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-line">
+                /
+              </li>
+              <li aria-current="page" className="text-ink">
+                {m.name}
+              </li>
+            </ol>
+          </nav>
+          <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-16 lg:gap-24">
+            <div className="md:sticky md:top-28 md:self-start">
+              <div className="mx-auto max-w-[380px] overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6] md:max-w-none">
+                <Picture img={m.photo} sizes="(min-width: 768px) 380px, 90vw" priority className="aspect-[4/5] h-auto w-full object-cover object-top" />
+              </div>
             </div>
-            <Rich
-              paras={m.bio}
-              className="mt-[20px] font-sans text-[16px] leading-[1.7] text-black/85"
-              headingTag="h2"
-              headingClass="!mt-[28px] font-sans text-[20px] font-semibold text-[#334155]"
-              listClass="list-disc pl-[22px]"
-            />
-          </div>
-          <div className="hidden md:block">
-            <Picture img={m.photo} sizes="300px" priority className="mt-[20px] h-auto w-full" />
+            <div>
+              <h1 className="h-page">{m.name}</h1>
+              <p className="mt-3 text-[15px] font-semibold uppercase tracking-[0.12em] text-copper">{m.role}</p>
+              <span className="mt-7 block h-px w-full bg-line" aria-hidden="true" />
+              <Rich paras={m.bio} className="mt-8 text-[16.5px] leading-[1.8] text-body" headingTag="h2" headingClass="text-[19px]" />
+              <div className="mt-10">
+                <PillButton link={{ label: "Let’s Chat", href: "#chat" }} />
+              </div>
+            </div>
           </div>
         </div>
       </section>

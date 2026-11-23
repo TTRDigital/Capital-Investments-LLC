@@ -7,11 +7,12 @@ export const metadata = { title: { absolute: "Page not found - Capital Investmen
 export default function NotFound() {
   return (
     <SiteShell>
-      <section className="bg-night pb-[100px] pt-[200px] text-center text-white">
+      <section className="bg-sand py-24 text-center md:py-36">
         <div className="container-box">
-          <h1 className="font-serif text-[40px] font-bold md:text-[56px]">Page not found</h1>
-          <p className="mt-4 font-sans">The page you were looking for has moved or no longer exists.</p>
-          <Link href="/" className="btn mt-8">
+          <p className="eyebrow">404</p>
+          <h1 className="h-page mt-4">Page not found</h1>
+          <p className="lead mx-auto mt-5 max-w-[520px]">The page you were looking for has moved or no longer exists.</p>
+          <Link href="/" className="btn mt-10">
             Back to the home page
           </Link>
         </div>

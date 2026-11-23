@@ -8,6 +8,12 @@ export const images = {
     "width": 395,
     "height": 72
   },
+  "logoInk": {
+    "src": "/images/brand/logo-ink.webp",
+    "alt": "Capital Investment LLC, Commercial Real Estate Advisors",
+    "width": 395,
+    "height": 72
+  },
   "logoDark": {
     "src": "/images/brand/logo-dark.webp",
     "alt": "Capital Investment LLC, Commercial Real Estate Advisors",

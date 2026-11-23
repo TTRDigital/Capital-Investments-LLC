@@ -15,82 +15,88 @@ import type {
 } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Inline, Rich } from "@/components/ui/Rich";
-import { Carousel } from "@/components/ui/Carousel";
-import { CheckCircle, Minus, Phone, Pin, Plus } from "@/components/ui/Icons";
+import { ArrowRight, Minus, Phone, Pin, Plus } from "@/components/ui/Icons";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { mapSrc } from "@/components/sections/Home";
-import { Body, Reveal, Title } from "@/components/sections/parts";
+import { Body, Reveal, Section, SectionHeader, Title } from "@/components/sections/parts";
 
 const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
+
+function OfficeContact({ o, address }: { o: Office; address: string }) {
+  return (
+    <>
+      <p className="mt-3 flex gap-2.5 text-[15px] leading-relaxed">
+        <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
+        {address}
+      </p>
+      {o.phone ? (
+        <a href={tel(o.phone)} className="mt-3 inline-flex items-center gap-2.5 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
+          <Phone className="h-3.5 w-3.5 text-copper" />
+          {o.phone}
+        </a>
+      ) : null}
+    </>
+  );
+}
 
 /* ---------- Service area: office photo cards ---------- */
 
 export function OfficeCards({ s, offices }: { s: OfficeCardsSection; offices: Office[] }) {
   return (
-    <section className="py-[40px] md:py-[60px]">
+    <Section>
       <div className="container-box">
-        {s.eyebrow ? <p className="text-center font-serif text-[22px] font-bold text-copper md:text-[30px]">{s.eyebrow}</p> : null}
-        <Title text={s.heading} font={s.hFont} size="section" className="mt-[5px] md:!text-[36px]" />
-        <Reveal className="mx-auto mt-[30px] max-w-[1340px] rounded-[20px] bg-cream p-[10px] md:p-[20px]">
-          <ul className="no-scrollbar flex snap-x snap-mandatory gap-[15px] overflow-x-auto md:grid md:grid-cols-2 md:gap-[20px] md:overflow-visible">
-            {offices.map((o) => (
-              <li key={o.key} className="w-[85%] shrink-0 snap-center rounded-[16px] bg-white p-[15px] md:w-auto">
-                <Picture img={o.image} sizes="(min-width: 768px) 620px, 85vw" className="aspect-[1.18] h-auto w-full rounded-[8px] object-cover" />
-                <h3 className="mt-[20px] font-serif text-[24px] font-semibold leading-[1.3] text-black md:text-[36px]">{o.name}</h3>
-                <p className="mt-[12px] flex gap-[10px] font-sans text-[13px] leading-[1.6] text-black/80">
-                  <Pin className="mt-[3px] h-[14px] w-[10px] shrink-0 text-[#555]" />
-                  {o.address}
-                </p>
-                {o.phone ? (
-                  <a href={tel(o.phone)} className="mt-[8px] flex items-center gap-[10px] font-sans text-[13px] text-black/80 hover:text-copper">
-                    <Phone className="h-[12px] w-[12px] shrink-0 text-[#555]" />
-                    {o.phone}
-                  </a>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        <SectionHeader eyebrow={s.eyebrow} heading={s.heading} />
+        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {offices.map((o) => (
+            <Reveal as="li" key={o.key} className="card overflow-hidden">
+              <Picture img={o.image} sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full object-cover" />
+              <div className="p-6">
+                <h3 className="h-card">{o.name}</h3>
+                <OfficeContact o={o} address={o.address} />
+              </div>
+            </Reveal>
+          ))}
+        </ul>
       </div>
-    </section>
+    </Section>
   );
 }
 
-/* ---------- Service area: market slider ---------- */
+/* ---------- Service area: markets (were a slider; now all four are visible) ---------- */
 
 export function MarketSlider({ s }: { s: MarketSliderSection }) {
   return (
-    <section className="py-[40px] md:py-[60px]">
+    <Section tone="sand">
       <div className="container-box">
-        <Title text={s.heading} font={s.hFont} size="section" align="left" className="md:!text-[32px]" />
-        <Carousel label={s.heading.replace(/\*/g, "")} autoplay={7000} arrows="below" slideClass="w-full" gapClass="gap-0" className="mt-[25px]">
+        <Title text={s.heading} />
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {s.markets.map((m, i) => (
-            <div key={i} className="grid gap-[20px] rounded-[20px] bg-cream p-[20px] md:grid-cols-2 md:gap-[30px] md:p-[30px]">
-              <div>
-                <h3 className="font-sans text-[20px] font-semibold text-black md:text-[22px]">{m.title}</h3>
-                <p className="mt-[12px] font-sans text-[16px] font-semibold text-copper">{m.subtitle}</p>
-                <Rich paras={m.text} className="mt-[12px] font-sans text-[13px] leading-[1.85] text-black/80" />
-                <h4 className="mt-[20px] font-sans text-[16px] font-semibold text-black">{m.citiesHeading}</h4>
-                <ul className="mt-[12px] flex flex-wrap gap-[10px]">
+            <Reveal key={i} className="card flex flex-col overflow-hidden">
+              <Picture img={m.image} sizes="(min-width: 768px) 600px, 100vw" className="aspect-[16/9] h-auto w-full object-cover" />
+              <div className="flex flex-1 flex-col p-6 md:p-8">
+                <h3 className="h-sub">{m.title}</h3>
+                <p className="mt-2 text-[14px] font-semibold uppercase tracking-[0.12em] text-copper">{m.subtitle}</p>
+                <Rich paras={m.text} className="mt-4 text-[15px] leading-[1.7] text-body" />
+                <h4 className="mt-6 text-[15px] font-semibold text-ink">{m.citiesHeading}</h4>
+                <ul className="mt-3 flex flex-wrap gap-2">
                   {m.cities.map((c, j) => (
                     <li key={j}>
                       {c.href ? (
-                        <Link href={c.href} className="block rounded-full bg-white px-[16px] py-[6px] font-sans text-[12px] font-semibold text-copper hover:bg-copper hover:text-white">
+                        <Link href={c.href} className="block rounded-full border border-line px-3.5 py-1.5 text-[13.5px] font-medium text-ink transition-colors hover:border-copper hover:text-copper">
                           {c.label}
                         </Link>
                       ) : (
-                        <span className="block rounded-full bg-white px-[16px] py-[6px] font-sans text-[12px] font-semibold text-copper">{c.label}</span>
+                        <span className="block rounded-full border border-line px-3.5 py-1.5 text-[13.5px] font-medium text-body">{c.label}</span>
                       )}
                     </li>
                   ))}
                 </ul>
               </div>
-              <Picture img={m.image} sizes="(min-width: 768px) 45vw, 100vw" className="h-auto w-full rounded-[16px]" />
-            </div>
+            </Reveal>
           ))}
-        </Carousel>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -98,33 +104,22 @@ export function MarketSlider({ s }: { s: MarketSliderSection }) {
 
 export function OfficeList({ offices }: { s: OfficeListSection; offices: Office[] }) {
   return (
-    <section className="py-[40px] md:py-[50px]">
-      <div className="container-box space-y-[20px]">
+    <Section>
+      <div className="container-box space-y-5">
         {offices.map((o) => (
-          <Reveal key={o.key} className="grid gap-[20px] md:grid-cols-2">
-            <div className="overflow-hidden rounded-[10px] bg-white shadow-[0_0_20px_rgb(0_0_0/0.08)]">
-              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} loading="lazy" className="h-[200px] w-full border-0" referrerPolicy="no-referrer-when-downgrade" />
-              <div className="p-[20px]">
-                <h2 className="font-serif text-[26px] font-bold text-black">{o.label}</h2>
-                <p className="mt-[10px] flex gap-[10px] font-sans text-[13px] leading-[1.6] text-black/80">
-                  <Pin className="mt-[3px] h-[14px] w-[10px] shrink-0 text-[#555]" />
-                  {o.address}
-                </p>
-                {o.phone ? (
-                  <a href={tel(o.phone)} className="mt-[12px] inline-flex items-center gap-[8px] rounded-full bg-copper px-[18px] py-[6px] font-sans text-[13px] font-semibold text-white hover:opacity-90">
-                    <Phone className="h-[12px] w-[12px]" />
-                    {o.phone}
-                  </a>
-                ) : null}
-              </div>
+          <Reveal key={o.key} className="card grid overflow-hidden md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)_minmax(0,4fr)]">
+            <div className="p-7 md:p-10">
+              <h2 className="h-sub">{o.label}</h2>
+              <OfficeContact o={o} address={o.address} />
             </div>
-            <div className="relative min-h-[260px] overflow-hidden rounded-[10px]">
-              <Picture img={o.image} fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+            <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} loading="lazy" className="h-[240px] w-full border-0 grayscale-[35%] md:h-full md:min-h-[280px]" referrerPolicy="no-referrer-when-downgrade" />
+            <div className="relative min-h-[240px]">
+              <Picture img={o.image} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
             </div>
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -132,25 +127,24 @@ export function OfficeList({ offices }: { s: OfficeListSection; offices: Office[
 
 export function TeamGrid({ s, team }: { s: TeamGridSection; team: TeamMember[] }) {
   return (
-    <section className="py-[40px] md:py-[50px]">
+    <Section>
       <div className="container-box">
-        <Title text={s.heading} font={s.hFont} size="section" />
-        <span className="mx-auto mt-[20px] block h-px w-[80px] bg-black/40" aria-hidden="true" />
-        <ul className="mt-[40px] grid grid-cols-2 gap-x-[20px] gap-y-[30px] md:grid-cols-3 lg:grid-cols-4">
+        <Title text={s.heading} />
+        <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 md:mt-14 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4">
           {team.map((m) => (
             <Reveal as="li" key={m.slug}>
-              <Link href={`/team/${m.slug}/`} className="group block text-center">
-                <div className="overflow-hidden bg-gradient-to-b from-[#6b6b6b] to-[#bdbdbd]">
-                  <Picture img={m.photo} sizes="(min-width: 1024px) 300px, 45vw" className="aspect-[1.25] h-auto w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" />
+              <Link href={`/team/${m.slug}/`} className="group block">
+                <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6]">
+                  <Picture img={m.photo} sizes="(min-width: 1024px) 290px, (min-width: 768px) 30vw, 46vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
                 </div>
-                <h2 className="mt-[12px] font-serif text-[15px] font-bold uppercase text-black group-hover:text-copper md:text-[16px]">{m.name}</h2>
-                <p className="mt-[2px] font-sans text-[12px] text-black/60">{m.role}</p>
+                <h2 className="mt-4 text-[16px] font-semibold leading-snug text-ink transition-colors group-hover:text-copper md:text-[17px]">{m.name}</h2>
+                <p className="mt-1 text-[13.5px] leading-snug text-muted md:text-[14.5px]">{m.role}</p>
               </Link>
             </Reveal>
           ))}
         </ul>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -158,75 +152,90 @@ export function TeamGrid({ s, team }: { s: TeamGridSection; team: TeamMember[] }
 
 export function Careers({ s }: { s: CareersSection }) {
   return (
-    <section className="py-[40px] md:py-[50px]">
+    <Section>
       <div className="container-box">
-        <Body paras={s.text} align="left" className="text-[15px] leading-[1.7] text-black md:text-[16px]" />
-        <h2 className="mt-[25px] font-serif text-[26px] font-bold text-black md:text-[28px]">{s.heading}</h2>
-        <ul className="mt-[20px] space-y-[12px]">
-          {s.openings.map((o, i) => (
-            <li key={i} className="flex items-center gap-[12px] font-sans text-[14px] text-black">
-              <CheckCircle className="h-[16px] w-[16px] shrink-0 text-[#5cb85c]" />
-              <Link href={o.href} className="hover:text-copper">
-                {o.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="mx-auto max-w-[820px]">
+          <Body paras={s.text} className="lead" />
+          <h2 className="h-sub mt-14">{s.heading}</h2>
+          <ul className="mt-6 grid gap-3">
+            {s.openings.map((o, i) => (
+              <li key={i}>
+                <Link href={o.href} className="card group flex items-center justify-between gap-4 px-6 py-5 transition-colors hover:border-copper">
+                  <span className="text-[17px] font-semibold text-ink transition-colors group-hover:text-copper">{o.label}</span>
+                  <ArrowRight className="h-5 w-5 shrink-0 text-muted transition-[color,transform] group-hover:translate-x-1 group-hover:text-copper" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 export function Jobs({ s, consentText }: { s: JobsSection; consentText: string }) {
   return (
-    <section className="py-[40px] md:py-[50px]">
-      <div className="container-box grid gap-[40px] md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+    <Section>
+      <div className="container-box grid gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
         <div>
-          <h2 className="font-serif text-[26px] font-bold text-black md:text-[28px]">{s.heading}</h2>
-          <div className="mt-[20px] space-y-[12px]">
+          <Title text={s.heading} align="left" />
+          <div className="mt-8 border-t border-line">
             {s.jobs.map((j, i) => (
-              <details key={i} open={i === 0} className="group border-b border-black/10">
-                <summary className="flex cursor-pointer items-center gap-[10px] py-[10px] font-sans text-[14px] font-medium text-black">
-                  <Plus className="acc-plus h-[10px] w-[10px] shrink-0" />
-                  <Minus className="acc-minus h-[10px] w-[10px] shrink-0" />
-                  {j.title}
+              <details key={i} open={i === 0} className="group border-b border-line">
+                <summary className="flex cursor-pointer items-center gap-4 py-5">
+                  <span className="flex-1 text-[17px] font-semibold text-ink transition-colors group-hover:text-copper">{j.title}</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-ink">
+                    <Plus className="acc-plus h-3 w-3" />
+                    <Minus className="acc-minus h-3 w-3" />
+                  </span>
                 </summary>
-                <Rich paras={j.body} className="pb-[20px] font-sans text-[13px] leading-[1.8] text-black/85" listClass="list-disc pl-[20px]" />
+                <Rich paras={j.body} className="pb-6 text-[15px] leading-[1.75] text-body" headingClass="text-[16px]" />
               </details>
             ))}
           </div>
         </div>
-        <div>
-          <h2 className="font-serif text-[26px] font-bold text-black md:text-[28px]">{s.formHeading}</h2>
-          <LeadForm kind="careers" consentText={consentText} position={s.jobs[0]?.title} />
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <div className="rounded-2xl bg-sand p-6 md:p-9">
+            <h2 className="h-sub">{s.formHeading}</h2>
+            <LeadForm kind="careers" consentText={consentText} position={s.jobs[0]?.title} />
+          </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
-/* ---------- Forms pages ---------- */
+/* ---------- Contact page ---------- */
 
-export function ContactFormBlock({ consentText }: { consentText: string }) {
+export function ContactFormBlock({ consentText, offices = [] }: { consentText: string; offices?: Office[] }) {
   return (
-    <section className="py-[40px] md:py-[50px]">
-      <div className="container-box">
-        <div className="mx-auto max-w-[566px]">
+    <Section>
+      <div className="container-box grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+        {offices.length ? (
+          <ul className="space-y-8 lg:pt-2">
+            {offices.map((o) => (
+              <li key={o.key} className="border-t border-line pt-8 first:border-0 first:pt-0">
+                <h2 className="h-sub">{o.label}</h2>
+                <OfficeContact o={o} address={o.longAddress} />
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <div className={`rounded-2xl border border-line p-6 md:p-10 ${offices.length ? "" : "mx-auto w-full max-w-[640px] lg:col-span-2"}`}>
           <LeadForm kind="contact" consentText={consentText} />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 export function Message({ s }: { s: MessageSection }) {
   return (
-    <section className="py-[60px] md:py-[80px]">
-      <div className="container-box mx-auto max-w-[800px] text-center">
-        <Title text={s.heading} font={s.hFont} size="intro" />
-        <Body paras={s.text} className="mt-[15px] text-[15px] leading-[1.7] text-black/80" />
+    <Section>
+      <div className="container-box">
+        <SectionHeader heading={s.heading} text={s.text} />
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -235,66 +244,74 @@ export function Message({ s }: { s: MessageSection }) {
 export function SitemapList({ s, pages }: { s: SitemapListSection; pages: Page[] }) {
   const visible = pages.filter((p) => !p.seo.noIndex && p.path !== "/sitemap/");
   const group = (g: Page["group"]) => visible.filter((p) => p.group === g);
+  const link = "text-body transition-colors hover:text-copper";
   const item = (p: Page) => (
     <li key={p.path}>
-      <Link href={p.path} className="text-copper hover:underline">
+      <Link href={p.path} className={link}>
         <Inline text={p.title} accentClass="" />
       </Link>
     </li>
   );
   const locations = group("locations");
   const miami = locations.filter((p) => p.path.startsWith("/locations/miami-florida/") && p.path !== "/locations/miami-florida/");
+  const head = "text-[13px] font-semibold uppercase tracking-[0.14em] text-ink";
   return (
-    <section className="py-[40px] md:py-[50px]">
-      <div className="container-box font-sans text-[14px] leading-[1.9]">
-        <h2 className="font-serif text-[24px] font-bold text-black">{s.heading}</h2>
-        <ul className="mt-[10px] space-y-[2px] pl-[22px]">
-          {group("company").map(item)}
-          <li>
-            <Link href="/services/" className="text-copper hover:underline">
+    <Section>
+      <div className="container-box">
+        <Title text={s.heading} align="left" />
+        <div className="mt-10 grid gap-10 text-[15.5px] leading-[1.6] md:grid-cols-3">
+          <div>
+            <ul className="space-y-2.5">
+              {group("company").map(item)}
+              {group("forms").map(item)}
+              {group("legal").map(item)}
+            </ul>
+          </div>
+          <div>
+            <Link href="/services/" className={head}>
               Services
             </Link>
-            <ul className="pl-[22px]">{group("services").filter((p) => p.path !== "/services/").map(item)}</ul>
-          </li>
-          <li>
-            <Link href="/locations/" className="text-copper hover:underline">
+            <ul className="mt-4 space-y-2.5">{group("services").filter((p) => p.path !== "/services/").map(item)}</ul>
+          </div>
+          <div>
+            <Link href="/locations/" className={head}>
               Our Locations
             </Link>
-            <ul className="pl-[22px]">
+            <ul className="mt-4 space-y-2.5">
               {locations
                 .filter((p) => p.path !== "/locations/" && !miami.includes(p))
                 .map((p) =>
                   p.path === "/locations/miami-florida/" ? (
                     <li key={p.path}>
-                      <Link href={p.path} className="text-copper hover:underline">
+                      <Link href={p.path} className={link}>
                         {p.title}
                       </Link>
-                      <ul className="pl-[22px]">{miami.map(item)}</ul>
+                      <ul className="mt-2.5 space-y-2.5 border-l border-line pl-4">{miami.map(item)}</ul>
                     </li>
                   ) : (
                     item(p)
                   ),
                 )}
             </ul>
-          </li>
-          {group("forms").map(item)}
-          {group("legal").map(item)}
-        </ul>
+          </div>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
-/* ---------- Privacy policy / terms (no banner on the old site) ---------- */
+/* ---------- Privacy policy / terms ---------- */
 
 export function Legal({ s }: { s: LegalSection }) {
   return (
-    <section className="bg-white pb-[50px]">
-      <div className="h-[70px] bg-night min-[1025px]:h-[112px]" aria-hidden="true" />
-      <div className="container-box pt-[40px]">
-        <h1 className="font-serif text-[28px] font-bold text-black md:text-[32px]">{s.heading}</h1>
-        <Rich paras={s.body} className="mt-[20px] font-sans text-[14px] leading-[1.75] text-black/85" headingTag="h2" headingClass="!mt-[28px] font-sans text-[20px] font-semibold text-black" listClass="list-disc pl-[22px]" />
+    <Section className="!pt-14 md:!pt-20">
+      <div className="container-box">
+        <div className="mx-auto max-w-[820px]">
+          <h1 className="h-page">{s.heading}</h1>
+          <span className="mt-6 block h-[3px] w-14 rounded-full bg-copper" aria-hidden="true" />
+          <Rich paras={s.body} className="mt-10 text-[16px] leading-[1.8] text-body" headingTag="h2" headingClass="text-[20px]" />
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

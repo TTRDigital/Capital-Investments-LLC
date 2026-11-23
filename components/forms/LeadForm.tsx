@@ -147,28 +147,30 @@ export function LeadForm({
 
   const dark = tone === "dark";
   const inputCls = (bad: boolean) =>
-    `block w-full rounded-[3px] border px-[15px] py-[8px] font-sans text-[14px] outline-none transition-[border-color,box-shadow] ${
-      dark ? "border-white/40 bg-white/10 text-white placeholder:text-white/70 focus:border-white" : "border-[#d1d5db] bg-white text-ink placeholder:text-[#9ca3af] focus:border-copper"
-    } ${bad ? "border-[#e53e3e]" : ""}`;
-  const errCls = dark ? "text-[#ffb3b3]" : "text-[#c53030]";
+    `block w-full rounded-lg border px-4 py-3 font-sans text-[15px] outline-none transition-[border-color,box-shadow] ${
+      dark
+        ? "border-white/15 bg-white/[0.06] text-white placeholder:text-white/55 focus:border-white/60 focus:ring-2 focus:ring-white/15"
+        : "border-line bg-white text-ink placeholder:text-muted focus:border-copper focus:ring-2 focus:ring-copper/15"
+    } ${bad ? (dark ? "!border-[#ff9b9b]" : "!border-[#c53030]") : ""}`;
+  const errCls = dark ? "text-[#ffb3b3]" : "text-[#b42318]";
 
   if (status === "sent") {
     return (
-      <p role="status" className={`mt-5 font-sans text-[16px] font-semibold ${dark ? "text-white" : "text-ink"}`}>
+      <p role="status" className={`mt-6 rounded-lg border px-4 py-3.5 font-sans text-[15px] font-medium ${dark ? "border-white/15 text-white" : "border-line bg-sand text-ink"}`}>
         {SUCCESS[kind]}
       </p>
     );
   }
 
   return (
-    <form data-ttr-skip ref={formRef} onSubmit={onSubmit} noValidate className={`mt-5 space-y-[14px] text-left font-sans ${dark ? "text-white" : "text-ink"}`}>
+    <form data-ttr-skip ref={formRef} onSubmit={onSubmit} noValidate className={`mt-6 space-y-4 text-left font-sans ${dark ? "text-white" : "text-ink"}`}>
       {fields.map((f) => {
         const id = `${uid}-${f.name}`;
         const bad = !!errors[f.name];
         const describedBy = bad ? `${id}-err` : undefined;
         return (
           <div key={f.name}>
-            <label htmlFor={id} className={showLabels ? "mb-[6px] block text-[14px] font-medium" : "sr-only"}>
+            <label htmlFor={id} className={showLabels ? "mb-1.5 block text-[14px] font-medium" : "sr-only"}>
               {f.label}
               {f.required ? <span aria-hidden="true">{showLabels ? " *" : ""}</span> : null}
               {f.required ? <span className="sr-only"> (required)</span> : null}
@@ -182,7 +184,7 @@ export function LeadForm({
                 aria-invalid={bad || undefined}
                 aria-describedby={describedBy}
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-                className="block w-full text-[14px] file:mr-3 file:rounded-[3px] file:border file:border-[#d1d5db] file:bg-white file:px-3 file:py-1.5 file:text-[13px]"
+                className="block w-full rounded-lg border border-dashed border-line bg-white p-3 text-[14px] text-body file:mr-3 file:cursor-pointer file:rounded-md file:border-0 file:bg-copper-tint file:px-3 file:py-2 file:text-[13px] file:font-semibold file:text-copper"
               />
             ) : (
               <input
@@ -208,7 +210,7 @@ export function LeadForm({
       })}
 
       <div>
-        <label htmlFor={`${uid}-consent`} className={`flex cursor-pointer items-start gap-3 text-[13px] leading-[1.5] ${dark ? "text-white/85" : "text-ink/85"}`}>
+        <label htmlFor={`${uid}-consent`} className={`flex cursor-pointer items-start gap-3 text-[12.5px] leading-[1.55] ${dark ? "text-white/60" : "text-muted"}`}>
           <input
             id={`${uid}-consent`}
             type="checkbox"
@@ -219,7 +221,7 @@ export function LeadForm({
             }}
             aria-invalid={errors.consent ? true : undefined}
             aria-describedby={errors.consent ? `${uid}-consent-err` : undefined}
-            className="mt-[3px] h-[16px] w-[16px] shrink-0 accent-[#bb6e3d]"
+            className="mt-[2px] h-4 w-4 shrink-0 accent-[#a65a2a]"
           />
           <span>{consentText}</span>
         </label>
@@ -245,7 +247,7 @@ export function LeadForm({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="block w-full rounded-[3px] bg-copper px-5 py-[12px] text-[14px] font-semibold uppercase tracking-[1px] text-white transition-opacity hover:opacity-90 disabled:opacity-70"
+        className="btn w-full tracking-[0.06em] disabled:opacity-70"
       >
         {status === "sending" ? "Sending…" : submitLabel}
       </button>

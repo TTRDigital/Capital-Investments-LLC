@@ -112,11 +112,11 @@ export function Carousel({
       aria-label={dir < 0 ? "Previous slide" : "Next slide"}
       className={
         arrows === "below"
-          ? "flex h-[32px] w-[32px] items-center justify-center rounded-full bg-copper text-white transition-opacity hover:opacity-85"
-          : "absolute top-1/2 z-10 flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-full bg-white text-black shadow-[0_0_10px_rgb(0_0_0/0.15)] " + (dir < 0 ? "left-[2px]" : "right-[2px]")
+          ? "flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:border-ink"
+          : "absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white text-ink shadow-card transition-colors hover:border-ink " + (dir < 0 ? "left-2" : "right-2")
       }
     >
-      {dir < 0 ? <ChevronLeft className="h-[12px] w-[12px]" /> : <ChevronRight className="h-[12px] w-[12px]" />}
+      {dir < 0 ? <ChevronLeft className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
     </button>
   );
 
@@ -135,12 +135,12 @@ export function Carousel({
           {arrowBtn(1)}
         </>
       ) : null}
-      {arrows === "below" && count > 1 ? <div className="mt-[20px] flex justify-center gap-[10px]">{[arrowBtn(-1), arrowBtn(1)].map((b, i) => <span key={i}>{b}</span>)}</div> : null}
+      {arrows === "below" && count > 1 ? <div className="mt-8 flex justify-start gap-2.5">{[arrowBtn(-1), arrowBtn(1)].map((b, i) => <span key={i}>{b}</span>)}</div> : null}
       {dots && count > 1 ? (
         <div className="mt-[20px] flex justify-center gap-[6px]">
           {slides.map((_, i) => (
             <button key={i} type="button" onClick={() => scrollTo(i)} aria-label={`Go to slide ${i + 1}`} aria-current={i === index ? "true" : undefined} className="p-[3px]">
-              <span className={`block h-[8px] w-[8px] rounded-full transition-colors ${i === index ? "bg-copper" : "bg-[#d8c2b2]"}`} />
+              <span className={`block h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-copper" : "w-1.5 bg-line"}`} />
             </button>
           ))}
         </div>

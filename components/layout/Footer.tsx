@@ -2,113 +2,116 @@ import Link from "next/link";
 import type { SiteSettings } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
-import { ChevronsUp, Facebook, Instagram, LinkedIn } from "@/components/ui/Icons";
+import { ArrowUp, Facebook, Instagram, LinkedIn } from "@/components/ui/Icons";
 import { LeadForm } from "@/components/forms/LeadForm";
 
 const SOCIAL = { linkedin: LinkedIn, facebook: Facebook, instagram: Instagram } as const;
 const SOCIAL_LABEL = { linkedin: "LinkedIn", facebook: "Facebook", instagram: "Instagram" } as const;
+const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
 
 /**
- * Old site footer: dark building photo in a rounded panel with the logo in a
- * notch (one background image, desktop and phone versions), copper "back to
- * top" tab, three link columns, then the copper copyright bar.
+ * Dark footer: logo, consultation form and social links on the left; quick
+ * links, services and the two contact offices on the right; then the
+ * copyright bar. The white logo is the design's asset (not the CMS logo field).
  */
 export function Footer({ settings }: { settings: SiteSettings }) {
   const offices = settings.contactOffices.map((k) => settings.offices.find((o) => o.key === k)).filter((o) => !!o);
   const year = new Date().getFullYear();
   return (
-    <footer className="relative mt-[50px] font-dm text-white">
-      <div className="relative">
-        <div className="absolute inset-0 -z-10 hidden bg-[length:100%_100%] bg-no-repeat md:block" style={{ backgroundImage: `url(${images.footerBg.src})` }} />
-        <div className="absolute inset-0 -z-10 bg-[length:100%_100%] bg-no-repeat md:hidden" style={{ backgroundImage: `url(${images.footerBgMobile.src})` }} />
-        <Link href="/" className="absolute left-[10px] top-[5px] block w-[180px] md:left-[30px] md:top-[10px] md:w-[223px]" aria-label={`${settings.name} home`}>
-          <Picture img={settings.footerLogo} sizes="223px" className="h-auto w-full" />
-        </Link>
-        <a
-          href="#main"
-          className="absolute right-[18px] top-0 flex h-[30px] w-[145px] items-center justify-center bg-copper text-white [clip-path:polygon(0_0,100%_0,92%_100%,8%_100%)] md:right-[18px] md:h-[48px] md:w-[170px]"
-          aria-label="Back to top"
-        >
-          <ChevronsUp className="h-[20px] w-[20px] md:h-[26px] md:w-[26px]" />
-        </a>
-        <div className="mx-auto grid max-w-[1440px] gap-10 px-[20px] pb-[70px] pt-[120px] md:grid-cols-[1fr_auto] md:px-[50px] md:pb-[100px] md:pt-[110px]">
-          <div className="text-center md:max-w-[620px] md:text-left">
-            <ul className="flex justify-center gap-[13px] md:justify-start">
+    <footer className="bg-night text-[15px] text-white/70">
+      <div className="container-box grid gap-14 pb-14 pt-16 md:pt-24 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+        <div className="max-w-[460px]">
+          <Link href="/" className="block w-[188px]" aria-label={`${settings.name} home`}>
+            <Picture img={images.logoLight} sizes="188px" className="h-auto w-full" />
+          </Link>
+          <h2 className="mt-10 font-serif text-[26px] font-medium leading-tight text-white">{settings.consultationHeading || "Request a consultation"}</h2>
+          {settings.consultationText ? <p className="mt-3 leading-relaxed">{settings.consultationText}</p> : null}
+          <LeadForm kind="consultation" consentText={settings.consentText} tone="dark" showLabels={false} submitLabel="SUBMIT" />
+        </div>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:pt-2">
+          <FooterColumn title="Quick Links" links={settings.footerQuickLinks} />
+          <FooterColumn title="Services" links={settings.footerServiceLinks} />
+          <div>
+            <h2 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-white">Contact Us</h2>
+            <ul className="mt-5 space-y-6">
+              {offices.map((o) => (
+                <li key={o.key}>
+                  <p className="leading-relaxed">{o.longAddress}</p>
+                  {o.phone ? (
+                    <p className="mt-1.5">
+                      <a href={tel(o.phone)} className="font-medium text-white transition-colors hover:text-copper-tint">
+                        {o.phone}
+                      </a>
+                    </p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-8 flex gap-2.5">
               {settings.social.map((s) => {
                 const Icon = SOCIAL[s.network];
                 return (
                   <li key={s.network}>
-                    <a href={s.href} target="_blank" rel="noopener" aria-label={`${settings.name} on ${SOCIAL_LABEL[s.network]}`} className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-copper transition-opacity hover:opacity-85">
-                      <Icon className="h-[18px] w-[18px] fill-white" />
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`${settings.name} on ${SOCIAL_LABEL[s.network]}`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-copper hover:bg-copper hover:text-white"
+                    >
+                      <Icon className="h-4 w-4 fill-current" />
                     </a>
                   </li>
                 );
               })}
             </ul>
-            <h2 className="mt-[20px] text-left text-[20px] font-semibold leading-[26px]">{settings.consultationHeading || "Request a consultation"}</h2>
-            {settings.consultationText ? <p className="mt-[8px] max-w-[460px] text-left font-sans text-[14px] leading-[22px] text-white/85">{settings.consultationText}</p> : null}
-            <div className="max-w-[460px]">
-              <LeadForm kind="consultation" consentText={settings.consentText} tone="dark" showLabels={false} submitLabel="SUBMIT" />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-[201px_201px_201px] md:gap-x-[21px] md:pt-[50px]">
-            <FooterColumn title="Quick Links" links={settings.footerQuickLinks} />
-            <FooterColumn title="Services" links={settings.footerServiceLinks} alignRight />
-            <div className="col-span-2 md:col-span-1">
-              <h2 className="text-[20px] font-semibold leading-[26px]">Contact Us</h2>
-              <ul className="mt-[20px] space-y-[15px] font-sans text-[14px] leading-[23px]">
-                {offices.map((o) => (
-                  <li key={o.key} className="space-y-[15px]">
-                    <p>{o.longAddress}</p>
-                    {o.phone ? (
-                      <p>
-                        <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="hover:text-copper">
-                          {o.phone}
-                        </a>
-                      </p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </div>
-      <div className="-mt-[40px] bg-copper-bar px-5 pb-[50px] pt-[80px] text-center font-sans">
-        <p className="text-[18px] font-bold uppercase leading-[1.6]">
-          Copyright © {year} | {settings.name} |{" "}
-          <Link href="/sitemap/" className="hover:underline">
-            Sitemap
-          </Link>
-        </p>
-        <p className="mt-[18px] text-[13px] font-bold uppercase">
-          Website by{" "}
-          <a href={settings.credit.href} target="_blank" rel="noopener" className="hover:underline">
-            {settings.credit.label}
-          </a>
-        </p>
-        <p className="mt-[30px] text-[14px]">
-          <Link href="/privacy-policy/" className="underline">
-            Privacy Policy
-          </Link>{" "}
-          |{" "}
-          <Link href="/terms-of-service/" className="underline">
-            Terms of Service
-          </Link>
-        </p>
+      <div className="border-t border-white/10">
+        <div className="container-box flex flex-col gap-4 py-7 text-[13.5px] md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-1.5 md:flex-row md:gap-6">
+            <p>
+              Copyright © {year} | {settings.name} |{" "}
+              <Link href="/sitemap/" className="hover:text-white">
+                Sitemap
+              </Link>
+            </p>
+            <p>
+              <Link href="/privacy-policy/" className="hover:text-white">
+                Privacy Policy
+              </Link>{" "}
+              |{" "}
+              <Link href="/terms-of-service/" className="hover:text-white">
+                Terms of Service
+              </Link>
+            </p>
+          </div>
+          <div className="flex items-center justify-between gap-6">
+            <p>
+              Website by{" "}
+              <a href={settings.credit.href} target="_blank" rel="noopener" className="hover:text-white">
+                {settings.credit.label}
+              </a>
+            </p>
+            <a href="#main" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white hover:text-white" aria-label="Back to top">
+              <ArrowUp className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
 
-function FooterColumn({ title, links, alignRight = false }: { title: string; links: { label: string; href: string }[]; alignRight?: boolean }) {
+function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
-    <div className={alignRight ? "text-right md:text-left" : ""}>
-      <h2 className="text-[20px] font-semibold leading-[26px]">{title}</h2>
-      <ul className="mt-[20px] space-y-[15px] font-sans text-[14px] leading-[23px]">
+    <div>
+      <h2 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-white">{title}</h2>
+      <ul className="mt-5 space-y-3">
         {links.map((l) => (
           <li key={l.label}>
-            <Link href={l.href} className="transition-colors hover:text-copper">
+            <Link href={l.href} className="transition-colors hover:text-white">
               {l.label}
             </Link>
           </li>

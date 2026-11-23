@@ -19,7 +19,7 @@ plus one PHP form handler, hosted on SiteGround.
 | Built-in content | `lib/data/pages.ts`, `team.ts`, `site.ts` (menu, footer, offices), `images.ts` |
 | Content layer | `lib/content.ts` (GROQ fetch, merge over built-in content), `lib/merge.ts`, `lib/sanity/fetch.ts` |
 | CMS | Sanity Studio at `/cms` (`sanity.config.ts`, `sanity/schemaTypes/*`), project `850gl5j0`, dataset `production` |
-| Styling | Tailwind v4, tokens in `app/globals.css` (copper `#bb6e3d`, cream `#fff6ef`, Lora / Inter / Roboto / Montserrat / Outfit / DM Sans) |
+| Styling | Tailwind v4. Design system in `app/globals.css`: Lora headings + Inter text, ink `#101b2d`, copper `#a65a2a`, sand `#f7f4ef`; `.sec` section rhythm, `.btn`, `.card`, type scale. Shared section parts in `components/sections/parts.tsx` |
 | Images | `scripts/optimize-images.mjs` writes WebP sizes to `public/_img/` at build time; `lib/image-loader.ts` picks them |
 | Hosting rules | `public/.htaccess` (canonical host, trailing slashes, old-URL 301s, security headers + CSP, caching, compression) |
 | Forms | `components/forms/*` → `public/api/lead.php` → GoHighLevel webhook |

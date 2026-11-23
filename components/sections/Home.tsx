@@ -1,42 +1,52 @@
 import Link from "next/link";
 import type { ComparisonSection, OfficeMapsSection, Office, StatsSection, TeamCarouselSection, TeamMember } from "@/lib/types";
-import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
-
 import { Carousel } from "@/components/ui/Carousel";
-import { CheckCircle, Pin, Phone, XCircle } from "@/components/ui/Icons";
+import { Phone, Pin } from "@/components/ui/Icons";
 import { CountUp } from "@/components/sections/CountUp";
-import { PillButton, Reveal, Title } from "@/components/sections/parts";
+import { CheckMark, PillButton, Reveal, Section, Title } from "@/components/sections/parts";
+
+const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
 
 /* ---------- Capital Investment LLC vs other firms ---------- */
 
+function Cross() {
+  return (
+    <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black/[0.05] text-muted">
+      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round">
+        <path d="M7 7l10 10M17 7 7 17" />
+      </svg>
+    </span>
+  );
+}
+
 export function Comparison({ s }: { s: ComparisonSection }) {
   const card = (side: ComparisonSection["ours"], good: boolean) => (
-    <Reveal className={`rounded-[26px] px-[20px] pb-[40px] pt-[25px] md:px-[30px] md:pb-[50px] md:pt-[30px] ${good ? "bg-[rgb(99_186_103/0.1)]" : "bg-[rgb(255_148_148/0.1)]"}`}>
+    <Reveal className={`rounded-2xl p-7 md:p-10 ${good ? "border border-copper/30 bg-white shadow-card" : "border border-line bg-transparent"}`}>
       <div className="flex items-center justify-between gap-4">
-        <h3 className="font-serif text-[24px] font-bold leading-[1.3] text-black md:text-[38px]">{side.title}</h3>
-        <Picture img={side.icon} sizes="48px" className="h-auto w-[40px] md:w-[48px]" />
+        <h3 className={`h-sub ${good ? "" : "text-body"}`}>{side.title}</h3>
+        <Picture img={side.icon} sizes="44px" className={`h-auto w-10 ${good ? "" : "opacity-60 grayscale"}`} />
       </div>
-      <ul className="mt-[30px] space-y-[16px] font-sans text-[15px] leading-[1.6] text-black md:text-[16px]">
+      <ul className="mt-8 space-y-4 text-[15.5px] leading-[1.6]">
         {side.points.map((p, i) => (
-          <li key={i} className="flex items-start gap-[12px]">
-            {good ? <CheckCircle className="mt-[3px] h-[18px] w-[18px] shrink-0 text-[#5cb85c]" /> : <XCircle className="mt-[3px] h-[18px] w-[18px] shrink-0 text-[#e53e3e]" />}
-            <span>{p}</span>
+          <li key={i} className={`flex items-start gap-3.5 ${good ? "text-ink" : "text-body"}`}>
+            {good ? <CheckMark /> : <Cross />}
+            <span className="pt-px">{p}</span>
           </li>
         ))}
       </ul>
     </Reveal>
   );
   return (
-    <section className="py-[40px] md:py-[50px]">
-      <div className="container-box md:px-[60px]">
-        <Title text={s.heading} font={s.hFont} size="panel" />
-        <div className="mt-[30px] grid gap-[20px] md:mt-[60px] md:grid-cols-2">
+    <Section tone="sand">
+      <div className="container-box">
+        <Title text={s.heading} />
+        <div className="mx-auto mt-12 grid max-w-[1080px] gap-5 md:mt-14 md:grid-cols-2">
           {card(s.ours, true)}
           {card(s.theirs, false)}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -44,28 +54,26 @@ export function Comparison({ s }: { s: ComparisonSection }) {
 
 export function Stats({ s }: { s: StatsSection }) {
   return (
-    <section className="px-[10px] py-[10px] md:px-[50px]">
-      <Reveal className="relative isolate mx-auto max-w-[1340px] overflow-hidden rounded-[24px] bg-night px-[20px] py-[40px] text-white md:p-[40px]">
-        {s.image ? <Picture img={s.image} fill sizes="(min-width: 1440px) 1340px, 100vw" className="-z-10 object-cover" /> : null}
-        <div className="absolute inset-0 -z-10 bg-black/45" aria-hidden="true" />
-        <div className="flex flex-col items-center gap-[20px] md:flex-row">
-          <h2 className="font-sans text-[32px] font-light italic leading-none md:text-[47px]">{s.heading}</h2>
-          <span className="h-px w-[33px] bg-white" aria-hidden="true" />
-        </div>
-        <ul className="mt-[40px] grid gap-[30px] text-center md:grid-cols-3 md:gap-[20px]">
+    <Section tone="ink" className="relative isolate overflow-hidden">
+      {s.image ? <Picture img={s.image} fill sizes="100vw" className="-z-10 object-cover opacity-[0.12] grayscale" /> : null}
+      <div className="container-box">
+        <h2 className="h-section text-white">
+          <span className="italic">{s.heading}</span>
+        </h2>
+        <ul className="mt-12 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-3 md:gap-0">
           {s.items.map((it, i) => (
-            <li key={i}>
-              <h3 className="font-sans text-[20px] font-normal leading-[1.3]">{it.label}</h3>
-              <p className="mt-[8px] font-sans text-[48px] font-medium leading-[1.3] text-[#bf7444]">
+            <li key={i} className={`md:px-10 ${i === 0 ? "md:pl-0" : "md:border-l md:border-white/10"}`}>
+              <h3 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-white/60">{it.label}</h3>
+              <p className="mt-4 font-serif text-[52px] font-medium leading-none text-white md:text-[64px]">
                 <CountUp to={it.value} />
-                {it.suffix ? <span className="ml-[12px]">{it.suffix}</span> : null}
+                {it.suffix ? <span className="ml-2 text-copper-tint/80">{it.suffix}</span> : null}
               </p>
-              {it.caption ? <p className="mt-[4px] font-sans text-[20px] leading-[1.3]">{it.caption}</p> : null}
+              {it.caption ? <p className="mt-3 text-[15px] text-white/70">{it.caption}</p> : null}
             </li>
           ))}
         </ul>
-      </Reveal>
-    </section>
+      </div>
+    </Section>
   );
 }
 
@@ -74,29 +82,37 @@ export function Stats({ s }: { s: StatsSection }) {
 export function TeamCarousel({ s, team }: { s: TeamCarouselSection; team: TeamMember[] }) {
   const members = s.members.map((m) => ({ ...m, member: team.find((t) => t.slug === m.slug) })).filter((m) => m.member);
   return (
-    <section className="py-[40px] md:py-[60px]">
+    <Section>
       <div className="container-box">
-        <Title text={s.heading} font={s.hFont} size="section" className="md:!text-[52px]" />
-        <Carousel label={s.heading} arrows="sides" autoplay={0} slideClass="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)]" gapClass="gap-[20px]" className="mt-[30px] px-[10px] md:mt-[50px]">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <Title text={s.heading} align="left" />
+          {s.button ? <PillButton link={s.button} variant="outline" className="hidden md:inline-flex" /> : null}
+        </div>
+        <Carousel
+          label={s.heading}
+          arrows="below"
+          autoplay={0}
+          slideClass="w-[78%] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)]"
+          gapClass="gap-5"
+          className="mt-10 md:mt-12"
+        >
           {members.map(({ slug, photo, member }) => (
-            <Link key={slug} href={`/team/${slug}/`} className="group block overflow-hidden rounded-[16px] border border-black/[0.11] bg-[linear-gradient(180deg,#5c5c5c_0%,#bdbdbd_100%)] pt-[15px]">
-              <Picture img={photo ?? member!.photo} sizes="240px" className="mx-auto h-[243px] w-auto object-contain" />
-              <div className="rounded-b-[14px] bg-white px-[10px] py-[25px] text-center">
-                <p className="font-sans text-[17px] font-medium leading-[1.3] text-black">{member!.role}</p>
-                <h3 className="mt-[10px] font-serif text-[22px] font-semibold uppercase leading-[1.3] text-black transition-colors group-hover:text-copper md:text-[26px]">
-                  {member!.name}
-                </h3>
+            <Link key={slug} href={`/team/${slug}/`} className="group block">
+              <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6]">
+                <Picture img={photo ?? member!.photo} sizes="(min-width: 1280px) 290px, (min-width: 640px) 45vw, 78vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
+              <h3 className="h-card mt-5 transition-colors group-hover:text-copper">{member!.name}</h3>
+              <p className="mt-1 text-[14.5px] text-muted">{member!.role}</p>
             </Link>
           ))}
         </Carousel>
         {s.button ? (
-          <div className="mt-[30px] text-center">
-            <PillButton link={s.button} />
+          <div className="mt-8 md:hidden">
+            <PillButton link={s.button} variant="outline" />
           </div>
         ) : null}
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -106,37 +122,30 @@ export const mapSrc = (q: string, zoom = 13) => `https://maps.google.com/maps?q=
 
 export function OfficeMaps({ s, offices }: { s: OfficeMapsSection; offices: Office[] }) {
   return (
-    <section className="py-[40px] md:py-[60px]">
+    <Section tone="sand">
       <div className="container-box">
-        <Title text={s.heading} font={s.hFont} size="section" />
-        <div className="mt-[30px] grid gap-[20px] md:grid-cols-2">
+        <Title text={s.heading} />
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {offices.map((o) => (
-            <Reveal key={o.key} className="overflow-hidden rounded-[20px] border border-black/10 bg-white shadow-[0_0_10px_rgb(0_0_0/0.12)]">
-              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} loading="lazy" className="h-[260px] w-full border-0 md:h-[300px]" referrerPolicy="no-referrer-when-downgrade" />
-              <div className="flex items-start justify-between gap-4 p-[20px] md:p-[30px]">
-                <div>
-                  <div className="flex items-center gap-[12px]">
-                    <h3 className="font-serif text-[24px] font-bold text-black md:text-[28px]">{o.label}</h3>
-                    <span className="rounded-full bg-[#e8f5e9] px-[10px] py-[2px] font-sans text-[12px] font-semibold text-[#2e7d32]">Open</span>
-                  </div>
-                  <p className="mt-[12px] flex gap-[10px] font-sans text-[15px] leading-[1.6] text-black/80">
-                    <Pin className="mt-[4px] h-[16px] w-[12px] shrink-0 text-copper" />
-                    {o.longAddress}
-                  </p>
-                  {o.phone ? (
-                    <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="mt-[8px] flex items-center gap-[10px] font-sans text-[15px] text-black/80 hover:text-copper">
-                      <Phone className="h-[14px] w-[14px] shrink-0 text-copper" />
-                      {o.phone}
-                    </a>
-                  ) : null}
-                </div>
-                <Picture img={images.logoMark} sizes="72px" className="h-[50px] w-[50px] shrink-0" />
+            <Reveal key={o.key} className="card overflow-hidden">
+              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} loading="lazy" className="h-[240px] w-full border-0 grayscale-[35%] md:h-[300px]" referrerPolicy="no-referrer-when-downgrade" />
+              <div className="p-6 md:p-8">
+                <h3 className="h-sub">{o.label}</h3>
+                <p className="mt-3 flex gap-2.5 text-[15px] leading-relaxed">
+                  <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
+                  {o.longAddress}
+                </p>
+                {o.phone ? (
+                  <a href={tel(o.phone)} className="mt-3 inline-flex items-center gap-2.5 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
+                    <Phone className="h-3.5 w-3.5 text-copper" />
+                    {o.phone}
+                  </a>
+                ) : null}
               </div>
             </Reveal>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
-
