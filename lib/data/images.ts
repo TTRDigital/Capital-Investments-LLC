@@ -40,7 +40,7 @@ export const images = {
   },
   "downArrow": {
     "src": "/images/icons/down-arrow.svg",
-    "alt": "",
+    "alt": "Down arrow",
     "width": 45,
     "height": 55
   },
