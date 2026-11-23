@@ -13,41 +13,45 @@ function postal(o: Office) {
 
 const ORG_ID = () => `${absoluteUrl("/")}#organization`;
 
-/** The firm plus one branch per office, all built from the Site settings (no ratings, reviews or prices). */
-export function businessSchema(s: SiteSettings) {
+/**
+ * The firm plus one branch per office, all built from the Site settings (no ratings, reviews or prices).
+ * Each node is its own top-level block (not one @graph), so checkers that read only top-level @type
+ * still find the business type on every page (TTR-2880). The @id links between them are unchanged.
+ */
+export function businessSchema(s: SiteSettings): Record<string, unknown>[] {
   const sameAs = s.social.map((x) => x.href);
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "RealEstateAgent",
-        "@id": ORG_ID(),
-        name: s.name,
-        legalName: s.legalName,
-        slogan: s.tagline,
-        url: absoluteUrl("/"),
-        logo: absoluteUrl(s.footerLogo.src),
-        image: absoluteUrl(s.logo.src),
-        telephone: s.phone,
-        email: s.email,
-        sameAs,
-        address: postal(s.offices[0]),
-        areaServed: ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
-        contactPoint: [{ "@type": "ContactPoint", contactType: "customer service", telephone: s.phone, email: s.email, areaServed: "US" }],
-      },
-      ...s.offices.map((o) => ({
-        "@type": "RealEstateAgent",
-        "@id": `${absoluteUrl("/offices/")}#${o.key}`,
-        name: `${s.name}, ${o.name}`,
-        url: absoluteUrl("/offices/"),
-        parentOrganization: { "@id": ORG_ID() },
-        address: postal(o),
-        hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.mapQuery)}`,
-        ...(o.phone ? { telephone: o.phone } : {}),
-      })),
-      { "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, url: absoluteUrl("/"), name: s.name, inLanguage: "en-US", publisher: { "@id": ORG_ID() } },
-    ],
-  };
+  const ctx = { "@context": "https://schema.org" };
+  return [
+    {
+      ...ctx,
+      "@type": "RealEstateAgent",
+      "@id": ORG_ID(),
+      name: s.name,
+      legalName: s.legalName,
+      slogan: s.tagline,
+      url: absoluteUrl("/"),
+      logo: absoluteUrl(s.footerLogo.src),
+      image: absoluteUrl(s.logo.src),
+      telephone: s.phone,
+      email: s.email,
+      sameAs,
+      address: postal(s.offices[0]),
+      areaServed: ["Washington, DC", "Virginia", "Maryland", "Miami, FL"],
+      contactPoint: [{ "@type": "ContactPoint", contactType: "customer service", telephone: s.phone, email: s.email, areaServed: "US" }],
+    },
+    ...s.offices.map((o) => ({
+      ...ctx,
+      "@type": "RealEstateAgent",
+      "@id": `${absoluteUrl("/offices/")}#${o.key}`,
+      name: `${s.name}, ${o.name}`,
+      url: absoluteUrl("/offices/"),
+      parentOrganization: { "@id": ORG_ID() },
+      address: postal(o),
+      hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.mapQuery)}`,
+      ...(o.phone ? { telephone: o.phone } : {}),
+    })),
+    { ...ctx, "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, url: absoluteUrl("/"), name: s.name, inLanguage: "en-US", publisher: { "@id": ORG_ID() } },
+  ];
 }
 
 /** Service pages: the service as offered by the firm in the markets it serves. Text comes from the page's own title and description. */

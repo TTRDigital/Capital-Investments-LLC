@@ -8,7 +8,7 @@ export const fallbackPages: Page[] = [
     "group": "company",
     "order": 1,
     "seo": {
-      "title": "Commercial Real Estate Advisors | Capital Investment LLC",
+      "title": "Capital Investment LLC | Commercial Real Estate Advisors",
       "description": "Offices in Tysons VA, Washington DC, Bethesda MD and Miami FL. Commercial leasing, investment sales, property management and valuation."
     },
     "sections": [
@@ -664,7 +664,7 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 3,
     "seo": {
-      "title": "Investment Sales and Acquisitions | Capital Investment LLC",
+      "title": "Commercial Real Estate Acquisitions and Investment Sales",
       "description": "Representation for buyers and sellers of commercial property in the Washington DC area and Miami. Call (571) 540-8688 or (305) 404-6426 to talk it through."
     },
     "sections": [
@@ -1024,7 +1024,7 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 4,
     "seo": {
-      "title": "Landlord and Tenant Representation | Capital Investment LLC",
+      "title": "Tenant Representation Services and Landlord Representation",
       "description": "Commercial lease representation for landlords and tenants in the Washington DC area and Miami, including lease negotiation and dispute resolution."
     },
     "sections": [
@@ -1896,7 +1896,7 @@ export const fallbackPages: Page[] = [
     "group": "services",
     "order": 7,
     "seo": {
-      "title": "Property Valuation and Consulting | Capital Investment LLC",
+      "title": "Capital Real Estate Valuation and Consulting | Capital Investment LLC",
       "description": "Commercial property valuation and consulting for owners and investors in the Washington DC area, Virginia, Maryland and Miami."
     },
     "sections": [
@@ -6802,7 +6802,7 @@ export const fallbackPages: Page[] = [
     "order": 31,
     "seo": {
       "title": "Privacy Policy | Capital Investment LLC",
-      "description": "How Capital Investment LLC collects, uses and protects personal information submitted through this website."
+      "description": "How Capital Investment LLC collects, uses and protects personal information submitted through this website, and your CCPA and GDPR privacy rights."
     },
     "sections": [
       {

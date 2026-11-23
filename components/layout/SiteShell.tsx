@@ -20,7 +20,9 @@ export async function SiteShell({ children }: { children: ReactNode }) {
   const popupOffices = settings.contactOffices.map((k) => settings.offices.find((o) => o.key === k)).filter((o) => !!o);
   return (
     <>
-      <JsonLd data={businessSchema(settings)} />
+      {businessSchema(settings).map((node, i) => (
+        <JsonLd key={i} data={node} />
+      ))}
       <a href="#main" className="sr-only z-[100] rounded bg-copper px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Skip to content
       </a>
