@@ -112,10 +112,13 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
       </section>
       {photos.length ? (
         <section aria-label="Our team at work" className="overflow-hidden bg-white pt-4 md:pt-5">
-          <ul className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 md:grid md:grid-cols-6 md:gap-4 md:overflow-visible md:px-5">
+          <ul
+            className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 md:grid md:gap-4 md:overflow-visible md:px-5"
+            style={{ gridTemplateColumns: `repeat(${photos.length}, minmax(0, 1fr))` }}
+          >
             {photos.map((img, i) => (
               <li key={i} className="relative aspect-[4/5] w-[42vw] shrink-0 snap-start overflow-hidden rounded-xl md:w-auto">
-                <Picture img={img} fill sizes="(min-width: 768px) 17vw, 42vw" className="object-cover transition-transform duration-500 hover:scale-[1.04]" />
+                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 42vw" className="object-cover transition-transform duration-500 hover:scale-[1.04]" />
               </li>
             ))}
           </ul>
