@@ -11,7 +11,10 @@ import type { HeroSection } from "@/lib/types";
 
 /* Team member pages (/team/<slug>/), same layout as the old WordPress "team" posts. */
 
-export const dynamicParams = false;
+// A path that was not built ahead is rendered on request: in draft preview (lib/preview.ts) that is how an
+// unpublished page (e.g. TTR OS's scratch draft) shows. For visitors nothing changes: published content has no
+// such path, so the page is not found and it is the same 404 as before.
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   return (await getTeam()).map((m) => ({ slug: m.slug }));
