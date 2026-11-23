@@ -55,7 +55,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
             />
           </div>
           <div className="hidden md:block">
-            <Picture img={m.photo} sizes="300px" priority className="mt-[20px] h-auto w-full" />
+            <Picture img={m.photo} sizes="300px" className="mt-[20px] h-auto w-full" />
           </div>
         </div>
       </section>

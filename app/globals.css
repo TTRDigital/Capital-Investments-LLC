@@ -212,3 +212,8 @@ html[data-reveal-ready] [data-reveal]:not([data-in]) {
     border-right-color: rgb(255 255 255 / 0.2);
   }
 }
+
+/* Decorative backgrounds far down the page wait for the load event (app/layout.tsx bgWaitScript, TTR-2880). */
+html[data-bg-wait] .bg-later {
+  background-image: none !important;
+}

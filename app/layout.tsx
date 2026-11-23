@@ -16,6 +16,12 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["600", "700"], display: "sw
 const lexend = Lexend({ subsets: ["latin"], weight: ["500"], display: "swap", variable: "--font-lexend-f", preload: false });
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap", variable: "--font-dm-f", preload: false });
 
+/**
+ * Decorative CSS backgrounds far down the page (.bg-later: footer, CTA shapes) wait for the load event,
+ * so on a phone they do not compete with the main content (TTR-2880). Without JavaScript they show as before.
+ */
+const bgWaitScript = `(function(d){d.setAttribute("data-bg-wait","");addEventListener("load",function(){d.removeAttribute("data-bg-wait")})})(document.documentElement)`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Capital Investment LLC", template: "%s - Capital Investment LLC" },
@@ -29,6 +35,9 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-US" className={`${lora.variable} ${inter.variable} ${roboto.variable} ${montserrat.variable} ${outfit.variable} ${lexend.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: bgWaitScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

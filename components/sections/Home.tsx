@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ComparisonSection, OfficeMapsSection, Office, StatsSection, TeamCarouselSection, TeamMember } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
+import { LazyMap } from "@/components/ui/LazyMap";
 
 import { Carousel } from "@/components/ui/Carousel";
 import { CheckCircle, Pin, Phone, XCircle } from "@/components/ui/Icons";
@@ -112,7 +113,7 @@ export function OfficeMaps({ s, offices }: { s: OfficeMapsSection; offices: Offi
         <div className="mt-[30px] grid gap-[20px] md:grid-cols-2">
           {offices.map((o) => (
             <Reveal key={o.key} className="overflow-hidden rounded-[20px] border border-black/10 bg-white shadow-[0_0_10px_rgb(0_0_0/0.12)]">
-              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} loading="lazy" className="h-[260px] w-full border-0 md:h-[300px]" referrerPolicy="no-referrer-when-downgrade" />
+              <LazyMap title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} className="h-[260px] w-full border-0 md:h-[300px]" />
               <div className="flex items-start justify-between gap-4 p-[20px] md:p-[30px]">
                 <div>
                   <div className="flex items-center gap-[12px]">

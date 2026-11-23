@@ -179,7 +179,7 @@ export function Cta({ s }: { s: CtaSection }) {
     <section className="px-[10px] py-[50px] md:px-[50px]">
       <Reveal className="mx-auto max-w-[1340px] rounded-[20px] bg-cream-2 px-[20px] pb-[30px] pt-[50px] md:p-[40px]">
         <div className="relative overflow-hidden rounded-[20px] bg-white px-[15px] py-[40px] shadow-[0_0_30px_0_rgb(209_209_209/0.2)] md:px-[120px] md:py-[63px] lg:px-[189px]">
-          <div className="pointer-events-none absolute inset-0 hidden bg-contain bg-center bg-no-repeat md:block" style={{ backgroundImage: `url(${images.ctaShapes.src})` }} aria-hidden="true" />
+          <div className="bg-later pointer-events-none absolute inset-0 hidden bg-contain bg-center bg-no-repeat md:block" style={{ backgroundImage: `url(${images.ctaShapes.src})` }} aria-hidden="true" />
           <div className="relative">
             <Title text={s.heading} font={s.hFont} accent={s.hAccent} size="intro" className="md:!text-[36px]" />
             <Body paras={s.text} className="mx-auto mt-[20px] max-w-[790px] text-[14px] leading-[1.9] text-black md:text-[14px]" />

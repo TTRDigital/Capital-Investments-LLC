@@ -19,8 +19,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="relative mt-[50px] font-dm text-white">
       <div className="relative">
-        <div className="absolute inset-0 -z-10 hidden bg-[length:100%_100%] bg-no-repeat md:block" style={{ backgroundImage: `url(${images.footerBg.src})` }} />
-        <div className="absolute inset-0 -z-10 bg-[length:100%_100%] bg-no-repeat md:hidden" style={{ backgroundImage: `url(${images.footerBgMobile.src})` }} />
+        <div className="bg-later absolute inset-0 -z-10 hidden bg-[length:100%_100%] bg-no-repeat md:block" style={{ backgroundImage: `url(${images.footerBg.src})` }} />
+        <div className="bg-later absolute inset-0 -z-10 bg-[length:100%_100%] bg-no-repeat md:hidden" style={{ backgroundImage: `url(${images.footerBgMobile.src})` }} />
         <Link href="/" className="absolute left-[10px] top-[5px] block w-[180px] md:left-[30px] md:top-[10px] md:w-[223px]" aria-label={`${settings.name} home`}>
           <Picture img={settings.footerLogo} sizes="223px" className="h-auto w-full" />
         </Link>

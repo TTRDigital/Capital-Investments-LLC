@@ -14,6 +14,7 @@ import type {
   TeamMember,
 } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
+import { LazyMap } from "@/components/ui/LazyMap";
 import { Inline, Rich } from "@/components/ui/Rich";
 import { Carousel } from "@/components/ui/Carousel";
 import { CheckCircle, Minus, Phone, Pin, Plus } from "@/components/ui/Icons";
@@ -103,7 +104,7 @@ export function OfficeList({ offices }: { s: OfficeListSection; offices: Office[
         {offices.map((o) => (
           <Reveal key={o.key} className="grid gap-[20px] md:grid-cols-2">
             <div className="overflow-hidden rounded-[10px] bg-white shadow-[0_0_20px_rgb(0_0_0/0.08)]">
-              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} loading="lazy" className="h-[200px] w-full border-0" referrerPolicy="no-referrer-when-downgrade" />
+              <LazyMap title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} className="h-[200px] w-full border-0" />
               <div className="p-[20px]">
                 <h2 className="font-serif text-[26px] font-bold text-black">{o.label}</h2>
                 <p className="mt-[10px] flex gap-[10px] font-sans text-[13px] leading-[1.6] text-black/80">
