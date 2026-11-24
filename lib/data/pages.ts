@@ -915,8 +915,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/richmond-skyline.webp",
               "alt": "Richmond, Virginia skyline",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           },
           {
@@ -928,8 +928,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/maryland-office-building.webp",
               "alt": "Modern glass office building in Maryland",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           },
           {
@@ -941,8 +941,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/downtown-miami-street.webp",
               "alt": "Street corner in downtown Miami",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           }
         ],
@@ -1201,8 +1201,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/richmond-skyline.webp",
               "alt": "Richmond, Virginia skyline",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           },
           {
@@ -1214,8 +1214,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/maryland-office-building.webp",
               "alt": "Modern glass office building in Maryland",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           },
           {
@@ -1227,8 +1227,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/downtown-miami-street.webp",
               "alt": "Street corner in downtown Miami",
-              "width": 610,
-              "height": 558
+              "width": 1220,
+              "height": 1116
             }
           }
         ],
@@ -1593,8 +1593,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/miami-beach-aerial.webp",
               "alt": "Aerial view of the Miami Beach coastline",
-              "width": 609,
-              "height": 559
+              "width": 1218,
+              "height": 1118
             }
           }
         ],
