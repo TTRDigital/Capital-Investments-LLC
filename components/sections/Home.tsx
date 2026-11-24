@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComparisonSection, OfficeMapsSection, Office, StatsSection, TeamCarouselSection, TeamMember } from "@/lib/types";
+import type { ComparisonSection, Img, OfficeMapsSection, Office, StatsSection, TeamCarouselSection, TeamMember } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Carousel } from "@/components/ui/Carousel";
 import { Phone, Pin } from "@/components/ui/Icons";
@@ -80,6 +80,9 @@ export function Stats({ s }: { s: StatsSection }) {
 
 /* ---------- Meet the team carousel ---------- */
 
+/** The larger of two photos (the old carousel crops are only ~240px wide; portraits are 470-1200px). */
+const sharper = (a?: Img, b?: Img) => (!a ? b : !b ? a : (b.width ?? 0) > (a.width ?? 0) ? b : a);
+
 export function TeamCarousel({ s, team }: { s: TeamCarouselSection; team: TeamMember[] }) {
   const members = s.members.map((m) => ({ ...m, member: team.find((t) => t.slug === m.slug) })).filter((m) => m.member);
   return (
@@ -104,7 +107,7 @@ export function TeamCarousel({ s, team }: { s: TeamCarouselSection; team: TeamMe
           {members.map(({ slug, photo, member }) => (
             <Link key={slug} href={`/team/${slug}/`} className="group block">
               <div className="overflow-hidden rounded-[20px] bg-gradient-to-b from-[#e8e1d6] to-[#cfc5b7]">
-                <Picture img={photo ?? member!.photo} sizes="(min-width: 1280px) 290px, (min-width: 640px) 45vw, 78vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                <Picture img={sharper(photo, member!.photo)} sizes="(min-width: 1280px) 290px, (min-width: 640px) 45vw, 78vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
               <h3 className="h-card mt-6 transition-colors group-hover:text-copper">{member!.name}</h3>
               <p className="caps mt-2 text-muted">{member!.role}</p>

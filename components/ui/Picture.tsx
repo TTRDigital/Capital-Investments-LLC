@@ -24,7 +24,7 @@ export function Picture({
 }) {
   if (!img?.src) return null;
   const loading = priority || eager ? ("eager" as const) : ("lazy" as const);
-  const common = { src: img.src, alt: img.alt ?? "", sizes, className, loading, ...(priority ? { fetchPriority: "high" as const } : {}) };
+  const common = { src: img.src, alt: img.alt ?? "", sizes, className, loading, quality: 82, ...(priority ? { fetchPriority: "high" as const } : {}) };
   if (fill || !img.width || !img.height) return <Image {...common} alt={common.alt} fill />;
   return <Image {...common} alt={common.alt} width={img.width} height={img.height} />;
 }

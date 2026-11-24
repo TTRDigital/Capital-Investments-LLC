@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
     // Keep in sync with WIDTHS in scripts/optimize-images.mjs.
     deviceSizes: [640, 828, 1200, 1920],
     imageSizes: [96, 256, 384],
-    qualities: [75],
+    qualities: [82],
   },
   async redirects() {
     return [

@@ -44,18 +44,19 @@ export function TabsClient({ tabs }: { tabs: TabsSection["tabs"] }) {
           role="tabpanel"
           aria-labelledby={`${id}-tab-${i}`}
           hidden={i !== active}
-          className="relative isolate mt-10 overflow-hidden rounded-[28px] bg-ink shadow-lift"
+          className="relative isolate mt-10 grid overflow-hidden rounded-[28px] bg-ink shadow-lift md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]"
         >
-          <Picture img={t.image} fill sizes="(min-width: 1280px) 1200px, 100vw" className="-z-20 object-cover" />
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_21_29/0.25)_0%,rgb(16_21_29/0.55)_55%,rgb(16_21_29/0.8)_100%)]" aria-hidden="true" />
-          <div className="grid min-h-[480px] items-end p-5 pt-56 md:min-h-[540px] md:p-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:items-center lg:pt-12">
-            <div className="glass p-7 md:p-10 lg:col-start-2">
-              <p className="caps text-gold">{t.label}</p>
-              <h3 className="h-sub mt-4 text-paper">
-                <Inline text={t.title} accentClass="italic" />
-              </h3>
-              <Rich paras={t.text} className="mt-5 text-[15px] leading-[1.8] text-white/75" />
-            </div>
+          <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[440px]">
+            <Picture img={t.image} fill sizes="(min-width: 1280px) 520px, (min-width: 768px) 45vw, 100vw" className="object-cover" />
+          </div>
+          <div className="relative flex flex-col justify-center p-7 md:p-12 lg:p-16">
+            <div className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-bronze/20 blur-[100px]" aria-hidden="true" />
+            <p className="caps text-gold">{t.label}</p>
+            <h3 className="h-sub mt-4 text-paper">
+              <Inline text={t.title} accentClass="italic" />
+            </h3>
+            <span aria-hidden="true" className="mt-7 block h-px w-24 bg-gold/50" />
+            <Rich paras={t.text} className="mt-7 text-[15px] leading-[1.85] text-white/75" />
           </div>
         </div>
       ))}

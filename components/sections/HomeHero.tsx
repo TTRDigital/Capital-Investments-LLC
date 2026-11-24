@@ -130,8 +130,8 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
             style={{ gridTemplateColumns: `repeat(${photos.length}, minmax(0, 1fr))` }}
           >
             {photos.map((img, i) => (
-              <li key={i} className="relative aspect-[3/4] w-[44vw] shrink-0 snap-start overflow-hidden rounded-[18px] shadow-card md:w-auto">
-                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 42vw" className="object-cover transition-transform duration-700 hover:scale-[1.05]" />
+              <li key={i} className="relative aspect-[3/4] w-[34vw] shrink-0 snap-start overflow-hidden rounded-[16px] shadow-card md:w-auto">
+                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 34vw" className="object-cover transition-transform duration-700 hover:scale-[1.05]" />
               </li>
             ))}
           </ul>
