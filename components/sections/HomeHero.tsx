@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { HeroVideo, HomeHeroSection } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
-import { Inline, Rich } from "@/components/ui/Rich";
+import { Rich } from "@/components/ui/Rich";
 import { ArrowRight } from "@/components/ui/Icons";
 import { PillButton } from "@/components/sections/parts";
 
@@ -86,8 +86,12 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
         {/* Only a soft shade at the bottom left, so the skyline stays bright. */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(15deg,rgb(16_21_29/0.78)_0%,rgb(16_21_29/0.35)_45%,rgb(16_21_29/0.05)_75%)]" aria-hidden="true" />
         <div className="container-box w-full pb-14 pt-40 md:pb-20">
-          <h1 className="max-w-[860px] font-serif text-[clamp(38px,5vw,72px)] font-normal leading-[1.06] tracking-[-0.01em] text-paper">
-            <Inline text={s.heading} accentClass="italic" />
+          {/* Redesign headline. Sanity is shared with the live site, so it is set here on staging;
+              when the redesign ships, put it in Sanity (Home > hero heading) and use s.heading again. */}
+          <h1 className="font-serif text-[clamp(44px,6.6vw,100px)] font-normal leading-[1.02] tracking-[-0.015em] text-paper">
+            Commercial Real Estate,{" "}
+            <br />
+            <em className="italic text-gold">Elevated.</em>
           </h1>
           <span aria-hidden="true" className="mt-8 block h-px w-24 bg-paper/70" />
         </div>
