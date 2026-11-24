@@ -36,12 +36,12 @@ function DesktopItem({ item, path, depth }: { item: MenuItem; path: string; dept
   const label = (
     <>
       <span>{item.label}</span>
-      {item.children ? <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${top ? "group-hover/item:rotate-180" : flip ? "rotate-90" : "-rotate-90"}`} /> : null}
+      {item.children ? <ChevronDown className={`h-3 w-3 opacity-50 transition-transform ${top ? "group-hover/item:rotate-180" : flip ? "rotate-90" : "-rotate-90"}`} /> : null}
     </>
   );
   const cls = top
-    ? `relative flex h-[76px] items-center gap-1.5 px-3.5 text-[15px] font-medium transition-colors hover:text-copper xl:px-4 ${current ? "text-copper" : "text-ink"}`
-    : `flex items-center justify-between gap-4 rounded-lg px-3.5 py-2.5 text-[14.5px] font-medium transition-colors hover:bg-sand hover:text-copper ${current ? "text-copper" : "text-ink"}`;
+    ? `relative flex h-[84px] items-center gap-1.5 px-3 text-[11.5px] font-semibold uppercase tracking-[0.2em] transition-colors hover:text-copper xl:px-4 ${current ? "text-copper" : "text-ink"}`
+    : `flex items-center justify-between gap-4 rounded-xl px-4 py-2.5 text-[14px] font-medium transition-colors hover:bg-paper hover:text-copper ${current ? "text-copper" : "text-ink"}`;
   return (
     <li className="group/item relative" onMouseEnter={item.children ? place : undefined} onFocus={item.children ? place : undefined}>
       {item.href ? (
@@ -56,8 +56,8 @@ function DesktopItem({ item, path, depth }: { item: MenuItem; path: string; dept
       {item.children ? (
         <ul
           ref={sub}
-          className={`invisible absolute z-10 min-w-[270px] rounded-xl border border-line bg-white p-2 opacity-0 shadow-lift transition-[opacity,transform] duration-150 group-hover/item:visible group-hover/item:opacity-100 group-focus-within/item:visible group-focus-within/item:opacity-100 ${
-            top ? `top-[calc(100%-10px)] ${flip ? "right-0" : "left-0"}` : `-top-2 ${flip ? "right-[calc(100%+8px)]" : "left-[calc(100%+8px)]"}`
+          className={`invisible absolute z-10 min-w-[280px] rounded-2xl border border-line/70 bg-white p-2 opacity-0 shadow-lift transition-[opacity,transform] duration-150 group-hover/item:visible group-hover/item:opacity-100 group-focus-within/item:visible group-focus-within/item:opacity-100 ${
+            top ? `top-[calc(100%-14px)] ${flip ? "right-0" : "left-0"}` : `-top-2 ${flip ? "right-[calc(100%+8px)]" : "left-[calc(100%+8px)]"}`
           }`}
         >
           {item.children.map((c) => (
@@ -73,7 +73,7 @@ function MobileItem({ item, path, depth, onNavigate }: { item: MenuItem; path: s
   const [open, setOpen] = useState(() => !!item.children && inSection(item, path));
   const current = isActive(item, path);
   const pad = { paddingLeft: `${depth * 16}px` };
-  const text = depth === 0 ? "text-[18px] font-medium" : "text-[16px]";
+  const text = depth === 0 ? "font-serif text-[26px] font-medium leading-tight" : "text-[15.5px]";
   return (
     <li className={depth === 0 ? "border-b border-line" : ""}>
       <div className="flex items-center justify-between">
@@ -127,26 +127,26 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
   }, [open]);
 
   return (
-    <header className={`sticky top-0 z-50 border-b bg-white/95 backdrop-blur transition-[border-color,box-shadow] duration-300 supports-[backdrop-filter]:bg-white/85 ${scrolled || open ? "border-line shadow-[0_6px_24px_-18px_rgb(16_27_45/0.35)]" : "border-transparent"}`}>
-      <div className="container-box flex h-16 items-center gap-4 min-[1025px]:h-[76px]">
-        <Link href="/" className="block w-[156px] shrink-0 min-[1025px]:w-[188px]" aria-label={`${siteName} home`}>
-          <Picture img={images.logoInk} sizes="188px" eager className="h-auto w-full" />
+    <header className={`sticky top-0 z-50 border-b bg-paper/95 backdrop-blur transition-[border-color,box-shadow] duration-300 supports-[backdrop-filter]:bg-paper/85 ${scrolled || open ? "border-line shadow-[0_10px_30px_-24px_rgb(21_26_34/0.45)]" : "border-line/60"}`}>
+      <div className="container-box flex h-[68px] items-center gap-4 min-[1025px]:grid min-[1025px]:h-[84px] min-[1025px]:grid-cols-[1fr_auto_1fr]">
+        <Link href="/" className="block w-[152px] shrink-0 min-[1025px]:w-[184px]" aria-label={`${siteName} home`}>
+          <Picture img={images.logoInk} sizes="184px" eager className="h-auto w-full" />
         </Link>
-        <nav aria-label="Main" className="ml-auto hidden min-[1025px]:block">
+        <nav aria-label="Main" className="hidden min-[1025px]:block">
           <ul className="flex items-center">
             {menu.map((item) => (
               <DesktopItem key={item.label} item={item} path={path} depth={0} />
             ))}
           </ul>
         </nav>
-        <div className="ml-auto flex items-center gap-2 min-[1025px]:ml-4">
+        <div className="ml-auto flex items-center gap-3 min-[1025px]:justify-self-end">
           {phone ? (
-            <a href={tel(phone)} className="hidden items-center gap-2 px-3 text-[15px] font-medium text-ink transition-colors hover:text-copper xl:flex">
-              <Phone className="h-3.5 w-3.5 text-copper" />
+            <a href={tel(phone)} className="hidden items-center gap-2 text-[12px] font-semibold tracking-[0.14em] text-ink transition-colors hover:text-copper xl:flex">
+              <Phone className="h-3 w-3 text-copper" />
               {phone}
             </a>
           ) : null}
-          <Link href="/contact-us/" data-open-chat className="btn !px-4 !py-2.5 text-[14px] min-[1025px]:!px-5 min-[1025px]:!py-3">
+          <Link href="/contact-us/" data-open-chat className="btn !px-5 !py-3 !text-[11px] min-[1025px]:!px-6">
             Let’s Chat
           </Link>
           <button
@@ -162,7 +162,7 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
         </div>
       </div>
       {open ? (
-        <nav id="mobile-menu" aria-label="Main" className="h-[calc(100dvh-64px)] overflow-y-auto border-t border-line bg-white min-[1025px]:hidden">
+        <nav id="mobile-menu" aria-label="Main" className="h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-paper min-[1025px]:hidden">
           <div className="container-box pb-10 pt-2">
             <ul>
               {menu.map((item) => (
@@ -170,8 +170,8 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
               ))}
             </ul>
             {phone ? (
-              <a href={tel(phone)} className="btn btn-outline mt-8 w-full">
-                <Phone className="h-3.5 w-3.5 text-copper" />
+              <a href={tel(phone)} className="btn btn-dark mt-10 w-full">
+                <Phone className="h-3.5 w-3.5 text-gold" />
                 {phone}
               </a>
             ) : null}

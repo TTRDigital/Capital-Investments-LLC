@@ -34,9 +34,9 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
     <>
       <JsonLd data={personSchema(m, path)} />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Our Team", path: "/our-team/" }, { name: m.name, path }])} />
-      <section className="bg-sand pb-16 pt-10 md:pb-24 md:pt-14">
+      <section className="bg-paper pb-20 pt-10 md:pb-32 md:pt-16">
         <div className="container-box">
-          <nav aria-label="Breadcrumb" className="text-[13.5px] font-medium text-muted">
+          <nav aria-label="Breadcrumb" className="caps text-muted">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <li>
                 <Link href="/" className="transition-colors hover:text-copper">
@@ -59,16 +59,19 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
               </li>
             </ol>
           </nav>
-          <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-16 lg:gap-24">
+          <div className="mt-12 grid gap-12 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-16 lg:gap-28">
             <div className="md:sticky md:top-28 md:self-start">
-              <div className="mx-auto max-w-[380px] overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6] md:max-w-none">
-                <Picture img={m.photo} sizes="(min-width: 768px) 380px, 90vw" priority className="aspect-[4/5] h-auto w-full object-cover object-top" />
+              <div className="relative mx-auto max-w-[380px] md:max-w-none">
+                <span aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[24px] border border-bronze/40" />
+                <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-b from-[#e8e1d6] to-[#cfc5b7] shadow-lift">
+                  <Picture img={m.photo} sizes="(min-width: 768px) 380px, 90vw" priority className="aspect-[4/5] h-auto w-full object-cover object-top" />
+                </div>
               </div>
             </div>
             <div>
               <h1 className="h-page">{m.name}</h1>
-              <p className="mt-3 text-[15px] font-semibold uppercase tracking-[0.12em] text-copper">{m.role}</p>
-              <span className="mt-7 block h-px w-full bg-line" aria-hidden="true" />
+              <p className="eyebrow eyebrow-rule mt-6">{m.role}</p>
+              <span className="mt-9 block h-px w-full bg-line" aria-hidden="true" />
               <Rich paras={m.bio} className="mt-8 text-[16.5px] leading-[1.8] text-body" headingTag="h2" headingClass="text-[19px]" />
               <div className="mt-10">
                 <PillButton link={{ label: "Let’s Chat", href: "#chat" }} />

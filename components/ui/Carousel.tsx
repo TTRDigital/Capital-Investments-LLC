@@ -17,6 +17,7 @@ export function Carousel({
   autoplay = 0,
   arrows = "none",
   dots = false,
+  counter = false,
   gapClass = "gap-[20px]",
   trackClass = "",
   className = "",
@@ -30,6 +31,8 @@ export function Carousel({
   autoplay?: number;
   arrows?: "none" | "sides" | "below";
   dots?: boolean;
+  /** "01 / 08" between the arrows below the track. */
+  counter?: boolean;
   gapClass?: string;
   /** Extra track classes, e.g. side padding + matching scroll padding so neighbours peek in. */
   trackClass?: string;
@@ -112,7 +115,7 @@ export function Carousel({
       aria-label={dir < 0 ? "Previous slide" : "Next slide"}
       className={
         arrows === "below"
-          ? "flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:border-ink"
+          ? "flex h-12 w-12 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
           : "absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white text-ink shadow-card transition-colors hover:border-ink " + (dir < 0 ? "left-2" : "right-2")
       }
     >
@@ -135,7 +138,17 @@ export function Carousel({
           {arrowBtn(1)}
         </>
       ) : null}
-      {arrows === "below" && count > 1 ? <div className="mt-8 flex justify-start gap-2.5">{[arrowBtn(-1), arrowBtn(1)].map((b, i) => <span key={i}>{b}</span>)}</div> : null}
+      {arrows === "below" && count > 1 ? (
+        <div className="mt-10 flex items-center justify-start gap-4">
+          {arrowBtn(-1)}
+          {counter ? (
+            <span className="caps min-w-[64px] text-center text-muted" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
+            </span>
+          ) : null}
+          {arrowBtn(1)}
+        </div>
+      ) : null}
       {dots && count > 1 ? (
         <div className="mt-[20px] flex justify-center gap-[6px]">
           {slides.map((_, i) => (

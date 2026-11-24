@@ -49,28 +49,29 @@ export function ChatPopup({ offices, consentText }: { offices: Office[]; consent
       aria-labelledby="chat-title"
       onClose={() => setOpen(false)}
       onClick={(e) => e.target === ref.current && close()}
-      className="m-auto max-h-[92dvh] w-[calc(100%-24px)] max-w-[920px] overflow-y-auto rounded-2xl bg-white p-0 text-body shadow-lift backdrop:bg-ink/60 backdrop:backdrop-blur-sm"
+      className="m-auto max-h-[92dvh] w-[calc(100%-24px)] max-w-[960px] overflow-y-auto rounded-[24px] bg-white p-0 text-body shadow-lift backdrop:bg-ink/70 backdrop:backdrop-blur-sm"
     >
       {open ? (
         <div className="relative grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-          <button type="button" onClick={close} aria-label="Close" className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-sand">
+          <button type="button" onClick={close} aria-label="Close" className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:border-ink">
             <Close className="h-5 w-5" />
           </button>
-          <div className="bg-sand px-6 pb-8 pt-10 md:px-10 md:py-12">
-            <h2 id="chat-title" className="h-section">
+          <div className="bg-ink px-6 pb-8 pt-12 text-white/70 md:px-10 md:py-14">
+            <h2 id="chat-title" className="h-section h-caps text-paper">
               Get In Touch
             </h2>
+            <span aria-hidden="true" className="mt-6 block h-px w-24 bg-gold/60" />
             <ul className="mt-8 space-y-6">
               {offices.map((o) => (
-                <li key={o.key} className="border-t border-line pt-6 first:border-0 first:pt-0">
-                  <h3 className="h-card">{o.label}</h3>
+                <li key={o.key} className="border-t border-white/10 pt-6 first:border-0 first:pt-0">
+                  <h3 className="h-card text-paper">{o.label}</h3>
                   <p className="mt-2 flex gap-2.5 text-[14.5px] leading-relaxed">
-                    <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
+                    <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-gold" />
                     <span>{o.longAddress}</span>
                   </p>
                   {o.phone ? (
-                    <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="mt-3 inline-flex items-center gap-2 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
-                      <Phone className="h-3.5 w-3.5 text-copper" />
+                    <a href={`tel:+1${o.phone.replace(/\D/g, "")}`} className="mt-3 inline-flex items-center gap-2.5 text-[12px] font-semibold tracking-[0.16em] text-paper transition-colors hover:text-gold">
+                      <Phone className="h-3 w-3 text-gold" />
                       {o.phone}
                     </a>
                   ) : null}
@@ -78,7 +79,7 @@ export function ChatPopup({ offices, consentText }: { offices: Office[]; consent
               ))}
             </ul>
           </div>
-          <div className="px-6 pb-8 pt-6 md:px-10 md:py-12">
+          <div className="px-6 pb-8 pt-6 md:px-10 md:py-14">
             <LeadForm kind="contact" consentText={consentText} />
           </div>
         </div>

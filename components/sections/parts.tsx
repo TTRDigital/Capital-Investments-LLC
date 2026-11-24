@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import type { Link as LinkT } from "@/lib/types";
-import { Inline, Rich, SmartLink } from "@/components/ui/Rich";
+import { Inline, Rich, SmartLink, plain } from "@/components/ui/Rich";
 import { Picture } from "@/components/ui/Picture";
 import { images } from "@/lib/data/images";
 
@@ -9,7 +9,7 @@ import { images } from "@/lib/data/images";
 
 export type Tone = "white" | "sand" | "ink";
 
-const TONE: Record<Tone, string> = { white: "bg-white", sand: "bg-sand", ink: "bg-ink text-white/80" };
+const TONE: Record<Tone, string> = { white: "bg-paper", sand: "bg-sand", ink: "bg-ink text-white/75" };
 
 /** A page section: background tone plus the shared vertical rhythm (.sec). */
 export function Section({ tone = "white", className = "", children, id }: { tone?: Tone; className?: string; children: ReactNode; id?: string }) {
@@ -20,7 +20,7 @@ export function Section({ tone = "white", className = "", children, id }: { tone
   );
 }
 
-/** *accent* words in headings: Lora italic in copper. */
+/** *accent* words in headings: display italic in copper. */
 export const ACCENT = "italic text-copper";
 
 /**
@@ -42,7 +42,9 @@ export function Title({
   align?: "center" | "left";
   className?: string;
 }) {
-  const cls = size === "card" ? "h-card" : size === "sub" ? "h-sub" : "h-section";
+  // Short section titles are set as uppercase statements; long ones stay in sentence case.
+  const caps = size !== "card" && size !== "sub" && plain(text).length <= 34;
+  const cls = size === "card" ? "h-card" : size === "sub" ? "h-sub" : `h-section ${caps ? "h-caps" : ""}`;
   return (
     <Tag className={`${cls} ${align === "center" ? "text-center" : "text-left"} ${className}`}>
       <Inline text={text} accentClass={ACCENT} />
@@ -75,9 +77,9 @@ export function SectionHeader({
   const center = align === "center";
   return (
     <div className={`${center ? "mx-auto max-w-[780px] text-center" : "max-w-[720px]"} ${className}`}>
-      {eyebrow ? <p className="eyebrow mb-4">{eyebrow}</p> : null}
+      {eyebrow ? <p className="eyebrow eyebrow-rule mb-5">{eyebrow}</p> : null}
       {heading ? <Title text={heading} as={as} align={align} /> : null}
-      <Body paras={text} className={`lead ${heading ? "mt-5" : ""}`} align={align} />
+      <Body paras={text} className={`lead ${heading ? "mt-6" : ""}`} align={align} />
     </div>
   );
 }
@@ -89,9 +91,9 @@ export function Body({ paras, className = "", align = "left" }: { paras?: string
 
 /**
  * Button for a CMS link; href "#chat" (or empty) opens the contact popup.
- * Variants: primary (copper), outline, light (white on dark), ghost (outline on dark).
+ * Variants: primary (bronze), dark (ink), outline, light (ivory on dark), ghost (outline on dark).
  */
-export function PillButton({ link, className = "", variant = "primary" }: { link?: LinkT; className?: string; variant?: "primary" | "outline" | "light" | "ghost" }) {
+export function PillButton({ link, className = "", variant = "primary" }: { link?: LinkT; className?: string; variant?: "primary" | "dark" | "outline" | "light" | "ghost" }) {
   if (!link?.label) return null;
   const cls = `btn ${variant === "primary" ? "" : `btn-${variant}`} ${className}`;
   const chat = !link.href || link.href === "#chat";
@@ -127,10 +129,15 @@ export function cols(n: number | undefined, count: number) {
 /** Small numbered/check marker used in lists. */
 export function CheckMark({ className = "" }: { className?: string }) {
   return (
-    <span aria-hidden="true" className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-copper-tint text-copper ${className}`}>
+    <span aria-hidden="true" className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bronze text-ink ${className}`}>
       <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m5 12.5 4.5 4.5L19 7.5" />
+        <path d="m5.5 12.5 4 4L18.5 8" />
       </svg>
     </span>
   );
+}
+
+/** Short horizontal rule under display headings. */
+export function Rule({ className = "" }: { className?: string }) {
+  return <span aria-hidden="true" className={`block h-px w-24 bg-current opacity-60 ${className}`} />;
 }

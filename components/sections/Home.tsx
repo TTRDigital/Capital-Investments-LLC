@@ -4,7 +4,7 @@ import { Picture } from "@/components/ui/Picture";
 import { Carousel } from "@/components/ui/Carousel";
 import { Phone, Pin } from "@/components/ui/Icons";
 import { CountUp } from "@/components/sections/CountUp";
-import { CheckMark, PillButton, Reveal, Section, Title } from "@/components/sections/parts";
+import { CheckMark, PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
 
 const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
 
@@ -22,12 +22,13 @@ function Cross() {
 
 export function Comparison({ s }: { s: ComparisonSection }) {
   const card = (side: ComparisonSection["ours"], good: boolean) => (
-    <Reveal className={`rounded-2xl p-7 md:p-10 ${good ? "border border-copper/30 bg-white shadow-card" : "border border-line bg-transparent"}`}>
+    <Reveal className={`rounded-[24px] p-8 md:p-12 ${good ? "bg-white shadow-lift ring-1 ring-bronze/30" : "border border-line bg-transparent"}`}>
       <div className="flex items-center justify-between gap-4">
-        <h3 className={`h-sub ${good ? "" : "text-body"}`}>{side.title}</h3>
+        <h3 className={`h-sub ${good ? "" : "text-muted"}`}>{side.title}</h3>
         <Picture img={side.icon} sizes="44px" className={`h-auto w-10 ${good ? "" : "opacity-60 grayscale"}`} />
       </div>
-      <ul className="mt-8 space-y-4 text-[15.5px] leading-[1.6]">
+      <span aria-hidden="true" className={`mt-7 block h-px w-full ${good ? "bg-bronze/40" : "bg-line"}`} />
+      <ul className="mt-7 space-y-5 text-[15px] leading-[1.6]">
         {side.points.map((p, i) => (
           <li key={i} className={`flex items-start gap-3.5 ${good ? "text-ink" : "text-body"}`}>
             {good ? <CheckMark /> : <Cross />}
@@ -55,20 +56,20 @@ export function Comparison({ s }: { s: ComparisonSection }) {
 export function Stats({ s }: { s: StatsSection }) {
   return (
     <Section tone="ink" className="relative isolate overflow-hidden">
-      {s.image ? <Picture img={s.image} fill sizes="100vw" className="-z-10 object-cover opacity-[0.12] grayscale" /> : null}
+      {s.image ? <Picture img={s.image} fill sizes="100vw" className="-z-20 object-cover opacity-[0.1] grayscale" /> : null}
+      <div className="pointer-events-none absolute -right-40 top-0 -z-10 h-[520px] w-[520px] rounded-full bg-bronze/20 blur-[130px]" aria-hidden="true" />
       <div className="container-box">
-        <h2 className="h-section text-white">
-          <span className="italic">{s.heading}</span>
-        </h2>
-        <ul className="mt-12 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-3 md:gap-0">
+        <span aria-hidden="true" className="block h-px w-24 bg-gold/60" />
+        <h2 className="h-section h-caps mt-8 text-paper">{s.heading}</h2>
+        <ul className="mt-14 grid gap-12 border-t border-white/10 pt-12 md:grid-cols-3 md:gap-0">
           {s.items.map((it, i) => (
-            <li key={i} className={`md:px-10 ${i === 0 ? "md:pl-0" : "md:border-l md:border-white/10"}`}>
-              <h3 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-white/60">{it.label}</h3>
-              <p className="mt-4 font-serif text-[52px] font-medium leading-none text-white md:text-[64px]">
+            <li key={i} className={`md:px-12 ${i === 0 ? "md:pl-0" : "md:border-l md:border-white/10"}`}>
+              <h3 className="caps text-gold">{it.label}</h3>
+              <p className="mt-5 font-serif text-[64px] font-normal leading-none text-paper md:text-[84px]">
                 <CountUp to={it.value} />
-                {it.suffix ? <span className="ml-2 text-copper-tint/80">{it.suffix}</span> : null}
+                {it.suffix ? <span className="ml-3 font-serif text-[36px] italic text-gold md:text-[44px]">{it.suffix}</span> : null}
               </p>
-              {it.caption ? <p className="mt-3 text-[15px] text-white/70">{it.caption}</p> : null}
+              {it.caption ? <p className="mt-4 text-[14.5px] text-white/65">{it.caption}</p> : null}
             </li>
           ))}
         </ul>
@@ -85,30 +86,34 @@ export function TeamCarousel({ s, team }: { s: TeamCarouselSection; team: TeamMe
     <Section>
       <div className="container-box">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <Title text={s.heading} align="left" />
-          {s.button ? <PillButton link={s.button} variant="outline" className="hidden md:inline-flex" /> : null}
+          <div>
+            <Title text={s.heading} align="left" />
+            <Rule className="mt-8 text-copper" />
+          </div>
+          {s.button ? <PillButton link={s.button} variant="dark" className="hidden md:inline-flex" /> : null}
         </div>
         <Carousel
           label={s.heading}
           arrows="below"
+          counter
           autoplay={0}
           slideClass="w-[78%] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)]"
           gapClass="gap-5"
-          className="mt-10 md:mt-12"
+          className="mt-12 md:mt-14"
         >
           {members.map(({ slug, photo, member }) => (
             <Link key={slug} href={`/team/${slug}/`} className="group block">
-              <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6]">
+              <div className="overflow-hidden rounded-[20px] bg-gradient-to-b from-[#e8e1d6] to-[#cfc5b7]">
                 <Picture img={photo ?? member!.photo} sizes="(min-width: 1280px) 290px, (min-width: 640px) 45vw, 78vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
               </div>
-              <h3 className="h-card mt-5 transition-colors group-hover:text-copper">{member!.name}</h3>
-              <p className="mt-1 text-[14.5px] text-muted">{member!.role}</p>
+              <h3 className="h-card mt-6 transition-colors group-hover:text-copper">{member!.name}</h3>
+              <p className="caps mt-2 text-muted">{member!.role}</p>
             </Link>
           ))}
         </Carousel>
         {s.button ? (
           <div className="mt-8 md:hidden">
-            <PillButton link={s.button} variant="outline" />
+            <PillButton link={s.button} variant="dark" />
           </div>
         ) : null}
       </div>
@@ -125,19 +130,19 @@ export function OfficeMaps({ s, offices }: { s: OfficeMapsSection; offices: Offi
     <Section tone="sand">
       <div className="container-box">
         <Title text={s.heading} />
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {offices.map((o) => (
-            <Reveal key={o.key} className="card overflow-hidden">
-              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} loading="lazy" className="h-[240px] w-full border-0 grayscale-[35%] md:h-[300px]" referrerPolicy="no-referrer-when-downgrade" />
-              <div className="p-6 md:p-8">
+            <Reveal key={o.key} className="card overflow-hidden p-2.5">
+              <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery)} loading="lazy" className="h-[260px] w-full rounded-[14px] border-0 grayscale-[45%] sepia-[12%] md:h-[320px]" referrerPolicy="no-referrer-when-downgrade" />
+              <div className="px-5 pb-6 pt-7 md:px-8 md:pb-8">
                 <h3 className="h-sub">{o.label}</h3>
                 <p className="mt-3 flex gap-2.5 text-[15px] leading-relaxed">
                   <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
                   {o.longAddress}
                 </p>
                 {o.phone ? (
-                  <a href={tel(o.phone)} className="mt-3 inline-flex items-center gap-2.5 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
-                    <Phone className="h-3.5 w-3.5 text-copper" />
+                  <a href={tel(o.phone)} className="mt-4 inline-flex items-center gap-2.5 text-[12px] font-semibold tracking-[0.16em] text-ink transition-colors hover:text-copper">
+                    <Phone className="h-3 w-3 text-copper" />
                     {o.phone}
                   </a>
                 ) : null}

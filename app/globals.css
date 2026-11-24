@@ -2,27 +2,32 @@
 
 /* ==========================================================================
    Capital Investment LLC design system (2026 redesign)
-   Two typefaces (Lora headings, Inter everything else), one accent (copper),
-   navy ink, white and one warm sand band. Spacing comes from the .sec rhythm
-   below; components use these tokens instead of one-off values.
+   Editorial luxury: Cormorant Garamond display type over Manrope text,
+   ivory paper and cream bands, deep navy for dark bands, and the brand's
+   copper as a bronze accent. Hairline eyebrows, pill buttons, frosted glass
+   panels over photography. Spacing comes from the .sec rhythm below.
    ========================================================================== */
 
 @theme {
-  --color-copper: #a65a2a; /* accent: buttons, links, eyebrows (white text on it passes AA) */
-  --color-copper-dark: #8a4a22; /* hover */
-  --color-copper-tint: #f5ebe3; /* soft accent backgrounds */
-  --color-ink: #101b2d; /* headings, dark bands */
-  --color-body: #4a5263; /* body text */
-  --color-muted: #6e7585; /* captions, secondary text */
-  --color-line: #e7e2db; /* borders, dividers */
-  --color-sand: #f7f4ef; /* alternate section band */
-  --color-night: #0b1421; /* footer */
+  --color-copper: #9a5b2f; /* accent text and italic accents on light backgrounds (AA on paper) */
+  --color-copper-dark: #7d4825;
+  --color-copper-tint: #f1e6d8;
+  --color-bronze: #b98d5b; /* primary buttons (ink text on it) */
+  --color-bronze-dark: #a57a4a;
+  --color-gold: #dcc29b; /* accents on dark backgrounds */
+  --color-ink: #151a22; /* headings, dark bands */
+  --color-body: #57534c; /* body text */
+  --color-muted: #6c665c; /* captions, secondary text (AA on paper and white) */
+  --color-line: #e3dacd; /* borders, dividers */
+  --color-paper: #f8f5ef; /* page background */
+  --color-sand: #efe9df; /* alternate band */
+  --color-night: #10151d; /* footer */
 
-  --font-serif: var(--font-lora), Georgia, serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-text), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-card: 0 1px 2px rgb(16 27 45 / 0.04), 0 8px 24px -12px rgb(16 27 45 / 0.12);
-  --shadow-lift: 0 2px 4px rgb(16 27 45 / 0.05), 0 18px 40px -16px rgb(16 27 45 / 0.22);
+  --shadow-card: 0 1px 2px rgb(21 26 34 / 0.04), 0 14px 34px -18px rgb(21 26 34 / 0.18);
+  --shadow-lift: 0 2px 6px rgb(21 26 34 / 0.06), 0 28px 60px -28px rgb(21 26 34 / 0.35);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -44,11 +49,11 @@
     }
   }
   body {
-    background: #fff;
+    background: var(--color-paper);
     color: var(--color-body);
     font-family: var(--font-sans);
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -70,8 +75,8 @@
     outline-offset: 3px;
   }
   ::selection {
-    background: var(--color-copper);
-    color: #fff;
+    background: var(--color-bronze);
+    color: var(--color-ink);
   }
   summary {
     list-style: none;
@@ -85,23 +90,23 @@
   /* One content width everywhere. */
   .container-box {
     width: 100%;
-    max-width: 1248px;
+    max-width: 1280px;
     margin-inline: auto;
     padding-inline: 20px;
   }
   @media (min-width: 768px) {
     .container-box {
-      padding-inline: 32px;
+      padding-inline: 40px;
     }
   }
 
   /* Section rhythm. Two sections in a row on the same background share one gap. */
   .sec {
-    padding-block: 64px;
+    padding-block: 72px;
   }
   @media (min-width: 768px) {
     .sec {
-      padding-block: 104px;
+      padding-block: 120px;
     }
   }
   .sec[data-tone="white"] + .sec[data-tone="white"],
@@ -109,131 +114,182 @@
     padding-top: 0;
   }
 
-  /* Type scale. */
+  /* Eyebrow label, with a hairline before it (.eyebrow-rule) as in an editorial layout. */
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 12.5px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.14em;
-    line-height: 1.4;
+    letter-spacing: 0.28em;
+    line-height: 1.5;
     text-transform: uppercase;
     color: var(--color-copper);
   }
+  .eyebrow-rule {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow-rule::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.55;
+  }
+
+  /* Type scale: light display serif for headings, uppercase for short statements. */
   .h-display {
     font-family: var(--font-serif);
-    font-weight: 500;
-    font-size: clamp(36px, 5.2vw, 64px);
-    line-height: 1.08;
-    letter-spacing: -0.015em;
+    font-weight: 400;
+    font-size: clamp(46px, 6.4vw, 92px);
+    line-height: 1;
+    letter-spacing: -0.005em;
   }
   .h-page {
     font-family: var(--font-serif);
-    font-weight: 500;
-    font-size: clamp(32px, 4.4vw, 54px);
-    line-height: 1.12;
-    letter-spacing: -0.012em;
+    font-weight: 400;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.04;
   }
   .h-section {
     font-family: var(--font-serif);
     font-weight: 500;
-    font-size: clamp(28px, 3.3vw, 42px);
-    line-height: 1.18;
-    letter-spacing: -0.01em;
+    font-size: clamp(32px, 3.6vw, 50px);
+    line-height: 1.1;
+  }
+  .h-caps {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.08;
   }
   .h-sub {
     font-family: var(--font-serif);
     font-weight: 500;
-    font-size: clamp(22px, 2.2vw, 28px);
-    line-height: 1.25;
+    font-size: clamp(26px, 2.4vw, 32px);
+    line-height: 1.15;
   }
   .h-card {
-    font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
   }
   .lead {
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16.5px;
+    line-height: 1.85;
   }
   @media (min-width: 768px) {
     .lead {
-      font-size: 18.5px;
+      font-size: 17.5px;
     }
   }
+  .caps {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
 
-  /* Buttons. */
+  /* Buttons: pills. Primary is bronze with ink text. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
-    border-radius: 8px;
-    border: 1px solid var(--color-copper);
-    background: var(--color-copper);
-    color: #fff;
+    gap: 0.6em;
+    border-radius: 999px;
+    border: 1px solid var(--color-bronze);
+    background: var(--color-bronze);
+    color: var(--color-ink);
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     line-height: 1.2;
-    padding: 14px 24px;
+    padding: 15px 30px;
+    box-shadow: 0 10px 24px -14px rgb(185 141 91 / 0.9);
     transition:
-      background-color 0.2s,
-      border-color 0.2s,
-      color 0.2s;
+      background-color 0.25s,
+      border-color 0.25s,
+      color 0.25s,
+      box-shadow 0.25s;
     cursor: pointer;
   }
   .btn:hover {
-    background: var(--color-copper-dark);
-    border-color: var(--color-copper-dark);
+    background: var(--color-bronze-dark);
+    border-color: var(--color-bronze-dark);
+  }
+  .btn-dark {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+    box-shadow: none;
+  }
+  .btn-dark:hover {
+    background: #262d38;
+    border-color: #262d38;
   }
   .btn-outline {
     background: transparent;
     border-color: var(--color-line);
     color: var(--color-ink);
+    box-shadow: none;
   }
   .btn-outline:hover {
     background: transparent;
     border-color: var(--color-ink);
-    color: var(--color-ink);
   }
   .btn-light {
-    background: #fff;
-    border-color: #fff;
+    background: var(--color-paper);
+    border-color: var(--color-paper);
     color: var(--color-ink);
+    box-shadow: none;
   }
   .btn-light:hover {
-    background: var(--color-copper-tint);
-    border-color: var(--color-copper-tint);
+    background: var(--color-sand);
+    border-color: var(--color-sand);
   }
   .btn-ghost {
     background: transparent;
-    border-color: rgb(255 255 255 / 0.45);
-    color: #fff;
+    border-color: rgb(248 245 239 / 0.45);
+    color: var(--color-paper);
+    box-shadow: none;
   }
   .btn-ghost:hover {
-    background: rgb(255 255 255 / 0.08);
-    border-color: #fff;
+    background: rgb(248 245 239 / 0.08);
+    border-color: var(--color-paper);
   }
 
   /* Text link with an arrow. */
   .link-arrow {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-weight: 600;
+    gap: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--color-copper);
   }
   .link-arrow:hover {
     color: var(--color-copper-dark);
   }
 
-  /* Card: white, hairline border. */
+  /* Card: white on paper, soft shadow. */
   .card {
-    border: 1px solid var(--color-line);
-    border-radius: 14px;
+    border: 1px solid rgb(227 218 205 / 0.7);
+    border-radius: 18px;
     background: #fff;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Frosted glass panel over photography. */
+  .glass {
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: 18px;
+    background: rgb(16 21 29 / 0.55);
+    -webkit-backdrop-filter: blur(16px) saturate(1.1);
+    backdrop-filter: blur(16px) saturate(1.1);
   }
 
   /* Rich text from the CMS. */
@@ -246,17 +302,17 @@
   }
   .rich ul > li {
     position: relative;
-    padding-left: 1.35em;
+    padding-left: 1.4em;
   }
   .rich ul > li::before {
     content: "";
     position: absolute;
-    left: 0.15em;
-    top: 0.72em;
-    width: 6px;
-    height: 6px;
+    left: 0.2em;
+    top: 0.8em;
+    width: 5px;
+    height: 5px;
     border-radius: 9999px;
-    background: var(--color-copper);
+    background: var(--color-bronze);
   }
   .rich ol {
     list-style: decimal;
@@ -268,12 +324,12 @@
   }
   .rich ul > li + li,
   .rich ol > li + li {
-    margin-top: 0.45em;
+    margin-top: 0.5em;
   }
   .rich a {
     color: var(--color-copper);
     text-decoration: underline;
-    text-decoration-color: rgb(166 90 42 / 0.35);
+    text-decoration-color: rgb(154 91 47 / 0.35);
     text-underline-offset: 3px;
   }
   .rich a:hover {
@@ -286,9 +342,12 @@
   .rich h2,
   .rich h3 {
     font-family: var(--font-sans);
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--color-ink);
-    margin-top: 1.6em;
+    margin-top: 2em;
   }
 
   /* Hide scrollbars on the swipe sliders. */
@@ -312,16 +371,39 @@
 /* Scroll reveal (lib/reveal-script.ts): content stays visible if JavaScript never runs. */
 html[data-reveal-ready] [data-reveal]:not([data-in]) {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(22px);
 }
 [data-reveal] {
   transition:
-    opacity 0.6s var(--ease-out-expo),
-    transform 0.6s var(--ease-out-expo);
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
 }
 @media (prefers-reduced-motion: reduce) {
   html[data-reveal-ready] [data-reveal]:not([data-in]) {
     opacity: 1;
     transform: none;
   }
+}
+
+/* "Scroll" cue in the home banner. */
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.scroll-cue {
+  animation: scroll-cue 2.4s var(--ease-out-expo) infinite;
 }

@@ -147,16 +147,16 @@ export function LeadForm({
 
   const dark = tone === "dark";
   const inputCls = (bad: boolean) =>
-    `block w-full rounded-lg border px-4 py-3 font-sans text-[15px] outline-none transition-[border-color,box-shadow] ${
+    `block w-full rounded-xl border px-4 py-3.5 font-sans text-[15px] outline-none transition-[border-color,box-shadow,background-color] ${
       dark
         ? "border-white/15 bg-white/[0.06] text-white placeholder:text-white/55 focus:border-white/60 focus:ring-2 focus:ring-white/15"
-        : "border-line bg-white text-ink placeholder:text-muted focus:border-copper focus:ring-2 focus:ring-copper/15"
+        : "border-line bg-paper text-ink placeholder:text-muted/80 focus:border-bronze focus:bg-white focus:ring-4 focus:ring-bronze/15"
     } ${bad ? (dark ? "!border-[#ff9b9b]" : "!border-[#c53030]") : ""}`;
   const errCls = dark ? "text-[#ffb3b3]" : "text-[#b42318]";
 
   if (status === "sent") {
     return (
-      <p role="status" className={`mt-6 rounded-lg border px-4 py-3.5 font-sans text-[15px] font-medium ${dark ? "border-white/15 text-white" : "border-line bg-sand text-ink"}`}>
+      <p role="status" className={`mt-6 rounded-xl border px-5 py-4 font-serif text-[22px] leading-snug ${dark ? "border-white/15 text-white" : "border-line bg-paper text-ink"}`}>
         {SUCCESS[kind]}
       </p>
     );
@@ -170,7 +170,7 @@ export function LeadForm({
         const describedBy = bad ? `${id}-err` : undefined;
         return (
           <div key={f.name}>
-            <label htmlFor={id} className={showLabels ? "mb-1.5 block text-[14px] font-medium" : "sr-only"}>
+            <label htmlFor={id} className={showLabels ? "mb-2 block text-[11px] font-semibold uppercase tracking-[0.18em]" : "sr-only"}>
               {f.label}
               {f.required ? <span aria-hidden="true">{showLabels ? " *" : ""}</span> : null}
               {f.required ? <span className="sr-only"> (required)</span> : null}
@@ -184,7 +184,7 @@ export function LeadForm({
                 aria-invalid={bad || undefined}
                 aria-describedby={describedBy}
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-                className="block w-full rounded-lg border border-dashed border-line bg-white p-3 text-[14px] text-body file:mr-3 file:cursor-pointer file:rounded-md file:border-0 file:bg-copper-tint file:px-3 file:py-2 file:text-[13px] file:font-semibold file:text-copper"
+                className="block w-full rounded-xl border border-dashed border-line bg-paper p-3 text-[14px] text-body file:mr-3 file:cursor-pointer file:rounded-full file:border-0 file:bg-ink file:px-4 file:py-2 file:text-[11px] file:font-bold file:uppercase file:tracking-[0.16em] file:text-paper"
               />
             ) : (
               <input
@@ -221,7 +221,7 @@ export function LeadForm({
             }}
             aria-invalid={errors.consent ? true : undefined}
             aria-describedby={errors.consent ? `${uid}-consent-err` : undefined}
-            className="mt-[2px] h-4 w-4 shrink-0 accent-[#a65a2a]"
+            className="mt-[2px] h-4 w-4 shrink-0 accent-[#151a22]"
           />
           <span>{consentText}</span>
         </label>
@@ -247,7 +247,7 @@ export function LeadForm({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="btn w-full tracking-[0.06em] disabled:opacity-70"
+        className={`btn ${dark ? "" : "btn-dark"} w-full !py-4 disabled:opacity-70`}
       >
         {status === "sending" ? "Sending…" : submitLabel}
       </button>

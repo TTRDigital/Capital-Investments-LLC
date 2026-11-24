@@ -66,7 +66,7 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
 
   return (
     <>
-      <section data-tone="ink" className="relative isolate flex min-h-[calc(100svh-64px)] items-center overflow-hidden bg-ink min-[1025px]:min-h-[min(calc(100svh-76px),860px)]">
+      <section data-tone="ink" className="relative isolate flex min-h-[calc(100svh-68px)] items-end overflow-hidden bg-ink min-[1025px]:min-h-[max(calc(100svh-84px),640px)]">
         <Picture img={s.image} fill priority sizes="100vw" className="-z-20 object-cover" />
         {videoSources.length ? (
           <video
@@ -85,40 +85,53 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
             ))}
           </video>
         ) : null}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_27_45/0.9)_0%,rgb(16_27_45/0.62)_50%,rgb(16_27_45/0.35)_100%)]" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" aria-hidden="true" />
-        <div className="container-box py-20 md:py-28">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_21_29/0.82)_0%,rgb(16_21_29/0.45)_55%,rgb(16_21_29/0.2)_100%)]" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-ink/85 via-ink/40 to-transparent" aria-hidden="true" />
+        <div className="container-box w-full pb-16 pt-32 md:pb-24">
           {s.words?.length ? (
-            <p className="eyebrow flex flex-wrap items-center gap-x-3 gap-y-1 !text-[#e6b892]">
+            <p className="eyebrow eyebrow-rule flex-wrap !text-gold">
               {s.words.map((w, i) => (
                 <span key={i} className="flex items-center gap-3">
-                  {i > 0 ? <span aria-hidden="true" className="h-1 w-1 rounded-full bg-white/40" /> : null}
+                  {i > 0 ? <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gold/60" /> : null}
                   {w}
                 </span>
               ))}
             </p>
           ) : null}
-          <h1 className="h-display mt-6 max-w-[900px] text-white">
-            <Inline text={s.heading} accentClass="italic text-[#e6b892]" />
-          </h1>
-          <Rich paras={s.text} className="lead mt-6 max-w-[640px] text-white/80" />
-          <div className="mt-10 flex flex-wrap gap-3">
-            <PillButton link={s.button} />
-            <Link href="/services/" className="btn btn-ghost">
-              Our Services <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="mt-8 grid items-end gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-16">
+            <div>
+              <h1 className="h-display max-w-[920px] text-paper">
+                <Inline text={s.heading} accentClass="italic text-gold" />
+              </h1>
+              <span aria-hidden="true" className="mt-9 block h-px w-28 bg-paper/60" />
+            </div>
+            <div className="lg:pb-3">
+              <Rich paras={s.text} className="text-[15.5px] leading-[1.85] text-white/75" />
+              <div className="mt-8 flex flex-wrap gap-3">
+                <PillButton link={s.button} />
+                <Link href="/services/" className="btn btn-ghost">
+                  Our Services <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
+        <a href="#home-services" className="caps absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/60 transition-colors hover:text-white md:flex" aria-label="Scroll down">
+          Scroll
+          <span aria-hidden="true" className="relative block h-10 w-px overflow-hidden bg-white/20">
+            <span className="scroll-cue absolute inset-0 bg-gold" />
+          </span>
+        </a>
       </section>
       {photos.length ? (
-        <section aria-label="Our team at work" className="overflow-hidden bg-white pt-4 md:pt-5">
+        <section aria-label="Our team at work" className="overflow-hidden bg-paper pt-5 md:pt-6">
           <ul
-            className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 md:grid md:gap-4 md:overflow-visible md:px-5"
+            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 md:grid md:overflow-visible md:px-6"
             style={{ gridTemplateColumns: `repeat(${photos.length}, minmax(0, 1fr))` }}
           >
             {photos.map((img, i) => (
-              <li key={i} className="relative aspect-[4/5] w-[42vw] shrink-0 snap-start overflow-hidden rounded-xl md:w-auto">
-                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 42vw" className="object-cover transition-transform duration-500 hover:scale-[1.04]" />
+              <li key={i} className="relative aspect-[3/4] w-[44vw] shrink-0 snap-start overflow-hidden rounded-[18px] shadow-card md:w-auto">
+                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 42vw" className="object-cover transition-transform duration-700 hover:scale-[1.05]" />
               </li>
             ))}
           </ul>

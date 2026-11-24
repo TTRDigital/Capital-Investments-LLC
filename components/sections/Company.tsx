@@ -30,8 +30,8 @@ function OfficeContact({ o, address }: { o: Office; address: string }) {
         {address}
       </p>
       {o.phone ? (
-        <a href={tel(o.phone)} className="mt-3 inline-flex items-center gap-2.5 text-[15px] font-semibold text-ink transition-colors hover:text-copper">
-          <Phone className="h-3.5 w-3.5 text-copper" />
+        <a href={tel(o.phone)} className="mt-4 inline-flex items-center gap-2.5 text-[12px] font-semibold tracking-[0.16em] text-ink transition-colors hover:text-copper">
+          <Phone className="h-3 w-3 text-copper" />
           {o.phone}
         </a>
       ) : null}
@@ -48,9 +48,9 @@ export function OfficeCards({ s, offices }: { s: OfficeCardsSection; offices: Of
         <SectionHeader eyebrow={s.eyebrow} heading={s.heading} />
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {offices.map((o) => (
-            <Reveal as="li" key={o.key} className="card overflow-hidden">
-              <Picture img={o.image} sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full object-cover" />
-              <div className="p-6">
+            <Reveal as="li" key={o.key} className="card overflow-hidden p-2.5">
+              <Picture img={o.image} sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] h-auto w-full rounded-[14px] object-cover" />
+              <div className="px-4 pb-5 pt-6">
                 <h3 className="h-card">{o.name}</h3>
                 <OfficeContact o={o} address={o.address} />
               </div>
@@ -71,22 +71,22 @@ export function MarketSlider({ s }: { s: MarketSliderSection }) {
         <Title text={s.heading} />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {s.markets.map((m, i) => (
-            <Reveal key={i} className="card flex flex-col overflow-hidden">
-              <Picture img={m.image} sizes="(min-width: 768px) 600px, 100vw" className="aspect-[16/9] h-auto w-full object-cover" />
-              <div className="flex flex-1 flex-col p-6 md:p-8">
+            <Reveal key={i} className="card flex flex-col overflow-hidden p-2.5">
+              <Picture img={m.image} sizes="(min-width: 768px) 600px, 100vw" className="aspect-[16/9] h-auto w-full rounded-[14px] object-cover" />
+              <div className="flex flex-1 flex-col px-5 pb-6 pt-7 md:px-8 md:pb-8">
                 <h3 className="h-sub">{m.title}</h3>
-                <p className="mt-2 text-[14px] font-semibold uppercase tracking-[0.12em] text-copper">{m.subtitle}</p>
+                <p className="caps mt-3 text-copper">{m.subtitle}</p>
                 <Rich paras={m.text} className="mt-4 text-[15px] leading-[1.7] text-body" />
-                <h4 className="mt-6 text-[15px] font-semibold text-ink">{m.citiesHeading}</h4>
+                <h4 className="caps mt-7 text-ink">{m.citiesHeading}</h4>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {m.cities.map((c, j) => (
                     <li key={j}>
                       {c.href ? (
-                        <Link href={c.href} className="block rounded-full border border-line px-3.5 py-1.5 text-[13.5px] font-medium text-ink transition-colors hover:border-copper hover:text-copper">
+                        <Link href={c.href} className="block rounded-full border border-line px-4 py-2 text-[13px] font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper">
                           {c.label}
                         </Link>
                       ) : (
-                        <span className="block rounded-full border border-line px-3.5 py-1.5 text-[13.5px] font-medium text-body">{c.label}</span>
+                        <span className="block rounded-full border border-line px-4 py-2 text-[13px] font-medium text-body">{c.label}</span>
                       )}
                     </li>
                   ))}
@@ -107,13 +107,13 @@ export function OfficeList({ offices }: { s: OfficeListSection; offices: Office[
     <Section>
       <div className="container-box space-y-5">
         {offices.map((o) => (
-          <Reveal key={o.key} className="card grid overflow-hidden md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)_minmax(0,4fr)]">
-            <div className="p-7 md:p-10">
+          <Reveal key={o.key} className="card grid gap-2.5 overflow-hidden p-2.5 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)_minmax(0,4fr)]">
+            <div className="p-5 md:p-8">
               <h2 className="h-sub">{o.label}</h2>
               <OfficeContact o={o} address={o.address} />
             </div>
-            <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} loading="lazy" className="h-[240px] w-full border-0 grayscale-[35%] md:h-full md:min-h-[280px]" referrerPolicy="no-referrer-when-downgrade" />
-            <div className="relative min-h-[240px]">
+            <iframe title={`Map of the ${o.name} office`} src={mapSrc(o.mapQuery, 15)} loading="lazy" className="h-[240px] w-full rounded-[14px] border-0 grayscale-[45%] sepia-[12%] md:h-full md:min-h-[280px]" referrerPolicy="no-referrer-when-downgrade" />
+            <div className="relative min-h-[240px] overflow-hidden rounded-[14px]">
               <Picture img={o.image} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
             </div>
           </Reveal>
@@ -134,11 +134,11 @@ export function TeamGrid({ s, team }: { s: TeamGridSection; team: TeamMember[] }
           {team.map((m) => (
             <Reveal as="li" key={m.slug}>
               <Link href={`/team/${m.slug}/`} className="group block">
-                <div className="overflow-hidden rounded-2xl bg-gradient-to-b from-[#e9e4dd] to-[#d6cfc6]">
+                <div className="overflow-hidden rounded-[20px] bg-gradient-to-b from-[#e8e1d6] to-[#cfc5b7]">
                   <Picture img={m.photo} sizes="(min-width: 1024px) 290px, (min-width: 768px) 30vw, 46vw" className="aspect-[4/5] h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
                 </div>
-                <h2 className="mt-4 text-[16px] font-semibold leading-snug text-ink transition-colors group-hover:text-copper md:text-[17px]">{m.name}</h2>
-                <p className="mt-1 text-[13.5px] leading-snug text-muted md:text-[14.5px]">{m.role}</p>
+                <h2 className="mt-5 font-serif text-[21px] font-medium leading-snug text-ink transition-colors group-hover:text-copper md:text-[24px]">{m.name}</h2>
+                <p className="caps mt-1.5 text-[10.5px] leading-snug text-muted md:text-[11px]">{m.role}</p>
               </Link>
             </Reveal>
           ))}
@@ -160,8 +160,8 @@ export function Careers({ s }: { s: CareersSection }) {
           <ul className="mt-6 grid gap-3">
             {s.openings.map((o, i) => (
               <li key={i}>
-                <Link href={o.href} className="card group flex items-center justify-between gap-4 px-6 py-5 transition-colors hover:border-copper">
-                  <span className="text-[17px] font-semibold text-ink transition-colors group-hover:text-copper">{o.label}</span>
+                <Link href={o.href} className="card group flex items-center justify-between gap-4 px-7 py-6 transition-shadow hover:shadow-lift">
+                  <span className="font-serif text-[24px] font-medium text-ink transition-colors group-hover:text-copper">{o.label}</span>
                   <ArrowRight className="h-5 w-5 shrink-0 text-muted transition-[color,transform] group-hover:translate-x-1 group-hover:text-copper" />
                 </Link>
               </li>
@@ -183,8 +183,8 @@ export function Jobs({ s, consentText }: { s: JobsSection; consentText: string }
             {s.jobs.map((j, i) => (
               <details key={i} open={i === 0} className="group border-b border-line">
                 <summary className="flex cursor-pointer items-center gap-4 py-5">
-                  <span className="flex-1 text-[17px] font-semibold text-ink transition-colors group-hover:text-copper">{j.title}</span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-ink">
+                  <span className="flex-1 font-serif text-[22px] font-medium leading-snug text-ink transition-colors group-hover:text-copper">{j.title}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors group-open:border-ink group-open:bg-ink group-open:text-paper">
                     <Plus className="acc-plus h-3 w-3" />
                     <Minus className="acc-minus h-3 w-3" />
                   </span>
@@ -195,7 +195,7 @@ export function Jobs({ s, consentText }: { s: JobsSection; consentText: string }
           </div>
         </div>
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <div className="rounded-2xl bg-sand p-6 md:p-9">
+          <div className="card p-6 md:p-10">
             <h2 className="h-sub">{s.formHeading}</h2>
             <LeadForm kind="careers" consentText={consentText} position={s.jobs[0]?.title} />
           </div>
@@ -221,7 +221,7 @@ export function ContactFormBlock({ consentText, offices = [] }: { consentText: s
             ))}
           </ul>
         ) : null}
-        <div className={`rounded-2xl border border-line p-6 md:p-10 ${offices.length ? "" : "mx-auto w-full max-w-[640px] lg:col-span-2"}`}>
+        <div className={`card p-6 md:p-10 ${offices.length ? "" : "mx-auto w-full max-w-[640px] lg:col-span-2"}`}>
           <LeadForm kind="contact" consentText={consentText} />
         </div>
       </div>
