@@ -23,8 +23,8 @@ export const images = {
   "logoMark": {
     "src": "/images/brand/logo-mark.webp",
     "alt": "Capital Investment LLC logo mark",
-    "width": 72,
-    "height": 72
+    "width": 288,
+    "height": 288
   },
   "footerBg": {
     "src": "/images/brand/footer-bg.webp",

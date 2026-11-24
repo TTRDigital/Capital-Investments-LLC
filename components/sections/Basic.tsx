@@ -272,8 +272,14 @@ export function WhyList({ s }: { s: WhyListSection }) {
     <Section>
       <div className="container-box">
         <Reveal className="relative isolate overflow-hidden rounded-[28px] bg-ink shadow-lift">
-          {s.image ? <Picture img={s.image} fill sizes="(min-width: 1280px) 1200px, 100vw" className="-z-20 object-cover" /> : null}
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_21_29/0.9)_0%,rgb(16_21_29/0.66)_48%,rgb(16_21_29/0.4)_100%)]" aria-hidden="true" />
+          {/* Phones: the photo is a band on top (a full-height background would crop and blur it). Desktop: background. */}
+          {s.image ? (
+            <div className="relative aspect-[16/10] lg:absolute lg:inset-0 lg:-z-20 lg:aspect-auto">
+              <Picture img={s.image} fill sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent lg:hidden" aria-hidden="true" />
+            </div>
+          ) : null}
+          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,rgb(16_21_29/0.9)_0%,rgb(16_21_29/0.66)_48%,rgb(16_21_29/0.4)_100%)] lg:block" aria-hidden="true" />
           <div className="grid gap-10 p-6 sm:p-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16 lg:p-16">
             <div className="lg:self-center">
               <Rule className="mb-8 text-gold" />

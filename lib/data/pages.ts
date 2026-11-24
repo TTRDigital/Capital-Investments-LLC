@@ -45,76 +45,76 @@ export const fallbackPages: Page[] = [
           {
             "src": "/images/home/gallery-laptop-review.webp",
             "alt": "Capital Investment LLC advisor reviewing a deal on a laptop with a colleague",
-            "width": 227,
-            "height": 362
+            "width": 908,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-team-dinner.webp",
             "alt": "Capital Investment LLC team at a long dinner table",
-            "width": 228,
-            "height": 177
+            "width": 912,
+            "height": 708
           },
           {
             "src": "/images/home/gallery-dinner-event.webp",
             "alt": "Capital Investment LLC team gathered for a dinner event",
-            "width": 228,
-            "height": 177
+            "width": 912,
+            "height": 708
           },
           {
             "src": "/images/home/gallery-dinner-table.webp",
             "alt": "Team members seated at a formal dinner",
-            "width": 228,
-            "height": 362
+            "width": 912,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-desk-work.webp",
             "alt": "Two Capital Investment LLC advisors working together at a desk",
-            "width": 228,
-            "height": 362
+            "width": 912,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-team-logo.webp",
             "alt": "Capital Investment LLC team group photo under the company logo",
-            "width": 227,
-            "height": 177
+            "width": 908,
+            "height": 708
           }
         ],
         "galleryRight": [
           {
             "src": "/images/home/gallery-working-lunch.webp",
             "alt": "Capital Investment LLC team sharing a working lunch around a conference table",
-            "width": 227,
-            "height": 362
+            "width": 908,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-team-dinner.webp",
             "alt": "Capital Investment LLC team at a long dinner table",
-            "width": 228,
-            "height": 177
+            "width": 912,
+            "height": 708
           },
           {
             "src": "/images/home/gallery-dinner-event.webp",
             "alt": "Capital Investment LLC team gathered for a dinner event",
-            "width": 228,
-            "height": 177
+            "width": 912,
+            "height": 708
           },
           {
             "src": "/images/home/gallery-desk-work.webp",
             "alt": "Two Capital Investment LLC advisors working together at a desk",
-            "width": 228,
-            "height": 362
+            "width": 912,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-dinner-table.webp",
             "alt": "Team members seated at a formal dinner",
-            "width": 228,
-            "height": 362
+            "width": 912,
+            "height": 1448
           },
           {
             "src": "/images/home/gallery-team-logo.webp",
             "alt": "Capital Investment LLC team group photo under the company logo",
-            "width": 227,
-            "height": 177
+            "width": 908,
+            "height": 708
           }
         ],
         "_key": "s1"
@@ -125,8 +125,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/home/service-financial-analysis.webp",
           "alt": "Hands working with a calculator and printed financial charts",
-          "width": 418,
-          "height": 420
+          "width": 836,
+          "height": 840
         },
         "items": [
           {
@@ -178,8 +178,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-logo-tab.webp",
           "alt": "The Capital Investment LLC team in a group photo",
-          "width": 686,
-          "height": 443
+          "width": 1372,
+          "height": 886
         },
         "imageSide": "right",
         "_key": "s3"
@@ -192,8 +192,8 @@ export const fallbackPages: Page[] = [
           "icon": {
             "src": "/images/brand/logo-mark.webp",
             "alt": "Capital Investment LLC logo mark",
-            "width": 72,
-            "height": 72
+            "width": 288,
+            "height": 288
           },
           "points": [
             "10 Years of Local Expertise in FL, DC., VA, & MD",
@@ -366,8 +366,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/conference-room.webp",
           "alt": "Capital Investment LLC team in a conference room",
-          "width": 674,
-          "height": 458
+          "width": 1348,
+          "height": 916
         },
         "imageSide": "left",
         "button": {
@@ -395,8 +395,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/business-presentation.webp",
               "alt": "Professional presenting market data on a screen in a meeting room",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           },
           {
@@ -413,8 +413,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/valuation-document.webp",
               "alt": "Person reviewing a property valuation document",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           },
           {
@@ -431,8 +431,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/valuation-document.webp",
               "alt": "Person reviewing a property valuation document",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           },
           {
@@ -449,8 +449,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/handshake.webp",
               "alt": "Business handshake over a laptop after a negotiation",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           },
           {
@@ -467,8 +467,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/building-facades.webp",
               "alt": "Modern commercial building facades",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           },
           {
@@ -485,8 +485,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/services/team-laptops.webp",
               "alt": "Team working on laptops in a modern office",
-              "width": 603,
-              "height": 541
+              "width": 1206,
+              "height": 1082
             }
           }
         ],
@@ -552,8 +552,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/south-beach-aerial.webp",
               "alt": "Aerial view of South Beach, Miami",
-              "width": 606,
-              "height": 468
+              "width": 1212,
+              "height": 936
             }
           },
           {
@@ -565,8 +565,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/us-capitol.webp",
               "alt": "U.S. Capitol in Washington, D.C. at sunset",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           },
           {
@@ -578,8 +578,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/richmond-aerial.webp",
               "alt": "Aerial view of Richmond, Virginia and the James River",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           },
           {
@@ -591,8 +591,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/annapolis.webp",
               "alt": "Historic downtown Annapolis, Maryland",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           }
         ],
@@ -674,8 +674,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/heroes/glass-towers.webp",
           "alt": "Looking up at glass office towers",
-          "width": 1440,
-          "height": 526
+          "width": 2880,
+          "height": 1052
         },
         "hFont": "serif",
         "_key": "s1",
@@ -691,8 +691,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/team-at-event.webp",
           "alt": "Capital Investment LLC team members at an industry event",
-          "width": 674,
-          "height": 513
+          "width": 1348,
+          "height": 1026
         },
         "imageSide": "left",
         "button": {
@@ -712,8 +712,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-logo.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 602
+          "width": 2400,
+          "height": 1204
         },
         "subheading": "Our Core Values",
         "items": [
@@ -797,8 +797,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/desk-review.webp",
           "alt": "Capital Investment LLC advisors reviewing a transaction at a desk",
-          "width": 661,
-          "height": 636
+          "width": 1322,
+          "height": 1272
         },
         "imageSide": "right",
         "items": [
@@ -832,8 +832,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/attendees.webp",
           "alt": "Attendees networking at a Capital Investment LLC event",
-          "width": 661,
-          "height": 636
+          "width": 1322,
+          "height": 1272
         },
         "imageSide": "left",
         "items": [
@@ -868,8 +868,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/team-posing.webp",
           "alt": "Capital Investment LLC team members posing at an event",
-          "width": 661,
-          "height": 636
+          "width": 1322,
+          "height": 1272
         },
         "imageSide": "right",
         "items": [
@@ -902,8 +902,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/dc-office-tower.webp",
               "alt": "Modern glass office tower in Washington, D.C.",
-              "width": 609,
-              "height": 559
+              "width": 1218,
+              "height": 1118
             }
           },
           {
@@ -958,8 +958,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/event-conversation.webp",
           "alt": "Advisors in conversation at a Capital Investment LLC event",
-          "width": 604,
-          "height": 710
+          "width": 1208,
+          "height": 1420
         },
         "listHeading": "Key Advantages of Partnering with Capital Investment LLC",
         "items": [
@@ -1034,8 +1034,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -1051,8 +1051,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/miami-team.webp",
           "alt": "Capital Investment LLC team members at a networking event",
-          "width": 693,
-          "height": 552
+          "width": 1386,
+          "height": 1104
         },
         "imageSide": "right",
         "button": {
@@ -1097,8 +1097,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/two-advisors.webp",
               "alt": "Two Capital Investment LLC advisors talking at an event",
-              "width": 661,
-              "height": 731
+              "width": 1322,
+              "height": 1462
             },
             "imageSide": "right"
           },
@@ -1130,8 +1130,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/three-professionals.webp",
               "alt": "Three professionals in conversation at an industry event",
-              "width": 661,
-              "height": 731
+              "width": 1322,
+              "height": 1462
             },
             "imageSide": "left"
           },
@@ -1163,8 +1163,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/networking-group-2.webp",
               "alt": "Guests talking at a Capital Investment LLC networking event",
-              "width": 661,
-              "height": 731
+              "width": 1322,
+              "height": 1462
             },
             "imageSide": "right"
           }
@@ -1188,8 +1188,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/dc-office-tower.webp",
               "alt": "Modern glass office tower in Washington, D.C.",
-              "width": 609,
-              "height": 559
+              "width": 1218,
+              "height": 1118
             }
           },
           {
@@ -1244,8 +1244,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/services/clients-reviewing-documents.webp",
           "alt": "Clients reviewing documents together on a sofa",
-          "width": 603,
-          "height": 433
+          "width": 1206,
+          "height": 866
         },
         "imageSide": "left",
         "items": [
@@ -1309,8 +1309,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -1326,8 +1326,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/team-at-event.webp",
           "alt": "Capital Investment LLC team members at an industry event",
-          "width": 674,
-          "height": 513
+          "width": 1348,
+          "height": 1026
         },
         "imageSide": "right",
         "button": {
@@ -1349,8 +1349,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/team/conference-room.webp",
               "alt": "Capital Investment LLC team in a conference room",
-              "width": 674,
-              "height": 458
+              "width": 1348,
+              "height": 916
             },
             "imageSide": "right",
             "items": [
@@ -1373,8 +1373,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/advisors-talking-2.webp",
               "alt": "Capital Investment LLC advisors talking at a networking event",
-              "width": 545,
-              "height": 427
+              "width": 1090,
+              "height": 854
             },
             "imageSide": "left",
             "items": [
@@ -1397,8 +1397,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/networking-group.webp",
               "alt": "Guests talking at a Capital Investment LLC networking event",
-              "width": 545,
-              "height": 427
+              "width": 1090,
+              "height": 854
             },
             "imageSide": "right",
             "items": [
@@ -1421,8 +1421,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/desk-review-2.webp",
               "alt": "Capital Investment LLC advisors reviewing a transaction at a desk",
-              "width": 545,
-              "height": 427
+              "width": 1090,
+              "height": 854
             },
             "imageSide": "left",
             "items": [
@@ -1454,8 +1454,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/networking-event-logo.webp",
           "alt": "Capital Investment LLC networking event",
-          "width": 746,
-          "height": 446
+          "width": 1492,
+          "height": 892
         },
         "imageSide": "left",
         "hFont": "serif",
@@ -1515,8 +1515,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/advisors-talking.webp",
           "alt": "Capital Investment LLC advisors talking at a networking event",
-          "width": 603,
-          "height": 429
+          "width": 1206,
+          "height": 858
         },
         "listHeading": "Here’s Why Clients Trust Us",
         "items": [
@@ -1560,8 +1560,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/us-capitol-2.webp",
               "alt": "U.S. Capitol in Washington, D.C. at sunset",
-              "width": 609,
-              "height": 558
+              "width": 1218,
+              "height": 1116
             }
           },
           {
@@ -1632,8 +1632,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -1649,8 +1649,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -1669,8 +1669,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/lounge-meeting.webp",
           "alt": "Advisors meeting with clients in a lounge",
-          "width": 603,
-          "height": 433
+          "width": 1206,
+          "height": 866
         },
         "imageSide": "left",
         "items": [
@@ -1711,8 +1711,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/conversation-2.webp",
           "alt": "Professionals in conversation at an industry event",
-          "width": 603,
-          "height": 369
+          "width": 1206,
+          "height": 738
         },
         "items": [
           {
@@ -1758,8 +1758,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/us-capitol-3.webp",
               "alt": "U.S. Capitol in Washington, D.C. at sunset",
-              "width": 609,
-              "height": 559
+              "width": 1218,
+              "height": 1118
             }
           },
           {
@@ -1906,8 +1906,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -1923,8 +1923,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/miami-team.webp",
           "alt": "Capital Investment LLC team members at a networking event",
-          "width": 693,
-          "height": 552
+          "width": 1386,
+          "height": 1104
         },
         "imageSide": "right",
         "button": {
@@ -2003,8 +2003,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/conversation.webp",
               "alt": "Professionals in conversation at an industry event",
-              "width": 660,
-              "height": 869
+              "width": 1320,
+              "height": 1738
             },
             "imageSide": "right"
           },
@@ -2036,8 +2036,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/events/man-and-woman.webp",
               "alt": "Two professionals at a networking event",
-              "width": 660,
-              "height": 972
+              "width": 1320,
+              "height": 1944
             },
             "imageSide": "left"
           }
@@ -2112,8 +2112,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -2141,8 +2141,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/miami-team.webp",
           "alt": "Capital Investment LLC team members at a networking event",
-          "width": 693,
-          "height": 552
+          "width": 1386,
+          "height": 1104
         },
         "imageSide": "right",
         "button": {
@@ -2188,8 +2188,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/south-beach-aerial.webp",
               "alt": "Aerial view of South Beach, Miami",
-              "width": 606,
-              "height": 468
+              "width": 1212,
+              "height": 936
             }
           },
           {
@@ -2224,8 +2224,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/us-capitol.webp",
               "alt": "U.S. Capitol in Washington, D.C. at sunset",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           },
           {
@@ -2272,8 +2272,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/richmond-aerial.webp",
               "alt": "Aerial view of Richmond, Virginia and the James River",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           },
           {
@@ -2320,8 +2320,8 @@ export const fallbackPages: Page[] = [
             "image": {
               "src": "/images/places/annapolis.webp",
               "alt": "Historic downtown Annapolis, Maryland",
-              "width": 606,
-              "height": 467
+              "width": 1212,
+              "height": 934
             }
           }
         ],
@@ -2337,8 +2337,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-logo.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 602
+          "width": 2400,
+          "height": 1204
         },
         "items": [
           {
@@ -2438,8 +2438,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -2455,8 +2455,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -2476,8 +2476,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 609
+          "width": 2400,
+          "height": 1218
         },
         "items": [
           {
@@ -2577,8 +2577,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/lounge-meeting-2.webp",
           "alt": "Advisors meeting with clients in a lounge",
-          "width": 645,
-          "height": 336
+          "width": 1290,
+          "height": 672
         },
         "imageSide": "left",
         "items": [
@@ -2649,8 +2649,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/partners-talking.webp",
           "alt": "Capital Investment LLC partners in conversation",
-          "width": 693,
-          "height": 450
+          "width": 1386,
+          "height": 900
         },
         "imageSide": "right",
         "items": [
@@ -2749,8 +2749,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/miami-dusk.webp",
           "alt": "Miami skyline at dusk",
-          "width": 700,
-          "height": 394
+          "width": 2800,
+          "height": 1576
         },
         "hFont": "serif",
         "_key": "s1",
@@ -2766,8 +2766,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -2787,8 +2787,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 609
+          "width": 2400,
+          "height": 1218
         },
         "items": [
           {
@@ -2892,8 +2892,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/lounge-meeting-2.webp",
           "alt": "Advisors meeting with clients in a lounge",
-          "width": 645,
-          "height": 336
+          "width": 1290,
+          "height": 672
         },
         "imageSide": "left",
         "items": [
@@ -2931,8 +2931,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/partners-talking.webp",
           "alt": "Capital Investment LLC partners in conversation",
-          "width": 693,
-          "height": 450
+          "width": 1386,
+          "height": 900
         },
         "imageSide": "right",
         "items": [
@@ -3056,8 +3056,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/miami-cbd-night.webp",
           "alt": "Miami's Central Business District at night",
-          "width": 1344,
-          "height": 604
+          "width": 2688,
+          "height": 1208
         },
         "hFont": "serif",
         "_key": "s1",
@@ -3073,8 +3073,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -3233,8 +3233,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -3327,8 +3327,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -3478,8 +3478,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -3547,8 +3547,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/downtown-miami-towers.webp",
           "alt": "Street view of downtown Miami towers",
-          "width": 1200,
-          "height": 800
+          "width": 2400,
+          "height": 1600
         },
         "hFont": "serif",
         "_key": "s1",
@@ -3565,8 +3565,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -3714,8 +3714,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -3776,8 +3776,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/miami-dade-courthouse.webp",
           "alt": "Miami-Dade County Courthouse",
-          "width": 994,
-          "height": 924
+          "width": 1988,
+          "height": 1848
         },
         "hFont": "serif",
         "_key": "s1",
@@ -3793,8 +3793,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -3851,8 +3851,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/stephen-clark-center.webp",
           "alt": "Stephen P. Clark Government Center, Miami",
-          "width": 800,
-          "height": 530
+          "width": 1600,
+          "height": 1060
         },
         "imageSide": "right",
         "items": [
@@ -3954,8 +3954,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -4031,8 +4031,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/eighth-street-station.webp",
           "alt": "Eighth Street Station area in Miami",
-          "width": 1200,
-          "height": 960
+          "width": 2400,
+          "height": 1920
         },
         "hFont": "serif",
         "_key": "s1",
@@ -4048,8 +4048,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -4106,8 +4106,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/miami-metrorail.webp",
           "alt": "Metrorail train passing through downtown Miami",
-          "width": 500,
-          "height": 460
+          "width": 1000,
+          "height": 920
         },
         "imageSide": "right",
         "items": [
@@ -4210,8 +4210,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -4287,8 +4287,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/knight-concert-hall.webp",
           "alt": "Knight Concert Hall at the Adrienne Arsht Center, Miami",
-          "width": 979,
-          "height": 734
+          "width": 1958,
+          "height": 1468
         },
         "hFont": "serif",
         "_key": "s1",
@@ -4304,8 +4304,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -4466,8 +4466,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -4543,8 +4543,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/places/bicentennial-park.webp",
           "alt": "Aerial view of Bicentennial Park and the downtown Miami skyline",
-          "width": 1150,
-          "height": 767
+          "width": 2300,
+          "height": 1534
         },
         "hFont": "serif",
         "_key": "s1",
@@ -4560,8 +4560,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -4721,8 +4721,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -4798,8 +4798,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -4815,8 +4815,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -4836,8 +4836,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 609
+          "width": 2400,
+          "height": 1218
         },
         "items": [
           {
@@ -4991,8 +4991,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/partners-talking.webp",
           "alt": "Capital Investment LLC partners in conversation",
-          "width": 693,
-          "height": 450
+          "width": 1386,
+          "height": 900
         },
         "imageSide": "right",
         "items": [
@@ -5078,8 +5078,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "hFont": "serif",
         "_key": "s1",
@@ -5095,8 +5095,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -5116,8 +5116,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 609
+          "width": 2400,
+          "height": 1218
         },
         "items": [
           {
@@ -5214,8 +5214,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/lounge-meeting-2.webp",
           "alt": "Advisors meeting with clients in a lounge",
-          "width": 645,
-          "height": 336
+          "width": 1290,
+          "height": 672
         },
         "imageSide": "left",
         "items": [
@@ -5286,8 +5286,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/partners-talking.webp",
           "alt": "Capital Investment LLC partners in conversation",
-          "width": 693,
-          "height": 450
+          "width": 1386,
+          "height": 900
         },
         "imageSide": "right",
         "items": [
@@ -5417,8 +5417,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/team-at-event.webp",
           "alt": "Capital Investment LLC team members at an industry event",
-          "width": 674,
-          "height": 513
+          "width": 1348,
+          "height": 1026
         },
         "imageSide": "left",
         "hFont": "serif",
@@ -5771,8 +5771,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-wide.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 423
+          "width": 2400,
+          "height": 846
         },
         "items": [
           {
@@ -5825,8 +5825,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "items": [
@@ -6123,8 +6123,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "items": [
@@ -6213,8 +6213,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/events/two-professionals.webp",
           "alt": "Two Capital Investment LLC professionals at an event",
-          "width": 653,
-          "height": 505
+          "width": 1306,
+          "height": 1010
         },
         "imageSide": "right",
         "button": {
@@ -6363,8 +6363,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-2024.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 710
+          "width": 2400,
+          "height": 1420
         },
         "items": [
           {
@@ -6432,8 +6432,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-logo-small.webp",
           "alt": "The Capital Investment LLC team under the company logo",
-          "width": 1200,
-          "height": 392
+          "width": 2400,
+          "height": 784
         },
         "_key": "s1",
         "overlay": 0.7,
@@ -6541,8 +6541,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "breadcrumbs": true,
         "align": "left",
@@ -6573,8 +6573,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "breadcrumbs": true,
         "align": "left",
@@ -6618,8 +6618,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "breadcrumbs": true,
         "align": "left",
@@ -6684,8 +6684,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "breadcrumbs": true,
         "align": "left",
@@ -6779,8 +6779,8 @@ export const fallbackPages: Page[] = [
         "image": {
           "src": "/images/team/group-photo-white-2.webp",
           "alt": "The Capital Investment LLC team",
-          "width": 1200,
-          "height": 631
+          "width": 2400,
+          "height": 1262
         },
         "breadcrumbs": true,
         "align": "left",

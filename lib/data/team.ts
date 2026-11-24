@@ -10,8 +10,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/reza-sabaii.webp",
       "alt": "Reza Sabaii, Principal Broker at Capital Investment LLC",
-      "width": 702,
-      "height": 702
+      "width": 1404,
+      "height": 1404
     },
     "bio": [
       "Reza Sabaii is the Principal Broker at Capital Investment LLC – a cutting edge commercial real estate company founded ten years ago which currently has twenty real estate associates and four office locations including Washington DC, Tysons VA, Bethesda MD, and Miami, FL.",
@@ -134,8 +134,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/christina-davies.webp",
       "alt": "Christina Davies, Project Development at Capital Investment LLC",
-      "width": 476,
-      "height": 495
+      "width": 952,
+      "height": 990
     },
     "bio": [
       "Christina has an extensive background in real estate that includes procuring, capitalizing, developing and leasing commercial real estate. Prior to joining Capital Investment LLC, Christina served as Director of Retail Real Estate Services at Madison Marquette where she was involved with the strategy, leasing and execution of the 1.2 Million square feet of retail and commercial projects and was part of the The District Wharf development project, a $2 Billion, 3.2 million square feet of World Class waterfront mixed-use development on the Potomac River in Washington, DC.",
@@ -294,8 +294,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/steven-p-moskowitz.webp",
       "alt": "Steven P. Moskowitz, Real Estate Associate at Capital Investment LLC",
-      "width": 750,
-      "height": 660
+      "width": 1500,
+      "height": 1320
     },
     "bio": [
       "With extensive experience in the sales and leasing of retail, office, industrial, and medical spaces, he welcomes the opportunity to service clients in Maryland, D.C., and Virginia. He is especially skilled at negotiating complicated transactions and putting deals together.",
@@ -318,8 +318,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/cason-chatham.webp",
       "alt": "Cason Chatham, Real Estate Associate at Capital Investment LLC",
-      "width": 750,
-      "height": 681
+      "width": 1500,
+      "height": 1362
     },
     "bio": [
       "Cason Chatham is a third-generation real estate professional, whose time as a humanitarian fixed-wing pilot and later as a Commissioned Officer in the NAVY Reserve helped inspire his love for geography, real estate, and risk analysis. He thrives on offering his clients bespoke Commercial Investment services in the acquisition, disposition, and development of properties\nthat exceed their investment and usage needs, by being intelligently focused, innovative, and trust-worthy. His goal is to help everyone elevate their place in the world.",
@@ -341,8 +341,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/xandria-baleno.webp",
       "alt": "Xandria Baleno, Real Estate Associate at Capital Investment LLC",
-      "width": 704,
-      "height": 731
+      "width": 1408,
+      "height": 1462
     },
     "bio": [
       "Xandria Baleno is a dynamic and driven commercial real estate professional, adept at forging connections between people and ideas in the vibrant DC Metro region (Maryland, Washington D.C., and Virginia). With a meticulous eye for detail, Xandria effortlessly establishes rapport with her clients, comprehends their unique requirements, and consistently surpasses expectations.",
@@ -364,8 +364,8 @@ export const fallbackTeam: TeamMember[] = [
     "photo": {
       "src": "/images/team/catina-rhinehart.webp",
       "alt": "Catina Rhinehart, Real Estate Associate at Capital Investment LLC",
-      "width": 702,
-      "height": 702
+      "width": 1404,
+      "height": 1404
     },
     "bio": [
       "Catina began her Multifamily career in 2003 assisting investors and clients in all aspects from development, financing, buying, selling and managing apartment communities through North Carolina and many other states.\nHer extensive experience in budgets, financial reporting and proformas gives clients confidence in choosing the best deal to add to their real estate portfolio.",
