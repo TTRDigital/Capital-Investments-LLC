@@ -56,8 +56,6 @@ export function Comparison({ s }: { s: ComparisonSection }) {
 export function Stats({ s }: { s: StatsSection }) {
   return (
     <Section tone="ink" className="relative isolate overflow-hidden">
-      {s.image ? <Picture img={s.image} fill sizes="100vw" className="-z-20 object-cover opacity-[0.1] grayscale" /> : null}
-      <div className="pointer-events-none absolute -right-40 top-0 -z-10 h-[520px] w-[520px] rounded-full bg-bronze/20 blur-[130px]" aria-hidden="true" />
       <div className="container-box">
         <span aria-hidden="true" className="block h-px w-24 bg-gold/60" />
         <h2 className="h-section h-caps mt-8 text-paper">{s.heading}</h2>

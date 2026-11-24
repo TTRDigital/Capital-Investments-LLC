@@ -9,9 +9,9 @@ import { ArrowRight } from "@/components/ui/Icons";
 import { PillButton } from "@/components/sections/parts";
 
 /**
- * Home banner: the Miami skyline video behind the heading, the service areas
- * (the old typewriter words, now one static line), the welcome text and two
- * buttons; then the team photos as one strip below the banner.
+ * Home banner: the Miami skyline video with only the heading on it; the welcome
+ * text and the two buttons follow as one centred statement below. (The old
+ * service-area words and team photo strip are no longer shown here.)
  */
 
 type VideoSource = { src: string; type: string };
@@ -61,8 +61,6 @@ function useVideoSources(video?: HeroVideo) {
 export function HomeHero({ s }: { s: HomeHeroSection }) {
   const videoSources = useVideoSources(s.video);
   const [playing, setPlaying] = useState(false);
-  // The two old grids repeat the same photos; show each photo once.
-  const photos = [...(s.galleryLeft ?? []), ...(s.galleryRight ?? [])].filter((img, i, all) => img?.src && all.findIndex((x) => x?.src === img.src) === i);
 
   return (
     <>
@@ -85,58 +83,30 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
             ))}
           </video>
         ) : null}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_21_29/0.82)_0%,rgb(16_21_29/0.45)_55%,rgb(16_21_29/0.2)_100%)]" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-ink/85 via-ink/40 to-transparent" aria-hidden="true" />
-        <div className="container-box w-full pb-16 pt-32 md:pb-24">
-          {s.words?.length ? (
-            <p className="eyebrow eyebrow-rule flex-wrap !text-gold">
-              {s.words.map((w, i) => (
-                <span key={i} className="flex items-center gap-3">
-                  {i > 0 ? <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gold/60" /> : null}
-                  {w}
-                </span>
-              ))}
-            </p>
-          ) : null}
-          <div className="mt-8 grid items-end gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-16">
-            <div>
-              <h1 className="h-display max-w-[920px] text-paper">
-                <Inline text={s.heading} accentClass="italic text-gold" />
-              </h1>
-              <span aria-hidden="true" className="mt-9 block h-px w-28 bg-paper/60" />
-            </div>
-            <div className="lg:pb-3">
-              <Rich paras={s.text} className="text-[15.5px] leading-[1.85] text-white/75" />
-              <div className="mt-8 flex flex-wrap gap-3">
-                <PillButton link={s.button} />
-                <Link href="/services/" className="btn btn-ghost">
-                  Our Services <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
+        {/* Only a soft shade at the bottom left, so the skyline stays bright. */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(15deg,rgb(16_21_29/0.78)_0%,rgb(16_21_29/0.35)_45%,rgb(16_21_29/0.05)_75%)]" aria-hidden="true" />
+        <div className="container-box w-full pb-14 pt-40 md:pb-20">
+          <h1 className="max-w-[860px] font-serif text-[clamp(38px,5vw,72px)] font-normal leading-[1.06] tracking-[-0.01em] text-paper">
+            <Inline text={s.heading} accentClass="italic" />
+          </h1>
+          <span aria-hidden="true" className="mt-8 block h-px w-24 bg-paper/70" />
+        </div>
+      </section>
+      {/* The welcome text and the two buttons, as one calm centred statement below the banner. */}
+      <section className="border-b border-line bg-paper py-24 md:py-36">
+        <div className="container-box text-center">
+          <p className="eyebrow inline-flex items-center gap-4 before:h-px before:w-10 before:bg-current before:opacity-55 after:h-px after:w-10 after:bg-current after:opacity-55">
+            Capital Investment LLC
+          </p>
+          <Rich paras={s.text} className="mx-auto mt-8 max-w-[880px] font-serif text-[clamp(22px,2.3vw,31px)] leading-[1.5] text-ink" />
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <PillButton link={s.button} variant="dark" className="min-w-[210px] justify-center" />
+            <Link href="/services/" className="btn btn-outline min-w-[210px] justify-center">
+              Our Services <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
-        <a href="#home-services" className="caps absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/60 transition-colors hover:text-white md:flex" aria-label="Scroll down">
-          Scroll
-          <span aria-hidden="true" className="relative block h-10 w-px overflow-hidden bg-white/20">
-            <span className="scroll-cue absolute inset-0 bg-gold" />
-          </span>
-        </a>
       </section>
-      {photos.length ? (
-        <section aria-label="Our team at work" className="overflow-hidden bg-paper pt-5 md:pt-6">
-          <ul
-            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 md:grid md:overflow-visible md:px-6"
-            style={{ gridTemplateColumns: `repeat(${photos.length}, minmax(0, 1fr))` }}
-          >
-            {photos.map((img, i) => (
-              <li key={i} className="relative aspect-[3/4] w-[34vw] shrink-0 snap-start overflow-hidden rounded-[16px] shadow-card md:w-auto">
-                <Picture img={img} fill sizes="(min-width: 768px) 15vw, 34vw" className="object-cover transition-transform duration-700 hover:scale-[1.05]" />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
     </>
   );
 }

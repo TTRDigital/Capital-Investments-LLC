@@ -15,7 +15,6 @@ export function HomeServices({ s }: { s: HomeServicesSection }) {
           <Rule className="mt-8 text-copper" />
           {s.image ? (
             <div className="relative mt-12 hidden md:block">
-              <span aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[24px] border border-bronze/40" />
               <Picture img={s.image} sizes="(min-width: 768px) 40vw, 100vw" className="relative h-auto w-full rounded-[24px] shadow-lift" />
             </div>
           ) : null}

@@ -79,7 +79,6 @@ export function Intro({ s }: { s: IntroSection }) {
           ) : null}
         </Reveal>
         <Reveal className={`relative ${imgLeft ? "md:order-1" : ""}`}>
-          <span aria-hidden="true" className={`absolute -bottom-4 hidden h-full w-full rounded-[24px] border border-bronze/40 md:block ${imgLeft ? "-left-4" : "-right-4"}`} />
           <Picture img={s.image} sizes="(min-width: 768px) 50vw, 100vw" className="relative h-auto w-full rounded-[24px] shadow-lift" />
         </Reveal>
       </div>
