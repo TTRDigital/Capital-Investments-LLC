@@ -6526,6 +6526,187 @@ export const fallbackPages: Page[] = [
     ]
   },
   {
+    "path": "/about-us/",
+    "title": "About Us",
+    "group": "company",
+    "order": 24,
+    "seo": {
+      "title": "About Us | Capital Investment LLC",
+      "description": "Capital Investment LLC was founded by Attorney Reza Sabaii in 2014. Commercial real estate sales, acquisitions, valuations, property management and development in DC, Virginia, Maryland and Miami."
+    },
+    "sections": [
+      {
+        "_type": "hero",
+        "heading": "About *Capital Investment LLC*",
+        "image": {
+          "src": "/images/heroes/glass-towers.webp",
+          "alt": "Looking up at glass office towers",
+          "width": 2880,
+          "height": 1052
+        },
+        "breadcrumbs": true,
+        "_key": "a1"
+      },
+      {
+        "_type": "intro",
+        "variant": "about",
+        "heading": "Your Trusted Partner in *Commercial Real Estate*",
+        "text": [
+          "Capital Investment LLC, founded by Attorney Reza Sabaii in 2014, offers expert services in real estate sales, acquisitions, valuations, property management, and development.",
+          "Welcome to Capital Investment, your trusted partner in financial growth and wealth management. With over 50 years of combined experience, our dedicated team is here to help you achieve your ideal financial future. Let us work together to turn your investment goals into reality.",
+          "With offices in Miami, Washington, D.C., McLean, and Bethesda, we’re here to help you succeed."
+        ],
+        "image": {
+          "src": "/images/team/group-photo-2024.webp",
+          "alt": "The Capital Investment LLC team",
+          "width": 2400,
+          "height": 1420
+        },
+        "imageSide": "right",
+        "button": {
+          "label": "Let's Chat",
+          "href": "#chat"
+        },
+        "_key": "a2"
+      },
+      {
+        "_type": "founder",
+        "eyebrow": "Our Founder",
+        "name": "Reza Sabaii, Esq.",
+        "role": "Founder & President · Principal Broker",
+        "text": [
+          "Reza Sabaii is the Principal Broker at Capital Investment LLC – a cutting edge commercial real estate company founded ten years ago which currently has twenty real estate associates and four office locations including Washington DC, Tysons VA, Bethesda MD, and Miami, FL.",
+          "His extensive knowledge in commercial real estate encompasses acquisitions, dispositions, leasing, and financing. Reza’s strategic insights and meticulous attention to detail have earned him a reputation as a trusted advisor to developers, investors, and corporations seeking to maximize their real estate portfolios.",
+          "Reza holds a Juris Doctor degree from the George Washington University Law School and has the respect of industry leaders because of his wealth of expertise in all aspects of commercial real estate."
+        ],
+        "quote": "Partner with Reza Sabaii, Esq. for unparalleled expertise and a proactive approach to your commercial real estate needs.",
+        "image": {
+          "src": "/images/team/reza-sabaii.webp",
+          "alt": "Reza Sabaii, Principal Broker at Capital Investment LLC",
+          "width": 1404,
+          "height": 1404
+        },
+        "button": {
+          "label": "View Reza’s Profile",
+          "href": "/team/reza-sabaii-esq/"
+        },
+        "_key": "a3"
+      },
+      {
+        "_type": "slider",
+        "variant": "process",
+        "heading": "The Benefits of Working With *Capital Investment*",
+        "text": [
+          "At Capital Investment, we offer a range of unique advantages that set us apart in the commercial real estate market. Our team serves commercial real estate needs across Washington DC, Virginia, Maryland, and Miami, FL, with precision:"
+        ],
+        "icon": true,
+        "items": [
+          {
+            "title": "10 Years of Local Expertise",
+            "text": [
+              "With over ten years of commercial real estate experience, we bring local market knowledge to every transaction, helping clients secure the best deals in the DC, Virginia, Maryland, and Miami commercial real estate markets."
+            ]
+          },
+          {
+            "title": "Attorney-Owned Advantage",
+            "text": [
+              "Led by Attorney Reza Sabaii, we handle all legal document reviews in-house, saving clients time and reducing legal fees that are often outsourced by other firms."
+            ]
+          },
+          {
+            "title": "Exclusive Off-Market Opportunities",
+            "text": [
+              "Thanks to our extensive network, we provide access to off-market properties that other firms can’t offer, giving our clients an edge in finding hidden opportunities."
+            ]
+          },
+          {
+            "title": "Partnerships with Landlords",
+            "text": [
+              "As property managers for numerous landlords, we have exclusive access to properties before they hit the market, ensuring clients get the first look at prime opportunities for buying or leasing."
+            ]
+          },
+          {
+            "title": "Local Offices and Staff",
+            "text": [
+              "With offices and dedicated teams in South Florida, D.C., Virginia, and Maryland, we offer personalized, in-person service, delivering exceptional support tailored to your needs."
+            ]
+          }
+        ],
+        "hFont": "serif",
+        "_key": "a4"
+      },
+      {
+        "_type": "cardGrid",
+        "heading": "What We *Do*",
+        "text": [
+          "Five commercial real estate services for investors, businesses, and property owners in Washington DC, Virginia, Maryland, and Miami, FL."
+        ],
+        "items": [
+          {
+            "title": "Investment Sales & Acquisitions for Local and Foreign Investors",
+            "text": [
+              "Capital Investment LLC specializes in helping local and foreign investors buy and sell commercial properties. With deep market knowledge and a strategic approach, we provide tailored solutions that maximize investment returns, ensuring a smooth process from acquisition to sale across U.S. markets."
+            ],
+            "href": "/services/investment-sales-and-acquisition-services/"
+          },
+          {
+            "title": "Commercial Real Estate Valuation & Consultation",
+            "text": [
+              "Our expert team delivers precise commercial real estate valuations and consultation services. Using comprehensive market analysis, we guide investors in making informed decisions, offering insights into property value, market conditions, and investment potential to enhance profitability and mitigate risks."
+            ],
+            "href": "/services/valuation-consultation/"
+          },
+          {
+            "title": "Landlord & Tenant Representation",
+            "text": [
+              "Capital Investment LLC provides dedicated landlord and tenant representation services. Our team advocates for your best interests, negotiating lease agreements, resolving disputes, and ensuring optimal terms for both parties. Whether leasing, renegotiating, or managing relationships, we prioritize your goals with a collaborative approach."
+            ],
+            "href": "/services/landlord-and-tenant-representation/"
+          },
+          {
+            "title": "Commercial Property Management",
+            "text": [
+              "We offer comprehensive commercial property management services that ensure your property is well-maintained and profitable. From daily operations to financial management, our team handles tenant relations, maintenance, and asset performance to help property owners achieve long-term success and maximize their investments."
+            ],
+            "href": "/services/property-management/"
+          },
+          {
+            "title": "Development & Project Management",
+            "text": [
+              "Our development and project management services are designed to bring your commercial real estate visions to life. From planning and permitting to construction oversight, Capital Investment LLC ensures every project is completed on time, within budget, and aligned with your strategic goals for growth and development."
+            ],
+            "href": "/services/development-services-and-project-management/"
+          }
+        ],
+        "_key": "a5"
+      },
+      {
+        "_type": "officeCards",
+        "eyebrow": "Our Offices",
+        "heading": "Serving You Where You Need Us Most",
+        "offices": [
+          "tysons",
+          "dc",
+          "miami",
+          "bethesda"
+        ],
+        "_key": "a6"
+      },
+      {
+        "_type": "cta",
+        "heading": "Ready to Work With *Capital Investment LLC?*",
+        "text": [
+          "Leave your name, email and phone number and ask to be contacted about your property or investment."
+        ],
+        "button": {
+          "label": "Let's Chat",
+          "href": "#chat"
+        },
+        "_key": "a7"
+      }
+    ]
+  },
+  {
     "path": "/our-team/",
     "title": "Our Team",
     "group": "company",

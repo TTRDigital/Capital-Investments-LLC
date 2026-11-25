@@ -165,6 +165,20 @@ export const tab = defineType({
 export const tabs = section("tabs", "Market tabs", [heading(), paras(), defineField({ name: "tabs", type: "array", of: [defineArrayMember({ type: "tab" })] })]);
 
 export const cta = section("cta", "Call to action box", [heading(), paras(), button()]);
+export const founder = section(
+  "founder",
+  "Founder (portrait + bio)",
+  [
+    defineField({ name: "eyebrow", title: "Small heading", type: "string" }),
+    defineField({ name: "name", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "role", title: "Title", type: "string" }),
+    paras(),
+    defineField({ name: "quote", title: "Pull quote", type: "text", rows: 3 }),
+    image("image", "Portrait"),
+    button(),
+  ],
+  "name",
+);
 
 export const faqItem = defineType({
   name: "faqItem",
@@ -293,6 +307,7 @@ export const sectionTypes = [
   "whyList",
   "tabs",
   "cta",
+  "founder",
   "faq",
   "cardGrid",
   "article",
@@ -383,6 +398,7 @@ export const objectTypes = [
   whyList,
   tabs,
   cta,
+  founder,
   faq,
   cardGrid,
   article,

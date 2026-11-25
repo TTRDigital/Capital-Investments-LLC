@@ -69,6 +69,8 @@ export type ImageCardsSection = Base & { _type: "imageCards"; heading: string; t
 export type WhyListSection = Base & { _type: "whyList"; heading: string; text: Rich; image?: Img; listHeading?: string; items: Item[] };
 export type TabsSection = Base & { _type: "tabs"; heading: string; text: Rich; tabs: { label: string; title: string; text: Rich; image?: Img }[] };
 export type CtaSection = Base & { _type: "cta"; heading: string; text: Rich; button: Link };
+/** About page: the founder's portrait, name, title, short bio and a pull quote. */
+export type FounderSection = Base & { _type: "founder"; eyebrow?: string; name: string; role: string; text: Rich; quote?: string; image?: Img; button?: Link };
 export type FaqSection = Base & { _type: "faq"; heading: string; items: { question: string; answer: Rich }[] };
 export type CardGridSection = Base & { _type: "cardGrid"; heading: string; text: Rich; items: Item[]; button?: Link; columns?: number };
 export type ArticleSection = Base & { _type: "article"; heading: string; body: Rich };
@@ -133,6 +135,7 @@ export type Section =
   | WhyListSection
   | TabsSection
   | CtaSection
+  | FounderSection
   | FaqSection
   | CardGridSection
   | ArticleSection

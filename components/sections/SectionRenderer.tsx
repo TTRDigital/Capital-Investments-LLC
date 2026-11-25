@@ -3,6 +3,7 @@ import { Article, CardGrid, Cta, Hero, ImageCards, Intro, Panel, ServiceBlocks, 
 import { Faq, ServiceSlider, Slider, SplitAccordion, Tabs } from "@/components/sections/Interactive";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { HomeServices } from "@/components/sections/HomeServices";
+import { Founder } from "@/components/sections/Founder";
 import { Comparison, OfficeMaps, TeamCarousel } from "@/components/sections/Home";
 import { Careers, ContactFormBlock, Jobs, Legal, MarketSlider, Message, OfficeCards, OfficeList, SitemapList, TeamGrid } from "@/components/sections/Company";
 
@@ -30,6 +31,8 @@ export function SectionRenderer({ section: s, ctx }: { section: Section; ctx: Re
       return <WhyList s={s} />;
     case "tabs":
       return <Tabs s={s} />;
+    case "founder":
+      return <Founder s={s} />;
     case "cta":
       return <Cta s={s} />;
     case "faq":

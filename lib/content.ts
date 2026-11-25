@@ -8,6 +8,7 @@ import { fallbackPages } from "@/lib/data/pages";
 import { fallbackTeam } from "@/lib/data/team";
 import { applyTeamOrder } from "@/lib/team-order";
 import { applyMemberTitles, fixDavidTitle } from "@/lib/title-override";
+import { withAboutLinks } from "@/lib/about-link";
 import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
@@ -58,7 +59,7 @@ function normalizeSection(raw: unknown): Section | null {
 
 export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
   const cms = await sanityFetch<Loose>(`*[_id == "siteSettings"][0]`, {}, ["siteSettings"]);
-  return merge(fallbackSettings, fromCms(cms));
+  return withAboutLinks(merge(fallbackSettings, fromCms(cms)));
 });
 
 export async function getOffice(key: string): Promise<Office | undefined> {
