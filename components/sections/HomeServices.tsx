@@ -55,10 +55,10 @@ export function HomeServices({ s }: { s: HomeServicesSection }) {
                     <p className="caps text-gold">Our Service</p>
                     <Rich paras={it.text} className="mt-3 line-clamp-3 text-[14px] leading-[1.7] text-white/75" />
                     {it.href ? (
-                      <span className="mt-4 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-[13px] font-semibold text-paper transition-colors group-hover:border-gold/50">
+                      <span className="caps mt-4 inline-flex items-center gap-2.5 text-paper transition-colors group-hover:text-gold">
                         Learn more
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
-                          <ArrowRight className="h-3.5 w-3.5" />
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white/30 transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+                          <ArrowRight className="h-3 w-3" />
                         </span>
                       </span>
                     ) : null}
