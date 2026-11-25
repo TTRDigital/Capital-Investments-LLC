@@ -10,7 +10,7 @@ import { ChevronDown, Close, MenuIcon, Phone } from "@/components/ui/Icons";
 
 /**
  * Sticky white header: logo, menu (hover and keyboard dropdowns on desktop,
- * an expandable full-height panel on phones), main phone number and "Let's Chat".
+ * an expandable full-height panel on phones), "Let's Chat" (the phone number is in the phone menu and the footer).
  * The logo is the design's dark version of the brand logo, not the CMS logo field,
  * so a light logo uploaded in /cms can't end up on the white header.
  */
@@ -129,8 +129,8 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
   return (
     <header className={`sticky top-0 z-50 border-b bg-paper/95 backdrop-blur transition-[border-color,box-shadow] duration-300 supports-[backdrop-filter]:bg-paper/85 ${scrolled || open ? "border-line shadow-[0_10px_30px_-24px_rgb(21_26_34/0.45)]" : "border-line/60"}`}>
       <div className="container-box flex h-[68px] items-center gap-4 min-[1025px]:grid min-[1025px]:h-[84px] min-[1025px]:grid-cols-[1fr_auto_1fr]">
-        <Link href="/" className="block w-[152px] shrink-0 min-[1025px]:w-[184px]" aria-label={`${siteName} home`}>
-          <Picture img={images.logoInk} sizes="184px" eager className="h-auto w-full" />
+        <Link href="/" className="block w-[148px] shrink-0 min-[380px]:w-[170px] sm:w-[196px] min-[1025px]:w-[250px]" aria-label={`${siteName} home`}>
+          <Picture img={images.logoInk} sizes="(min-width: 1025px) 250px, 196px" eager className="h-auto w-full" />
         </Link>
         <nav aria-label="Main" className="hidden min-[1025px]:block">
           <ul className="flex items-center">
@@ -140,13 +140,7 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
           </ul>
         </nav>
         <div className="ml-auto flex items-center gap-3 min-[1025px]:justify-self-end">
-          {phone ? (
-            <a href={tel(phone)} className="hidden items-center gap-2 text-[12px] font-semibold tracking-[0.14em] text-ink transition-colors hover:text-copper xl:flex">
-              <Phone className="h-3 w-3 text-copper" />
-              {phone}
-            </a>
-          ) : null}
-          <Link href="/contact-us/" data-open-chat className="btn !px-5 !py-3 !text-[11px] min-[1025px]:!px-6">
+          <Link href="/contact-us/" data-open-chat className="btn whitespace-nowrap !px-5 !py-3 !text-[11px] min-[1025px]:!px-6">
             Let’s Chat
           </Link>
           <button
