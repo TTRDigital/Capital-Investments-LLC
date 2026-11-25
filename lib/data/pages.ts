@@ -6539,10 +6539,10 @@ export const fallbackPages: Page[] = [
         "_type": "hero",
         "heading": "About *Capital Investment LLC*",
         "image": {
-          "src": "/images/heroes/glass-towers.webp",
-          "alt": "Looking up at glass office towers",
-          "width": 2880,
-          "height": 1052
+          "src": "/images/team/group-photo-wide.webp",
+          "alt": "The Capital Investment LLC team",
+          "width": 2400,
+          "height": 846
         },
         "breadcrumbs": true,
         "_key": "a1"
@@ -6557,10 +6557,10 @@ export const fallbackPages: Page[] = [
           "With offices in Miami, Washington, D.C., McLean, and Bethesda, we’re here to help you succeed."
         ],
         "image": {
-          "src": "/images/team/group-photo-2024.webp",
-          "alt": "The Capital Investment LLC team",
-          "width": 2400,
-          "height": 1420
+          "src": "/images/events/desk-review.webp",
+          "alt": "Capital Investment LLC advisors reviewing a transaction at a desk",
+          "width": 1322,
+          "height": 1272
         },
         "imageSide": "right",
         "button": {
