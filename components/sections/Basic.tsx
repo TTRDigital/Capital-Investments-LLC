@@ -15,8 +15,8 @@ import type {
 import Link from "next/link";
 import { Picture } from "@/components/ui/Picture";
 import { Inline, Rich, plain } from "@/components/ui/Rich";
-import { ArrowRight } from "@/components/ui/Icons";
-import { ACCENT, Body, CheckMark, LogoMark, PillButton, Reveal, Rule, Section, SectionHeader, Title, cols } from "@/components/sections/parts";
+import { ACCENT, Body, CheckMark, PillButton, Reveal, Rule, Section, SectionHeader, Title } from "@/components/sections/parts";
+import { IndexList, ListLayout } from "@/components/sections/IndexList";
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
@@ -25,24 +25,22 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
 export function Hero({ s, crumbs, headingTag: H = "h1" }: { s: HeroSection; crumbs?: { label: string; href?: string }[]; headingTag?: "h1" | "p" }) {
   const pos = s.position === "top" ? "object-top" : s.position === "bottom" ? "object-bottom" : "object-center";
   const showCrumbs = s.breadcrumbs && !!crumbs?.length;
+  // The heading sits on the page, the photo below it with nothing on top.
   return (
-    <section data-tone="ink" className="relative isolate flex min-h-[420px] items-end overflow-hidden bg-ink md:min-h-[600px]">
-      {s.image ? <Picture img={s.image} fill priority sizes="100vw" className={`-z-20 object-cover ${pos}`} /> : null}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(16_21_29/0.86)_0%,rgb(16_21_29/0.5)_55%,rgb(16_21_29/0.2)_100%)]" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-ink/75 to-transparent" aria-hidden="true" />
-      <div className="container-box w-full pb-14 pt-28 md:pb-24 md:pt-40">
+    <section className="bg-paper pt-10 md:pt-16">
+      <div className="container-box">
         {showCrumbs ? (
-          <nav aria-label="Breadcrumb" className="caps mb-7 text-white/60">
+          <nav aria-label="Breadcrumb" className="caps mb-8 text-muted">
             <ol className="flex flex-wrap items-center gap-x-3 gap-y-1">
               {crumbs!.map((c, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  {i > 0 ? <span aria-hidden="true" className="h-px w-5 bg-white/35" /> : null}
+                  {i > 0 ? <span aria-hidden="true" className="h-px w-5 bg-line" /> : null}
                   {c.href ? (
-                    <Link href={c.href} className="transition-colors hover:text-gold">
+                    <Link href={c.href} className="transition-colors hover:text-copper">
                       {c.label}
                     </Link>
                   ) : (
-                    <span aria-current="page" className="text-gold">
+                    <span aria-current="page" className="text-copper">
                       {c.label}
                     </span>
                   )}
@@ -51,10 +49,16 @@ export function Hero({ s, crumbs, headingTag: H = "h1" }: { s: HeroSection; crum
             </ol>
           </nav>
         ) : null}
-        <H className="h-page max-w-[960px] text-paper">
-          <Inline text={s.heading} accentClass="italic" />
+        <H className="h-page max-w-[1000px] text-ink">
+          <Inline text={s.heading} accentClass="italic text-copper" />
         </H>
-        <Rule className="mt-8 text-paper" />
+        {s.image ? (
+          <div className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[24px] sm:aspect-[16/9] md:mt-14 lg:aspect-[21/8] lg:rounded-[28px]">
+            <Picture img={s.image} fill priority sizes="(min-width: 1280px) 1200px, 100vw" className={`object-cover ${pos}`} />
+          </div>
+        ) : (
+          <Rule className="mt-8 text-copper" />
+        )}
       </div>
     </section>
   );
@@ -86,89 +90,31 @@ export function Intro({ s }: { s: IntroSection }) {
   );
 }
 
-/* ---------- Card used by panels and grids ---------- */
-
 function ItemText({ text, className = "" }: { text: string[]; className?: string }) {
   return <Rich paras={text} className={`text-[15px] leading-[1.75] text-body ${className}`} />;
 }
 
-function Card({ it, i }: { it: Item; i: number }) {
-  return (
-    <div className="card group flex h-full flex-col p-7 transition-[box-shadow,transform] duration-500 hover:-translate-y-1 hover:shadow-lift md:p-8">
-      <span className="caps flex items-center gap-3 text-muted" aria-hidden="true">
-        {num(i)}
-        <span className="h-px w-8 bg-line" />
-      </span>
-      <h3 className="h-card mt-6">
-        {it.href ? (
-          <Link href={it.href} className="transition-colors hover:text-copper">
-            {it.title}
-          </Link>
-        ) : (
-          <Inline text={it.title} accentClass={ACCENT} />
-        )}
-      </h3>
-      <ItemText text={it.text} className="mt-4" />
-      {it.href ? (
-        <Link href={it.href} className="link-arrow mt-auto pt-6" aria-hidden="true" tabIndex={-1}>
-          Learn more <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      ) : null}
-    </div>
-  );
-}
-
-/* ---------- Panel: heading, text, photo, card grid ---------- */
+/* ---------- Panel: heading, text and photo on the left, the opening list on the right ---------- */
 
 export function Panel({ s }: { s: PanelSection }) {
   return (
     <Section tone="sand">
-      <div className="container-box">
-        <Reveal>
-          {s.icon ? <LogoMark className="mb-8" /> : null}
-          <SectionHeader heading={s.heading} text={s.text} />
-        </Reveal>
-        {s.image ? (
-          <Reveal className="mx-auto mt-14 max-w-[1100px] overflow-hidden rounded-[24px] shadow-card">
-            <Picture img={s.image} sizes="(min-width: 1280px) 1100px, 100vw" className="h-auto w-full" />
-          </Reveal>
-        ) : null}
-        {s.subheading ? <h3 className="h-sub mt-16 text-center">{s.subheading}</h3> : null}
-        <ul className={`mt-12 grid gap-5 md:mt-14 md:gap-6 ${cols(s.columns, s.items.length)}`}>
-          {s.items.map((it, i) => (
-            <Reveal as="li" key={i}>
-              <Card it={it} i={i} />
-            </Reveal>
-          ))}
-        </ul>
-      </div>
+      <ListLayout heading={s.heading} text={s.text} image={s.image} icon={s.icon}>
+        {s.subheading ? <h3 className="mb-6 font-serif text-[24px] font-normal leading-snug text-ink md:text-[28px]">{s.subheading}</h3> : null}
+        <IndexList items={s.items} name={`panel-${s._key ?? "x"}`} />
+      </ListLayout>
     </Section>
   );
 }
 
-/* ---------- Cards with a heading (location pages) ---------- */
+/* ---------- Heading and list (location pages) ---------- */
 
 export function CardGrid({ s }: { s: CardGridSection }) {
-  const n = s.columns ?? (s.items.length === 4 || s.items.length === 2 ? 2 : 3);
   return (
     <Section>
-      <div className="container-box">
-        <Reveal>
-          <SectionHeader heading={s.heading} text={s.text} />
-        </Reveal>
-        <ul className={`mx-auto mt-12 grid gap-5 md:mt-14 md:gap-6 ${n === 2 ? "max-w-[1000px] md:grid-cols-2" : cols(n, s.items.length)}`}>
-          {s.items.map((it, i) => (
-            <Reveal as="li" key={i}>
-              <Card it={it} i={i} />
-            </Reveal>
-          ))}
-        </ul>
-        {s.button ? (
-          <div className="mt-12 text-center">
-            <PillButton link={s.button} />
-          </div>
-        ) : null}
-      </div>
+      <ListLayout heading={s.heading} text={s.text} button={s.button}>
+        <IndexList items={s.items} name={`grid-${s._key ?? "x"}`} />
+      </ListLayout>
     </Section>
   );
 }
@@ -240,26 +186,14 @@ export function Steps({ s }: { s: StepsSection }) {
   );
 }
 
-/* ---------- Photo + text, cards below ---------- */
+/* ---------- Photo + text, list beside ---------- */
 
 export function ImageCards({ s }: { s: ImageCardsSection }) {
   return (
     <Section tone="sand">
-      <div className="container-box">
-        <Reveal className="grid items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
-          <div className={s.imageSide === "right" ? "md:order-2" : ""}>
-            <Picture img={s.image} sizes="(min-width: 768px) 50vw, 100vw" className="h-auto w-full rounded-[24px] shadow-lift" />
-          </div>
-          <SectionHeader heading={s.heading} text={s.text} align="left" />
-        </Reveal>
-        <ul className={`mt-14 grid gap-5 md:gap-6 ${cols(undefined, s.items.length)}`}>
-          {s.items.map((it, i) => (
-            <Reveal as="li" key={i}>
-              <Card it={it} i={i} />
-            </Reveal>
-          ))}
-        </ul>
-      </div>
+      <ListLayout heading={s.heading} text={s.text} image={s.image}>
+        <IndexList items={s.items} name={`cards-${s._key ?? "x"}`} />
+      </ListLayout>
     </Section>
   );
 }
@@ -287,25 +221,13 @@ export function WhyList({ s }: { s: WhyListSection }) {
               </h2>
               <Rich paras={s.text} className="lead mt-6 text-white/75" />
             </div>
-            <div className="glass p-6 md:p-9">
+            <div className="glass p-6 md:px-9 md:pb-4 md:pt-9">
               {s.listHeading ? (
                 <h3 className="caps text-gold">
                   <Inline text={s.listHeading} accentClass="" />
                 </h3>
               ) : null}
-              <ul className={`divide-y divide-white/10 ${s.listHeading ? "mt-5" : ""}`}>
-                {s.items.map((it, i) => (
-                  <li key={i} className="flex gap-4 py-5 first:pt-2 last:pb-0">
-                    <CheckMark className="mt-1" />
-                    <div>
-                      <h4 className="font-serif text-[21px] font-medium leading-snug text-paper">
-                        <Inline text={it.title} accentClass="italic" />
-                      </h4>
-                      <Rich paras={it.text} className="mt-1.5 text-[14.5px] leading-[1.7] text-white/65" />
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <IndexList items={s.items} name={`why-${s._key ?? "x"}`} dark className={s.listHeading ? "mt-4" : ""} />
             </div>
           </div>
         </Reveal>

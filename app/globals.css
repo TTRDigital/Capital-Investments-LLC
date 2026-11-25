@@ -314,6 +314,18 @@
     border-radius: 9999px;
     background: var(--color-bronze);
   }
+  /* Quieter bullets: a short hairline instead of a dot (index lists). */
+  .rich-dash ul > li {
+    padding-left: 1.6em;
+  }
+  .rich-dash ul > li::before {
+    top: 0.85em;
+    left: 0;
+    width: 0.8em;
+    height: 1px;
+    border-radius: 0;
+    background: var(--color-bronze);
+  }
   .rich ol {
     list-style: decimal;
     padding-left: 1.3em;
@@ -359,6 +371,22 @@
   }
 
   /* Accordion +/− toggles driven by <details open>. */
+  /* Smooth open/close for the numbered lists (browsers without support just open instantly). */
+  @supports (interpolate-size: allow-keywords) {
+    details.acc {
+      interpolate-size: allow-keywords;
+    }
+    details.acc::details-content {
+      block-size: 0;
+      overflow: hidden;
+      transition:
+        block-size 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+        content-visibility 0.45s allow-discrete;
+    }
+    details.acc[open]::details-content {
+      block-size: auto;
+    }
+  }
   details[open] > summary .acc-plus,
   details:not([open]) > summary .acc-minus {
     display: none;
