@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type {
   ArticleSection,
   CardGridSection,
@@ -242,8 +243,12 @@ function PointList({ items }: { items: Item[] }) {
   return (
     <ul className="mt-8 divide-y divide-line border-y border-line">
       {items.map((it, j) => (
-        <li key={j} className="flex gap-4 py-5">
-          <CheckMark className="mt-1" />
+        <li
+          key={j}
+          style={{ "--d": `${150 + j * 120}ms` } as CSSProperties}
+          className="cmp-row group -mx-3 flex gap-4 rounded-xl px-3 py-5 transition-colors hover:bg-white/70"
+        >
+          <CheckMark className="mt-0.5 transition-transform duration-300 group-hover:scale-110" />
           <div>
             <h4 className="font-serif text-[21px] font-medium leading-snug text-ink">
               <Inline text={it.title} accentClass={ACCENT} />

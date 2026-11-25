@@ -128,9 +128,10 @@ export function cols(n: number | undefined, count: number) {
 
 /** Small numbered/check marker used in lists. */
 export function CheckMark({ className = "" }: { className?: string }) {
+  // Gold tick with a soft glow; inside a scroll-revealed block it pops in, draws itself and sends out one ripple (.cmp-check in globals.css).
   return (
-    <span aria-hidden="true" className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bronze text-ink ${className}`}>
-      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+    <span aria-hidden="true" className={`cmp-check relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-bronze text-ink shadow-[0_0_0_4px_rgb(185_141_91/0.16),0_6px_14px_-6px_rgb(154_91_47/0.6)] ${className}`}>
+      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="m5.5 12.5 4 4L18.5 8" />
       </svg>
     </span>

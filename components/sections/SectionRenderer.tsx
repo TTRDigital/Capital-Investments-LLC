@@ -4,6 +4,7 @@ import { Faq, ServiceSlider, Slider, SplitAccordion, Tabs } from "@/components/s
 import { HomeHero } from "@/components/sections/HomeHero";
 import { HomeServices } from "@/components/sections/HomeServices";
 import { Founder } from "@/components/sections/Founder";
+import { AreaLinks } from "@/components/sections/AreaLinks";
 import { Comparison, OfficeMaps, TeamCarousel } from "@/components/sections/Home";
 import { Careers, ContactFormBlock, Jobs, Legal, MarketSlider, Message, OfficeCards, OfficeList, SitemapList, TeamGrid } from "@/components/sections/Company";
 
@@ -31,6 +32,8 @@ export function SectionRenderer({ section: s, ctx }: { section: Section; ctx: Re
       return <WhyList s={s} />;
     case "tabs":
       return <Tabs s={s} />;
+    case "areaLinks":
+      return <AreaLinks s={s} />;
     case "founder":
       return <Founder s={s} />;
     case "cta":

@@ -69,6 +69,8 @@ export type ImageCardsSection = Base & { _type: "imageCards"; heading: string; t
 export type WhyListSection = Base & { _type: "whyList"; heading: string; text: Rich; image?: Img; listHeading?: string; items: Item[] };
 export type TabsSection = Base & { _type: "tabs"; heading: string; text: Rich; tabs: { label: string; title: string; text: Rich; image?: Img }[] };
 export type CtaSection = Base & { _type: "cta"; heading: string; text: Rich; button: Link };
+/** Links to the city / neighborhood pages inside a state page. */
+export type AreaLinksSection = Base & { _type: "areaLinks"; eyebrow?: string; heading: string; links: Link[] };
 /** About page: the founder's portrait, name, title, short bio and a pull quote. */
 export type FounderSection = Base & { _type: "founder"; eyebrow?: string; name: string; role: string; text: Rich; quote?: string; image?: Img; button?: Link };
 export type FaqSection = Base & { _type: "faq"; heading: string; items: { question: string; answer: Rich }[] };
@@ -136,6 +138,7 @@ export type Section =
   | TabsSection
   | CtaSection
   | FounderSection
+  | AreaLinksSection
   | FaqSection
   | CardGridSection
   | ArticleSection
@@ -195,6 +198,18 @@ export type Office = {
   phone?: string;
   mapQuery: string;
   image?: Img;
+};
+
+/** Blog post (Sanity "post"). */
+export type Post = {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt?: string;
+  image?: Img;
+  body: Rich;
+  author?: { slug: string; name: string; role?: string };
+  seo: Seo;
 };
 
 export type MenuItem = { label: string; href: string; children?: MenuItem[] };

@@ -108,5 +108,31 @@ export const teamMember = defineType({
   preview: { select: { title: "name", subtitle: "role", media: "photo" } },
 });
 
-export const documentTypes = [siteSettings, page, teamMember];
+/* ---------- Blog ---------- */
+
+export const post = defineType({
+  name: "post",
+  title: "Blog post",
+  type: "document",
+  fields: [
+    defineField({ name: "title", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "slug", title: "URL slug", type: "slug", options: { source: "title" }, validation: (r) => r.required(), description: "The post is /blog/<slug>/." }),
+    defineField({ name: "date", title: "Publish date", type: "date", validation: (r) => r.required() }),
+    defineField({ name: "author", type: "reference", to: [{ type: "teamMember" }], description: "Optional: links the post to a team member's profile." }),
+    defineField({ name: "excerpt", title: "Short summary", type: "text", rows: 3, description: "Shown on the blog page and used as the search description if SEO is empty." }),
+    defineField({ name: "image", title: "Cover photo", type: "altImage" }),
+    defineField({
+      name: "body",
+      title: "Text",
+      type: "array",
+      of: [defineArrayMember({ type: "text", rows: 5 })],
+      description: "One box per paragraph. **bold**, [link text](/services/), “## ” for a sub-heading, “- ” for a bullet.",
+    }),
+    seoField,
+  ],
+  orderings: [{ title: "Newest first", name: "dateDesc", by: [{ field: "date", direction: "desc" }] }],
+  preview: { select: { title: "title", subtitle: "date", media: "image" } },
+});
+
+export const documentTypes = [siteSettings, page, teamMember, post];
 export const singletonTypes = new Set(["siteSettings"]);

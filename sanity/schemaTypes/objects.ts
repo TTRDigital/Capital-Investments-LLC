@@ -165,6 +165,11 @@ export const tab = defineType({
 export const tabs = section("tabs", "Market tabs", [heading(), paras(), defineField({ name: "tabs", type: "array", of: [defineArrayMember({ type: "tab" })] })]);
 
 export const cta = section("cta", "Call to action box", [heading(), paras(), button()]);
+export const areaLinks = section("areaLinks", "City links", [
+  defineField({ name: "eyebrow", title: "Small heading", type: "string" }),
+  heading(),
+  defineField({ name: "links", type: "array", of: [defineArrayMember({ type: "subSubMenuItem" })] }),
+]);
 export const founder = section(
   "founder",
   "Founder (portrait + bio)",
@@ -308,6 +313,7 @@ export const sectionTypes = [
   "tabs",
   "cta",
   "founder",
+  "areaLinks",
   "faq",
   "cardGrid",
   "article",
@@ -399,6 +405,7 @@ export const objectTypes = [
   tabs,
   cta,
   founder,
+  areaLinks,
   faq,
   cardGrid,
   article,

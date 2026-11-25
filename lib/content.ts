@@ -9,8 +9,8 @@ import { fallbackTeam } from "@/lib/data/team";
 import { applyTeamOrder } from "@/lib/team-order";
 import { applyMemberTitles, fixDavidTitle } from "@/lib/title-override";
 import { withAboutLinks } from "@/lib/about-link";
-import { withTeamBanners } from "@/lib/hero-override";
-import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
+import { withAreaLinks, withTeamBanners } from "@/lib/hero-override";
+import type { Img, Office, Page, Post, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
    Content layer
@@ -71,7 +71,7 @@ export async function getOffice(key: string): Promise<Office | undefined> {
 
 export const getPages = cache(async (): Promise<Page[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "page" && defined(path)] | order(order asc)`, {}, ["page"]);
-  if (!cms?.length) return withTeamBanners(fixDavidTitle(fallbackPages));
+  if (!cms?.length) return withAreaLinks(withTeamBanners(fixDavidTitle(fallbackPages)));
   const byPath = new Map(fallbackPages.map((p) => [p.path, p]));
   const merged = cms.map((doc) => {
     const c = fromCms(doc) as Partial<Page>;
@@ -80,7 +80,7 @@ export const getPages = cache(async (): Promise<Page[]> => {
     return { ...page, sections: page.sections.map(normalizeSection).filter((s): s is Section => !!s) };
   });
   const missing = fallbackPages.filter((f) => !merged.some((m) => m.path === f.path));
-  return withTeamBanners(fixDavidTitle([...merged, ...missing].sort((a, b) => a.order - b.order)));
+  return withAreaLinks(withTeamBanners(fixDavidTitle([...merged, ...missing].sort((a, b) => a.order - b.order))));
 });
 
 export async function getPage(path: string): Promise<Page | undefined> {
@@ -104,4 +104,33 @@ export const getTeam = cache(async (): Promise<TeamMember[]> => {
 
 export async function getTeamMember(slug: string) {
   return (await getTeam()).find((m) => m.slug === slug);
+}
+
+/* ---------- Blog ---------- */
+
+/** Published blog posts, newest first. There is no built-in fallback: with no posts in Sanity the list is empty. */
+export const getPosts = cache(async (): Promise<Post[]> => {
+  const cms = await sanityFetch<Loose[]>(
+    `*[_type == "post" && defined(slug.current) && defined(date)] | order(date desc){..., "author": author->{ "slug": slug.current, name, role }}`,
+    {},
+    ["post", "teamMember"],
+  );
+  return (cms ?? []).map((doc) => {
+    const c = fromCms({ ...doc, slug: isObj(doc.slug) ? doc.slug.current : doc.slug }) as Partial<Post> & { seo?: Partial<Post["seo"]> };
+    const title = c.title ?? "";
+    return {
+      slug: String(c.slug ?? ""),
+      title,
+      date: String(c.date ?? ""),
+      excerpt: c.excerpt || undefined,
+      image: c.image ?? undefined,
+      body: Array.isArray(c.body) ? c.body : [],
+      author: c.author?.slug ? c.author : undefined,
+      seo: { title: c.seo?.title || `${title} | Capital Investment LLC`, description: c.seo?.description || c.excerpt || "", noIndex: c.seo?.noIndex, image: c.seo?.image ?? c.image ?? undefined },
+    };
+  });
+});
+
+export async function getPost(slug: string) {
+  return (await getPosts()).find((p) => p.slug === slug);
 }

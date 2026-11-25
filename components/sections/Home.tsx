@@ -4,7 +4,7 @@ import type { ComparisonSection, Img, OfficeMapsSection, Office, TeamCarouselSec
 import { Picture } from "@/components/ui/Picture";
 import { Carousel } from "@/components/ui/Carousel";
 import { Phone, Pin } from "@/components/ui/Icons";
-import { PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
+import { CheckMark, PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
 
 const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
 
@@ -15,17 +15,6 @@ function Cross() {
     <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black/[0.05] text-muted">
       <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round">
         <path d="M7 7l10 10M17 7 7 17" />
-      </svg>
-    </span>
-  );
-}
-
-/** Gold tick that pops in and draws itself when its card scrolls into view (see .cmp-* in globals.css). */
-function LiveCheck() {
-  return (
-    <span aria-hidden="true" className="cmp-check relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-bronze text-ink shadow-[0_0_0_4px_rgb(220_194_155/0.15)]">
-      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m5.5 12.5 4 4L18.5 8" />
       </svg>
     </span>
   );
@@ -57,7 +46,7 @@ export function Comparison({ s }: { s: ComparisonSection }) {
               good ? "border-white/10 text-white/85 hover:bg-white/[0.05]" : "border-line text-body"
             }`}
           >
-            {good ? <LiveCheck /> : <Cross />}
+            {good ? <CheckMark /> : <Cross />}
             <span className="pt-[3px]">{p}</span>
           </li>
         ))}
