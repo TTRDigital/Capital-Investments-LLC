@@ -6,25 +6,27 @@ import { ATTRIBUTION_STORAGE_KEY, attributionKeys, RESUME_ACCEPT, RESUME_MAX_BYT
 
 /*
  * The old site's four forms, same fields, plus a consent checkbox:
- * - contact (Let's Chat popup, /contact-us/): Full Name, Email, Phone
- * - consultation (footer, "be contacted"): Full Name*, Email*, Phone*
+ * - contact (Let's Chat popup, /contact-us/): Full Name*, Email*, Phone*, Comment
+ * - consultation (footer, "be contacted"): Full Name*, Email*, Phone*, Comment
  * - careers (/careers-in-…/): Name*, Email Address*, Phone Number, Upload Resume*
  * Posted to /api/lead/, which checks the same rules and forwards to GoHighLevel.
  */
 
-type FieldName = "full_name" | "first_name" | "last_name" | "email" | "phone" | "resume";
-type FieldDef = { name: FieldName; label: string; required: boolean; type: "text" | "email" | "tel" | "file"; autoComplete?: string };
+type FieldName = "full_name" | "first_name" | "last_name" | "email" | "phone" | "comment" | "resume";
+type FieldDef = { name: FieldName; label: string; required: boolean; type: "text" | "email" | "tel" | "textarea" | "file"; autoComplete?: string };
 
 const FIELDS: Record<FormKind, FieldDef[]> = {
   contact: [
     { name: "full_name", label: "Full Name", required: true, type: "text", autoComplete: "name" },
     { name: "email", label: "Email", required: true, type: "email", autoComplete: "email" },
     { name: "phone", label: "Phone", required: true, type: "tel", autoComplete: "tel" },
+    { name: "comment", label: "Comment", required: false, type: "textarea" },
   ],
   consultation: [
     { name: "full_name", label: "Full Name", required: true, type: "text", autoComplete: "name" },
     { name: "email", label: "Email", required: true, type: "email", autoComplete: "email" },
     { name: "phone", label: "Phone", required: true, type: "tel", autoComplete: "tel" },
+    { name: "comment", label: "Comment", required: false, type: "textarea" },
   ],
   careers: [
     { name: "full_name", label: "Name", required: true, type: "text", autoComplete: "name" },
@@ -54,6 +56,7 @@ function validate(f: FieldDef, value: string, file: File | null): string | undef
   if (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return "Please enter a valid email address.";
   if (f.type === "tel" && (!/^[0-9()#&+*\-=. ]+$/.test(v) || v.replace(/\D/g, "").length < 10)) return "Please enter a phone number with area code.";
   if (f.type === "text" && v.length < 2) return `Please enter your ${f.label.toLowerCase()}.`;
+  if (f.type === "textarea" && v.length > 2000) return "Please keep your comment under 2,000 characters.";
   return undefined;
 }
 
@@ -185,6 +188,19 @@ export function LeadForm({
                 aria-describedby={describedBy}
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
                 className="block w-full rounded-xl border border-dashed border-line bg-paper p-3 text-[14px] text-body file:mr-3 file:cursor-pointer file:rounded-full file:border-0 file:bg-ink file:px-4 file:py-2 file:text-[11px] file:font-bold file:uppercase file:tracking-[0.16em] file:text-paper"
+              />
+            ) : f.type === "textarea" ? (
+              <textarea
+                id={id}
+                name={f.name}
+                rows={3}
+                maxLength={2000}
+                placeholder={f.label}
+                value={values[f.name] ?? ""}
+                aria-invalid={bad || undefined}
+                aria-describedby={describedBy}
+                onChange={(e) => setValues((s) => ({ ...s, [f.name]: e.target.value }))}
+                className={`${inputCls(bad)} min-h-[96px] resize-y`}
               />
             ) : (
               <input

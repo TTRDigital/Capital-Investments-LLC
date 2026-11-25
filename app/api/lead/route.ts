@@ -1,7 +1,8 @@
 import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
 
 /*
- * Lead forms (contact, consultation, careers). Checks the same rules
+ * Lead forms (contact, consultation, careers; the first two take an optional
+ * comment). Checks the same rules
  * as the form, filters spam, then sends the lead to TTR OS, which saves it for
  * Capital Investment LLC. Settings (Vercel environment variables):
  *   TTR_SITE_KEY   optional, the public site key from TTR OS (Capital > Integrations);
@@ -13,8 +14,8 @@ import { MIN_FILL_MS, attributionKeys } from "@/lib/lead-options";
 export const runtime = "nodejs";
 
 const FORMS: Record<string, Record<string, boolean>> = {
-  contact: { full_name: true, email: true, phone: true },
-  consultation: { full_name: true, email: true, phone: true },
+  contact: { full_name: true, email: true, phone: true, comment: false },
+  consultation: { full_name: true, email: true, phone: true, comment: false },
   careers: { full_name: true, email: true, phone: false },
 };
 
@@ -64,7 +65,7 @@ export async function POST(req: Request) {
   const lead: Record<string, string> = {};
   const errors: Record<string, string> = {};
   for (const [field, required] of Object.entries(rules)) {
-    const v = text(input[field], field === "email" ? 200 : 120);
+    const v = text(input[field], field === "email" ? 200 : field === "comment" ? 2000 : 120);
     lead[field] = v;
     if (!v) {
       if (required) errors[field] = "This field is required.";
@@ -103,6 +104,7 @@ export async function POST(req: Request) {
   f("last_name", lead.last_name ?? "");
   f("email", lead.email ?? "");
   f("phone", lead.phone ?? "");
+  f("comment", lead.comment ?? "");
   f("position", text(input.position, 200));
   if (hasResume) f("resume_file", `${resumeName} (not delivered: ask the person to email it)`);
   f("consent", "yes");

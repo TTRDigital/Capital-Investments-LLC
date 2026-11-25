@@ -9,6 +9,7 @@ import { fallbackTeam } from "@/lib/data/team";
 import { applyTeamOrder } from "@/lib/team-order";
 import { applyMemberTitles, fixDavidTitle } from "@/lib/title-override";
 import { withAboutLinks } from "@/lib/about-link";
+import { withTeamBanners } from "@/lib/hero-override";
 import type { Img, Office, Page, Section, SiteSettings, TeamMember } from "@/lib/types";
 
 /* ==========================================================================
@@ -70,7 +71,7 @@ export async function getOffice(key: string): Promise<Office | undefined> {
 
 export const getPages = cache(async (): Promise<Page[]> => {
   const cms = await sanityFetch<Loose[]>(`*[_type == "page" && defined(path)] | order(order asc)`, {}, ["page"]);
-  if (!cms?.length) return fixDavidTitle(fallbackPages);
+  if (!cms?.length) return withTeamBanners(fixDavidTitle(fallbackPages));
   const byPath = new Map(fallbackPages.map((p) => [p.path, p]));
   const merged = cms.map((doc) => {
     const c = fromCms(doc) as Partial<Page>;
@@ -79,7 +80,7 @@ export const getPages = cache(async (): Promise<Page[]> => {
     return { ...page, sections: page.sections.map(normalizeSection).filter((s): s is Section => !!s) };
   });
   const missing = fallbackPages.filter((f) => !merged.some((m) => m.path === f.path));
-  return fixDavidTitle([...merged, ...missing].sort((a, b) => a.order - b.order));
+  return withTeamBanners(fixDavidTitle([...merged, ...missing].sort((a, b) => a.order - b.order)));
 });
 
 export async function getPage(path: string): Promise<Page | undefined> {

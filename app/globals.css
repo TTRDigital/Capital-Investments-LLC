@@ -416,6 +416,54 @@ html[data-reveal-ready] [data-reveal]:not([data-in]) {
   }
 }
 
+/* Comparison: rows slide in one by one, ticks pop and draw (only once the card is revealed). */
+.cmp-row {
+  transition:
+    opacity 0.7s var(--ease-out-expo) var(--d, 0ms),
+    transform 0.7s var(--ease-out-expo) var(--d, 0ms),
+    background-color 0.3s;
+}
+html[data-reveal-ready] [data-reveal]:not([data-in]) .cmp-row {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+.cmp-check path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease calc(var(--d, 0ms) + 250ms);
+}
+html[data-reveal-ready] [data-reveal]:not([data-in]) .cmp-check path {
+  stroke-dashoffset: 20;
+}
+[data-in] .cmp-check {
+  animation: cmp-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0ms) both;
+}
+.cmp-row:hover .cmp-check {
+  transform: scale(1.08);
+}
+@keyframes cmp-pop {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-reveal-ready] [data-reveal]:not([data-in]) .cmp-row {
+    opacity: 1;
+    transform: none;
+  }
+  html[data-reveal-ready] [data-reveal]:not([data-in]) .cmp-check path {
+    stroke-dashoffset: 0;
+  }
+  [data-in] .cmp-check {
+    animation: none;
+  }
+}
+
 /* "Scroll" cue in the home banner. */
 @keyframes scroll-cue {
   0% {

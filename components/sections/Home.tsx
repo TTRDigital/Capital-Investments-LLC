@@ -1,9 +1,10 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { ComparisonSection, Img, OfficeMapsSection, Office, TeamCarouselSection, TeamMember } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Carousel } from "@/components/ui/Carousel";
 import { Phone, Pin } from "@/components/ui/Icons";
-import { CheckMark, PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
+import { PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
 
 const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
 
@@ -19,19 +20,45 @@ function Cross() {
   );
 }
 
+/** Gold tick that pops in and draws itself when its card scrolls into view (see .cmp-* in globals.css). */
+function LiveCheck() {
+  return (
+    <span aria-hidden="true" className="cmp-check relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-bronze text-ink shadow-[0_0_0_4px_rgb(220_194_155/0.15)]">
+      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m5.5 12.5 4 4L18.5 8" />
+      </svg>
+    </span>
+  );
+}
+
+/**
+ * Capital Investment LLC vs other firms: our card dark with a gold glow, theirs
+ * light and muted, a "VS" badge between them. The points slide in one by one
+ * and the ticks pop in as the cards scroll into view.
+ */
 export function Comparison({ s }: { s: ComparisonSection }) {
   const card = (side: ComparisonSection["ours"], good: boolean) => (
-    <Reveal className={`rounded-[24px] p-8 md:p-12 ${good ? "bg-white shadow-lift ring-1 ring-bronze/30" : "border border-line bg-transparent"}`}>
+    <Reveal
+      className={`relative isolate overflow-hidden rounded-[28px] p-8 md:p-11 ${good ? "bg-ink text-paper shadow-lift" : "border border-line bg-white/50"}`}
+    >
+      {good ? <div className="pointer-events-none absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-bronze/30 blur-[90px]" aria-hidden="true" /> : null}
       <div className="flex items-center justify-between gap-4">
-        <h3 className={`h-sub ${good ? "" : "text-muted"}`}>{side.title}</h3>
-        <Picture img={side.icon} sizes="44px" className={`h-auto w-10 ${good ? "" : "opacity-60 grayscale"}`} />
+        <div>
+          <h3 className={`font-serif text-[28px] font-normal leading-tight md:text-[32px] ${good ? "text-paper" : "text-muted"}`}>{side.title}</h3>
+        </div>
+        <Picture img={side.icon} sizes="44px" className={`h-auto w-10 ${good ? "brightness-0 invert" : "opacity-50 grayscale"}`} />
       </div>
-      <span aria-hidden="true" className={`mt-7 block h-px w-full ${good ? "bg-bronze/40" : "bg-line"}`} />
-      <ul className="mt-7 space-y-5 text-[15px] leading-[1.6]">
+      <ul className="mt-8 text-[15px] leading-[1.6]">
         {side.points.map((p, i) => (
-          <li key={i} className={`flex items-start gap-3.5 ${good ? "text-ink" : "text-body"}`}>
-            {good ? <CheckMark /> : <Cross />}
-            <span className="pt-px">{p}</span>
+          <li
+            key={i}
+            style={{ "--d": `${200 + i * 110}ms` } as CSSProperties}
+            className={`cmp-row -mx-3 flex items-start gap-4 rounded-xl border-t px-3 py-4 transition-colors first:border-t-0 ${
+              good ? "border-white/10 text-white/85 hover:bg-white/[0.05]" : "border-line text-body"
+            }`}
+          >
+            {good ? <LiveCheck /> : <Cross />}
+            <span className="pt-[3px]">{p}</span>
           </li>
         ))}
       </ul>
@@ -41,8 +68,14 @@ export function Comparison({ s }: { s: ComparisonSection }) {
     <Section tone="sand">
       <div className="container-box">
         <Title text={s.heading} />
-        <div className="mx-auto mt-12 grid max-w-[1080px] gap-5 md:mt-14 md:grid-cols-2">
+        <div className="relative mx-auto mt-12 grid max-w-[1080px] items-stretch gap-5 md:mt-16 md:grid-cols-2 md:gap-8">
           {card(s.ours, true)}
+          <span
+            aria-hidden="true"
+            className="cmp-vs absolute left-1/2 top-1/2 z-10 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-bronze/40 bg-paper font-serif text-[18px] italic text-copper shadow-card md:flex"
+          >
+            vs
+          </span>
           {card(s.theirs, false)}
         </div>
       </div>
