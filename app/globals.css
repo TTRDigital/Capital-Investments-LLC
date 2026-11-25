@@ -33,8 +33,6 @@
 
 @layer base {
   html {
-    /* Closed menu flyouts sit off to the side until hovered; never let them cause sideways scrolling. */
-    overflow-x: clip;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
@@ -51,6 +49,9 @@
     }
   }
   body {
+    /* Closed menu flyouts sit off to the side until hovered; never let them cause sideways scrolling.
+       (On body, not html: on html it stops the phone menu from locking the page and unpins the header.) */
+    overflow-x: clip;
     background: var(--color-paper);
     color: var(--color-body);
     font-family: var(--font-sans);

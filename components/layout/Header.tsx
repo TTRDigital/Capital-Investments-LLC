@@ -119,10 +119,12 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
+    // Lock the page behind the open menu (on <html>, which is the element that scrolls).
+    const root = document.documentElement;
+    root.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      root.style.overflow = "";
     };
   }, [open]);
 
@@ -156,7 +158,7 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
         </div>
       </div>
       {open ? (
-        <nav id="mobile-menu" aria-label="Main" className="h-[calc(100dvh-68px)] overflow-y-auto border-t border-line bg-paper min-[1025px]:hidden">
+        <nav id="mobile-menu" aria-label="Main" className="absolute inset-x-0 top-full h-[calc(100dvh-68px)] overflow-y-auto overscroll-contain border-t border-line bg-paper min-[1025px]:hidden">
           <div className="container-box pb-10 pt-2">
             <ul>
               {menu.map((item) => (
