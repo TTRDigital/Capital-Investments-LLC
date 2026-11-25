@@ -9,6 +9,8 @@ import type { SiteSettings } from "@/lib/types";
  */
 export const ABOUT_PATH = "/about-us/";
 
+const fixSuite = <T extends object>(o: T): T => JSON.parse(JSON.stringify(o).replace(/Suite 110\b/g, "Suite 460"));
+
 export function withAboutLinks(s: SiteSettings): SiteSettings {
   const menu = s.menu.map((item) =>
     item.label === "About" && !item.children?.some((c) => c.href === ABOUT_PATH)
@@ -29,5 +31,7 @@ export function withAboutLinks(s: SiteSettings): SiteSettings {
     return item;
   });
   const footerQuickLinks = s.footerQuickLinks.map((l) => (l.label === "About Us" ? { ...l, href: ABOUT_PATH } : l));
-  return { ...s, menu: menu2, footerQuickLinks };
+  // Tysons office moved to Suite 460 (Reza, Nov 2026); Sanity still says Suite 110.
+  const offices = s.offices.map((o) => (o.key === "tysons" ? fixSuite(o) : o));
+  return { ...s, menu: menu2, footerQuickLinks, offices };
 }

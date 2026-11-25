@@ -78,7 +78,12 @@ export function Comparison({ s }: { s: ComparisonSection }) {
 const sharper = (a?: Img, b?: Img) => (!a ? b : !b ? a : (b.width ?? 0) > (a.width ?? 0) ? b : a);
 
 export function TeamCarousel({ s, team }: { s: TeamCarouselSection; team: TeamMember[] }) {
-  const members = s.members.map((m) => ({ ...m, member: team.find((t) => t.slug === m.slug) })).filter((m) => m.member);
+  // Same order as the Our Team page (team is already sorted, see lib/team-order.ts).
+  const rank = (slug: string) => team.findIndex((t) => t.slug === slug);
+  const members = s.members
+    .map((m) => ({ ...m, member: team.find((t) => t.slug === m.slug) }))
+    .filter((m) => m.member)
+    .sort((a, b) => rank(a.slug) - rank(b.slug));
   return (
     <Section>
       <div className="container-box">

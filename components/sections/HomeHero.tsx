@@ -89,9 +89,7 @@ export function HomeHero({ s }: { s: HomeHeroSection }) {
           {/* Redesign headline. Sanity is shared with the live site, so it is set here on staging;
               when the redesign ships, put it in Sanity (Home > hero heading) and use s.heading again. */}
           <h1 className="font-serif text-[clamp(44px,6.6vw,100px)] font-normal leading-[1.02] tracking-[-0.015em] text-paper">
-            Commercial Real Estate,{" "}
-            <br />
-            <em className="italic text-gold">Elevated.</em>
+            Beyond <em className="italic text-gold">Brokerage.</em>
           </h1>
           <span aria-hidden="true" className="mt-8 block h-px w-24 bg-paper/70" />
         </div>
