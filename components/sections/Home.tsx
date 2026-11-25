@@ -1,9 +1,8 @@
 import Link from "next/link";
-import type { ComparisonSection, Img, OfficeMapsSection, Office, StatsSection, TeamCarouselSection, TeamMember } from "@/lib/types";
+import type { ComparisonSection, Img, OfficeMapsSection, Office, TeamCarouselSection, TeamMember } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Carousel } from "@/components/ui/Carousel";
 import { Phone, Pin } from "@/components/ui/Icons";
-import { CountUp } from "@/components/sections/CountUp";
 import { CheckMark, PillButton, Reveal, Rule, Section, Title } from "@/components/sections/parts";
 
 const tel = (p: string) => `tel:+1${p.replace(/\D/g, "").slice(-10)}`;
@@ -46,31 +45,6 @@ export function Comparison({ s }: { s: ComparisonSection }) {
           {card(s.ours, true)}
           {card(s.theirs, false)}
         </div>
-      </div>
-    </Section>
-  );
-}
-
-/* ---------- Track record counters ---------- */
-
-export function Stats({ s }: { s: StatsSection }) {
-  return (
-    <Section tone="ink" className="relative isolate overflow-hidden">
-      <div className="container-box">
-        <span aria-hidden="true" className="block h-px w-24 bg-gold/60" />
-        <h2 className="h-section h-caps mt-8 text-paper">{s.heading}</h2>
-        <ul className="mt-14 grid gap-12 border-t border-white/10 pt-12 md:grid-cols-3 md:gap-0">
-          {s.items.map((it, i) => (
-            <li key={i} className={`md:px-12 ${i === 0 ? "md:pl-0" : "md:border-l md:border-white/10"}`}>
-              <h3 className="caps text-gold">{it.label}</h3>
-              <p className="mt-5 font-serif text-[64px] font-normal leading-none text-paper md:text-[84px]">
-                <CountUp to={it.value} />
-                {it.suffix ? <span className="ml-3 font-serif text-[36px] italic text-gold md:text-[44px]">{it.suffix}</span> : null}
-              </p>
-              {it.caption ? <p className="mt-4 text-[14.5px] text-white/65">{it.caption}</p> : null}
-            </li>
-          ))}
-        </ul>
       </div>
     </Section>
   );

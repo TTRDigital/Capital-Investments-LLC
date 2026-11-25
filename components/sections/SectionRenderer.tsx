@@ -3,7 +3,7 @@ import { Article, CardGrid, Cta, Hero, ImageCards, Intro, Panel, ServiceBlocks, 
 import { Faq, ServiceSlider, Slider, SplitAccordion, Tabs } from "@/components/sections/Interactive";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { HomeServices } from "@/components/sections/HomeServices";
-import { Comparison, OfficeMaps, Stats, TeamCarousel } from "@/components/sections/Home";
+import { Comparison, OfficeMaps, TeamCarousel } from "@/components/sections/Home";
 import { Careers, ContactFormBlock, Jobs, Legal, MarketSlider, Message, OfficeCards, OfficeList, SitemapList, TeamGrid } from "@/components/sections/Company";
 
 export type RenderContext = { settings: SiteSettings; team: TeamMember[]; pages: Page[]; crumbs: { label: string; href?: string }[] };
@@ -51,7 +51,9 @@ export function SectionRenderer({ section: s, ctx }: { section: Section; ctx: Re
     case "comparison":
       return <Comparison s={s} />;
     case "stats":
-      return <Stats s={s} />;
+      // The "Track Record" numbers band was removed in the redesign. Sanity is shared with the
+      // live site, so the section stays in the CMS and is simply not shown; delete it there at launch.
+      return null;
     case "teamCarousel":
       return <TeamCarousel s={s} team={ctx.team} />;
     case "officeMaps":
