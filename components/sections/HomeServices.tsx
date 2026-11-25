@@ -1,9 +1,11 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import type { HomeServicesSection, Img } from "@/lib/types";
 import { Picture } from "@/components/ui/Picture";
 import { Rich } from "@/components/ui/Rich";
 import { ArrowRight } from "@/components/ui/Icons";
 import { Reveal, Rule, Section, Title } from "@/components/sections/parts";
+import { StackFx } from "@/components/sections/StackFx";
 
 /**
  * A photo for each service, by the page it links to (all are the client's own
@@ -21,8 +23,9 @@ const PHOTOS: Record<string, Img> = {
 /**
  * Home "Our Services": each service is a wide photo panel, its number and
  * title on the left and a frosted card with a short summary and "Learn more"
- * on the right. On large screens the panels stack over each other as the
- * page scrolls (sticky), so the section reads one service at a time.
+ * on the right. The panels stack over each other as the page scrolls
+ * (sticky), and each one shrinks and darkens a little as the next covers
+ * it (StackFx), like a deck of flashcards.
  */
 export function HomeServices({ s }: { s: HomeServicesSection }) {
   return (
@@ -32,7 +35,7 @@ export function HomeServices({ s }: { s: HomeServicesSection }) {
           <Title text={s.heading} align="left" />
           <Rule className="mt-8 text-copper" />
         </Reveal>
-        <ol className="mt-12 space-y-5 lg:mt-16 lg:space-y-8">
+        <ol id="home-services-stack" className="mt-12 space-y-5 lg:mt-16 lg:space-y-8">
           {s.items.map((it, i) => {
             const photo = (it.href && PHOTOS[it.href]) || s.image;
             const num = String(i + 1).padStart(2, "0");
@@ -61,11 +64,13 @@ export function HomeServices({ s }: { s: HomeServicesSection }) {
                     ) : null}
                   </div>
                 </div>
+                {/* Darkens as the next card covers this one (set by StackFx). */}
+                <div className="pointer-events-none absolute inset-0 z-10 bg-ink [opacity:var(--stack-shade,0)]" aria-hidden="true" />
               </>
             );
-            const cls = "group relative isolate block h-[520px] overflow-hidden rounded-[28px] bg-ink shadow-lift md:h-[440px] lg:h-[460px]";
+            const cls = "group relative isolate block h-[520px] origin-top overflow-hidden rounded-[28px] bg-ink shadow-lift will-change-transform md:h-[440px] lg:h-[460px]";
             return (
-              <li key={i} className="lg:sticky" style={{ top: `calc(110px + ${i * 18}px)` }}>
+              <li key={i} data-stack-item className="sticky [top:calc(84px+var(--i)*14px)] lg:[top:calc(110px+var(--i)*20px)]" style={{ "--i": i } as CSSProperties}>
                 {it.href ? (
                   <Link href={it.href} className={cls}>
                     {inner}
@@ -77,6 +82,7 @@ export function HomeServices({ s }: { s: HomeServicesSection }) {
             );
           })}
         </ol>
+        <StackFx id="home-services-stack" />
       </div>
     </Section>
   );
