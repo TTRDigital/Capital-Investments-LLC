@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import type { MenuItem } from "@/lib/types";
+import type { MenuItem, Office } from "@/lib/types";
 import { images } from "@/lib/data/images";
 import { Picture } from "@/components/ui/Picture";
-import { ChevronDown, Close, MenuIcon, Phone } from "@/components/ui/Icons";
+import { ChevronDown, Close, MenuIcon, Phone, Pin } from "@/components/ui/Icons";
 
 /**
  * Sticky white header: logo, menu (hover and keyboard dropdowns on desktop,
- * an expandable full-height panel on phones), "Let's Chat" (the phone number is in the phone menu and the footer).
+ * an expandable full-height panel on phones, with both offices' addresses and phone numbers), "Let's Chat".
  * The logo is the design's dark version of the brand logo, not the CMS logo field,
  * so a light logo uploaded in /cms can't end up on the white header.
  */
@@ -103,7 +103,7 @@ function MobileItem({ item, path, depth, onNavigate }: { item: MenuItem; path: s
   );
 }
 
-export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: string; phone?: string }) {
+export function Header({ menu, siteName, phone, offices = [] }: { menu: MenuItem[]; siteName: string; phone?: string; offices?: Office[] }) {
   const path = usePathname() || "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -165,7 +165,31 @@ export function Header({ menu, siteName, phone }: { menu: MenuItem[]; siteName: 
                 <MobileItem key={item.label} item={item} path={path} depth={0} onNavigate={() => setOpen(false)} />
               ))}
             </ul>
-            {phone ? (
+            {/* Both offices with their address (opens maps) and phone number (tap to call). */}
+            {offices.length ? (
+              <ul className="mt-10 grid gap-3">
+                {offices.map((o) => (
+                  <li key={o.key} className="rounded-2xl border border-line bg-white p-5">
+                    <p className="font-serif text-[22px] leading-tight text-ink">{o.label}</p>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.mapQuery)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 flex gap-2.5 text-[14px] leading-relaxed text-body transition-colors hover:text-copper"
+                    >
+                      <Pin className="mt-[5px] h-3.5 w-3 shrink-0 text-copper" />
+                      {o.address}
+                    </a>
+                    {o.phone ? (
+                      <a href={tel(o.phone)} className="mt-3 inline-flex items-center gap-2.5 text-[13px] font-semibold tracking-[0.14em] text-ink transition-colors hover:text-copper">
+                        <Phone className="h-3 w-3 text-copper" />
+                        {o.phone}
+                      </a>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            ) : phone ? (
               <a href={tel(phone)} className="btn btn-dark mt-10 w-full">
                 <Phone className="h-3.5 w-3.5 text-gold" />
                 {phone}
