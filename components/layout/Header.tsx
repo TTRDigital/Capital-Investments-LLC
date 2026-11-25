@@ -130,18 +130,18 @@ export function Header({ menu, siteName, phone, offices = [] }: { menu: MenuItem
 
   return (
     <header className={`sticky top-0 z-50 border-b bg-paper/95 backdrop-blur transition-[border-color,box-shadow] duration-300 supports-[backdrop-filter]:bg-paper/85 ${scrolled || open ? "border-line shadow-[0_10px_30px_-24px_rgb(21_26_34/0.45)]" : "border-line/60"}`}>
-      <div className="container-box flex h-[68px] items-center gap-4 min-[1025px]:grid min-[1025px]:h-[84px] min-[1025px]:grid-cols-[1fr_auto_1fr]">
+      <div className="container-box flex h-[68px] items-center gap-4 min-[1025px]:h-[84px]">
         <Link href="/" className="block w-[158px] shrink-0 min-[380px]:w-[184px] sm:w-[220px] lg:w-[260px] xl:w-[300px]" aria-label={`${siteName} home`}>
           <Picture img={images.logoInk} sizes="(min-width: 1280px) 300px, (min-width: 1025px) 260px, 220px" eager className="h-auto w-full" />
         </Link>
-        <nav aria-label="Main" className="hidden min-[1025px]:block">
+        <nav aria-label="Main" className="ml-auto hidden min-[1025px]:block">
           <ul className="flex items-center">
             {menu.map((item) => (
               <DesktopItem key={item.label} item={item} path={path} depth={0} />
             ))}
           </ul>
         </nav>
-        <div className="ml-auto flex items-center gap-3 min-[1025px]:justify-self-end">
+        <div className="ml-auto flex items-center gap-3 min-[1025px]:ml-4 xl:ml-6">
           <Link href="/contact-us/" data-open-chat className="btn whitespace-nowrap !px-4 !py-3 !text-[11px] min-[380px]:!px-5 min-[1025px]:!px-6">
             Let’s Chat
           </Link>
