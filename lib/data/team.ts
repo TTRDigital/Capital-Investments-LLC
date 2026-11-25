@@ -427,4 +427,25 @@ export const fallbackTeam: TeamMember[] = [
       "description": "Monica Morfin is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
     }
   },
+  {
+    "slug": "donya-taylor",
+    "name": "Donya Taylor",
+    "role": "Real Estate Associate",
+    "order": 23,
+    "photo": {
+      "src": "/images/team/donya-taylor.webp",
+      "alt": "Donya Taylor, Real Estate Associate at Capital Investment LLC",
+      "width": 900,
+      "height": 900
+    },
+    "bio": [
+      "With over a decade of experience in the real estate industry, Donya brings extensive knowledge in residential and commercial real estate, investment properties, new construction, and remodeling. Licensed in both Illinois and Florida, she has a strong background in real estate transactions, property development, and investment opportunities.",
+      "Her diverse experience allows her to guide clients through buying, selling, and investing with confidence. With a strong understanding of market trends, property values, and construction costs, Donya is committed to providing exceptional service, building lasting relationships, and helping clients achieve their real estate goals.",
+      "Contact me:\nM: [(847) 345-2536](tel:+18473452536)\n[donya@capitalinvestmentllc.com](mailto:donya@capitalinvestmentllc.com)"
+    ],
+    "seo": {
+      "title": "Donya Taylor, Real Estate Associate | Capital Investment LLC",
+      "description": "Donya Taylor is a Real Estate Associate at Capital Investment LLC, a commercial real estate firm with offices in Tysons, DC, Bethesda and Miami."
+    }
+  },
 ];

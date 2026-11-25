@@ -284,6 +284,15 @@ export const fallbackPages: Page[] = [
             }
           },
           {
+            "slug": "brooke-fontan",
+            "photo": {
+              "src": "/images/team/carousel/brooke-fontan.webp",
+              "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
+              "width": 237,
+              "height": 243
+            }
+          },
+          {
             "slug": "christina-davies",
             "photo": {
               "src": "/images/team/carousel/christina-davies.webp",
@@ -306,15 +315,6 @@ export const fallbackPages: Page[] = [
             "photo": {
               "src": "/images/team/carousel/yassin-kadir.webp",
               "alt": "Yassin Kadir, Real Estate Associate at Capital Investment LLC",
-              "width": 237,
-              "height": 243
-            }
-          },
-          {
-            "slug": "brooke-fontan",
-            "photo": {
-              "src": "/images/team/carousel/brooke-fontan.webp",
-              "alt": "Brooke Fontan, Vice President at Capital Investment LLC",
               "width": 237,
               "height": 243
             }
